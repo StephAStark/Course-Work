@@ -1,0 +1,29 @@
+Write a MATLAB program to implement (6.8) and (6.9) and construct the differentiation matrix $D_N$ 
+associated with an arbitrary set of distinct points $x_0,\ldots , x_N$. Combine it with gauss to create 
+a function that computes the matrix $D_N$ associated with Legendre points in $(-1,1)$. Print 
+results for $N = 1,2,3,4$.\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Implementing the formulas for (6.8) and (6.9) was not too difficult as it took the $a^{-1}$ code
+    from the Baycentric Interpolation code. After that, it took the same for and if loops to build the
+    differentiation matrix. Running the code through $N = 1, 2, 3, 4$ gives the matrices
+
+    $$D_1 = 0$$
+
+    $$D_2 = \left(\begin{array}{cc} -0.8660 & 0.8660 \\
+                                    -0.8660 & 0.8660 \end{array}\right)$$
+
+    $$D_3 = \left(\begin{array}{ccc} -0.6455 & 2.5820 & -0.6455 \\
+                                     -0.6455 & -1.2910 & 0.6455 \\
+                                     0.6455 & -2.5820 & 1.2910 \end{array}\right)$$
+
+    $$D_4 = \left(\begin{array}{cccc} -0.5806 & 4.8602 & -2.1088 & 0.5806 \\
+                                      -0.7576 & -0.8326 & 1.4707 & -0.3287 \\
+                                      0.3287 & -1.4707 & -1.9188 & 0.7576 \\
+                                      -0.5806 & 2.1088 & -4.8602 & 1.9188 \end{array}\right)$$
+
+\end{solution}
+
+\newpage
+\lstinputlisting{problem12_2.m}
+\newpage
