@@ -1,0 +1,41 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{accents}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{tcolorbox}
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\usepackage{tikz}
+\usepackage{amsfonts}
+\usepackage{latexsym}
+\usepackage{amscd}
+\usepackage[mathscr]{euscript}
+\usepackage{xy} \xyoption{all}
+\setlength{\oddsidemargin}{0in}
+\setlength{\textwidth}{6.5in}
+\setlength{\headheight}{40pt}
+\setlength{\textheight}{9in}
+\renewcommand \d{\displaystyle}
+\newcommand{\uloopr}[1]{\ar@'{@+{[0,0]+(-4,5)}@+{[0,0]+(0,10)}@+{[0,0] +(4,5)}}^{#1}}
+\newcommand{\uloopd}[1]{\ar@'{@+{[0,0]+(5,4)}@+{[0,0]+(10,0)}@+{[0,0]+ (5,-4)}}^{#1}}
+\newcommand{\dloopr}[1]{\ar@'{@+{[0,0]+(-4,-5)}@+{[0,0]+(0,-10)}@+{[0, 0]+(4,-5)}}_{#1}}
+\newcommand{\dloopd}[1]{\ar@'{@+{[0,0]+(-5,4)}@+{[0,0]+(-10,0)}@+{[0,0 ]+(-5,-4)}}_{#1}}
+\newcommand{\luloop}[1]{\ar@'{@+{[0,0]+(-8,2)}@+{[0,0]+(-10,10)}@+{[0, 0]+(2,2)}}^{#1}}
+\pagestyle{fancy}
+
+\newenvironment{solution}
+  {\renewcommand\qedsymbol{$\blacksquare$}
+  \begin{proof}[Solution]}
+  {\end{proof}}
+\renewcommand\qedsymbol{$\blacksquare$}
+
+\newcommand{\ubar}[1]{\underaccent{\bar}{#1}}
+
+% Style: no further than column 105 for readability.
+%        ensure 'whitespace'
+%        use \item[hw #] to enumerate wrt to the book problems
+%        for the header, name left, class right, assignment/title center

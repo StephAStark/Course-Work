@@ -1,0 +1,54 @@
+Let $K$ be any field. Let $G_n$ be the graph
+
+$$  \xymatrix{\bullet  \ar[r] & \bullet \ar[r] &  {\bullet^v} \ar@(ur,dr) ^{y_1} \ar@(u,r) ^{y_2} \ar@(ul,ur) ^{y_3}
+ \ar@{.} @(l,u) \ar@{.} @(dr,dl)
+\ar@(r,d) ^{y_n} \ar@{}[l] }$$
+
+Explicitly write down a $K$-algebra isomorphism ${\rm M}_3(L_K(R_n)) \cong  L_K(G_n)$ 
+(where as usual $R_n$ is the graph with one vertex and $n$ loops). \\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Let $K, G_n$ be as above, and let $F={\rm M}_3(L_K(R_n))$. Let $v$ and $y_i$ for $1\leq i\leq n$ be
+    the vertex and edges denoted in the graph above. Further, let $t$ and $u$ be the other two vertices
+    from left to right repsctively, and let $e$ and $f$ be the remaining two edges from left to right
+    respectively. Consider the mapping $\gamma:L_K(G_n)\to F$ given by:
+
+    $$\gamma(t)=\left(\begin{array}{ccc} 1 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{array}\right)$$
+
+    $$\gamma(u)=\left(\begin{array}{ccc} 0 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 0 \end{array}\right)$$
+
+    $$\gamma(v)=\left(\begin{array}{ccc} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 1 \end{array}\right)$$
+
+    $$\gamma(e)=\left(\begin{array}{ccc} 0 & 1 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{array}\right)$$
+
+    $$\gamma(e^*)=\left(\begin{array}{ccc} 0 & 0 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 0 \end{array}\right)$$
+
+    $$\gamma(f)=\left(\begin{array}{ccc} 0 & 0 & 0 \\ 0 & 0 & 1 \\ 0 & 0 & 0 \end{array}\right)$$
+
+    $$\gamma(f^*)=\left(\begin{array}{ccc} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 1 & 0 \end{array}\right)$$
+
+    $$\gamma(y_i)=\left(\begin{array}{ccc} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 1 & 0 & 0 \end{array}\right)$$
+
+    $$\gamma(y_i^*)=\left(\begin{array}{ccc} 0 & 0 & 1 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{array}\right)$$
+
+    Now witness, without loss of generality in terms of vertices:
+
+    $$\gamma(t)\gamma(t)-\gamma(t)=\left(\begin{array}{ccc} 1 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{array}\right)^2
+    -\left(\begin{array}{ccc} 1 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{array}\right)$$
+    $$\left(\begin{array}{ccc} 1 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{array}\right)-
+    \left(\begin{array}{ccc} 1 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{array}\right)=0$$
+
+    That is, all vertice mappings are idempotent. Also:
+
+    $$\gamma(t)\gamma(u)=\left(\begin{array}{ccc} 1 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{array}\right)
+    \left(\begin{array}{ccc} 0 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 0 \end{array}\right)=0$$
+
+    So, the mappings of the vertices are also orthogonal. Next note that:
+
+    $$\gamma(t)+\gamma(u)+\gamma(v)=\left(\begin{array}{ccc} 1 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{array}\right)
+    +\left(\begin{array}{ccc} 0 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 0 \end{array}\right)
+    +\left(\begin{array}{ccc} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 1 \end{array}\right)=I_3$$
+
+    Hence, the sum of the mappings of the vertices is the identiy element.
+
+\end{solution}
