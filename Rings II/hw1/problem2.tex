@@ -3,20 +3,46 @@ $\xymatrix{ \bullet \ar@(ul,dl)  \ar[r] & \bullet}$. Let $A$ be the Jacobson Alg
 Explicitly write down a $K$-algebra isomorphism $A\cong L_K(E)$.\\
 
 \begin{solution}\renewcommand{\qedsymbol}{}\ \\
-    Let $K, E$, and $A$ be as given. Let $L_K(E)$ be the Leavitt algebra of $E$. Denote the vertices from
-    left to right by $u$ and $v$ and the edges from left to right by $e$ and $f$ respctively. Consider the
-    mapping $\rho:L_K(E)\to A$ given by:
+    Let $K, E$, and $A$ be as given. Let $L_K(E)$ be the Leavitt algebra of $E$. Denote the vertices
+    from left to right by $u$ and $v$ and the edges from left to right by $e$ and $f$ respctively.
+    Consider the mapping $\rho:L_K(E)\to A$ given by:
 
-    $$\rho(u)$$
+    $$\rho(u)=yx$$
 
-    $$\rho(v)$$
+    $$\rho(v)=1-yx$$
 
-    $$\rho(e)$$
+    $$\rho(e)=y^2x$$
 
-    $$\rho(e^*)$$
+    $$\rho(e^*)=yx^2$$
 
-    $$\rho(f)$$
+    $$\rho(f)=y-y^2x$$
 
-    $$\rho(f^*)$$
+    $$\rho(f^*)=x-yx^2$$
+
+    The reader will bring their attention to the fact that:
+
+    $$\rho(u)\rho(u)-\rho(u)=yxyx-yx=y1x-yx=yx-yx=0$$
+
+    $$\rho(v)\rho(v)-\rho(v)=(1-yx)(1-yx)-1+yx=1-2yx+yxyx-1+yx=-2yx+yx+yx=0$$
+
+    $$\rho(u)\rho(v)=(yx)(1-yx)=yx-yxyx=yx-yx=0=\rho(v)\rho(u)$$
+
+    and
+
+    $$\rho(u)+\rho(v)=yx+1-yx=1$$
+
+    That is the mappings of the vertices are idempotent, orthogonal, and sum to the identity. Also note
+    
+    $$\rho(u)\rho(e)=(yx)(y^2x)=y(yx)=y^2x=\rho(e)=(y^2x)(yx)=\rho(e)\rho(u)$$
+
+    $$\rho(u)\rho(e^*)=(yx)(yx^2)=yx^2=\rho(e^*)=(yx)x=(yx^2)(yx)=\rho(e^*)\rho(u)$$
+
+    $$\rho(u)\rho(f)=(yx)(y-y^2x)=(yx)y-(yx)(y^2x)=y-y(yx)=y-y^2x=\rho(f)$$
+
+    $$\rho(f^*)\rho(u)=(x-yx^2)(yx)=x(yx)-(yx^2)(yx)=x-(yx)x=x-yx^2=\rho(f^*)$$
+
+    $$\rho(f)\rho(v)=(y-y^2x)(1-yx)=y-y^2x-y^2x+y^2x(yx)=y-2y^2x+y^2x=y-y^2x=\rho(f)$$
+
+    %$$h$$
 
 \end{solution}
