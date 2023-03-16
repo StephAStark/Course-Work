@@ -43,6 +43,47 @@ Explicitly write down a $K$-algebra isomorphism $A\cong L_K(E)$.\\
 
     $$\rho(f)\rho(v)=(y-y^2x)(1-yx)=y-y^2x-y^2x+y^2x(yx)=y-2y^2x+y^2x=y-y^2x=\rho(f)$$
 
-    %$$h$$
+    $$\rho(v)\rho(f^*)=(1-yx)(x-yx^2)=x-yx^2-yx^2+yx^2=x-2yx^2+yx^2=x-yx^2=\rho(f^*)$$
+
+    $$\rho(e)\rho(e^*)=(y^2x)(yx^2)=y^2x^2=(yx)^2=yx=\rho(u)=(yx^2)(y^2x)=\rho(e^*)\rho(e)$$
+
+    $$\rho(f^*)\rho(f)=(x-yx^2)(y-y^2x)=1-yx-yx+y^2x^2=1-2yx+yx=1-yx=\rho(v)$$
+
+    $$\rho(f)\rho(f^*)=(y-y^2x)(x-yx^2)=yx-y^2x^2-y^2x^2+yx=2yx-2yx=0$$
+    
+    which gives us
+
+    $$\rho(e)\rho(e^*)+\rho(f)\rho(f^*)=\rho(u)$$
+
+    Therefore, all of the relations are satisfied and hence, $\rho$ is our deired homomorphism. Now,
+    define $\nu:A\to L_K(E)$ by
+
+    $$\nu(x)=e^*+f^*$$
+
+    $$\nu(y)=e+f$$
+
+    Then, we see that
+
+    $$\nu(x)\nu(y)=(e^*+f^*)(e+f)=e^*e+e^*f+f^*e+f^*f=u+0+0+v=1$$
+
+    $$\nu(y)\nu(x)=(e+f)(e^*+f^*)=ee^*+ef^*+fe^*+ff^*=u$$
+
+    $$\nu(x)\nu(x)-\nu(x)=(e^*+f^*)(e^*+f^*)-e^*-f^*=e^*e^*+2e^*f^*+f^*f^*-e^*-f^*=e^*+f^*-e^*-f^*=0$$
+
+    and
+
+    $$\nu(y)\nu(y)-\nu(y)=(e+f)(e+f)-e-f=ee+2ef+ff-e-f=e+f-e-f=0$$
+
+    So, we have verified the desired conditions and thus $\nu$ is also a homomorphism. Now, observe that
+    for all $x\in L_K(E)$
+
+    $$\nu(\rho(x))=x$$
+
+    and for all $x\in A$
+
+    $$\rho(\nu(x))=x$$
+
+    That is $\rho$ and $\nu$ are inverses and as such, they are bijective. Thus, $A\cong L_K(E)$ as
+    desired.
 
 \end{solution}
