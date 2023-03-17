@@ -1,6 +1,48 @@
-Let $E$ be a finite graph and $K$ any field. Suppose $E$ contains a cycle $c$ based at a vertex $v$, and suppose $c$ 
-has an exit $f$ at $v$. Prove that $L_K(E)$ is not left noetherian.\\\\
+Let $E$ be a finite graph and $K$ any field. Suppose $E$ contains a cycle $c$ based at a vertex $v$, and
+suppose $c$ has an exit $f$ at $v$. Prove that $L_K(E)$ is not left noetherian.\\\\
 
 \begin{solution}\renewcommand{\qedsymbol}{}\ \\
-    Well,
+    Let $E$ and $K$ be as given. Suppose $c$ is a cycle based at $v$ in $E$ with exit $f$ at $v$. Let
+    $R=L_K(E)$ be Leavitt path algebra of $E$. Since $E$ contains a cylce that has an exit, we know that
+    $L_K(E)$ is not left noetherian nor left artinian by a given proposition. Thus, $L_K(E)$ is not left
+    noetherian as desired. We will now proceed to show the noetherian part of this proposition.
+
+    Consider the asscending chain
+
+    $$R(v-cc^*)\subseteq R(v-c^2(c^*)^2)\subseteq\ldots$$
+
+    Now, let $n\in\mathbb{Z}^+$ be arbitrary and let $r=v-c^n(c^*)^n$. We will show that
+    $r\in R(v-c^{n+1}(c^*)^{n+1})$ to show that the above chain holds. Along this line,
+
+    $$r(v-c^{n+1}(c^*)^{n+1})=(v-c^n(c^*)^n)(v-c^{n+1}(c^*)^{n+1})$$
+    $$=v^2-vc^{n+1}(c^*)^{n+1}-c^n(c^*)^nv+c^n(c^*)^nc^{n+1}(c^*)^{n+1}$$
+    $$=v-c^{n+1}(c^*)^{n+1}-c^n(c^*)^n+c^nc(c^*)^{n+1}$$
+    $$=v-c^{n+1}(c^*)^{n+1}-c^n(c^*)^n+c^{n+1}(c^*)^{n+1}=v-c^n(c^*)^n\in R(v-c^{n+1}(c^*)^{n+1})$$
+
+    Since $n$ was arbitrary, we have that $R(v-c^{n}(c^*)^{n})\subseteq R(v-c^{n+1}(c^*)^{n+1})$ for all
+    $n\in\mathbb{Z}^+$. So, the above is indeed an asscending chain of subset equalities. We will now
+    justify that the inclusions are proper. Again, let $n\in\mathbb{Z}^+$ be arbitrary. Assume by way of
+    contradiction that $v-c^{n+1}(c^*)^{n+1}=s(v-c^n(c^*)^n)$ for some $s\in R$. Multiply both sides of
+    the equation on the right by $c^n$. This gives us
+
+    $$(v-c^{n+1}(c^*)^{n+1})c^n=s(v-c^n(c^*)^n)c^n$$
+
+    $$vc^n-c^{n+1}(c^*)^{n+1}c^n=s(vc^n-c^n(c^*)^nc^n)$$
+
+    $$c^n-c^{n+1}c^*=s(c^n-c^n)=0$$
+
+    Hence,
+
+    $$c^n=c^{n+1}c^*$$
+
+    and therefore, by multiplying both sides on the left by $(c^*)^n$,
+
+    $$(c^*)^nc^n=v=(c^*)^nc^{n+1}c^*=cc^*$$
+
+    Since $n\in\mathbb{Z}^+$ is arbitrary, we have $R(v-c^{n}(c^*)^{n})\neq R(v-c^{n+1}(c^*)^{n+1})$
+    for all $n$. Thus, $R(v-cc^*)\subset R(v-c^2(c^*)^2)\subset\ldots$ is an infinitely asscending chain
+    of left ideals. So, $L_K(E)$ is not left noetherian as desired.
+
 \end{solution}
+
+%% Need to fix the proper inclusion argument. This doesn't work and we need to use the exit f at v.

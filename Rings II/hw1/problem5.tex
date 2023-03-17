@@ -1,9 +1,78 @@
-Modify/simplify/rewrite the argument given in The Reduction Theorem 2.2.11 of AAS, in the situation where the graph 
-is assumed to be of the form $R_n$ (i.e., one vertex, $n$ loops, $n\geq2$). More formally, prove the following.\\
-Let $E=R_n$ for some $n\geq2$ (denote the unique vertex by $v$), and let $K$ be an arbitrary field. For any nonzero 
-element $\alpha\in L_K(E)$ there exists $\mu,\eta\in Path(E)$ such that $0\neq\mu*\alpha\eta =kv$ in $L_K(E)$, for 
-some $0\neq k\in K$.\\\\
+Modify/simplify/rewrite the argument given in The Reduction Theorem 2.2.11 of AAS, in the situation
+where the graph is assumed to be of the form $R_n$ (i.e., one vertex, $n$ loops, $n\geq2$). More
+formally, prove the following.\\
+Let $E=R_n$ for some $n\geq2$ (denote the unique vertex by $v$), and let $K$ be an arbitrary field. For
+any nonzero element $\alpha\in L_K(E)$ there exists $\mu,\eta\in Path(E)$ such that
+$0\neq\mu*\alpha\eta =kv$ in $L_K(E)$, for some $0\neq k\in K$.\\\\
 
 \begin{solution}\renewcommand{\qedsymbol}{}\ \\
-    Well,
+    Let $E, n$, and $K$ be as given. Let $\alpha\in L_K(E)$ be nonzero. Let $v$ be the unique vertex in
+    $E$. Since $E^0=\{v\}$ by definition of $E$, we have that $\alpha v\neq0$. So, we can write this as
+    
+    $$\alpha v=\sum_{i=1}^m\alpha_ie_i^*+\alpha'$$
+
+    with $\alpha_i\in L_K(E)r(e_i)$, $e_i\in E^1$, $e_i\neq e_j$ for $i\neq j$, $s(e_i)=v$, and
+    $\alpha'\in(KE)v$ for all $1\leq i\leq r$. Since $n\geq 2$, we have that $\text{gedg}(\alpha v)>0$. Now,
+    if $\alpha ve_i=0$ for all $1\leq i\leq r$, then
+    
+    $$0=\alpha ve_i=(\sum_{j=1}^r\alpha_ie_i^*+\alpha')e_i=\alpha_i+\alpha'e_i$$
+
+    Hence,
+
+    $$\alpha_i=-\alpha'e_i$$
+
+    So,
+
+    $$\alpha v=\sum_{j=1}^n(\alpha'e_je_j^*)+\alpha'=\alpha'(\sum_{j=1}^ne_je_j^*+v)$$
+
+    Since $\alpha v\neq 0$, we have that $\alpha'\neq0$ and $\sum_{j=1}^ne_je_j^*+v\neq0$. Then, by the
+    CK2 relation, there exists $f\in s^{-1}\setminus\{e_1,\ldots,e_r\}$ such that $\alpha vf\in KE$ and
+    $\alpha vf\neq0$. Now, suppose that there exists $e_i$ such that $\alpha ve_i\neq 0$ for some
+    $1\leq i\leq r$. Without loss of generality, assume that $j=1$. Then, by similar operations as above
+
+    $$\alpha ve_1=\alpha_1+\alpha'e_1=(\alpha_1+\alpha'e_1)v\neq0$$
+
+    with $\text{gdeg}(\alpha_1+\alpha'e_1)<\text{gdeg}(\alpha v)$ by lemma 2.2.10 of AAS. Continuing
+    through finitely many iterations, we find $\eta\in\text{Path}(E)$ with
+    $\alpha\eta\in KE\setminus\{0\}$. Now, define $B:=\alpha\eta$ and write $B$ as
+
+    $$B=\sum_{i=1}^sk_i\gamma_i$$
+
+    with $k_i\in K$, $\gamma_i\in\text{Path}(E)$, and with $r(\gamma_i)=r(\eta)=v$ for all $i$. Suppose
+    $s=1$. If $\text{deg}(\gamma_1)=0$, then we are done. If, however, $\text{deg}(\gamma_1)>0$, then
+    
+    $$\gamma_1^*\alpha\eta=\gamma_1^*B=k_1\gamma_1^*\gamma_1=k_1v\neq0$$
+
+    Now suppose the result is true for any element having at most $s-1$ summands. Write again
+    
+    $$B=\sum_{i=1}^sk_i\gamma_i$$
+    
+    where $k_i\in K$, $\gamma_i\in\text{Path}(E),$ $\gamma_i\neq\gamma_j$ for $i\neq j$ and 
+    $\text{deg}(\gamma_i)\leq\text{deg}(\gamma_{i+1})$ for all $1\leq i\leq 2-1$. Then
+
+    $$0\neq\gamma_i^*B=k_1v+\sum_{i=2}k_i\gamma_1^*\gamma_i$$
+    
+    If $\gamma_1^*\gamma_i=0$ for some $2\leq i\leq s$, then we apply the induction hypothesis to get
+    the result. Elsewise,
+    
+    $$0\neq\mu=\gamma_1^*B=k_1v+\sum_{i=2}^sk_i\mu_i$$
+    
+    where the $\mu_i$ are paths starting and ending at $v$ and satisfying
+    $0<\text{deg}(\mu_2)\leq\ldots\leq\text{deg}(\mu_s)$. If $T(v)\cap P_c(E)=\emptyset$, then by lemma
+    2.2.8 of AAS there exists a path $\tau$ such that
+    
+    $$\tau^*\gamma_1^*\alpha\eta\tau=\tau^*\mu\tau=k_1r(\tau)=k_1v$$
+    
+    and we are done. If $T(v)\cap P_c(E)\neq\emptyset$, then there is a path $\rho$ such that
+    $w:=r(\rho)$ is a vertex in a cycle $c$ without exits. In this case,
+    
+    $$0\neq\rho^*\gamma_1^*\alpha\eta\rho=\rho^*\mu\rho\in wL_K(E)w$$
+
+    and by lemma 2.2.7 of AAS the proof is complete.
+
 \end{solution}
+
+%% The proof has been edited slightly, however it needs quite a bit more to specify to 
+%% R_n. That is all paths start and end at v, the source/range of all edges is v, etc.
+%% These are relatively minor and should lead to a shorter proof that cuts pieces out of
+%% this entirely. Also should not be hard to actually fill out properly.
