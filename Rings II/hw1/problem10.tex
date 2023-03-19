@@ -1,16 +1,33 @@
-For $i\geq 3$, let $C_n$ be the graph consisting of $n$ vertices $\{v_1, v_2, \hdots, v_n\}$,  and $2n$ edges 
-$\{e_1, e_2, \hdots, e_n, f_1, f_2, \hdots, f_n\}$ for which 
+For $i\geq 3$, let $C_n$ be the graph consisting of $n$ vertices $\{v_1, v_2, \hdots, v_n\}$,  and $2n$
+edges $\{e_1, e_2, \hdots, e_n, f_1, f_2, \hdots, f_n\}$ for which 
 
 $$s(e_i) = v_i,  \ \  r(e_i) = v_{i+1}, \ \  s(f_i) = v_i,  \ \ r(f_i) = v_{i-1},$$
 
-where indices are interpreted ${\rm mod } \ n$.   (So, for instance, $r(e_n) = e_1$, and $r(f_1) = v_n$.)   In words, $C_n$ 
-is the graph with $n$ vertices, where each vertex emits two edges, one to both of its neighboring vertices. In particular, 
-$C_3$ is the graph $E$ of the previous problem. For $n=4$, $n=5$, and $n=6$, describe $\mathcal{V}(L_K(C_n))$.  
-(Do this by Smith normal form; you need NOT do this directly as in Question 6a.) For two of these three, you will 
-be able to use this description of $\mathcal{V}(L_K(C_n))$  to identify $L_K(C_n)$ as a ``known" $K$-algebra.   
-(You might need to look at the monoid  $\mathcal{V}(L_K(C_n))$ directly in order to identify $[  L_K(C_n) ]$ within 
-$\mathcal{V}(L_K(C_n))$.)  Do that. Can you say anything about $L_K(C_n)$ for the third of these?  
+where indices are interpreted ${\rm mod } \ n$. (So, for instance, $r(e_n) = e_1$, and $r(f_1) = v_n$.)
+In words, $C_n$ is the graph with $n$ vertices, where each vertex emits two edges, one to both of its
+neighboring vertices. In particular, $C_3$ is the graph $E$ of the previous problem. For $n=4$, $n=5$,
+and $n=6$, describe $\mathcal{V}(L_K(C_n))$. (Do this by Smith normal form; you need NOT do this
+directly as in Question 6a.) For two of these three, you will be able to use this description of
+$\mathcal{V}(L_K(C_n))$ to identify $L_K(C_n)$ as a "known" $K$-algebra. (You might need to look at the
+monoid $\mathcal{V}(L_K(C_n))$ directly in order to identify $[  L_K(C_n) ]$ within 
+$\mathcal{V}(L_K(C_n))$.) Do that. Can you say anything about $L_K(C_n)$ for the third of these?\\\\ 
 
 \begin{solution}\renewcommand{\qedsymbol}{}\ \\
-    Well,
+    So, using either the smithForm or the eig Matlab functions depending on whether the matrix in
+    question is singular or not, we get the following Smith Normal Forms corresponding to $n=4$, $n=5$,
+    and $n=6$ respectively:
+
+    $$\left(\begin{array}{cccc} 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 
+                                0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 3 \end{array}\right)$$
+
+    $$\left(\begin{array}{ccccc} 1 & 0 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 & 0 \\ 0 & 0 & 1 & 0 & 0 \\ 
+                                 0 & 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 0 & 1 \end{array}\right)$$
+
+    $$\left(\begin{array}{cccccc} 1 & 0 & 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 & 0 & 0 \\
+                                  0 & 0 & 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 2 & 0 & 0 \\
+                                  0 & 0 & 0 & 0 & 2 & 0 \\ 0 & 0 & 0 & 0 & 0 & 3 \end{array}\right)$$
 \end{solution}
+
+\newpage
+\lstinputlisting{problem10.m}
+\newpage

@@ -2,5 +2,16 @@ Compute 'directly' the monoid $M_F$. (First find a set of representatives of the
 $M_F$, then prove that these equivalence classes are distinct.)\\\\
 
 \begin{solution}\renewcommand{\qedsymbol}{}\ \\
-    Well
+    Similar to problem 8, the grpah of $F$ has three vertices, and hence we will be dealing with
+    $(\mathbb{Z}^{\geq0})^3$. So, $v\mapsto(1,0,0), u\mapsto(0,1,0),$ and $z\mapsto(0,0,1)$. We will mod
+    out by $v\mapsto v+u, u\mapsto v+z,$ and $z\mapsto u+z$. That is, we will mod out by the relations:
+
+    $$\mathcal{R}_1:(1,0,0)=(1,0,0)+(0,1,0)=(1,1,0)$$
+
+    $$\mathcal{R}_2:(0,1,0)=(1,0,0)+(0,0,1)=(1,0,1)$$
+
+    and
+
+    $$\mathcal{R}_3:(0,0,1)=(0,1,0)+(0,0,1)=(0,1,1)$$
+
 \end{solution}
