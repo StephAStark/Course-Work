@@ -13,9 +13,34 @@ monoid $\mathcal{V}(L_K(C_n))$ directly in order to identify $[  L_K(C_n) ]$ wit
 $\mathcal{V}(L_K(C_n))$.) Do that. Can you say anything about $L_K(C_n)$ for the third of these?\\\\ 
 
 \begin{solution}\renewcommand{\qedsymbol}{}\ \\
-    So, using either the smithForm or the eig Matlab functions depending on whether the matrix in
-    question is singular or not, we get the following Smith Normal Forms corresponding to $n=4$, $n=5$,
-    and $n=6$ respectively:
+    Using $C_3$ from a previous problem as a starting point, we have that the $A_{C_i}$ are given by
+
+    $$A_{C_4}=\left(\begin{array}{cccc} 1 & 1 & 0 & 1 \\ 1 & 1 & 1 & 0 \\ 
+                                        0 & 1 & 1 & 1 \\ 1 & 0 & 1 & 1 \end{array}\right)$$
+
+    $$A_{C_5}=\left(\begin{array}{ccccc} 1 & 1 & 0 & 0 & 1 \\ 1 & 1 & 1 & 0 & 0 \\ 
+         0 & 1 & 1 & 1 & 0 \\ 0 & 0 & 1 & 1 & 1 \\ 1 & 0 & 0 & 1 & 1 \end{array}\right)$$
+
+    $$A_{C_6}=\left(\begin{array}{cccccc} 1 & 1 & 0 & 0 & 0 & 1 \\ 1 & 1 & 1 & 0 & 0 & 0 \\
+                                          0 & 1 & 1 & 1 & 0 & 0 \\ 0 & 0 & 1 & 1 & 1 & 0 \\
+                        0 & 0 & 0 & 1 & 1 & 1 \\ 1 & 0 & 0 & 0 & 1 & 1 \end{array}\right)$$
+
+    Hence, the $I_n-A_{C_i}$ are given by
+
+    $$I-A_{C_4}=\left(\begin{array}{cccc} 1 & -1 & 0 & -1 \\ -1 & 1 & -1 & 0 \\ 
+                                        0 & -1 & 1 & -1 \\ -1 & 0 & -1 & 1 \end{array}\right)$$
+
+    $$I-A_{C_5}=\left(\begin{array}{ccccc} 1 & -1 & 0 & 0 & -1 \\ -1 & 1 & -1 & 0 & 0 \\
+         0 & -1 & 1 & -1 & 0 \\ 0 & 0 & -1 & 1 & -1 \\ -1 & 0 & 0 & -1 & 1 \end{array}\right)$$
+
+    $$I-A_{C_6}=\left(\begin{array}{cccccc} 1 & -1 & 0 & 0 & 0 & -1 \\ -1 & 1 & -1 & 0 & 0 & 0 \\
+                                           0 & -1 & 1 & -1 & 0 & 0 \\ 0 & 0 & -1 & 1 & -1 & 0 \\
+                                           0 & 0 & 0 & -1 & 1 & -1 \\ -1 & 0 & 0 & 0 & -1 & 1 
+                                        \end{array}\right)$$          
+
+    So, using either the smithForm or the numbertheory Smith Form Calculator depending on whether the
+    matrix in question is singular or not, we get the following Smith Normal Forms corresponding to
+    $n=4$, $n=5$, and $n=6$ respectively:
 
     $$\left(\begin{array}{cccc} 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 
                                 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 3 \end{array}\right)$$
@@ -23,10 +48,16 @@ $\mathcal{V}(L_K(C_n))$.) Do that. Can you say anything about $L_K(C_n)$ for the
     $$\left(\begin{array}{ccccc} 1 & 0 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 & 0 \\ 0 & 0 & 1 & 0 & 0 \\ 
                                  0 & 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 0 & 1 \end{array}\right)$$
 
-    $$\left(\begin{array}{cccccc} 1 & 0 & 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 & 0 & 0 \\
-                                  0 & 0 & 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 2 & 0 & 0 \\
-                                  0 & 0 & 0 & 0 & 2 & 0 \\ 0 & 0 & 0 & 0 & 0 & 3 \end{array}\right)$$
+    $$\left(\begin{array}{cccccc} 1 & 0 & 0 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 & 0 & 0 \\
+                                  0 & 0 & 1 & 0 & 0 & 0 \\ 0 & 0 & 0 & 1 & 0 & 0 \\
+                                  0 & 0 & 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 & 0 & 0 \end{array}\right)$$
 \end{solution}
+
+Now, by applying the theorme that was used for problems 8 and 9, we can see that the "known" algebras
+are associated with $n=5$ and $n=6$. For $n=5$, we have $\mathbb{Z}_1=\{0\}$ which is just the trivial
+algebra. For $n=6$ on the other hand, we have $\mathbb{Z}\times\mathbb{Z}$. Now for $n=4$, we know that
+it will look like $\mathbb{Z}_3$, but we don't necessarily have an explicit representation as a Leavitt
+algebra.
 
 \newpage
 \lstinputlisting{problem10.m}

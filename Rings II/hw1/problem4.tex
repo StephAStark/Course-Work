@@ -1,6 +1,7 @@
 Let $K$ be any field. Let $G_n$ be the graph
 
-$$  \xymatrix{\bullet  \ar[r] & \bullet \ar[r] &  {\bullet^v} \ar@(ur,dr) ^{y_1} \ar@(u,r) ^{y_2} \ar@(ul,ur) ^{y_3}
+$$  \xymatrix{\bullet  \ar[r] & \bullet \ar[r] &  
+{\bullet^v} \ar@(ur,dr) ^{y_1} \ar@(u,r) ^{y_2} \ar@(ul,ur) ^{y_3}
  \ar@{.} @(l,u) \ar@{.} @(dr,dl)
 \ar@(r,d) ^{y_n} \ar@{}[l] }$$
 
@@ -26,10 +27,6 @@ $R_n$ is the graph with one vertex and $n$ loops). \\\\
     $$\gamma(f)=\left(\begin{array}{ccc} 0 & 0 & 0 \\ 0 & 0 & 1 \\ 0 & 0 & 0 \end{array}\right)$$
 
     $$\gamma(f^*)=\left(\begin{array}{ccc} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 1 & 0 \end{array}\right)$$
-
-    $$\gamma(y_i)=\left(\begin{array}{ccc} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 1 & 0 & 0 \end{array}\right)$$
-
-    $$\gamma(y_i^*)=\left(\begin{array}{ccc} 0 & 0 & 1 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{array}\right)$$
 
     Now witness, without loss of generality in terms of vertices:
 
@@ -94,26 +91,6 @@ $R_n$ is the graph with one vertex and $n$ loops). \\\\
     \left(\begin{array}{ccc} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 1 & 0 & 0 \end{array}\right)
     =\left(\begin{array}{ccc} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 1 & 0 & 0 \end{array}\right)=\gamma(y_i)$$
 
-    $$\gamma(v)\gamma(y_i^*)=
-    \left(\begin{array}{ccc} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 1 \end{array}\right)
-    \left(\begin{array}{ccc} 0 & 0 & 1 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{array}\right)
-    =\left(\begin{array}{ccc} 0 & 0 & 1 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{array}\right)=\gamma(y_i^*)$$
-
-    $$\gamma(y_i)\gamma(v)=
-    \left(\begin{array}{ccc} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 1 & 0 & 0 \end{array}\right)
-    \left(\begin{array}{ccc} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 1 \end{array}\right)
-    =\left(\begin{array}{ccc} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 1 & 0 & 0 \end{array}\right)=\gamma(y_i)$$
-
-    $$\gamma(y_i^*)\gamma(v)=
-    \left(\begin{array}{ccc} 0 & 0 & 1 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{array}\right)
-    \left(\begin{array}{ccc} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 1 \end{array}\right)
-    =\left(\begin{array}{ccc} 0 & 0 & 1 \\ 0 & 0 & 0 \\ 0 & 0 & 1 \end{array}\right)=\gamma(y_i^*)$$
-
-    $$\gamma(e)\gamma(e^*)=
-    \left(\begin{array}{ccc} 0 & 1 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{array}\right)
-    \left(\begin{array}{ccc} 0 & 0 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 0 \end{array}\right)
-    =\left(\begin{array}{ccc} 1 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{array}\right)=\gamma(t)$$
-
     $$\gamma(e^*)\gamma(e)=
     \left(\begin{array}{ccc} 0 & 0 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 0 \end{array}\right)
     \left(\begin{array}{ccc} 0 & 1 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{array}\right)
@@ -124,21 +101,11 @@ $R_n$ is the graph with one vertex and $n$ loops). \\\\
     \left(\begin{array}{ccc} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 1 & 0 \end{array}\right)
     =\left(\begin{array}{ccc} 0 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 0 \end{array}\right)=\gamma(u)$$
 
+    and
+
     $$\gamma(f^*)\gamma(f)=
     \left(\begin{array}{ccc} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 1 & 0 \end{array}\right)
     \left(\begin{array}{ccc} 0 & 0 & 0 \\ 0 & 0 & 1 \\ 0 & 0 & 0 \end{array}\right)
-    =\left(\begin{array}{ccc} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 1 \end{array}\right)=\gamma(v)$$
-
-    $$\gamma(y_i)\gamma(y_i^*)=
-    \left(\begin{array}{ccc} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 1 & 0 & 0 \end{array}\right)
-    \left(\begin{array}{ccc} 0 & 0 & 1 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{array}\right)
-    =\left(\begin{array}{ccc} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 1 \end{array}\right)=\gamma(v)$$
-
-    and
-
-    $$\gamma(y_i^*)\gamma(y_i)=
-    \left(\begin{array}{ccc} 0 & 0 & 1 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{array}\right)
-    \left(\begin{array}{ccc} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 1 & 0 & 0 \end{array}\right)
     =\left(\begin{array}{ccc} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 1 \end{array}\right)=\gamma(v)$$
 
     Finally, notice that for all elements in the image space, the product of any of the vertex mappings
@@ -160,12 +127,11 @@ $R_n$ is the graph with one vertex and $n$ loops). \\\\
 
     $$\lambda(\left(\begin{array}{ccc} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 1 & 0 \end{array}\right))=f^*$$
 
-    $$\lambda(\left(\begin{array}{ccc} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 1 & 0 & 0 \end{array}\right))=y_i$$
-
-    $$\lambda(\left(\begin{array}{ccc} 0 & 0 & 1 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{array}\right))=y_i^*$$
-
-    As we see, $\lambda$ is naturally defined and is also a homomorphism by similar logic as above. It
-    also appears to be the inverse of $\gamma$. Along this line, we see that, for all $x\in F$,
+    As we see, $\lambda$ is naturally defined and is also a homomorphism by similar logic as above. Now,
+    define $\eta$ to be the mapping from $\mathbb{M}_3(K)$ into $L_K(R_n)$. Then we can see that
+    $\eta(\gamma(x))$ and $\lambda(\eta^{-1})$ gives the full desired homomorphisms. It
+    also appears to be the case that $\lambda$ is the inverse of $\gamma$. Along this line, we see that,
+    for all $x\in F$,
 
     $$\gamma(\lambda(x))=x$$
 
@@ -176,8 +142,4 @@ $R_n$ is the graph with one vertex and $n$ loops). \\\\
     Therefore, $\gamma$ and $\lambda$ are bijective homomorphisms and thus,
     ${\rm M}_3(L_K(R_n))\cong L_K(G_n)$ as desired.
 
-
 \end{solution}
-
-%% need to figure out what is happend in defining y_i,y_i^* and v. They are the only ones being
-%% fucky in the matrix multiplication.

@@ -1,5 +1,5 @@
 Compute 'directly' the monoid $M_E$. (First find a set of representatives of the equivalence classes in
-$M_E$, then prove that these equivalence classes are distinct.)\\\\
+$M_E$, then prove that these equivalence classes are distinct).\\\\
 
 \begin{solution}\renewcommand{\qedsymbol}{}\ \\
     Given that the grpah of $E$ has three vertices, we know that we will be dealing with
@@ -15,19 +15,19 @@ $M_E$, then prove that these equivalence classes are distinct.)\\\\
     $$\mathcal{R}_3:(0,0,1)=(1,0,0)+(0,1,0)=(1,1,0)$$
 
     By $\mathcal{R}_3$, we have that every element in $M_E$ can be represented with $0$ in the last
-    component, and by $\mathcal{R}_1$ every element with $0$ only in the first component can be
-    represented by zeros in the second and third component. Observe
+    component. Observe
 
     $$(1,0,0)\mapsto(0,1,1)\mapsto(0,1,0)+(0,0,1)\mapsto(1,0,1)+(1,1,0)$$
     $$\mapsto(1,0,0)+(0,0,1)+(1,0,0)+(0,1,0)\mapsto(1,0,0)+(1,0,0)+(0,0,1)+(0,1,0)$$
     $$\mapsto(1,0,0)+(1,0,0)+(0,1,1)\mapsto(1,0,0)+(1,0,0)+(1,0,0)\mapsto(3,0,0)$$
 
     Now, by similar operations using the above relations, we get that $1=3$ in all components. So, we
-    conclude that $M_E$ consists of the equivalence classes $[(0,0,0)]$, $[(1,0,0)]$ and
-    $[(2,0,0)]$. Now, let $u=v=w=1$. For all $(u,v,w)+\mathcal{R}$ in
-    $(\mathbb{Z}^{\geq0})^3/\mathcal{R}$, assign the weights $u+v+w$. Then, if
-    $(u,v,w)+\mathcal{R}=(u',v',w')+\mathcal{R}$, we have that the vlaues $u+v+w$ and $u'+v'+w'$ differ
-    only by integer multiples of $2$. Hence, $(1,0,0)\neq(2,0,0)$. Thus, we have that
-    $M_E=\{0,u,2u|3u=u\}$.
+    conclude that $M_E$ consists of the equivalence classes $[(0,0,0)]$, $[(1,0,0)],$
+    $[(2,0,0)], [(0,1,0)], [(0,2,0)], [(1,1,0)], [(2,1,0)], [(1,2,0)]$ and $[(2,2,0)]$. Now, let $u=2$,
+    $v=1$ and $w=1$. Then we get that $[(1,0,0)]=[(0,2,0)]$, $[(1,1,0)]=[(2,2,0)]$ and
+    $[(2,0,0)]=[(1,2,0)]$. Setting up another invariance, let $u=2$, $v=2$, and $w=1$. Then, we get that
+    $[(0,1,0)]=[(2,1,0)]$. Hence, we get that $M_E$ consits of exactly the equivalence classes
+    $[(0,0,0)]$, $[(1,0,0)],$ $[(2,0,0)], [(0,1,0)]$, and $[(1,1,0)]$. So,
+    $M_E=\{0,u,2u,v,u+v|3u=u,3v=v\}$.
 
 \end{solution}

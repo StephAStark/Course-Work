@@ -39,10 +39,9 @@ suppose $c$ has an exit $f$ at $v$. Prove that $L_K(E)$ is not left noetherian.\
 
     $$(c^*)^nc^n=v=(c^*)^nc^{n+1}c^*=cc^*$$
 
-    Since $n\in\mathbb{Z}^+$ is arbitrary, we have $R(v-c^{n}(c^*)^{n})\neq R(v-c^{n+1}(c^*)^{n+1})$
-    for all $n$. Thus, $R(v-cc^*)\subset R(v-c^2(c^*)^2)\subset\ldots$ is an infinitely asscending chain
-    of left ideals. So, $L_K(E)$ is not left noetherian as desired.
+    However, by the CK2 relation, we have that $v\neq cc^*$ unless $ff^*=0$, a contradiction. Since
+    $n\in\mathbb{Z}^+$ is arbitrary, we have $R(v-c^{n}(c^*)^{n})\neq R(v-c^{n+1}(c^*)^{n+1})$ for all
+    $n$. Thus, $R(v-cc^*)\subset R(v-c^2(c^*)^2)\subset\ldots$ is an infinitely asscending chain of left
+    ideals. So, $L_K(E)$ is not left noetherian as desired.
 
 \end{solution}
-
-%% Need to fix the proper inclusion argument. This doesn't work and we need to use the exit f at v.
