@@ -1,0 +1,22 @@
+We obtained the entries of (1.4) by differentiating the sinc function. Derive the same result by
+calculating the inverse semidiscrete Fourier transform of $ik\hat{\delta}(k)$.\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    We need to calculate the inverse semidiscrete Fourier transform of the above expression by plugging
+    it into
+
+    $$\frac{1}{2\pi}\int_{-\frac{\pi}{h}}^{\frac{\pi}{h}}e^{ikx}\hat{v}(k)dk$$
+
+    where $\hat{\delta}(k)$ is given by $h$. So, we get
+
+    $$\frac{1}{2\pi}\int_{-\frac{\pi}{h}}^{\frac{\pi}{h}}e^{ikx}ik\hat{\delta}(k)dk=
+    \frac{2\pi x\cos(\frac{\pi x}{h})-2h\sin(\frac{\pi x}{h})}{2\pi x^2}$$
+
+    Now, when we differentiate the sinc function $sinc(\frac{\pi x}{h})$, we arrive at
+
+    $$\frac{2\pi x\cos(\frac{\pi x}{h})-2h\sin(\frac{\pi x}{h})}{2\pi x^2}$$
+
+    Thus, computing the inverse semidiscrete Fourier transform on $ik\hat{\delta}(k)$ gives the same
+    results as differentiating $sinc(\frac{\pi x}{h})$.
+
+\end{solution}

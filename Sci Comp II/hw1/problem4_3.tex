@@ -1,0 +1,20 @@
+(a) Determine the Fourier transform of $u(x)=\frac{1}{(1 + x^2 )}$. (Use a complex contour integral
+if you know how; otherwise, copy the result from (4.3).) (b) Determine $\hat{v}(k)$, where $v$ is the
+discretization of $u$ on the grid $h\mathbb{Z}$. (Hint. Calculating $\hat{v}(k)$ from the definition
+(2.3) is very difficult.) (c) How fast does $\hat{v}(k)$ approach $\hat{u}(k)$ as $h\rightarrow0$? (d)
+Does this result match the predictions of Theorem 3?\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Using reslut 4.3 and taking $\sigma=1$, we have $\hat{u}(k)=\pi e^{-|k|}$ as the Fourier transform
+    of $u(x)$. Now, to determine the semidiscrete Fourier transform of $u$ on the grid $h\mathbb{Z}$,
+    let $v=u(x_j)$ where $x_j\in h\mathbb{Z}$. Using Theorem 2, we have that
+    
+    $$\hat{v}(k)=\sum_{j=-\infty}^{\infty}\hat{u}(k+\frac{2\pi j}{h})=
+    \sum_{j=-\infty}^{\infty}\pi e^{-|k+\frac{2\pi j}{h}|}$$
+
+    So, leaving $\hat{v}$ in this form, and by the fact that $u(x)$ has infinitely many continuous
+    derivatives, we see that $|\hat{u}-\hat{v}|=\mathcal{O}(h^m)$ for all $m\in\mathbb{Z}^+$. That is
+    the order of the difference of the two transformations is better than any power of $h$ as
+    $h\rightarrow 0$. This also fits with the predictions of Theorem 3, which is expected.
+
+\end{solution}

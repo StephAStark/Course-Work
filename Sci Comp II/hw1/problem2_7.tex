@@ -1,0 +1,34 @@
+Modify Program 3 to determine the maximum error over $\mathbb{R}$ in the sinc function interpolants
+of the square wave and the hat function, and to produce a log-log plot of these two error maxima as
+functions of $h$. (Good choices for $h$ are $2^{-3}$, $2^{-4}$, $2^{-5}$ , $2^{-6}$.) What convergence
+rates do you observe as $h\rightarrow0$?\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Here, we have the graphs of the functions with increasing $h$ values, and we can clearly see that
+    the error for the computations decreases as $h\rightarrow0$. It also seems to settle after
+    $h=2^{-5}$.
+
+    \begin{figure}[htp]
+        \centering
+        \includegraphics[scale=0.2]{273.PNG}
+    \end{figure}
+    \begin{figure}[htp]
+        \centering
+        \includegraphics[scale=0.2]{274.PNG}
+    \end{figure}
+    \begin{figure}[htp]
+        \centering
+        \includegraphics[scale=0.2]{275.PNG}
+    \end{figure}
+    \begin{figure}[htp]
+        \centering
+        \includegraphics[scale=0.2]{276.PNG}
+    \end{figure}
+
+I was not sure how to get the loglog plot to work.
+
+\end{solution}
+
+\newpage
+\lstinputlisting{p2_7.m}
+\newpage

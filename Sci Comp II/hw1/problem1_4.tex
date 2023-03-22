@@ -1,0 +1,35 @@
+Run Program 1 to $N=2^{16}$ instead of $2^{12}$. What happens to the plot of the error vs. $N$? Why? Use
+the MATLAB commands tic and toc to generate a plot of approximately how the computation time depends on
+N. Is the dependence linear, quadratic, or cubic?\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    We can see from these two images that the plot of the error starts to behave differently at the end.
+    This is due to the computations near the limit of the computational precision of the program. We can
+    see that the error starts to go up as $N$ gets closer to this precision after the point of
+    $N=2^{12}$.
+
+    \begin{figure}[htp]
+        \centering
+        \includegraphics[scale=0.18]{212.PNG}
+        \caption{$N=2^{12}$}
+    \end{figure}
+    \begin{figure}[htp]
+        \centering
+        \includegraphics[scale=0.18]{216.PNG}
+        \caption{$N=2^{16}$}
+    \end{figure}
+
+    Now, as we see by the time graph, the dependance appears to be more linear. Even with the cluster of
+    time on the left, the data seems to be well approximated by a linear function.
+
+    \begin{figure}[htp]
+        \centering
+        \includegraphics[scale=0.18]{tictoc4.PNG}
+        \caption{Time vs $N$}
+    \end{figure}
+
+\end{solution}
+
+\newpage
+\lstinputlisting{p1_4.m}
+\newpage
