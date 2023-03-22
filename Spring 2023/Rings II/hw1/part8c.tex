@@ -1,0 +1,30 @@
+Find the matrix $I-A_E^t$, and compute its Smith normal form. Show that your answer to (c) is consistent
+with your answer to (a).\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Using the relations defined in part a, we have that $A_E$ is given by
+
+    $$\left(\begin{array}{ccc} 0 & 1 & 1 \\ 1 & 0 & 1 \\ 1 & 1 & 0 \end{array}\right)$$
+
+    So
+
+    $$I-A_E^t=\left(\begin{array}{ccc} 1 & -1 & -1 \\ -1 & 1 & -1 \\ -1 & -1 & 1 \end{array}\right)$$
+
+    Now, using the builtin smithForm function in Matlab, we get that the Smith Normal Form for the above
+    matrix is
+
+    $$\left(\begin{array}{ccc} 1 & 0 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & 2 \end{array}\right)$$
+
+    So, by the Theorem that states that $V(L_K(E))\setminus\{0\}\cong\bigoplus_{m_i}\mathbb{Z}_{m_i}$
+    for $m_i$ the $ith$ diagonal component of the Smith Normal Form matrix, we get that 
+
+    $$V(L_K(E))\setminus\{0\}\cong\mathbb{Z}_1\oplus\mathbb{Z}_2\oplus\mathbb{Z}_2\cong
+    \mathbb{Z}_2\oplus\mathbb{Z}_2$$
+
+    which agrees with what we find from part a.
+
+\end{solution}
+
+\newpage
+\lstinputlisting{problem8c.m}
+\newpage

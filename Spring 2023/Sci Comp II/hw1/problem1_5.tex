@@ -1,0 +1,42 @@
+Run Programs 1 and 2 with $e^{\sin(x)}$ replaced by (a) $e^{\sin^2(x)}$ and (b) $e^{\sin(x)|\sin(x)|}$
+and with uprime adjusted appropriately. What rates of convergence do you observe?\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    a. The rates of convergence seem to be roughly the same as that of the original $e^{\sin(x)}$
+    function. They might be a little slower, though the convergence is still very much present and
+    similar to that of the original.\\
+
+    \begin{figure}[htp]
+        \centering
+        \includegraphics[scale=0.18]{151a.PNG}
+    \end{figure}
+    \begin{figure}[htp]
+        \centering
+        \includegraphics[scale=0.18]{152a.PNG}
+    \end{figure}
+
+
+
+b. The rates of convergence for $e^{\sin(x)|\sin(x)|}$ are drastically different than that of part a and
+the original. That is to say, the error tends upward instaed of downward as the iterations increase.
+This is due to discontinuities in the derivative of the function.
+
+    \begin{figure}[htp]
+        \centering
+        \includegraphics[scale=0.18]{151b.PNG}
+    \end{figure}
+    \begin{figure}[htp]
+        \centering
+        \includegraphics[scale=0.18]{152b.PNG}
+    \end{figure}
+
+\end{solution}
+
+\newpage
+\lstinputlisting{p1_5_1a.m}
+\lstinputlisting{p1_5_2a.m}
+\newpage
+\newpage
+\lstinputlisting{p1_5_1b.m}
+\lstinputlisting{p1_5_2b.m}
+\newpage

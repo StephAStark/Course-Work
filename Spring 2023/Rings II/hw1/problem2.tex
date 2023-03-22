@@ -1,0 +1,91 @@
+Let $K$ be any field. Let $E$ be the Toeplitz graph  \ \ \
+$\xymatrix{ \bullet \ar@(ul,dl)  \ar[r] & \bullet}$. Let $A$ be the Jacobson Algebra
+$A=K\langle X,Y|XY=1\rangle$. Explicitly write down a $K$-algebra isomorphism $A\cong L_K(E)$.\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Let $K, E$, and $A$ be as given. Let $L_K(E)$ be the Leavitt algebra of $E$. Denote the vertices
+    from left to right by $u$ and $v$ and the edges from left to right by $e$ and $f$ respctively.
+    Consider the mapping $\rho:L_K(E)\to A$ given by:
+
+    $$\rho(u)=yx$$
+
+    $$\rho(v)=1-yx$$
+
+    $$\rho(e)=y^2x$$
+
+    $$\rho(e^*)=yx^2$$
+
+    $$\rho(f)=y-y^2x$$
+
+    $$\rho(f^*)=x-yx^2$$
+
+    The reader will bring their attention to the fact that:
+
+    $$\rho(u)\rho(u)-\rho(u)=yxyx-yx=y1x-yx=yx-yx=0$$
+
+    $$\rho(v)\rho(v)-\rho(v)=(1-yx)(1-yx)-1+yx=1-2yx+yxyx-1+yx=-2yx+yx+yx=0$$
+
+    $$\rho(u)\rho(v)=(yx)(1-yx)=yx-yxyx=yx-yx=0=\rho(v)\rho(u)$$
+
+    and
+
+    $$\rho(u)+\rho(v)=yx+1-yx=1$$
+
+    That is the mappings of the vertices are idempotent, orthogonal, and sum to the identity. Also note
+    
+    $$\rho(u)\rho(e)=(yx)(y^2x)=y(yx)=y^2x=\rho(e)=(y^2x)(yx)=\rho(e)\rho(u)$$
+
+    $$\rho(u)\rho(e^*)=(yx)(yx^2)=yx^2=\rho(e^*)=(yx)x=(yx^2)(yx)=\rho(e^*)\rho(u)$$
+
+    $$\rho(u)\rho(f)=(yx)(y-y^2x)=(yx)y-(yx)(y^2x)=y-y(yx)=y-y^2x=\rho(f)$$
+
+    $$\rho(f^*)\rho(u)=(x-yx^2)(yx)=x(yx)-(yx^2)(yx)=x-(yx)x=x-yx^2=\rho(f^*)$$
+
+    $$\rho(f)\rho(v)=(y-y^2x)(1-yx)=y-y^2x-y^2x+y^2x(yx)=y-2y^2x+y^2x=y-y^2x=\rho(f)$$
+
+    $$\rho(v)\rho(f^*)=(1-yx)(x-yx^2)=x-yx^2-yx^2+yx^2=x-2yx^2+yx^2=x-yx^2=\rho(f^*)$$
+
+    $$\rho(e)\rho(e^*)=(y^2x)(yx^2)=y^2x^2=(yx)^2=yx=\rho(u)=(yx^2)(y^2x)=\rho(e^*)\rho(e)$$
+
+    $$\rho(f^*)\rho(f)=(x-yx^2)(y-y^2x)=1-yx-yx+y^2x^2=1-2yx+yx=1-yx=\rho(v)$$
+
+    $$\rho(f)\rho(f^*)=(y-y^2x)(x-yx^2)=yx-y^2x^2-y^2x^2+yx=2yx-2yx=0$$
+    
+    which gives us
+
+    $$\rho(e)\rho(e^*)+\rho(f)\rho(f^*)=\rho(u)$$
+
+    Therefore, all of the relations are satisfied and hence, $\rho$ is our deired homomorphism from the
+    free algebra mod the given relations. Now, define $\nu:A\to L_K(E)$ by
+
+    $$\nu(x)=e^*+f^*$$
+
+    $$\nu(y)=e+f$$
+
+    Then, we see that
+
+    $$\nu(x)\nu(y)=(e^*+f^*)(e+f)=e^*e+e^*f+f^*e+f^*f=u+0+0+v=1$$
+
+    $$\nu(y)\nu(x)=(e+f)(e^*+f^*)=ee^*+ef^*+fe^*+ff^*=u$$
+
+    $$\nu(x)\nu(x)-\nu(x)=(e^*+f^*)(e^*+f^*)-e^*-f^*$$
+    $$=e^*e^*+2e^*f^*+f^*f^*-e^*-f^*=e^*+f^*-e^*-f^*=0$$
+
+    and
+
+    $$\nu(y)\nu(y)-\nu(y)=(e+f)(e+f)-e-f=ee+2ef+ff-e-f=e+f-e-f=0$$
+
+    So, we have verified the desired conditions and thus $\nu$ is also the desired unique homomorphism
+    over the free algebra mod the relations in the reverse direction. Now, observe that
+    for all $x\in L_K(E)$
+
+    $$\nu(\rho(x))=x$$
+
+    and for all $x\in A$
+
+    $$\rho(\nu(x))=x$$
+
+    That is $\rho$ and $\nu$ are inverses and as such, they are bijective. Thus, $A\cong L_K(E)$ as
+    desired.\footnote{I typed $\rho$ too many times, so here is this. $\rho\rho\rho\;u^r\;\usym{1F6A3}$}
+
+\end{solution}
