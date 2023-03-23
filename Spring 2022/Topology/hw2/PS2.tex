@@ -1,55 +1,25 @@
-\documentclass[12pt]{article}
-\usepackage[margin=1in]{geometry} 
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{amsthm}
-\usepackage{accents}
-
-
-\setlength{\oddsidemargin}{0in}
-\setlength{\textwidth}{6.5in}
-\setlength{\topmargin}{-.55in}
-\setlength{\textheight}{9in}
-\pagestyle{empty}
-
+\input{settings}
 
 \begin{document}
-\noindent Math 5510
 
-\noindent Topology
+\lhead{Stephanie Klumpe}
 
-\noindent Stephanie Klumpe
+\chead{Problem Set 2}
 
-\vspace{.2in}
-\begin{center}
-Problem Set 2
-\end{center}
+\rhead{MATH 5510}
+
+\cfoot{\thepage\ of \pageref{LastPage}}
 
  \begin{enumerate}
-\item (\#6 in 2.5) Show that the countable union of countable sets is countable. (Hint: consider a table similar to the one used to show that the set of rational numbers is countable).\\\\
-Let $A_n$ be a countable set for all $n\in\mathbb{N}$. Then $\bigcup_{n\in\mathbb{N}}A_n$ is a countable union of countable sets. We will show that $\bigcup_{n\in\mathbb{N}}A_n$ is countable. Now, consider the following table displaying $\bigcup_{n\in\mathbb{N}}A_n$: \begin{center}
-\begin{tabular}{ c|   c   c   c   c   c   c   }
-$A_1$ & $a_{11}$ & $a_{12}$ & $a_{13}$ & $a_{14}$ & $a_{15}$ & $\dots$ \\ 
-$A_2$ & $a_{21}$ & $a_{22}$ & $a_{23}$ & $a_{24}$ & $a_{25}$ & $\dots$ \\  
-$A_3$ & $a_{31}$ & $a_{32}$ & $a_{33}$ & $a_{34}$ & $a_{35}$ & $\dots$ \\
-$A_4$ & $a_{41}$ & $a_{42}$ & $a_{43}$ & $a_{44}$ & $a_{45}$ & $\dots$ \\
-$A_5$ & $a_{51}$ & $a_{52}$ & $a_{53}$ & $a_{54}$ & $a_{55}$ & $\dots$ \\
-$A_6$ & $a_{61}$ & $a_{62}$ & $a_{63}$ & $a_{64}$ & $a_{65}$ & $\dots$ \\
-$\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\ddots$ \\
-\end{tabular}
-\end{center}
-We can write the elements of each $A_i$ for $i\in\mathbb{N}$ in this table since each $A_i$ is countable, and so we can define onto mappings $f_i:\mathbb{N}\rightarrow A_i$ by $f_i(j)=a_{ij}$. This is beacuase each $A_i$ is countable, so we can list their elements along the horizontal, and since the collection of all $A_i$ is also countable, we can list the $A_i$ along the vertical. Now, consider the function $f:\bigcup_{n\in\mathbb{N}}A_n\rightarrow\mathbb{N}$ defined by $f(a_{mn})=\frac12(m+n-2)(m+n-1)+m$. Now, this is the same function from the proof of the positive rationals being countable. Since each element is indexed, we see that each element of each set has a unique representation given by the element's index. Therefore, $f$ is a one to one function since the order of $m$ and $n$ matter to the function's output. That is, if $a_{m_1n_1}\neq a_{m_2n_2}$, then $f(a_{m_1n_1})\neq f(a_{m_2n_2})$. So we have that $f^{-1}$ exists. Now, let $y=a_{mn}\in\bigcup_{n\in\mathbb{N}}A_n$ and $x=\frac12(m+n-2)(m+n-1)+m$. Then $x\in\mathbb{N}$. Since $f^{-1}$ exists, we have that $f^{-1}(x)=f^{-1}(\frac12(m+n-2)(m+n-1)+m)=a_{mn}=y$. Since $y$ was arbitrary, we have that $f^{-1}$ is an onto function from $\mathbb{N}$ to $\bigcup_{n\in\mathbb{N}}A_n$. Since there exists an onto function from $\mathbb{N}$ to $\bigcup_{n\in\mathbb{N}}A_n$, we have that $\bigcup_{n\in\mathbb{N}}A_n$ is countable as desired.\\[20pt]
 
-\item (\#4 in 3.2) Find all the topologies on the set $X = \{a,b,c\}$. There are 29 of them. (Hint: be extremely organized in how you write them down).\\\\
-Let $X$ be as given above. Well, there are the two standard topologies, $D=\mathcal{P}(X)$ and $J=\{\emptyset, X\}$. Now, the three element topologies are: $$\{\emptyset, \{a\}, X\}, \{\emptyset, \{b\}, X\}, \{\emptyset, \{c\}, X\}, \{\emptyset, \{a,b\}, X\}, \{\emptyset, \{a,c\}, X\}, \{\emptyset, \{b,c\}, X\}$$Consider $\{\emptyset, \{a\}, X\}$. Clearly $\emptyset$ and $X$ are in the set and taking any arbitrary union or intersection will yield $\emptyset, \{a\},$ or $X$, so $\{\emptyset, \{a\}, X\}$ is a topology on $X$. By similar logic, we have that all the three element sets are indeed topologies of $X$. Now, the four element topologies are: $$\{\emptyset, \{a\}, \{a,b\}, X\}, \{\emptyset, \{a\}, \{a,c\}, X\}, \{\emptyset, \{a\}, \{b,c\}, X\}, \{\emptyset, \{b\}, \{a,b\}, X\}, \{\emptyset, \{b\}, \{a,c\}, X\}$$ $$\{\emptyset, \{b\}, \{b,c\}, X\}, \{\emptyset, \{c\}, \{a,b\}, X\}, \{\emptyset, \{c\}, \{a,c\}, X\}, \{\emptyset, \{c\}, \{b,c\}, X\}$$To show this, take $\{\emptyset, \{a\}, \{a,b\} X\}$. Again, we see that $\emptyset$ and $X$ are in the set. Now, any union of any of the elements will give us $\emptyset, \{a\}, \{a,b\}$, or $X$. Similarly, any intersection would give us $\emptyset, \{a\}, \{a,b\}$, or $X$. Thus $\{\emptyset, \{a\}, \{a,b\}, X\}$ is a topology. Now consider $\{\emptyset, \{a\}, \{b,c\}, X\}$. Still, $\emptyset$ and $X$ are in this set and we see that any union or intersection will give us only $\emptyset$ or $X$. So $\{\emptyset, \{a\}, \{b,c\}, X\}$ is also a topology on $X$. Hence, by similar logic from either of the two previous cases, all of the four element sets are topologies on $X$, bringing the total to 17. Next, the five element topologies are: $$\{\emptyset, \{a\}, \{b\}, \{a,b\}, X\}, \{\emptyset, \{a\}, \{c\}, \{a,c\}, X\}, \{\emptyset, \{b\}, \{c\}, \{b,c\}, X\}, \{\emptyset, \{a\}, \{a,b\}, \{a,c\}, X\}$$ $$\{\emptyset, \{b\}, \{a,b\}, \{b,c\}, X\}, \{\emptyset, \{c\}, \{a,c\}, \{b,c\}, X\}$$From these five element sets, consider $\{\emptyset, \{a\}, \{b\}, \{a,b\}, X\}$. Now, $X$ and $\emptyset$ are in this set. Next if we take any arbitrary union in the set, we will always fall back in the set. Lastly, any finite intersection will also remain in the set. Thus, $\{\emptyset, \{a\}, \{b\}, \{a,b\}, X\}$ is a topology, and since all five elemenet sets are similar to this, they all are topologies. Finally, the six element topologies are: $$\{\emptyset, \{a\}, \{b\}, \{a,b\}, \{a,c\}, X\}, \{\emptyset, \{a\}, \{b\}, \{a,b\}, \{b,c\}, X\}, \{\emptyset, \{a\}, \{c\}, \{a,b\}, \{a,c\}, X\}$$ $$\{\emptyset, \{a\}, \{c\}, \{a,c\}, \{b,c\}, X\}, \{\emptyset, \{b\}, \{c\}, \{a,b\}, \{b,c\}, X\}, \{\emptyset, \{b\}, \{c\}, \{a,c\}, \{b,c\}, X\}$$Since all of these six element sets contain $X$ and $\emptyset$ and are closed under unions and intersections, they are all topologies. Thus, we have all 29 topologies of $X$.\\[20pt]
+   \item \input{problem1}
+   \pagebreak
+   \item \input{problem2}
+   \pagebreak
+   \item \input{problem3}
+   \pagebreak
+   \item \input{problem4}
 
-\item In the topology $U$ on $\mathbb{R}$, give an example of an arbitrary intersection of open sets that is nonempty and not open.\\\\
-Let $U$ be the usual topology on $\mathbb{R}$. Consider the interval $(-\frac1n, \frac1n)$ where $n\in\mathbb{N}$. Clearly this interval is in $U$, and hence is open. Then, we have that the arbitrary intersection $\bigcap_{n\in\mathbb{N}}(-\frac1n, \frac1n)=(-1,1)\cap(-\frac12, \frac12)\cap\ldots=\{0\}\neq\emptyset$. Now $\bigcap_{n\in\mathbb{N}}(-\frac1n, \frac1n)=\{0\}$ since, for any $a<0$ and any $b>0$, there exists an $n\in\mathbb{N}$ such that $a<-\frac1n<0<\frac1n<b$ by the Archimedian Property. Also, $\{0\}$ is not an open set in $U$ as we cannot place an open interval $(a,b)$ around $0$ in $\{0\}$ as there is no $a<0$ or $b>0$ in $\{0\}$. So this arbitrary intersection of open sets need not be open and nonempty as desired.\\[20pt]
-
-\item (\#12 in 3.2) Prove that the set $FC$ is a topology on any set $X$.\\\\
-Let $X$ be any set. First assume that $X=\emptyset$. Then $FC=\{\emptyset\}$. Hence $FC$ is the discrete topology and therefore a topology. So, assume that $X\neq\emptyset$. Then $FC=\{V\subseteq X|V=\emptyset$ or $X\setminus V$ is finite$\}$. Now, clearly $\emptyset\in FC$ by definition. Also, $X\in FC$ since $X\setminus X=\emptyset$ which is finite. Now let $\Lambda$ be an index set. So, let $V_{\alpha}\in FC$ for every $\alpha\in\Lambda$. Now, if all $V_{\alpha}=\emptyset$, then $\bigcup_{\alpha\in\Lambda}V_{\alpha}=\emptyset\in FC$. So, assume that at least one $V_{\alpha}\neq\emptyset$. Then $X\setminus\bigcup_{\alpha\in\Lambda}V_{\alpha}=\bigcap_{\alpha\in\Lambda}(X\setminus V_{\alpha})$ by DeMorgan's laws. Now, $\bigcap_{\alpha\in\Lambda}(X\setminus V_{\alpha})\subseteq X\setminus V_{\beta}$ for any $\beta\in\Lambda$. Now $X\setminus V_{\beta}$ for any $\beta\in\Lambda$ is finite since $V_{\beta}\in FC$, and since $\bigcap_{\alpha\in\Lambda}(X\setminus V_{\alpha})\subseteq X\setminus V_{\beta}$, $X\setminus\bigcup_{\alpha\in\Lambda}V_{\alpha}$ is finite since $X\setminus\bigcup_{\alpha\in\Lambda}V_{\alpha}=\bigcap_{\alpha\in\Lambda}(X\setminus V_{\alpha})$ and $\bigcap_{\alpha\in\Lambda}(X\setminus V_{\alpha})$ is a subset of a finte set. Next consider $V_1,V_2\in FC$. Then, again by DeMorgan's Laws, $X\setminus(V_1\cap V_2)=(X\setminus V_1)\cup(X\setminus V_2)$. Since $V_1,V_2\in FC$, we have the union of two finite sets, which is finite. Now let $V_3\in FC$. Then $X\setminus((V_1\cap V_2)\cap V_3)=X\setminus(V_1\cap V_2)\cup(X\setminus V_3)$ which is again finite since it is the union of two finite sets by the same reasoning above. Continuing in this manner, if $V_1,\ldots V_n\in FC$ for some $n\in\mathbb{N}$, we have that $X\setminus(\bigcap_{\alpha\in\Lambda}V_{\alpha})$ is also finite by being the finite union of finite sets. Thus we have that $FC$ is closed under arbitrary unions and finite intersections. Therefore, $FC$ is a topology on any set as desired.
-\end{enumerate}
-
-\noindent Recommendation: Also write out the details for \#8 in 3.2, showing that the set $RR$ is a topology on $\mathbb{R}$.
+ \end{enumerate}
 
 \end{document}

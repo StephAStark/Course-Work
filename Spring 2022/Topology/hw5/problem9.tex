@@ -1,0 +1,25 @@
+Prove that the product of a finite collection of finite sets is finite. (Hint: First prove that the
+product of two finite sets is finite by writing the product $A\times B$ as a finite union.)\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Let $A$ and $B$ be finite nonempty sets. Then $B$ is equivalent to $\{1,\ldots, n\}$ for some
+    $n\in\mathbb{N}$. That is, there is a bijection $g:\{1,\ldots, n\}\rightarrow B$ defined by
+    $g(i)=b_i$. So, each $b_i\in B$ is the image of an element of $\{1,\ldots, n\}$ for $1\leq i\leq n$.
+    Now, take $A\times B$. We may write $A\times B=\bigcup_{a\in A}\{a\}\times B$. Then
+    $(\bigcup_{a\in A}\{a\})\times B=\bigcup_{a\in A}(\{a\}\times B)=
+    \bigcup_{a\in A}\{(a,b_i)|b_i\in B, 1\leq i\leq n\}$ for some $n\in\mathbb{N}$. Now, fix $a\in A$
+    and define $f:\{(a,b_i)|b_i\in B, 1\leq i\leq n\}\rightarrow\{1,\ldots, n\}$ by $f((a,b_i))=i$.
+    Suppose $f((a,b_s))=f((a,b_t))$ for some $b_s,b_t\in B$. Then, $s=t$ by the definition of the
+    function, and since $B$ is equivalent to $\{1,\dots, n\}$ with equivalence $g$, $b_s=b_t$, so $f$ is
+    injective. Let $y\in\{1,\ldots, n\}$. Since $B$ is equivalent to $\{1,\ldots, n\}$ with equivalence
+    $g$ there exists $b\in B$ such that $g(b)=y$. Therefore, there exists $b\in B$ such that $f(a,b)=y$
+    and so $f$ is onto. Hence, $f$ is bijective, so we have that $\{(a,b_i)|b_i\in B, 1\leq i\leq n\}$
+    is finite. Then, by problem 8 above, we have $\bigcup_{a\in A}\{(a,b_i)|b_i\in B, 1\leq i\leq n\}$,
+    the finite union of finite sets, is finite. Hence, the product of two finite sets is finite. Now
+    consider finite sets $A_1, A_2$, and $A_3$. Then
+    $A_1\times A_2\times A_3=(A_1\times A_2)\times A_3$. Since $A_1$ and $A_2$ are finite,
+    $A_1\times A_2$ is finite. So, since $A_1\times A_2$ and $A_3$ are finite,
+    $(A_1\times A_2)\times A_3=A_1\times A_2\times A_3$ is also finite. Continuing in the same manner,
+    we have that $A_1\times A_2\times\dots A_m$ for some $m\in\mathbb{N}$ is finite.
+
+\end{solution}

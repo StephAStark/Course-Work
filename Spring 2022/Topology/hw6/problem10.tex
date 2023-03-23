@@ -1,0 +1,22 @@
+(\#11 in 2.5) Prove that if Card$(A) = n$ for any $n\in \mathbb{N}$, then
+Card$(\mathcal{P}(A))=2^n$.\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    First let $A=\emptyset$. Then Card$(A)=0$. So, $\mathcal{P}(A)=\{\emptyset\}$ and
+    Card$(\mathcal{P}(A))=1=2^0$. So, now assume that Card$(A)=n$ and that Card$(\mathcal{P}(A))=2^n$
+    for some $n\geq0$. Define $A=\{a_1,\ldots, a_n\}$. Now take $A\cup\{a_{n+1}\}$. Then we see that
+    $A\cap\{a_{n+1}\}=\emptyset$. So,
+    Card$(A\cup\{a_{n+1}\})=Card(A)+Card(\{a_{n+1}\})-Card(A\cap\{a_{n+1}\}=\emptyset)=n+1-0=n+1$. Now,
+    $\mathcal{P}(A\cup\{a_{n+1}\})=\mathcal{P}(A)\cup X$ where
+    $X=\{B\cup \{a_{n+1}\}|B\in\mathcal{P}(A)\}$. Define the function
+    $f:X\rightarrow\mathcal{P}(A)$ by $f(C)=B$ where $C=B\cup \{a_{n+1}\}$. Now, take $C_1,C_2\in X$
+    where $C_1=B_1\cup \{a_{n+1}\}$ and $C_2=B_2\cup \{a_{N=1}\}$ and assume that $f(C_1)=f(C_2)$.
+    Then $B_1\cup \{a_{n+1}\}=B_2\cup \{a_{n+1}\}$, and hence $C_1=C_2$. So, $f$ is injective. Now,
+    take $B\in\mathcal{P}(A)$ and consider $C=B\cup \{a_{n+1}\}$. Then $f(C)=B$ and we have that $f$ is
+    also onto. Then $f$ is bijective and so $Card(X)=Card(\mathcal{P}(A))$ Now,
+    Card$(\mathcal{P}(A\cup\{a_{n+1}\}))=$Card$(\mathcal{P}(A))+$Card$(X)$ and by the induction
+    hypothesis, Card$(\mathcal{P}(A))=2^n$. So, clearly Card$(\mathcal{P}(A))=$Card$(X)=2^n$ since there
+    are still $2^n$ elements in $X$. Hence Card$\mathcal{P}(A\cup\{a_{n+1}\})=2^n+2^n=2^{n+1}$. Thus, we
+    have that if Card$(A)=n$, then Card$(\mathcal{P}(A))=2^n$.
+
+\end{solution}

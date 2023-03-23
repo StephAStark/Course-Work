@@ -1,0 +1,28 @@
+Prove that the union of a finite collection of finite sets is finite. \\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Let $X=\{A_1,\ldots, A_n\}$ where $A_i$ is a finite set for all $1\leq i\leq n$. Assume first that
+    $\bigcup_{i=1}^nA_i=\emptyset$. So, $A_i=\emptyset$ for all $0\leq i\leq n$, and
+    $\bigcup_{i=1}^nA_i$ is finite. So, assume that not all $A_i$ are empty. Since $B\cup\emptyset=B$
+    for any set $B$, define $Y=\{A_1,\ldots A_m\}$ where $A_i$ is a finite nonempty set for all
+    $0\leq i\leq m$. Now consider $m=1$. Then clearly $\bigcup_{i=1}^1A_i=A_1$ which is finite by
+    assumption. Next consider $m=2$, so $\bigcup_{i=1}^2A_i=A_1\cup A_2$. Assume first that
+    $A_1\cap A_2=\emptyset$. Now, since $A_1$ and $A_2$ are finite, there exist bijections
+    $f:A_1\rightarrow\{1,\ldots, k\}$ and $g:A_2\rightarrow\{1,\ldots, l\}$ for some $k,l\in\mathbb{N}$.
+    Define $\tilde{f}:A_1\cup A_2\rightarrow\{1,\ldots, k+l\}$ by
+    
+    $$f(a)=\left\{\begin{array}{lr}f(a)&$if $a\in A_1\\g(a)+k & $if $a\in A_2 \\ \end{array}\right.$$
+    
+    Now, suppose $\tilde{f}(a_1)=\tilde{f}(a_2)$ for some $a_1,a_2\in A_1\cup A_2$. Then, either
+    $f(a_1)=f(a_2)$ or $g(a_1)+k=g(a_2)+k$. In either case, we have that $a_1=a_2$ since both $f$ and
+    $g$ are bijective. Now, let $y\in \{1,\ldots, k+l\}$. again, since $f$ and $g$ are bijective, there
+    exists $x\in A_1\cup A_2$ such that $f(x)=y$. So, $\tilde{f}$ is a bijection, and $A_1\cup A_2$ is
+    finite. Now, assume that $A_1\cap A_2\neq\emptyset$. Now, $A_1\cup A_2=(A_1\setminus A_2)\cup A_2$,
+    and $(A_1\setminus A_2)\cap A_2=\emptyset$. Now since $(A_1\setminus A_2)\subset A_1$,
+    $(A_1\setminus A_2)$ is finite, and so $(A_1\setminus A_2)\cup A_2$ is the union of 2 disjoint
+    finite sets. Thus, the union of 2 finite sets is finte regardless of them being disjoint or not.
+    Then take $m=3$. So, $\bigcup_{i=1}^3A_i=A_1\cup A_2\cup A_3$ is finite as it can be given as
+    $(A_1\cup A_2)\cup A_3$ which is the union of 2 finite sets. Continuing in this manner, we have that
+    $\bigcup_{i=1}^mA_i=A_1\cup\dots\cup A_m$ is finite as desired.
+
+\end{solution}
