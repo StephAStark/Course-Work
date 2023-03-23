@@ -1,0 +1,44 @@
+2.3. Determine the null space of the matrix $A^T$ , where $A$ is given in equation $(2.58)$, and verify
+that the condition $(2.62)$ must hold for the linear system to have solutions.\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Transposing the matrix $A$ of $(2.58)$ we have that
+    
+    $$A^T=\left(\begin{array}{ccccc} -h & 1 & 0 & \cdots & 0\\ h & -2 & \ddots & \ddots & \vdots
+                                  \\ 0 & 1 & \ddots & 1 & 0\\ \vdots & \ddots & \ddots & -2 & h
+                                  \\ 0 & \cdots & 0 & 1 & -h \end{array}\right)$$
+    
+    So we need to solve $A^Tx=0$. Hence,
+    
+    $$\begin{array}{lcl} -hx_0+x_1 & = & 0 \\ hx_0-2x_1+x_2 & = & 0 \\ x_1-2x_2+x_3=0 \\ \vdots
+                      \\ x_{m-1}-2x_{m}+hx_{m+1}=0 \\ x_{m}-hx_{m+1}=0 \end{array}$$
+                      
+    So, we see that $x_1=hx_0$ and therefore, $x_2=x_1$. Continuing, we have that $x_i=x_1$ for 
+    $3\leq i\leq m$. Also, $x_0=x_{m+1}$ since $x_{m}=x_1$. So, letting $x_0=c$, we have that 
+    $c\left(\begin{array}{c} 1\\ h\\ \vdots\\ h\\ 1 \end{array}\right)$ or simply 
+    $\left(\begin{array}{c} 1\\ h\\ \vdots\\ h\\ 1 \end{array}\right)$ is the basis for the null space 
+    of $A^T$. Also, using MATLAB's null space function with an analogous $5\times 5$ matrix function,
+    we have that $\left(\begin{array}{c} 1\\ h\\ \vdots\\ h\\ 1 \end{array}\right)$ is the null space of
+    $A^T$. Now, we have that
+    
+    $$F=\left(\begin{array}{c} \sigma_0+\frac{h}{2}f(x_0) \\ f(x_1) \\ \vdots \\ f(x_m) 
+                           \\ -\sigma_1+\frac{h}{2}f(x_{m+1}) \end{array}\right)$$
+                           
+    Therefore, since $\left(\begin{array}{c} 1\\ h\\ \vdots\\ h\\ 1 \end{array}\right)$ is the basis for
+    the null space of $A^T$,
+    
+    $$Null(A^T) F=\sigma_0+\frac{h}{2}f(x_0)+hf(x_1)+\cdots+hf(x_m)-\sigma_1+\frac{h}{2}f(x_{m+1})$$
+    
+    Since the system in question only has solutions if $Null(A^T)\cdot F=0$, assume as such. Whence
+    
+    $$\sigma_0+\frac{h}{2}f(x_0)+hf(x_1)+\cdots+hf(x_m)-\sigma_1+\frac{h}{2}f(x_{m+1})=$$
+    $$\sigma_0+\frac{h}{2}f(x_0)+h\sum_{i=1}^mf(x_i)-\sigma_1+\frac{h}{2}f(x_{m+1})=0$$
+    
+    Thus,
+    
+    $$\frac{h}{2}f(x_0)+h\sum_{i=1}^mf(x_i)+\frac{h}{2}f(x_{m+1})=-\sigma_0+\sigma_1$$
+    
+    must hold for the system from $(2.58)$ to have solutions, verifying condition $(2.62)$.
+
+
+\end{solution}

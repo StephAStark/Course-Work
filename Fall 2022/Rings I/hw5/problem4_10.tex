@@ -1,0 +1,21 @@
+Show that if $f:R\rightarrow S$ is a surjective ring homomorphism, then $f(rad R)\subseteq rad S$.
+Give an example to show that $f(rad R)$ may be smaller than $rad S$.\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Let $f:R\rightarrow S$ be as stated above. Let $a\in rad R$. Then we know that $1-ba$ is left
+    invertible for all $b\in R$. That is there exists $c\in R$ such that $c(1-ba)=1$. Now, since $f$ is
+    a surjective homomorphism, we know that $f(1)=1$. Hence, 
+
+    $$1=f(1)=f(c(1-ba))$$
+
+    Since $f$ is a ring homomorphism,
+
+    $$1=f(c(1-ba))=f(c)f(1-ba)=f(c)(f(1)-f(ba))=f(c)(1-f(b)f(a))$$
+
+    Since $f(a)\in S$ we have that $f(a)\in rad S$. That is $f(rad R)\subseteq rad S$ as desired.\\
+
+    Consider the rings $R=\mathbb{Z}$ and $S=\mathbb{Z}/2^2\mathbb{Z}$ with $f:R\rightarrow S$ defined
+    to be the standard map. Then, $f$ is a surjective homomorphism and $rad R=\{0\}$ and
+    $rad S=2\mathbb{Z}/4\mathbb{Z}$. Then clearly $f(rad R)\neq rad S$.
+
+\end{solution}

@@ -1,0 +1,80 @@
+a. Verify that the predictor-corrector method (5.53) is second order accurate.\\
+b. Show that the predictor-corrector method obtained by predicting with the 2-step Adams-Bashforth
+method followed by correcting with the 2-step Adams-Moulton method is third order accurate.\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    a. We have that the predictor-corrector mathod is given by
+
+    $$\hat{U}^{n+1}=U^n+kf(U^n)$$
+
+    $$U^{n+1}=U^n+\frac12k(f(U^n)+f(\hat(U)^{n+1}))$$
+
+    So, employing substitution, we get
+
+    $$U^{n+1}=U^n+\frac12k(f(U^n)+f(U^n+kf(U^n)))$$
+
+    Hence,
+
+    $$\frac{2(U^{n+1}-U^n)}{k}=f(U^n)+f(U^n+kf(U^n))$$
+
+    This gives us the local truncation error
+
+    $$\tau=\frac2ku_{n+1}-\frac2ku_n-f(u_n)-f(u_n+kf(u_n))$$
+
+    Using $u'=\lambda u=f(u)$, we see that
+
+    $$\tau=\frac2ku_{n+1}-\frac2ku_n-\lambda u_n-\lambda(u_n+k\lambda u_n)$$
+
+    Now, expanding $u_{n+1}$ about $u_n$ using Taylor series yields
+
+    $$\tau=\frac2k(u_n+ku_n'+\frac{k^2}{2}u_n''+\mathcal{O}(k^3)-u_n)-\lambda u_n-
+    \lambda(u_n+k\lambda u_n)$$
+    $$=2u_n'+ku_n''+\mathcal{O}(k^2)-\lambda u_n-\lambda(u_n+k\lambda u_n)$$
+    $$=2\lambda u_n+k\lambda^2u_n+\mathcal{O}(k^2)-\lambda u_n-\lambda u_n-k\lambda^2 u_n
+    =\mathcal{O}(k^2)$$
+
+    since $u'=\lambda u$. Therefore, the predictor-corrector method is second order accurate as
+    desired.\\
+
+    b. We have that the 2-step AB method is $U^{n+2}=U^{n+1}+\frac{k}{2}(-f(U^n)+3f(U^{n+1}))$ and the
+    2-step AM method is $U^{n+2}=U^{n+1}+\frac{k}{12}(-f(U^n)+8f(U^{n+1})+5f(U^{n+2}))$. So,
+
+    $$U^{n+2}=U^{n+1}+\frac{k}{12}(-f(U^n)+8f(U^{n+1})+5f(U^{n+1}+\frac{k}{2}(-f(U^n)+3f(U^{n+1}))))$$
+
+    Hence,
+
+    $$\frac{12(U^{n+2}-U^{n+1})}{k}=-f(U^n)+8f(U^{n+1})+5f(U^{n+1}+\frac{k}{2}(-f(U^n)+3f(U^{n+1})))$$
+
+    Whence,
+
+    $$\frac{12(U^{n+2}-U^{n+1})}{k}+f(U^n)-8f(U^{n+1})-5f(U^{n+1}+\frac{k}{2}(-f(U^n)+3f(U^{n+1})))=0$$
+
+    Now, let $u_n$ be the exact solution to the approximation $U^n$. Also, we will use 
+    $u'=\lambda u=f(u)$. So, we get that the local truncation error is
+
+    $$\tau=\frac{12(u_{n+2}-u_{n+1})}{k}+f(u_n)-8f(u_{n+1})-5f(u_{n+1}+
+    \frac{k}{2}(-f(u_n)+3f(u_{n+1})))$$
+    $$=\frac{12}{k}u_{n+2}-\frac{12}{k}u_{n+1}+\lambda u_n-8\lambda u_{n+1}-5\lambda(u_{n+1}+
+    \frac{k}{2}(-\lambda u_n+3\lambda u_{n+1}))$$
+    $$=\frac{12}{k}u_{n+2}-\frac{12}{k}u_{n+1}+\lambda u_n-8\lambda u_{n+1}-5\lambda(u_{n+1}-
+    \frac{k}{2}\lambda u_n+\frac{3k}{2}\lambda u_{n+1})$$
+
+    Now, expanding out all $u_{n+2}$ and $u_n$ terms using Taylor series yields
+
+    $$\tau=\frac{12}{k}(u_{n+1}+ku_{n+1}'+\frac{k^2}{2}u_{n+1}''+\frac{k^3}{6}u_{n+1}'''+
+    \mathcal{O}(k^4)-u_{n+1})+\lambda(u_{n+1}-ku_{n+1}'+\frac{k^2}{2}u_{n+1}''+\mathcal{O}(k^3))$$
+    $$-8\lambda u_{n+1}-5\lambda(u_{n+1}-\frac{k}{2}(u_{n+1}-ku_{n+1}'+\mathcal{O}(k^2))+
+    \frac{3k}{2}\lambda u_{n+1})$$
+
+    Finally, using $u'=\lambda u$ again, nets us
+
+    $$\tau=12\lambda u_{n+1}+6k\lambda u_{n+1}+2k^2\lambda^3u_{n+1}+\mathcal{O}(k^3)+\lambda 
+    u_{n+1}-k\lambda^2 u_{n+1}+\frac{k^2\lambda^3}{2}u_{n+1}+\mathcal{O}(k^3)$$
+    $$-8\lambda u_{n+1}-5\lambda u_{n+1}+\frac{5k\lambda}{2}u_{n+1}-\frac{5k^2\lambda^2}{2}u_{n+1}
+    +\mathcal{O}(k^3)-\frac{15k}{2}\lambda^2 u_{n+1}$$
+
+    Therefore, we see that the predictor-corrector method obtained by predicting with the 2-step
+    Adams-Bashforth method followed by correcting with the 2-step Adams-Moulton method is third order
+    accurate as desired.
+
+\end{solution}

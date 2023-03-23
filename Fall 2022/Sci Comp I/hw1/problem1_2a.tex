@@ -1,0 +1,49 @@
+Use the method of undeermined coefficients to set up the $5\times5$ Vandermonde system that would
+determine a fourth-order accurate finite difference approximation to $u''(x)$ based on 5 equally spaced
+points;
+
+$$u''(x)=c_{-2}u(x-2h)+c_{-1}u(x-h)+c_0u(x)+c_1u(x+h)+c_2u(x+2h)+O(h^4)$$
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    We will expand each of the $u(\bar{x})$ using Taylor's Theorme to the fourth derivative. This gives
+    us:
+    
+    $$u(\bar{x}-2h)=u(x)-2hu'(x)+2h^2u''(x)-\frac86h^3u'''(x)+\frac23h^4u^{(4)}(x)$$
+    $$u(\bar{x}-h)=u(x)-hu'(x)+\frac12h^2u''(x)-\frac16h^3u'''(x)+\frac{1}{24}h^4u^{(4)}(x)$$
+    $$u(\bar{x})=u(x)+0$$
+    $$u(\bar{x}+h)=u(x)+hu'(x)+\frac12h^2u''(x)+\frac16h^3u'''(x)+\frac{1}{24}h^4u^{(4)}(x)$$
+    
+    and
+    
+    $$u(\bar{x}+2h)=u(x)+2hu'(x)+2h^2u''(x)+\frac86h^3u'''(x)+\frac23h^4u^{(4)}(x)$$
+
+    So, we have the following Vandermonde system
+    
+    $$\left(\begin{array}{ccccc} 1 & 1 & 1 & 1 &1
+                              \\ -2h & -h & 0 & h & 2h
+                              \\ 2h^2 & \frac{h^2}{2} & 0 & \frac{h^2}{2} & 2h^2
+                              \\ -\frac{8h^3}{6} & -\frac{h^3}{6} & 0 & \frac{h^3}{6} & \frac{8h^3}{6}
+                              \\ \frac{2h^4}{3} & \frac{h^4}{24} & 0 & \frac{h^4}{24} & \frac{2h^4}{3} 
+      \end{array}\right) 
+      \left(\begin{array}{c} c_{-2}\\ c_{-1}\\ c_0\\ c_1\\ c_2 \end{array}\right)
+      =\left(\begin{array}{c} 0\\ 0\\ 1\\ 0\\ 0 \end{array}\right)$$
+      
+    So taking the inverse of the Vandermonde matrix yeilds
+    
+    $$\left(\begin{array}{c} c_{-2}\\ c_{-1}\\ c_0\\ c_1\\ c_2 \end{array}\right)
+    =\left(\begin{array}{ccccc} 0 & \frac{1}{12h} & -\frac{1}{12h^2} & -\frac{1}{2h^3} & \frac{1}{h^4}
+                             \\ 0 & -\frac{2}{3h} & \frac{4}{3h^2} & \frac{1}{h^3} & -\frac{4}{h^4}
+                             \\ 1 & 0 & -\frac{5}{2h^2} & 0 & \frac{6}{h^4}
+                             \\ 0 & \frac{2}{3h} & \frac{4}{3h^2} & -\frac{1}{h^3} & -\frac{4}{h^4}
+                             \\ 0 & -\frac{1}{12h} & -\frac{1}{12h^2} & \frac{1}{2h^3} & \frac{1}{h^4} 
+     \end{array}\right) \left(\begin{array}{c} 0\\ 0\\ 1\\ 0\\ 0 \end{array}\right)$$
+     
+     Solving this system gives us $c_{-2}=-\frac{1}{12h^2}, c_{-1}=\frac{4}{3h^2}, c_0=-\frac{5}{2h^2},
+     c_1=\frac{4}{3h^2},$ and $c_2=-\frac{1}{12h^2}$. Since  each of the coefficients $c_i$ are of the
+     order $\frac{1}{h^2}$ and we are using the centered finite difference formula, we have that $u''$
+     is of the order of $O(h^{6-2})=O(h^4)$. So, we get that 
+     
+     $$u''(x)=-\frac{1}{12h^2}u(\bar{x}-2h)+\frac{4}{3h^2}u(\bar{x}-h)-\frac{5}{2h^2}u(\bar{x})+
+     \frac{4}{3h^2}u(\bar{x}+h)-\frac{1}{12h^2}u(\bar{x}+2h)+O(h^4)$$
+
+\end{solution}

@@ -1,0 +1,22 @@
+a. The m-file heat\_CN.m solves the heat equation $u_t=\kappa u_{xx}$ using the Crank-Nicolson method.
+Run this code, and by changing the number of grid points, confirm that it is second-order accurate.
+(Observe how the error at some fixed time such as $T= 1$ behaves as $k$ and $h$ go to zero with a fixed
+relation between $k$ and $h$, such as $k= 4h$.)\\
+You might want to use the function error\_table.m to print out this table and estimate the order of
+accuracy, and error\_loglog.m to produce a log-log plot of the error vs. $h$. See bvp\_2.m for an
+example of how these are used.\\
+b. Modify heat\_CN.m to produce a new m-file heat\_trbdf2.m that implements the TR-BDF2 method on the
+same problem. Test it to confirm that it is also second order accurate. Explain how you determined the
+proper boundary conditions in each stage of this Runge-Kutta method.\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    a. We can see from the output that this method is indeed second order accurate. See code below.
+
+    b. See code below.
+
+\end{solution}
+
+\newpage
+\lstinputlisting{heat_CN2.m}
+\newpage
+\lstinputlisting{heat_trbdf2.m}

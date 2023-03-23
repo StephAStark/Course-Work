@@ -1,0 +1,14 @@
+Show that a ring $R$ is a domain iff $R$ is prime and reduced.\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Let $R$ be a ring. Assume first that $R$ is a domain. Then, for all $a,b\in R$ if $ab=0$, then $a=0$
+    or $b=0$. Consider the ideal $\{0\}$ and assume that $aRb\subseteq\{0\}$. That is $arb=0$ for all
+    $r\in R$ and inparticualr $1\in R$. Hence, $a1b=ab=0$. Since $R$ is a domain, this means that $a=0$
+    or $b=0$. This is the same as saying that $a\in\{0\}$ or $b\in\{0\}$, so $R$ is a prime ring. If
+    $b=a$, then we have that $a=b=0$ and that $a=0$ is the only nilpotent element of $R$, so $R$ is also
+    reduced.  Conversely, assume that $R$ is prime and reduced. Let $a,b\in R$ be arbitrary and assume
+    that $aRb\subseteq\{0\}$. This means that $a=0$ or $b=0$. If $b=a$, then we have that $a^2=0$ and
+    since $R$ is reduced, $a=0$. If $b\neq a$, we have that $ab=0$ implies that $a=0$ or $b=0$. Thus,
+    $R$ is a domain as desired. 
+
+\end{solution}

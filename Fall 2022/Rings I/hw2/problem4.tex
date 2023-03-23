@@ -1,0 +1,13 @@
+4. Prove that $\mathbb{Q}$ is not projective as a $\mathbb{Z}$-module.\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Assume by way of contradiction that $\mathbb{Q}$ is projective as a $\mathbb{Z}$-module. By a fact
+    from class, we know that $\mathbb{Q}$ is projective if and only if $\mathbb{Q}$ is free. So, let
+    $S\subseteq\mathbb{Q}$ be a basis for $\mathbb{Q}$. Let $q,r\in S$. So, $q=\frac{x_1}{y_1}$ and
+    $r=\frac{x_2}{y_2}$ for some $x_1,x_2,y_1,y_2\in\mathbb{Z}^*$. Now consider $aq+br$. If $a=x_2y_1$
+    and $b=-x_1y_2$, $aq+br=x_2y_1\frac{x_1}{y_1}-x_1y_2\frac{x_2}{y_2}=x_1x_2-x_1x_2=0$. However, we
+    have that $x_1,x_2,y_1,y_2\in\mathbb{Z}^*$, so $a,b\neq0$. Thus $S$ is not linearly independent, and
+    is hence not a basis for $\mathbb{Q}$. Since $S$ was arbitrary, we have that there is not basis for
+    $\mathbb{Q}$. Thus, $\mathbb{Q}$ is not free and is thus not projective as a $\mathbb{Z}$-module.
+
+\end{solution}

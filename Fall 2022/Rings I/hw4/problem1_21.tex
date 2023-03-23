@@ -1,0 +1,11 @@
+Let $R$ be a finite ring. Show that there exists an infinite sequence $n_1<n_2<n_3<\cdots$ of natural
+numbers such that, for any $x\in R$, we have $x^{n_1}=x^{n_2}=x^{n_3}=\cdots$.\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Let $R$ be a ring with $|R|=m$ and $x_i\in R$ for $1\leq i\leq m$. Since $R$ is finite, we have that
+    there exists $k_i\in\mathbb{N}$ such that $x^{k_i}_i=1$ and $k_i$ divides the order of the ring for
+    all $1\leq i\leq m$. So, take $n_1=\prod_{i=1}^mk_i$. Then, $x^{n_1}=1$ for all $x\in R$. Now, take
+    $n_j=jn_1$ for $j\geq2$. Then, $x^{n_j}=1$ for all $x\in R$ and all $j\geq2$. Therefore,
+    $x^{n_1}=x^{n_2}=\cdots$ for the infinite sequence $n_1<n_2<\cdot$ as desired.
+
+\end{solution}

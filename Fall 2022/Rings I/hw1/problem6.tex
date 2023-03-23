@@ -1,0 +1,19 @@
+Let $R$ be a ring, $M$ a left $R$-module, and $\phi:M\rightarrow M$ an $R$-module homomorphism such that
+$\phi\circ\phi=\phi$. Show that $M=\phi(M)+\ker(\phi)$ and $\phi(M)\cap\ker(\phi)=\{0\}$.
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Let $R, M,$ and $\phi$ be as given. We will first show that $\phi(M)\cap\ker(\phi)=\{0\}$. Since we
+    showed $\phi(0)=0$ for an arbitrary left $R$-module homomorphism, we clearly have that
+    $\{0\}\subseteq\phi(M)\cap\ker(\phi)$. Now, let $m\in\phi(M)\cap\ker(\phi)$. Then $\phi(m)=0$ and
+    $m\in M$ such that $m=\phi(n)$ for some $n\in M$. Since $\phi\circ\phi=\phi$, we have that
+    $\phi(\phi(n))=\phi(m)=0$ and $\phi(\phi(n))=\phi(n)$. So, $\phi(n)=m=0$. Thus we have that
+    $m\in\{0\}$. Therefore $\phi(M)\cap\ker(\phi)=\{0\}$. Now we will show that $M=\phi(M)+\ker(\phi)$.
+    Clearly, since $\phi(M),\ker(\phi)\subseteq M$ and $M$ is closed under addition,
+    $\phi(M)+\ker(\phi)\subseteq M$. So, let $x\in M$. Now,
+    $\phi(M)+\ker(\phi)=\{m+n|m\in\phi(M),n\in\ker(\phi)\}$. We need to show that $x=\phi(m)+n$ for some
+    $\phi(m)+n\in\phi(M)+ker(\phi)$. Take $\phi(x)=\phi(\phi(m)+n)$. Since $\phi$ is a homomorphism, we
+    have that $\phi(x)=\phi(\phi(m))+\phi(n)$. By our assumption of $\phi$, $\phi(x)=\phi(m)+\phi(n)$
+    and since $n\in\ker(\phi)$, $\phi(x)=\phi(m)$. Thus, we have that $x\in\phi(M)+ker(\phi)$. Therefore
+    $M=\phi(M)+ker(\phi)$ as desired.
+
+\end{solution}

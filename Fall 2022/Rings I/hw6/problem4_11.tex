@@ -1,0 +1,11 @@
+If an ideal $I\subseteq R$ is such that $R/I$ is $J$-semisimple, show that $I\supseteq rad R$.
+(Therefore, $rad R$ is the smallest ideal $I\subseteq R$ such that $R/I$ is $J$-semisimple.)\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Let $R$ be a ring and $I$ an ideal of $R$ such that $R/I$ is $J$-semisimple. Denote $rad R=J$. If
+    $I=J$, we are done. Now, assume by way of contradiction that $I\subset J$. So,
+    $rad R/I=(rad R)/I=J/I$. Since $I\subset J$, we have that $I$ is contained in a maximal ideal of
+    $R$. Since $I\neq J$, there exists $a\in J$ such that $a+I\in J/I$ with $a+I\neq0$. This gives us
+    that $R/I$ is not $J$-semisimple, a contradiction. So, $I\supseteq J$ as desired.
+
+\end{solution}

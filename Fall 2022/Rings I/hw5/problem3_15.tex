@@ -1,0 +1,23 @@
+Let $D$ be a division ring, $V =\bigoplus_{i=1}^{\infty}e_iD$, and $E=End(V_D)$. Show that the ring $E$
+has exactly three ideals: $0, E$, and the ideal consisting of endomorphisms of finite rank.\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Let $D, V$, and $E$ be as given. Let $I$ be the ideal consisting of endomorphisms of finite rank. It
+    should be noted that $I\neq E$, and $I\neq0$, so it is a proper nonzero ideal. Now assume that there
+    exists an ideal $J\neq E$ such that $I\subseteq J$. Let $f\in J/I$. We have that $V$ is injective
+    since $D$ is a division ring. Therefore, $V\cong M\oplus\ker(f)$ with $M$ a submodule of $V$. By the
+    definition of $M$ and direct sum, $M$ has a basis and $M\cap\ker(f)=\{0\}$. So, if we let
+    $\{m_1,m_2,\ldots\}$ be a basis for $M$, we have that $\{f(m_1),f(m_2),\ldots\}$ is linearly
+    independent. Whence, there exists $g\in E$ such that $g(f(m_i))=v_i$ where $v_i$ is a standard basis
+    vector for $V$ for $i\geq1$. Also, there exists $h\in E$ such that $h(v_i)=m_i$ for all $i\geq1$.
+    Hence, $g((f(h(v_i))))=v_i$ and since $J$ is an ideal, $g\circ f\circ h\in J$. Thus, $J=E$ and so
+    $I$ is a maximal ideal. Now assume that there exists an ideal $K\neq0$ such that $K\subseteq I$.
+    Again, let $f\in K/I$. Since $V$ is injective, $V\cong N\oplus\ker(f)$ for $N$ a submodule of $V$.
+    Let $\{n_1,n_2,\ldots\}$ be a basis for $N$. Form the fact that $N\cap\ker(f)=\{0\}$, we have that
+    $\{f(n_1),f(n_2),\ldots\}$ is linearly indpendent. Therefore, there exists $g,h\in E$ such that
+    $g(f(n_i))=v_i$ a standard basis vector for $V$ and $h(v_i)=n_i$ for all $i\geq1$. So,
+    $g(f(h(v_i)))=v_i$ and since $K$ is also an ideal of $E$, $g\circ f\circ h\in K$. So, $K=I$ which
+    gives that $I$ is also minimal. Since we have that $I$ is both minimal and maximal, it is the only
+    proper nonzero ideal of $E$. Thus, the only ideals of $E$ are $0, I$, and $E$ as desired.
+
+\end{solution}

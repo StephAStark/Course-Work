@@ -1,0 +1,40 @@
+10.4. Consider the method
+
+$$U^{n+1}_j=U^n_j-\frac{ak}{2h}(U^n_j-U^n_{j-1}+U^{n+1}_j -U^{n+1}_{j-1})$$
+
+for the advection equation $u_t+au_x = 0$ on $0\leq x\leq1$ with periodic boundary conditions.\\
+a. This method can be viewed as the trapezoidal method applied to an ODE system $U'(t) = AU(t)$
+arising from a method of lines discretization of the advection equation. What is the matrix $A$? Don't
+forget the boundary conditions.\\
+b. Suppose we want to fix the Courant number $\frac{ak}{h}$ as $k,h\rightarrow0$. For what range of
+Courant numbers will the method be stable if $a>0$? If $a<0$? Justify your answers in terms of
+eigenvalues of the matrix $A$ from part (a) and the stability regions of the trapezoidal method.\\
+c. Apply von Neumann stability analysis to the method (E10.4a). What is the amplification factor
+$g(\xi)$?\\
+d. For what range of $\frac{ak}{h}$ will the CFL condition be satisfied for this method (with periodic
+boundary conditions)?\\
+e. Suppose we use the same method (E10.4a) for the initial-boundary value problem with $u(0, t)=g_0(t)$
+specified. Since the method has a one-sided stencil, no numerical boundary condition is needed at the
+right boundary (the formula (E10.4a) can be applied at $x_{m+1}$). For what range of $\frac{ak}{h}$ will
+the CFL condition be satisfied in this case? What are the eigenvalues of the $A$ matrix for this case
+and when will the method be stable?\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    a. The matrix $A$ is given by
+
+    $$A=\left(\begin{array}{ccccc} -a & 0 & \cdots & \cdots & a \\ a & -a & 0 & \cdots & 0
+                                \\ 0 & \ddots & \ddots & \ddots & \vdots
+                                \\ \vdots & \ddots & \ddots & \ddots & \vdots
+                                \\ 0 & \cdots & \cdots & a & -a \end{array}\right)$$
+
+    with the consideration of the periodic boundry conditions.\\
+
+    b. \\
+
+    c. \\
+
+    d. \\
+
+    e.
+
+\end{solution}

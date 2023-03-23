@@ -1,0 +1,32 @@
+Determine the interpolating quadratic polynomial of $u$ at $\bar{x}, \bar{x}-h$, and $\bar{x}-2h$, and
+verify $P'(\bar{x})=D_2u(\bar{x})=\frac{1}{2h}[3u(\bar{x})-4u(\bar{x}-h)+u(\bar{x}-2h)]$.\\
+
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    We will use a Lagrange interpolating polynomial. So,
+    
+    $$P(x)=\frac{(x-(\bar{x}-h))(x-(\bar{x}-2h))}{(\bar{x}-(\bar{x}-h))(\bar{x}-(\bar{x}-2h))}u(\bar{x})
+    +\frac{(x-(\bar{x}))(x-(\bar{x}-2h))}{((\bar{x}-h)-(\bar{x}))((\bar{x}-h)-(\bar{x}-2h))}
+    u(\bar{x}-h)$$
+    $$+\frac{(x-(\bar{x}))(x-(\bar{x}-h))}{((\bar{x}-2h)-(\bar{x}))((\bar{x}-2h)-(\bar{x}-h))}
+    u(\bar{x}-2h)=$$
+    $$\frac{(x-(\bar{x}-h))(x-(\bar{x}-2h))}{2h^2}u(\bar{x})
+    -\frac{(x-(\bar{x}))(x-(\bar{x}-2h))}{h^2}u(\bar{x}-h)$$
+    $$+\frac{(x-(\bar{x}))(x-(\bar{x}-h))}{2h^2}u(\bar{x}-2h)=$$
+    $$\frac{x^2-2x\bar{x}+3xh+\bar{x}^2-3\bar{x}h+2h^2}{2h^2}u(\bar{x})
+    -\frac{x^2-2x\bar{x}+2xh+\bar{x}^2-2\bar{x}h}{h^2}u(\bar{x}-h)+$$
+    $$\frac{x^2-2x\bar{x}+xh+\bar{x}^2-\bar{x}h}{2h^2}u(\bar{x}-2h)$$
+    
+    So,
+    
+    $$P'(x)=\frac{2x-2\bar{x}+3h}{2h^2}u(\bar{x})-\frac{2x-2\bar{x}+2h}{h^2}u(\bar{x}-h)+
+    \frac{2x-2\bar{x}+h}{2h^2}u(\bar{x}-2h)$$
+    
+    Therefore,
+    
+    $$P'(\bar{x})=\frac{3}{2h}u(\bar{x})-\frac2hu(\bar{x}-h)+\frac{1}{2h}u(\bar{x}-2h)=$$
+    $$\frac{1}{2h}[3u(\bar{x})-4u(\bar{x}-h)+u(\bar{x}-2h)]$$
+    
+    as desired.
+
+\end{solution}

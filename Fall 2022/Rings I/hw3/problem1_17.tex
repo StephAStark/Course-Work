@@ -1,0 +1,17 @@
+Let $x, y$ be elements in a ring $R$ such that $Rx=Ry$. Show that there exists a right $R$-module
+isomorphism $f:xR\rightarrow yR$ such that $f(x)=y$.\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Let $x, y, $ and $R$ be as given. Consider the mapping $\phi:xR\rightarrow yR$ defined by
+    $\phi(xr)=yr$ for all $r\in R$. Now, $\phi(xr+xr')=\phi(x(r+r'))$ since $xR$ is a right $R$-module.
+    Whence, $\phi(x(r+r'))=y(r+r')=yr+yr'=\phi(xr)+\phi(xr')$ since $yR$ is also a right $R$ module.
+    Now, let $r'\in R$. So, $\phi(xr)r'=(yr)r'=y(rr')=\phi(x(rr'))=\phi((xr)r')$ since $R$ is a ring and
+    $xR, yR$ are right $R$-modules. Therefore, $\phi$ is a right $R$-module homomorphism. Now, let let
+    $xr, xr'\in xR$ and assume that $\phi(xr)=\phi(xr')$. That is $yr=yr'$. Now, let $\bar{r}\in R$ So,
+    $\bar{r}(yr)=\bar{r}(yr')$. By associativity, $(\bar{r}y)r=(\bar{r}y)r'$. Since $Rx=Ry$ and
+    $\bar{r}\in R$, we have that $(\bar{r}x)r=(\bar{r}x)r'$. Thus, $xr=xr'$ and $\phi$ is $1-1$. Now,
+    let $yr\in yR$ be arbitrary. We see that $\phi(xr)=yr$, and so $\phi$ is also onto. It follows that
+    $\phi$ is a right $R$-module isomorphism. Clearly, if $r=1$ the identity of $R$, then we have that
+    $\phi(x)=y$ where $\phi:xR\rightarrow yR$ is an isomorphism.
+
+\end{solution}

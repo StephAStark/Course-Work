@@ -1,0 +1,26 @@
+2. Give an example of a ring $R$ and left $R$-modules $M,N,L$ such that $M\oplus L\cong N\oplus L$, but
+$M\ncong N$.\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Consider the ring $\mathbb{R}$ and the left $\mathbb{R}$-modules
+    $\{0\},\bigoplus_{i\in\mathbb{N}}\mathbb{R},$ and $\bigoplus_{i\in\mathbb{N}}\mathbb{R}$. Then, we
+    have that
+    $\{0\}\oplus\bigoplus_{i\in\mathbb{N}}\mathbb{R}\cong\bigoplus_{i\in\mathbb{N}}\mathbb{R}$. Also,
+    $\bigoplus_{i\in\mathbb{N}}\mathbb{R}\oplus\bigoplus_{i\in\mathbb{N}}\mathbb{R}\cong
+    \bigoplus_{i\in\mathbb{N}}\mathbb{R}$ via the map
+    $\pi:\bigoplus_{i\in\mathbb{N}}\mathbb{R}\rightarrow\bigoplus_{i\in\mathbb{N}}\mathbb{R}\oplus
+    \bigoplus_{i\in\mathbb{N}}\mathbb{R}$ defined by
+    $\pi((a_i)_{i\in\mathbb{N}})=((a_{2i})_{i\in\mathbb{N}},(a_{2i+1})_{i\in\mathbb{N}})$. Clearly,
+    $\pi$ is a module homomorphism. Also, we see that $\ker(\pi)=\{0\}$ as $0$ is the only element in
+    $\bigoplus_{i\in\mathbb{N}}\mathbb{R}$ such that $\pi(0)=0=(0,0)$. Thus, $\pi$ is $1-1$. Also,
+    $\pi$ is onto since for any element in
+    $\bigoplus_{i\in\mathbb{N}}\mathbb{R}\oplus\bigoplus_{i\in\mathbb{N}}\mathbb{R}$, there are finitely
+    many nonzero terms in each tuple. Since we have that
+    $\bigoplus_{i\in\mathbb{N}}\mathbb{R}\oplus\bigoplus_{i\in\mathbb{N}}\mathbb{R}\cong
+    \bigoplus_{i\in\mathbb{N}}\mathbb{R}$ and
+    $\{0\}\oplus\bigoplus_{i\in\mathbb{N}}\mathbb{R}\cong\bigoplus_{i\in\mathbb{N}}\mathbb{R}$,
+    $\bigoplus_{i\in\mathbb{N}}\mathbb{R}\oplus\bigoplus_{i\in\mathbb{N}}\mathbb{R}\cong\{0\}\oplus
+    \bigoplus_{i\in\mathbb{N}}\mathbb{R}$. However, $\{0\}\ncong\bigoplus_{i\in\mathbb{N}}\mathbb{R}$.
+
+
+\end{solution}

@@ -1,0 +1,51 @@
+a. Apply the trapezoidal method to the equation $u'=\lambda u$ and show that
+
+$$U^{n+1}=(\frac{1+z/2}{1-z/2})U^n$$
+
+where $z=k\lambda$.\\
+
+b. Let
+
+$$R(z)=\frac{1+z/2}{1-z/2}$$
+
+Show that $R(z)=e^z+\mathcal{O}(z^3)$ and conclude that the one-step error of the trapezoidal method
+on this problem is $\mathcal{O}(k^3)$.\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    a. We have that the trapezoidal method is given by
+
+    $$U^{n+1}=U^n+\frac{k}{2}(f(U^n)+f(U^{n=1}))$$
+
+    Using $u'=\lambda u=f(u)$, we see that
+
+    $$U^{n+1}=U^n+\frac{k}{2}(\lambda U^n+\lambda U^{n+1})$$
+    $$=U^n+\frac{k\lambda}{2}U^n+\frac{k\lambda}{2}U^{n+1}$$
+    $$U^n\frac{z}{2}U^n+\frac{z}{2}U^{n+1}$$
+
+    Hence,
+
+    $$U^{n+1}-\frac{z}{2}U^{n+1}=U^n+\frac{z}{2}U^n$$
+
+    Therefore,
+
+    $$(1-\frac{z}{2})U^{n+1}=(1+\frac{z}{2})U^n$$
+
+    Thus,
+
+    $$U^{n+1}=(\frac{1+z/2}{1-z/2})U^n$$
+
+    as desired.\\
+
+    b. Let $R(Z)$ be as given above. Note that the Taylor series expansion of $e^z$ about 0 is
+    $e^z=1+z+\frac{z^2}{2}+\ldots$. Now, we are given the Neumann series
+    $\frac{1}{1-z/2}=1+\frac{z}{2}+\frac{z^2}{4}+\frac{z^3}{8}+\ldots$. So,
+
+    $$R(z)=(1+z/2)(\frac{1}{1-z/2})=(1+z/2)(1+\frac{z}{2}+\frac{z^2}{4}+\frac{z^3}{8}+\ldots)$$
+    $$=1+\frac{z}{2}+\frac{z}{2}+\frac{z^2}{4}+\frac{z^2}{4}+\frac{z^3}{8}+\frac{z^3}{8}+\ldots$$
+
+    $$=1+z+\frac{z^2}{2}+\mathcal{O}(z^3)=e^z+\mathcal{O}(z^3)$$
+
+    Hence, we see that the one-step error of the trapezoidal method on this problem is
+    $\mathcal{O}(k^3)$ as desired.
+
+\end{solution}

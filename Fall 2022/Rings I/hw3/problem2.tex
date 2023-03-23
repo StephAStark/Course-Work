@@ -1,0 +1,18 @@
+Let $R$ be a ring and $n\in\mathbb{Z}^+$. Show that if $ _{\mathbb{M}_n(R)}\mathbb{M}_n(R)$ is
+artinian, then so is $ _RR$.\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Let $R$ and $n$ be as above. Assume that $ _{\mathbb{M}_n(R)}\mathbb{M}_n(R)$ is artinian. So, let
+    $N_1\supseteq N_2\supseteq\ldots$ be a descending chain of submodules of $ _RR$. Then,
+    $\mathbb{M}_n(N_1)\supseteq\mathbb{M}_n(N_2)\supseteq\ldots$ is a descending chain of submodules of
+    $ _{\mathbb{M}_n(R)}\mathbb{M}_n(R)$. Since $ _{\mathbb{M}_n(R)}\mathbb{M}_n(R)$ is artinian, we
+    have that $\mathbb{M}_n(N_m)=\mathbb{M}_n(N_{m+1})=\ldots$ for some $m\in\mathbb{Z}^+$. Clearly,
+    $I_n$ the $n\times n$ identity matrix is an element of $\mathbb{M}_n(N_i)$ for all
+    $i\in\mathbb{Z}^+$. Hence, let $x_m\in N_m$. Then $x_m\cdot I_n\in\mathbb{M}_n(N_m)$ and
+    $x_m\cdot I_n\in\mathbb{M}_n(N_{m+i})$ for all $i\in\mathbb{Z}^+$ since
+    $\mathbb{M}_n(N_m)=\mathbb{M}_n(N_{m+1})=\ldots$. Therefore, we have that $x_m\in N_{m+i}$ for all
+    $i\in\mathbb{Z}^+$. Since $x_m$ was arbitrary, we have that $N_m=N_{m+1}=\ldots$. Thus, the
+    descending chain of submodules of $ _RR$, $N_1\supseteq N_2\supseteq\ldots$, satisfies the
+    descending chain condition. That is, $ _RR$ is artinian as desired. 
+
+\end{solution}

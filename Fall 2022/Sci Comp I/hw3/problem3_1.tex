@@ -1,0 +1,22 @@
+a. Test this script by performing a grid refinement study to verify that it is second order accurate.\\
+b. Modify the script so that it works on a rectangular domain $[a_x, b_x]\times[a_y, b_y]$, but still
+with $\Delta x=\Delta y=h$. Test your modified script on a non-square domain.\\
+c. Further modify the code to allow $\Delta x\neq\Delta y$ and test the modified script.\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Here, the code was edited to be in a for loop so that the $m$ values would increase in size from 200
+    to 2000. We see that the order of accuracy converges to $\mathcal{O}(h^2)$.\\
+
+    The code here was editied to be a rectangular domain of $[0,1]\times[0,2]$. The code was also
+    editied such that $h$ was the same with $h=0.2$.\\
+
+    The code here was only slightly edited such that $h_x=0.2$ and $h_y=0.2222$.\\
+
+\end{solution}
+
+\newpage
+\lstinputlisting{poisson31a.m}
+\newpage
+\lstinputlisting{poisson31b.m}
+\newpage
+\lstinputlisting{poisson31c.m}

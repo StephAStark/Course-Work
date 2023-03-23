@@ -1,0 +1,24 @@
+Let $G$ be a finite group whose order is a unit in a ring $k$, and let $W\subseteq V$ be left
+$kG$-modules.\\
+1. If $W$ is a direct summand of $V$ as $k$-modules, show that $W$ is a direct summand of $V$ as
+$kG$-modules.\\
+2. If $V$ is projective as a $k$-module, show that $V$ is projective as a $kG$-module.\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Let $G, k, W$, and $V$ be as given.\\
+    1. Let $W$ be a direct summand of $V$ as $k$-modules. That is, $V=W\oplus X$ where $W\cap X=0$ for
+    some left $k$-module $X$. Let $\gamma:kG\rightarrow k$ be the augmentation map given in class, and
+    let $Y$ and $Z$ be the preimages of $W$ and $X$ respectively. Since $\gamma$ is a surjective map, we
+    have that $W\subseteq Y$. Hence, $Y=W\oplus (Y\setminus W)$. Therefore, we have that
+    $V=W\oplus (Y\setminus W)\oplus Z=Y\oplus Z$ and thus $W$ is a direct summand of $V$ as
+    $kG$-modules.\\
+
+    2. Let $W$ be a direct summand of $V$ as $k$-modules. Consider the $kG$ modules $Y$ and $Z$. Let
+    $\phi:Y\rightarrow Z$ be a surjective $kG$-module homomorphism, and let $\psi:V\rightarrow Z$ be a
+    $kG$-module homomrphism. Let $\gamma:kG\rightarrow k$ be the augmentation map as given in class.
+    Then, we have that $\gamma(Y)$ and $\gamma(Z)$ are $k$-modules. Now, $\phi$ restricted to a
+    $k$-module homomorphism between $\gamma(Y)$ and $\gamma(Z)$ is still surjective. Thus, since $V$ is
+    projective as a $k$-module, there exists $\rho:V\rightarrow\gamma(Y)$ and we can restirict $\rho$ to
+    be between $V$ and $Y$ such that $\rho\circ\phi=\psi$. Thus, $V$ is projective as a $kG$-module.
+
+\end{solution}

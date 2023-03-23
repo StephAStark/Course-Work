@@ -1,0 +1,51 @@
+10.3. Suppose $a>0$ and consider the following skewed leapfrog method for solving the advection equation
+$u_t + au_x = 0$:
+
+$$U^{n+1}_j=U^{n-1}_{j-2}-(\frac{ak}{h}-1)(U^n_j-U^n_{j-2})$$
+
+a. What is the order of accuracy of this method?\\
+b. For what range of Courant number $\frac{ak}{h}$ does this method satisfy the CFL condition?\\
+c. Show that the method is in fact stable for this range of Courant numbers by doing von Neumann
+analysis. Hint: Let $\gamma(\xi)=e^{i\xi h}g(\xi)$ and show that $\gamma$ satisfies a quadratic equation
+closely related to the equation (10.34) that arises from a von Neumann analysis of the leapfrog method\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    a. It can be noted that we need to look at the local truncation error of this method. This gives us
+
+    $$\tau(x,t)=\frac{u(x,t+k)-u(x,t)+u(x-2h,t)-u(x-2h,t-k)}{2k}$$
+    $$+a\frac{u(x,t)-u(x-2h,t)}{2h}$$
+
+    Now, expanding terms about $u(x,t)$ using multivariate Taylor series yeilds
+
+    $$u(x,t+k)=u(x,t)+ku_t+\frac12k^2u_{tt}+\mathcal{O}(k^3)$$
+    $$u(x-2h,t)=u(x,t)-2hu_x+2h^2u_{xx}+\mathcal{O}(h^3)$$
+
+    and
+
+    $$u(x-2h,t-k)=u(x,t)-2hu_x-ku_t+2h^2u_{xx}+2hku_{xt}+\frac12k^2u_{tt}+\mathcal{O}(k^3)
+    +\mathcal{O}(h^3)$$
+    
+    So, the local trunction error becomes
+
+    $$\tau=$$
+    $$\frac{ku_t+\frac12k^2u_{tt}-2hu_x+2h^2u_{xx}+2hu_x+ku_t-2h^2u_{xx}-2hku_{xt}-\frac12k^2u_{tt}
+    +\mathcal{O}(k^3)+\mathcal{O}(h^3)}{2k}$$
+    $$+a\frac{2hu_x-2h^2u_{xx}+\mathcal{O}(h^3)}{2h}$$
+    $$=u_t-hu_{xt}+au_x-2hau_{xx}+\mathcal{O}(k^2)+\mathcal{O}(h^2)$$
+
+    Since $u_t=-au_x$, we have that is second order accurate in both space and time.\\
+
+    b. We know that the advection equation has characteristic $\frac1a$, so we need the overall Courant
+    number to be less than $1$. From the method as well as the stencil of the method, we know that we
+    need $\frac{k}{2h}<\frac1a$. That is $\frac{ak}{h}<2$. So, the range of Courant numbers is $(0,2)$
+    to satisfy the CFL condition.\\
+
+    c. If we let $\gamma(\xi)=e^{i\xi h}\lambda$, then we get the quadratic equation
+    $\lambda^2+(\nu-1)(1-e^{2i\xi h})\lambda-1=0$. Letting $z=e^{2i\xi h}$ and applying the quadratic
+    formula, we see that $\lambda_{1,2}=\frac{-(\nu-1)(1-z)\pm\sqrt{(\nu-1)^2(1-z)^2+4z}}{2}$. So,
+    having $\lambda_1$ the positive and $\lambda_2$ the negative, we have that
+    $|\lambda_1||\lambda_2|=|z|$ and $\lambda_1+\lambda_2=-(\nu-1)(1-z)$ which yields
+    $|\lambda_1|=|\lambda_2|=1$. In the complex plain, this tells us that the method is stable for all
+    Courant numbers.
+
+\end{solution}

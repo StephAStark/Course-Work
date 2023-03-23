@@ -1,0 +1,25 @@
+Let $R$ be a ring and
+
+\begin{center}
+\begin{tikzcd}
+ 0 \arrow{r} & M_1 \arrow{r}{\phi_1} & M_2 \arrow{r}{\phi_2} & M_3 \arrow{r} & 0
+\end{tikzcd}
+\end{center} 
+
+a short exact sequence of left $R$-modules. Show that if $M_2$ is noetherian, then so are $M_1$ and
+$M_3$.\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Let $R$ and the above sequence be as given. Assume that $M_2$ is noetherian. Let $K=\ker(\phi_2)$.
+    We have that $K\subseteq M_2$ and since $M_2$ is noetheriean, so to is $M_2/K$. Since the sequence
+    is short exact, we know that $\phi_2$ is onto, and so $\phi_2(M_2)=M_3$. Now, by the Fundamental
+    Homomorphism Theorem, we have that $M_2/K\cong\phi_2(M_2)=M_3$, and so $M_3$ is also noetherian.
+    Now, let $N_1\subset N_2\subset\ldots$ be an ascending chain of left $R$-submodules of $M_1$. So,
+    $\phi_1(N_1)\subset\phi_1(N_2)\subset\ldots$ is an ascending chain of left $R$-submodules of $M_2$.
+    Since $M_2$ is noetherian, we have that $\phi_1(N_1)\subset\phi_1(N_2)\subset\ldots$ satisfies the
+    ascending chain condition. That is for some $n\in\mathbb{Z}^+$, we have that
+    $\phi_1(N_n)=\phi_1(N_{n+1})=\ldots$. Since the above sequence is short exact, we have that
+    $\phi_1$ is $1-1$. Thus, $N_n=N_{n+1}=\ldots$. Whence, $N_1\subset N_2\subset\ldots$ also satisfis
+    the ascending chain condition. Therefore, $M_1$ is also noetherian.
+
+\end{solution}
