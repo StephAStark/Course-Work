@@ -1,0 +1,55 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{accents}
+
+
+\setlength{\oddsidemargin}{0in}
+\setlength{\textwidth}{6.5in}
+\setlength{\topmargin}{-.55in}
+\setlength{\textheight}{9in}
+\pagestyle{empty}
+\renewcommand \d{\displaystyle}
+\renewcommand \a{\shortstack{$\rightarrow$\\$u$}}
+\renewcommand \b{\shortstack{$\rightarrow$\\$v$}}
+
+\begin{document}
+\noindent Math 5510
+
+\noindent Topology
+
+\noindent Stephanie Klumpe
+
+\vspace{.2in}
+\begin{center}
+Problem Set 3
+\end{center}
+
+ \begin{enumerate}%\setlength{\itemindent}{-1.5em}
+\item In the topology $\mathcal{U}$ on $\mathbb{R}$, give an example of an infinite union of closed sets that is open (and bounded).\\\\
+Consider the union $\bigcup_{n\in\mathbb{N}}[\frac{1}{n+1},1-\frac{1}{n+1}]$. Well, $[\frac{1}{n+1},1-\frac{1}{n+1}]$ is closed in $\mathbb{R}_{\mathcal{U}}$ since $\mathbb{R}\setminus[\frac{1}{n+1},1-\frac{1}{n+1}]=(-\infty,\frac{1}{n+1})\cup(1-\frac{1}{n+1})$ is open in $\mathbb{R}_{\mathcal{U}}$. Now, $\bigcup_{n\in\mathbb{N}}[\frac{1}{n+1},1-\frac{1}{n+1}]=\{\frac12\}\cup[\frac13,\frac23]\cup[\frac14,\frac34]\cup\ldots=(0,1)$ which is open in $\mathbb{R}_{\mathcal{U}}$. Now, $\bigcup_{n\in\mathbb{N}}[\frac{1}{n+1},1-\frac{1}{n+1}]=(0,1)$ since $\lim_{n\rightarrow\infty}(\frac{1}{n+1})=0$ and $\lim_{n\rightarrow\infty}(1-\frac{1}{n+1})=1$, and so every real number between 0 and 1 will be in $\bigcup_{n\in\mathbb{N}}[\frac{1}{n+1},1-\frac{1}{n+1}]$. Therefore an infinite union of closed sets need not be closed.\\[20pt]
+
+\item (\#2 in 3.3) Prove that no nonempty proper subset of $\mathbb{R}_{\mathcal{FC}}$ is simultaneously open and closed.\\\\
+Let $A\subset\mathbb{R}_{\mathcal{FC}}$ be such that $A\neq\emptyset$. Assume by way of contradiction that $A$ is both open and closed in $\mathbb{R}_{\mathcal{FC}}$. Since $A$ is open, we have that $A\subseteq\mathbb{R}_{\mathcal{FC}}$ and therefore $A$ is infinite by definition. So, $\mathbb{R}\setminus A$ is finite since $A$ is nonempty. Since $A$ is closed, we have that $\mathbb{R}\setminus A$ is open. That is $\mathbb{R}\setminus A\in\mathcal{FC}$. So, $\mathbb{R}\setminus(\mathbb{R}\setminus A)=A$ is finite since $A\neq\mathbb{R}$. However, this contradicts $A\in\mathcal{FC}$ and $A$ being infinite. Since $A$ was an arbitrary nonempty proper subset, we have that no such subset of $\mathbb{R}_{\mathcal{FC}}$ is both open and closed.\\[20pt]
+
+\item Find the closure and the interior of the interval [1,3] in $\mathbb{R}_{\mathcal{FC}}$.\\\\
+Well, Cl$([1,3])$ is the smallest subset $A\subseteq\mathbb{R}_{\mathcal{FC}}$ such that $A$ is closed and $[1,3]\subseteq A$. Now, Cl$([1,3])=\mathbb{R}$. Assume by way of contradiction that there exists $X\subset\mathbb{R}$ such that $[1,3]\subseteq X$ and $X$ is closed in $\mathbb{R}_{\mathcal{FC}}$. Then $\mathbb{R}\setminus X$ is open in $\mathbb{R}_{\mathcal{FC}}$ and so $X$ is finite. This is a contradiction though since there is no finite set $X$ such that $[1,3]\subseteq X$. Next, Int$([1,3])$ is the largest open subset of $[1,3]$. So, Int$([1,3])=\emptyset$. Assume by way of contradiction that there exists an open set $X\subseteq[1,3]$ such that $X\neq\emptyset$ and $X$ is open in $\mathbb{R}_{\mathcal{FC}}$ Then $\mathbb{R}\setminus X$ is finite. However, even if $X=[1,3]$, $\mathbb{R}\setminus X$ would not be finite. Hence, there exists no nonempty subset $X$ of $[1,3]$ such that $X$ is open in $\mathbb{R}_{\mathcal{FC}}$.\\[20pt]
+
+\item Let $X$ and $Y$ be topological spaces, and let $f:X\to Y$ be any function. Show that the following two conditions are equivalent:
+\begin{enumerate}\item If $U$ is open in $Y$, then $f^{-1}(U)$ is open in $X$.
+\item If $F$ is closed in $Y$, then $f^{-1}(F)$ is closed in $X$.\\\\ \end{enumerate}
+First we will show that for any two sets $A$ and $B$ and function $f:A\rightarrow B$, if $C\subseteq B$, then $f^{-1}(B\setminus C)=A\setminus f^{-1}(C)$. So, let $A,B$ be sets and $f:A\rightarrow B$ be a function. Let $C\subseteq B$. Now, let $x\in f^{-1}(B\setminus C)$. Then by definition of inverse image, $x\in A$ such that $f(x)\in B\setminus C$. Hence $f(x)\in B$ and $f(x)\notin C$. So, by definition of preimage, $x\in A$ and $x\notin f^{-1}(C)$. So, $x\in A\setminus f^{-1}(C)$ and $f^{-1}(B\setminus C)\subseteq A\setminus f^{-1}(C)$. Next, let $x\in A\setminus f^{-1}(C)$. Then $x\in A$ and $x\notin f^{-1}(C)$. So, by definition $f(x)\notin C$. Therefore $f(x)\in B$ and $f(x)\notin C$. So, $f(x)\in B\setminus C$. That is $x\in f^{-1}(B\setminus C)$. Thus $f^{-1}(B\setminus C)=A\setminus f^{-1}(C)$ by double inclusion.\\\\Let $X$ and $Y$ be topological spaces, and let $f:X\to Y$ be any function. Assume that if $U$ is open in $Y$, then $f^{-1}(U)$ is open in $X$. Now, assume that $F$ is closed in $Y$. Then we have that $Y\setminus F$ is open in $Y$. So, $f^{-1}(Y\setminus F)$ is open in $X$ by our assumption. Since $f^{-1}(Y\setminus F)=X\setminus f^{-1}(F)$ by above, $X\setminus f^{-1}(F)$ is open, and so by definition, we have that $f^{-1}(F)$ is closed in $X$. Now, assume that if $F$ is closed in $Y$, then $f^{-1}(F)$ is closed in $X$. So, assume that $U$ is open in $Y$. Since $U$ is open, we have that $Y\setminus U$ is closed in $Y$. Then by supposition, $f^{-1}(Y\setminus U)$ is closed in $X$. Now $f^{-1}(Y\setminus U)=X\setminus f^{-1}(U)$ by what we showed above, so $X\setminus f^{-1}(U)$ is closed in $X$. Thus, $f^{-1}(U)$ is open in $X$. Therefore statement 'a' is logically equivalent to statement 'b' as desired.\\[20pt]
+
+\item Suppose that $X$ is any set and that $\tau$ and $\sigma$ are topologies on $X$. If $A\subseteq X$, denote the closure of $A$ with respect to $\tau$ by $\text{Cl}_{\tau} (A)$ and the closure of $A$ with respect to $\sigma$ by $\text{Cl}_{\sigma} (A)$. That is, $\text{Cl}_{\tau} (A)$ is the smallest $\tau$-closed set containing $A$, and $\text{Cl}_{\sigma} (A)$ is the smallest $\sigma$-closed set containing $A$.\\Prove that if $\tau$ is finer than $\sigma$, then $\text{Cl}_{\tau} (A)\subseteq \text{Cl}_{\sigma} (A)$.\\\\
+Let $X$ be a set with topologies $\tau$ and $\sigma$. Let $A\subseteq X$, and assume that $\tau$ is finer than $\sigma$. That is $\sigma\subseteq\tau$. Well, Cl$_{\sigma}(A)=Y$ such that $Y\subseteq X$, $Y$ is $\sigma-$closed, and $A\subseteq Y$. Since $Y$ is $\sigma-$closed, we have that $X\setminus Y$ is $\sigma-$open. That is, $X\setminus Y\in\sigma$. So, $X\setminus Y\in\tau$ and is $\tau-$open. Hence, $Y$ is a $\tau-$closed set that contains $A$. Thus, Cl$_{\tau}(A)\subseteq Y=$Cl$_{\sigma}(A)$.\\[20pt]
+
+\item Let $X_{\tau}$ be a topological space, and let $A$ and $B$ be subsets of $X$. Prove that \begin{enumerate}\item $\text{Int}(A\cap B) = \text{Int}(A)\cap \text{Int}(B)$, and 
+\item $\text{Int}(A)\cup \text{Int}(B)\subseteq \text{Int}(A\cup B)$.\\\\
+a. Let $X_{\tau}$ be a topological space and $A,B\subseteq X$. Let $Y=$Int$(A\cap B)$. Then $Y\subseteq A\cap B$ such that $Y$ is open. Since $Y\subseteq A\cap B$, $Y\subseteq A$ and $Y\subseteq B$. Therefore, we have that $Y\subseteq $Int$(A)\cap $Int$(B)$ since $Y$ is open. On the other hand, let $Z=$Int$(A)\cap $Int$(B)$. So, $Z$ is such that $Z\subseteq A$, $Z\subseteq B$, and $Z$ is the largest such open subset of $A$ and $B$. Hence, $Z\subseteq A\cap B$, and since $Z$ is open, we have that $Z\subseteq $Int$(A\cap B)$. Thus, Int$(A\cap B)=$Int$(A)\cap $Int$(B)$.\\
+b. Let $X_{\tau}, A$, and $B$ be as given. Consider Int$(A)\cup $Int$(B)$. Well, Int$(A)\subseteq A$ and Int$(B)\subseteq B$ and so Int$(A)\cup $Int$(B)\subseteq A\cup B$. By definition Int$(A)$ and Int$(B)$ are open in $\tau$, so Int$(A)\cup $Int$(B)$ is $\tau-$open. Therefore, Int$(A)\cup $Int$(B)\subseteq $Int$(A\cup B)$.
+\end{enumerate}
+\end{enumerate}
+
+\end{document}

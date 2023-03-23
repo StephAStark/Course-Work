@@ -1,0 +1,60 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{accents}
+
+
+\setlength{\oddsidemargin}{0in}
+\setlength{\textwidth}{6.5in}
+\setlength{\topmargin}{-.55in}
+\setlength{\textheight}{9in}
+\pagestyle{empty}
+\renewcommand \d{\displaystyle}
+\renewcommand \a{\shortstack{$\rightarrow$\\$u$}}
+\renewcommand \b{\shortstack{$\rightarrow$\\$v$}}
+
+\begin{document}
+\noindent Math 5510
+
+\noindent Topology
+
+\noindent Stephanie Klumpe
+
+\vspace{.2in}
+\begin{center}
+Problem Set 9
+\end{center}
+
+ \begin{enumerate}%\setlength{\itemindent}{-1.5em}
+ \item (\#2 in 6.5) Prove the general form of Theorem 6.5.3: If $A_{\gamma}$ is a connected subspace of $X_{\tau}$ for every $\gamma\in \Lambda$ and if $\cap_{\gamma\in\Lambda} A_{\gamma}\neq \emptyset$, then $\cup_{\gamma\in\Lambda}A_\gamma$ is connected as a subspace of $X$.\\\\
+
+\textbf{Proof}: Let $X_{\tau}$ be a topological space and let $\{A_{\gamma}\}_{\gamma\in\Lambda}$ be a collection of connected subspaces of $X_{\tau}$. Let $\cap_{\gamma\in\Lambda}A_{\gamma}\neq\emptyset$. Assume that $\cup_{\gamma\in\Lambda} A_{\gamma}$ is disconnected. Then $\cup_{\gamma\in\Lambda}A_{\gamma}=U\cup V$ where $U$ and $V$ are disjoint, nonempty $\tau_{\cup_{\gamma\in\Lambda} A_{\gamma}}-$open sets. Take $A_{\gamma}\in\cup_{\gamma\in\Lambda} A_{\gamma}$, and consider $U\cap A_{\gamma}$ and $V\cap A_{\gamma}$. Since $U$ and $V$ are disjoint, we have that $(U\cap A_{\gamma})\cap(V\cap A_{\gamma})=(U\cap V)\cap A_{\gamma}=\emptyset$. Since $U$ and $V$ are open, $U\cap A_{\gamma}$ and $V\cap A_{\gamma}$ are open in the subspace topology by definition. Finally we can see that $(U\cap A_{\gamma})\cup(V\cap A_{\gamma})=(U\cup V)\cap A_{\gamma}=X\cap A_{\gamma}=A_{\gamma}$. So, if $U\cap A_{\gamma}, V\cap A_{\gamma}\neq\emptyset$, then $A_{\gamma}$ is disconnected as a subspace, which is a contradiction. So, without loss of generality, say $U\cap A_{\gamma}=\emptyset$. Since $\gamma\in\Lambda$ was arbitrary, we have that $U\cap A_{\gamma}=\emptyset$ or $V\cap A_{\gamma}=\emptyset$. So either $U\cap A_{\gamma}=\emptyset$ for all $\gamma\in\lambda$, in which case $U=\emptyset$ which is a contradiction, or $U\cap A_{\gamma}=\emptyset$ for $\gamma\in\Gamma\subset\Lambda$ and $V\cap A_{\gamma}=\emptyset$ for $\gamma\in\Lambda\setminus\Gamma$. For this latter case, we contradict $\cap_{\gamma\in\Lambda} A_{\gamma}\neq \emptyset$. Thus, $\cup_{\gamma\in\Lambda} A_{\gamma}$ is connected as desired.\\[20pt]
+
+\item (\#6 in 7.2) Show from the definition that $\mathbb{R}^2_{\mathcal{U}^2}$ is not compact.\\\\
+
+Consider the set $\mathcal{C}=\{(x,y)|x^2+y^2<a^2\; \text{such that}\; a\in\mathbb{R}^+\}$. Clearly $\mathcal{C}$ is a cover of $\mathbb{R}^2$ as $C\in\mathcal{C}$ is an open disk of radius $a$ and $\bigcup_{C\in\mathcal{C}}C=\mathbb{R}^2$. However, there is no finite subcollection from $\mathcal{C}$ that covers $\mathbb{R}^2$, since no finite union of open disks with radius $a\in\mathbb{R}^+$ covers all of $\mathbb{R}^2$. If there were, then there would have to be a radius $a=\infty$ inorder to reach the "ends" of $\mathbb{R}^2$, however $\infty\notin\mathbb{R}^+$. So we have that $\mathbb{R}^2_{\mathcal{U}^2}$ is not compact by definition.\\[20pt]
+
+\item (\#4 in 7.3)  Prove that a subspace of a Hausdorff space is Hausdorff.\\\\
+
+\textbf{Proof}: Let $X_{\tau}$ be a Hausdorff space and let $A_{\tau_A}$ be a subspace of $X_{\tau}$. Let $a,b\in A$ with $a\neq b$. Since $X_{\tau}$ is Hausdorff, there exist $\tau-$open sets $U,V$ such that $U\cap V=\emptyset, a\in U$, and $b\in V$. Since $U$ and $V$ are $\tau-$open, we have that $A\cap U$ and $A\cap V$ are $\tau_A$-open. Also, $(A\cap U)\cap(A\cap V)=\emptyset$ since $U\cap V=\emptyset$. Since $a\in(A\cap U)$ and $b\in(A\cap V)$ where $(A\cap U)$ and $(A\cap V)$ are disjoint $\tau_A-$open sets, $A$ is Hausdorff, as desired.\\[20pt]
+
+\item (\#6 in 7.3) Prove Theorem 7.3.2: Let $X_{\tau}$ be compact and Hausdorff. If $\tau'$ is any topology on $X$ with $\tau'$ finer than $\tau$, then $X_{\tau'}$ is not compact. If $\tau''$ is any topology on $X$ with $\tau''$ coarser than $\tau$, then $X_{\tau''}$ is not Hausdorff. (Hint: consider the hint for problem \#5 in 7.3).\\\\
+
+\textbf{Proof}:  Let $X_{\tau}$ be compact and Hausdorff. First, let $\tau'$ be a topology on $X$ that is strictly finer than $\tau$. Consider $i_X: X_{\tau'}\rightarrow X_{\tau}$. Since $\tau\subset\tau'$, we have that $i_X$ is continuous, and as discussed in previous problem sets, $i_X$ is bijective. Now, assume by way of contradiction that $X_{\tau'}$ is compact. Then, since $X_{\tau}$ is Hausdorff, we have that $i_X$ is a homeomorphism by Theorem 7.3.3. Hence, $\tau=\tau'$ which contradicts $\tau\subset\tau'$. Hence, $X_{\tau'}$ is not compact. Now let $\tau''$ be a strictly coarser topology than $\tau$ on $X$. So, consider $i_X:X_{\tau}\rightarrow X_{\tau''}$. Since $\tau''\subset\tau$, we have that $i_X$ is a continuous bijection. Now, suppose by way of contradiction that $X_{\tau''}$ is Hausdorff. Then, $i_X$ is a homeomorphism by Theorem 7.3.3. Therefore, $\tau''=\tau$ which contradicts $\tau''\subset\tau$. Thus, $X_{\tau''}$ is not Hausdorff.\\[20pt]
+
+\item (\#2 in 7.5) Prove that any finite union of compact subsets of a topological space is compact.\\\\
+
+\textbf{Proof}: Let $X_{\tau}$ be a topological space and let $A_1, A_2,\ldots, A_n$ be compact subsets of $X$ for some $n\in\mathbb{N}$. Let $\mathcal{C}$ be an arbitrary open cover for $\bigcup_{i=1}^nA_i$. So, $\bigcup_{C\in\mathcal{C}}C=\bigcup_{i=1}^nA_i$. Then, every $C\in\mathcal{C}$ has the form $C=V\cap(\bigcup_{i=1}^nA_i)$ where $V$ is $\tau$-open. So, $C=(V\cap A_1)\cup(V\cap A_2)\cup\cdots\cup(V\cap A_n)$. Since $V$ is $\tau-$open, $V\cap A_i$ is open in $\tau_{A_i}$ for $0\leq i\leq n$. Therefore, $\bigcup_{C\in\mathcal{C}}C=V_i\cap(\bigcup_{i=1}^nA_i)$. Hence, we can see that $\mathcal{C}$ is also an arbitrary open cover for each $A_i$. Since each $A_i$ is compact, each $A_i$ has a finite open subcover for $\mathcal{C}$. Let $\mathcal{B}_i$ be such a finite open subcover for $A_i$. Then $\bigcup_{B\in\mathcal{B}_i}=A_i$. Thus, $\bigcup_{i=1}^n(\bigcup_{B\in\mathcal{B}})=\bigcup_{i=1}^nA_i$. Since $\tau$ is a topology, we have that $\bigcup_{i=1}^n(\bigcup_{j=1}^{m_i}V_{i_j})$ is open in $\tau$ where $V_{i_j}$ is a $\tau$-open set such that $B_{i_j}=V_{i_j}\cap A_i$. Thus, $\bigcup_{i=1}^n(\bigcup_{j=1}^{m_i}V_{i_j})\bigcup_{i=1}^nA_i$ is open in $\tau_{\bigcup_{i=1}^nA_i}$. Therefore, $\bigcup_{i=1}^n(\bigcup_{B\in\mathcal{B}})$ is an open finite subcover of $\bigcup_{i=1}^nA_i$, and since $\mathcal{C}$ was arbitrary, we have that $\bigcup_{i=1}^nA_i$ is compact as desired.\\[20pt]
+
+\item (\#7 in 7.3) Prove the Closed Graph Theorem: If $f: X_{\tau} \to Y_{\nu}$ is continuous, with $Y$ both compact and Hausdorff, then the graph $$G_f = \{(x,y) \in X\times Y | y=f(x)\}$$ is closed in $X_{\tau}\times Y_{\nu}$.\\\\
+
+\textbf{Proof}; Let $X_{\tau}$ and $Y_{\nu}$ be topological spaces with $Y_{\nu}$ compact and Hausdorff and let $f:X_{\tau}\rightarrow Y_{\nu}$ be continuous. We will show that $(X\times Y)\setminus G_f$ is open. So, let $(x,y)\in(X\times Y)\setminus G_f$. So, for this $(x,y)$, we have that $y\neq f(x)$. Since $Y$ is Hausdorff, there exist disjoint $\nu-$open sets $U,V$ such that $y\in U$ and $f(x)\in V$. Let $M_{f(x)}$ be an open neighborhood of $f(x)$. Since $f$ is continuous, there exists a $\tau$-open neighborhood, $N_x$, of $x$ such that $N_x\subseteq f^{-1}(M_{f(x)})$. Since $y\neq f(x), U\subset Y$ and $(x,y)\in N_x\times U\subset(X\times Y)\setminus G_f$, and since $(x,y)\in(X\times Y)\setminus G_f$ was arbitrary, we have that $(X\times Y)\setminus G_f$ is open. Thus, $G_f$ is closed in $X\times Y$ as desired.
+
+
+
+
+
+\end{enumerate}
+\end{document}
