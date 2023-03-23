@@ -1,74 +1,37 @@
-\documentclass[12pt]{article}
-\usepackage[margin=1in]{geometry} 
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{amsthm}
-\usepackage{accents}
-
-
-\setlength{\oddsidemargin}{0in}
-\setlength{\textwidth}{6.5in}
-\setlength{\topmargin}{-.55in}
-\setlength{\textheight}{9in}
-\pagestyle{empty}
-
+\input{settings}
 
 \begin{document}
-\noindent Stephanie Klumpe
 
-\noindent Math 5510
+\lhead{Stephanie Klumpe}
 
-\noindent Topology
+\chead{Problem Set 1}
 
-\vspace{.2in}
-\begin{center}
-Problem Set 1
-\end{center}
+\rhead{MATH 5510}
+
+\cfoot{\thepage\ of \pageref{LastPage}}
 
  \begin{enumerate}
-\item (\#1 in 2.1) Prove \textbf{Theorem 2.1.3 (ii)} (DeMorgan's law): If $X$ is any set and $\{A_{\lambda}|\lambda\in\Lambda\}$ is any indexed collection of sets, then $X\backslash \bigcap_{\lambda\in\Lambda} A_{\lambda} = \bigcup_{\lambda\in\Lambda}(X\backslash A_{\lambda})$.\\\\
-Let $X$ be a set and $\{A_{\lambda}|\lambda\in\Lambda\}$ be an indexed collection of sets. First consider the case $\bigcup_{\lambda\in\Lambda}(X\backslash A_{\lambda})=\emptyset$. Then $X\backslash A_{\lambda}=\emptyset$ for every $\lambda\in\Lambda$. So, $A_{\lambda}=X$ for all $\lambda\in\Lambda$. Hence $\bigcap_{\lambda\in\Lambda}A_{\lambda}=X$, and thus $X\backslash \bigcap_{\lambda\in\Lambda} A_{\lambda} =\emptyset$, preserving equality. So, assume that $X\backslash \bigcap_{\lambda\in\Lambda} A_{\lambda}\neq\emptyset$. Now, let $x\in X\backslash \bigcap_{\lambda\in\Lambda} A_{\lambda}$. Then, $x\in X$, but $x\notin\bigcap_{\lambda\in\Lambda} A_{\lambda}$. So, by definition of intersection, $x\notin A_{\lambda}$ for at least one $\lambda\in\Lambda$. So, for some $\lambda\in\Lambda$, we have that $x\in X\setminus A_{\lambda}$. Hence $x\in\bigcup_{\lambda\in\Lambda}(X\backslash A_{\lambda})$. Conversely, assume that $x\in\bigcup_{\lambda\in\Lambda}(X\backslash A_{\lambda})$. So, for some $\lambda\in\Lambda$ $x\in X\backslash A_{\lambda}$. So, by definition, we have that $x\in X$ and $x\notin A_{\lambda}$ for at least one $\lambda\in\Lambda$. Therefore $x\in X$ but $x\notin\bigcap_{\lambda\in\Lambda} A_{\lambda}$. Thus $x\in X\backslash \bigcap_{\lambda\in\Lambda} A_{\lambda}$ and therefore $X\backslash \bigcap_{\lambda\in\Lambda} A_{\lambda} = \bigcup_{\lambda\in\Lambda}(X\backslash A_{\lambda})$ as desired.\\[20pt]
 
+   \item \input{problem1}
+   \pagebreak
+   \item \input{problem2}
+   \pagebreak
+   \item \input{problem3}
+   \pagebreak
+   \item \input{problem4}
+   \pagebreak
+   \item \input{problem5}
+   \pagebreak
+   \item \input{problem6}
+   \pagebreak
+   \item \input{problem7}
+   \pagebreak
+   \item \input{problem8}
+   \pagebreak
+   \item \input{problem9}
+   \pagebreak
+   \item \input{problem10}
 
-\item (\#3 in 2.1) Consider the subset $D$ of $\mathbb{R}^2$ defined by $D=\{(x,y)|x\leq y^2\}$. Is this set a Cartesian product of two subsets of $\mathbb{R}$? Explain.\\\\
-$D$ is not a cartesian product. Assume by way of contradiction that $D$ is a cartesian product. Well, we can see that the points $(1,1)$ and $(0,0)$ are elements of $D$. Since we assume that $D$ is a cartesian product, we would then have the points $(0,1),(1,0)\in D$. However, $1\nleq 0^2=0$ which is a contradiction. Therefore, $D$ is not a cartesian product.\\[20pt]
-
-
-\item (\#3 in 2.2) Prove or disprove the following: For $B\subseteq Y$ and $f:X\to Y$, $f^{-1}(Y\backslash B)=X\backslash f^{-1}(B)$.\\\\
-Prove: Let $B, X,$ and $Y$ be sets, $B\subseteq Y$, and $f:X\rightarrow Y$ be a function. First assume that $B=\emptyset$. Then $Y\setminus B=Y$. So, $f^{-1}(Y\setminus B)=f^{-1}(Y)=X=X\setminus f^{-1}(B)$. So, assume that $B\neq\emptyset$ Let $x\in f^{-1}(Y\backslash B)$. Then, we have that $f(x)\in Y\setminus B$. So, by definition, $f(x)\in Y$ and $f(x)\notin B$. Again by definition, $x\in X$ but $x\notin f^{-1}(B)$. Therefore $x\in X\backslash f^{-1}(B)$ and $f^{-1}(Y\backslash B)\subseteq X\backslash f^{-1}(B)$. On the other hand, assume $x\in X\backslash f^{-1}(B)$. Well, we have then that $x\in X$ and $x\notin f^{-1}(B)$. So, by definition, $f(x)\in Y$, but also $f(x)\notin B$ Thus, $f(x)\in Y\setminus B$ and so $x\in f^{-1}(Y\backslash B)$. Therefore $f^{-1}(Y\backslash B)=X\backslash f^{-1}(B)$ as desired.\\[20pt]
-
-
-\item (\#5 in 2.2) Prove \textbf{Theorem 2.2.5}: For $A\subseteq X$ and $f:X\to Y$ any function, we have $A\subseteq f^{-1}(f(A))$. If, in addition, $f$ is one-to-one, then $A=f^{-1}(f(A))$.\\\\
-Let $A\subseteq X$ and $f:X\to Y$ be any function. Assume $x\in A$. Then $f(x)=y$ for some $y\in Y$. So by definition of image, we have that $f(x)\in f(A)$. Then by definition of inverse image, we have that $x\in f^{-1}(f(A))$, and so $A\subseteq f^{-1}(f(A))$ as desired. Now, assume that $f$ is injective. Also, let $x\in f^{-1}(f(A))$. So, $f(x)\in f(A)$. Therefore, by definition, there is an $a\in A$ such that $f(x)=f(a)$. Now, since $f$ is one-to-one, we have that $x=a$. Hence $x\in A$. So, by the preiviuos proof, we have that $A=f^{-1}(f(A))$ as was to be done.\\[20pt]
-
-
-\item (\#8 a, b in 2.2) Let $f:X\to Y$ and $g:Y\to Z$ be any functions.
-  \begin{enumerate}
-  \item Prove that if $f$ is one-to-one and $g$ is one-to-one, then $g\circ f:X\to Z$ is one-to-one. Is the converse true?\\
-Let $f$ and $g$ be one-to-one functions as given above with $X, Y,$ and $Z$ as sets. Now, assume that $g(f(x_1))=g(f(x_2))$ for some $x_1, x_2\in X$. Since $g$ is injective, $f(x_1)=f(x_2)$. Also, since $f$ is injective, $x_1=x_2$ and thus $g\circ f:X\rightarrow Z$ is injective as desired. The converse is not true however. Consider $f:\mathbb{R}\rightarrow[0,\infty)$ and $g:[0,\infty)\rightarrow[0,\infty)$ given by $f(x)=x^2$ and $g(x)=\sqrt{x}$. Clearly $g(f(x))=x$ is one-to-one, but $f(x)$ is not.\\[10pt]
-  \item If $g$ is onto and $f$ is onto, then is $g\circ f$ always onto? Is the converse true?\\
-Let $f$ and $g$ be as given with sets $X, Y$, and $Z$. Assume that $f$ and $g$ are onto. Now, let $z\in Z$. Since $g$ is onto, there exists $y\in Y$ such that $g(y)=z$. Now, since $f$ is onto, there exists $x\in X$ such that $f(x)=y$. Thus, there exists $x\in X$ such that $g(f(x))=z$ and so $g\circ f:X\rightarrow Z$ is onto as desired. The converse is not always true. Consider $f:[0,\infty)\rightarrow\mathbb{R}$ and $g:\mathbb{R}\rightarrow[0,\infty)$ defined by $f(x)=\sqrt[3]{x}$ and $g(x)=x^2$. So clearly $g(f(x))=x^{\frac23}$ is onto, but $f$ is not.\\[20pt]
-  \end{enumerate}
-
-
-\item (\#3 in 2.5) Verify that the set $\{1,4,7,10,\ldots\}$ is infinite, by Definition 2.5.2.\\\\
-Let $A=\{1,4,7,10,\ldots\}$. Define $B=\{4,7,10,13,\ldots\}\subset A$. Also define $f:A\rightarrow B$ by $f(x)=x+3$. Now, assume that $f(x_1)=f(x_2)$. So, $x_1+3=x_2+3$, whence $x_1=x_2$. Hence $f$ is injective. Now $y\in Y$ such that $y=x+3$ for some $x\in X$. Therefore, $x=y-3$. So, $f(x)=f(y-3)=(y-3)+3=y$. Since $y$ was arbitrary, we have that $f$ is also onto. So, $f$ is bijective. Thus, $A=B$ and we have that $A$ is equal to a proper subset of itself. Thus by definition, $A$ is infinite as desired.\\[20pt]
-
-
-\item Prove that if $B\subseteq A$ and $B$ is infinite, then $A$ is infinite. Conclude that every subset of a finite set is finite.\\\\
-Let $A$ and $B$ be sets, and $B\subseteq A$. Let $B$ be infinite. Assume first that $B=A$. Then clearly $A$ is infinite. So, assume that $B\subset A$. Now, since $B$ is infinite, there exists an injective function $f:\mathbb{N}\rightarrow B$. So for any $x\in\mathbb{N}$, $f(x)\in B$. Now consider the function $g:B\rightarrow A$ defined by $g(x)=x$ since $B\subset A$. Now, let $x_1,x_2\in B$ and assume that $g(x_1)=g(x_2)$. Then $x_1=x_2$ and so $g(x)$ is injective. So, by above we have that $(g\circ f):\mathbb{N}\rightarrow A$ is injective. Since we have an injective function from $\mathbb{N}$ to $A$, we have that $A$ is infinite by definition. Still letting $B\subseteq A$, we have that if $A$ is finite, then $B$ is also finite by the contrapositive of the above proven statement.\\[20pt]
-
-
-\item Prove that the union of a finite collection of finite sets is finite. \\\\
-Let $X=\{A_1,\ldots, A_n\}$ where $A_i$ is a finite set for all $1\leq i\leq n$. Assume first that $\bigcup_{i=1}^nA_i=\emptyset$. So, $A_i=\emptyset$ for all $0\leq i\leq n$, and $\bigcup_{i=1}^nA_i$ is finite. So, assume that not all $A_i$ are empty. Since $B\cup\emptyset=B$ for any set $B$, define $Y=\{A_1,\ldots A_m\}$ where $A_i$ is a finite nonempty set for all $0\leq i\leq m$. Now consider $m=1$. Then clearly $\bigcup_{i=1}^1A_i=A_1$ which is finite by assumption. Next consider $m=2$, so $\bigcup_{i=1}^2A_i=A_1\cup A_2$. Assume first that $A_1\cap A_2=\emptyset$. Now, since $A_1$ and $A_2$ are finite, there exist bijections $f:A_1\rightarrow\{1,\ldots, k\}$ and $g:A_2\rightarrow\{1,\ldots, l\}$ for some $k,l\in\mathbb{N}$. Define $\tilde{f}:A_1\cup A_2\rightarrow\{1,\ldots, k+l\}$ by $$f(a)=\left\{ \begin{array}{lr} f(a) & $if $a\in A_1 \\ g(a)+k & $if $a\in A_2 \\ \end{array} \right.$$Now, suppose $\tilde{f}(a_1)=\tilde{f}(a_2)$ for some $a_1,a_2\in A_1\cup A_2$. Then, either $f(a_1)=f(a_2)$ or $g(a_1)+k=g(a_2)+k$. In either case, we have that $a_1=a_2$ since both $f$ and $g$ are bijective. Now, let $y\in \{1,\ldots, k+l\}$. again, since $f$ and $g$ are bijective, there exists $x\in A_1\cup A_2$ such that $f(x)=y$. So, $\tilde{f}$ is a bijection, and $A_1\cup A_2$ is finite. Now, assume that $A_1\cap A_2\neq\emptyset$. Now, $A_1\cup A_2=(A_1\setminus A_2)\cup A_2$, and $(A_1\setminus A_2)\cap A_2=\emptyset$. Now since $(A_1\setminus A_2)\subset A_1$, $(A_1\setminus A_2)$ is finite, and so $(A_1\setminus A_2)\cup A_2$ is the union of 2 disjoint finite sets. Thus, the union of 2 finite sets is finte regardless of them being disjoint or not. Then take $m=3$. So, $\bigcup_{i=1}^3A_i=A_1\cup A_2\cup A_3$ is finite as it can be given as $(A_1\cup A_2)\cup A_3$ which is the union of 2 finite sets. Continuing in this manner, we have that $\bigcup_{i=1}^mA_i=A_1\cup\dots\cup A_m$ is finite as desired.\\[20pt]
-
-
-\item Prove that the product of a finite collection of finite sets is finite. (Hint: First prove that the product of two finite sets is finite by writing the product $A\times B$ as a finite union.)\\\\
-Let $A$ and $B$ be finite nonempty sets. Then $B$ is equivalent to $\{1,\ldots, n\}$ for some $n\in\mathbb{N}$. That is, there is a bijection $g:\{1,\ldots, n\}\rightarrow B$ defined by $g(i)=b_i$. So, each $b_i\in B$ is the image of an element of $\{1,\ldots, n\}$ for $1\leq i\leq n$. Now, take $A\times B$. We may write $A\times B=\bigcup_{a\in A}\{a\}\times B$. Then $(\bigcup_{a\in A}\{a\})\times B=\bigcup_{a\in A}(\{a\}\times B)=\bigcup_{a\in A}\{(a,b_i)|b_i\in B, 1\leq i\leq n\}$ for some $n\in\mathbb{N}$. Now, fix $a\in A$ and define $f:\{(a,b_i)|b_i\in B, 1\leq i\leq n\}\rightarrow\{1,\ldots, n\}$ by $f((a,b_i))=i$. Suppose $f((a,b_s))=f((a,b_t))$ for some $b_s,b_t\in B$. Then, $s=t$ by the definition of the function, and since $B$ is equivalent to $\{1,\dots, n\}$ with equivalence $g$, $b_s=b_t$, so $f$ is injective. Let $y\in\{1,\ldots, n\}$. Since $B$ is equivalent to $\{1,\ldots, n\}$ with equivalence $g$ there exists $b\in B$ such that $g(b)=y$. Therefore, there exists $b\in B$ such that $f(a,b)=y$ and so $f$ is onto. Hence, $f$ is bijective, so we have that $\{(a,b_i)|b_i\in B, 1\leq i\leq n\}$ is finite. Then, by problem 8 above, we have $\bigcup_{a\in A}\{(a,b_i)|b_i\in B, 1\leq i\leq n\}$, the finite union of finite sets, is finite. Hence, the product of two finite sets is finite. Now consider finite sets $A_1, A_2$, and $A_3$. Then $A_1\times A_2\times A_3=(A_1\times A_2)\times A_3$. Since $A_1$ and $A_2$ are finite, $A_1\times A_2$ is finite. So, since $A_1\times A_2$ and $A_3$ are finite, $(A_1\times A_2)\times A_3=A_1\times A_2\times A_3$ is also finite. Continuing in the same manner, we have that $A_1\times A_2\times\dots A_m$ for some $m\in\mathbb{N}$ is finite.\\[20pt]
-
-
-\item (\#11 in 2.5) Prove that if Card$(A) = n$ for any $n\in \mathbb{N}$, then Card$(\mathcal{P}(A))=2^n$.\\\\
-First let $A=\emptyset$. Then Card$(A)=0$. So, $\mathcal{P}(A)=\{\emptyset\}$ and Card$(\mathcal{P}(A))=1=2^0$. So, now assume that Card$(A)=n$ and that Card$(\mathcal{P}(A))=2^n$ for some $n\geq0$. Define $A=\{a_1,\ldots, a_n\}$. Now take $A\cup\{a_{n+1}\}$. Then we see that $A\cap\{a_{n+1}\}=\emptyset$. So, Card$(A\cup\{a_{n+1}\})=Card(A)+Card(\{a_{n+1}\})-Card(A\cap\{a_{n+1}\}=\emptyset)=n+1-0=n+1$. Now, $\mathcal{P}(A\cup\{a_{n+1}\})=\mathcal{P}(A)\cup X$ where $X=\{B\cup \{a_{n+1}\}|B\in\mathcal{P}(A)\}$. Define the function $f:X\rightarrow\mathcal{P}(A)$ by $f(C)=B$ where $C=B\cup \{a_{n+1}\}$. Now, take $C_1,C_2\in X$ where $C_1=B_1\cup \{a_{n+1}\}$ and $C_2=B_2\cup \{a_{N=1}\}$ and assume that $f(C_1)=f(C_2)$. Then $B_1\cup \{a_{n+1}\}=B_2\cup \{a_{n+1}\}$, and hence $C_1=C_2$. So, $f$ is injective. Now, take $B\in\mathcal{P}(A)$ and consider $C=B\cup \{a_{n+1}\}$. Then $f(C)=B$ and we have that $f$ is also onto. Then $f$ is bijective and so $Card(X)=Card(\mathcal{P}(A))$ Now, Card$(\mathcal{P}(A\cup\{a_{n+1}\}))=$Card$(\mathcal{P}(A))+$Card$(X)$ and by the induction hypothesis, Card$(\mathcal{P}(A))=2^n$. So, clearly Card$(\mathcal{P}(A))=$Card$(X)=2^n$ since there are still $2^n$ elements in $X$. Hence Card$\mathcal{P}(A\cup\{a_{n+1}\})=2^n+2^n=2^{n+1}$. Thus, we have that if Card$(A)=n$, then Card$(\mathcal{P}(A))=2^n$.
-\end{enumerate}
+ \end{enumerate}
 
 \end{document}

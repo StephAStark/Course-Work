@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.8.27)  23 MAR 2023 16:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.8.27)  23 MAR 2023 16:04
 entering extended mode
-**"c:/Users/sprin/dev/Course-Work/Spring 2022/Topology/hw1/PS1.tex"
-(c:/Users/sprin/dev/Course-Work/Spring 2022/Topology/hw1/PS1.tex
+**"c:/Users/sprin/dev/Course-Work/Spring 2023/Sci Comp II/hw1/hw1.tex"
+(c:/Users/sprin/dev/Course-Work/Spring 2023/Sci Comp II/hw1/hw1.tex
 LaTeX2e <2021-06-01> patch level 1
 L3 programming layer <2021-07-12> (settings.tex (C:\Users\sprin\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
 Document Class: article 2021/02/12 v1.4n Standard LaTeX document class
@@ -352,6 +352,28 @@ Package: fancyhdr 2022/11/09 v4.1 Extensive control of page headers and footers
 \f@nch@O@erf=\skip61
 \f@nch@O@olf=\skip62
 \f@nch@O@orf=\skip63
+) (mcode.sty
+-- Package: `mcode' 2.7 <2015/11/11> --
+Package: mcode 2015/11/11 2.7
+ - settings optimized for display (colour formating)
+ - line numbering enabled
+ - literate programming (character replacements) enabled
+ - automatic line breaking enabled (careful, buggy!)
+ - framed listings
+\lbreakdots=\box69
+LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 230.
+(C:\Users\sprin\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)) (C:\Users\sprin\AppData\Local\Programs\MiKTeX\tex/latex/utfsym\utfsym.sty
+Package: utfsym 2022/04/17 Use TikZ to support icons from Unicode blocks
+ (C:\Users\sprin\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/l3keys2e\l3keys2e.sty (C:\Users\sprin\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
+Package: expl3 2021-07-12 L3 programming layer (loader) 
+ (C:\Users\sprin\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
+File: l3backend-pdftex.def 2021-08-04 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count298
+\l__pdf_internal_box=\box70
+))
+Package: l3keys2e 2021-08-04 LaTeX2e option processing using LaTeX3 keys
 ) (C:\Users\sprin\AppData\Local\Programs\MiKTeX\tex/latex/pgf/frontendlayer\tikz.sty (C:\Users\sprin\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgffor.sty (C:\Users\sprin\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfkeys.sty (C:\Users\sprin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys.code.tex)) (C:\Users\sprin\AppData\Local\Programs\MiKTeX\tex/latex/pgf/math\pgfmath.sty (C:\Users\sprin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code.tex)) (C:\Users\sprin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgffor.code.tex
 Package: pgffor 2021/05/15 v3.1.9a (3.1.9a)
  (C:\Users\sprin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code.tex)
@@ -363,7 +385,7 @@ Package: pgffor 2021/05/15 v3.1.9a (3.1.9a)
 Package: tikz 2021/05/15 v3.1.9a (3.1.9a)
  (C:\Users\sprin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibraryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@plot@mark@count=\count298
+\pgf@plot@mark@count=\count299
 \pgfplotmarksize=\dimen261
 )
 \tikz@lastx=\dimen262
@@ -374,49 +396,24 @@ File: pgflibraryplothandlers.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \tikz@lastmovetoy=\dimen267
 \tikzleveldistance=\dimen268
 \tikzsiblingdistance=\dimen269
-\tikz@figbox=\box69
-\tikz@figbox@bg=\box70
-\tikz@tempbox=\box71
-\tikz@tempbox@bg=\box72
-\tikztreelevel=\count299
-\tikznumberofchildren=\count300
-\tikznumberofcurrentchild=\count301
-\tikz@fig@count=\count302
+\tikz@figbox=\box71
+\tikz@figbox@bg=\box72
+\tikz@tempbox=\box73
+\tikz@tempbox@bg=\box74
+\tikztreelevel=\count300
+\tikznumberofchildren=\count301
+\tikznumberofcurrentchild=\count302
+\tikz@fig@count=\count303
  (C:\Users\sprin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfmatrixcurrentrow=\count303
-\pgfmatrixcurrentcolumn=\count304
-\pgf@matrix@numberofcolumns=\count305
+\pgfmatrixcurrentrow=\count304
+\pgfmatrixcurrentcolumn=\count305
+\pgf@matrix@numberofcolumns=\count306
 )
-\tikz@expandcount=\count306
+\tikz@expandcount=\count307
  (C:\Users\sprin\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-))) (C:\Users\sprin\AppData\Local\Programs\MiKTeX\tex/latex/base\latexsym.sty
-Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
-\symlasy=\mathgroup6
-LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
-(Font)                  U/lasy/m/n --> U/lasy/b/n on input line 52.
-) (C:\Users\sprin\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amscd.sty
-Package: amscd 2017/04/14 v2.1 AMS Commutative Diagrams
-\athelp@=\toks44
-\minaw@=\dimen270
-\bigaw@=\dimen271
-\minCDarrowwidth=\dimen272
-) (C:\Users\sprin\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\euscript.sty
-Package: euscript 2009/06/22 v3.00 Euler Script fonts
-LaTeX Font Info:    Overwriting math alphabet `\EuScript' in version `bold'
-(Font)                  U/eus/m/n --> U/eus/b/n on input line 33.
-) (C:\Users\sprin\AppData\Local\Programs\MiKTeX\tex/latex/utfsym\utfsym.sty
-Package: utfsym 2022/04/17 Use TikZ to support icons from Unicode blocks
- (C:\Users\sprin\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/l3keys2e\l3keys2e.sty (C:\Users\sprin\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
-Package: expl3 2021-07-12 L3 programming layer (loader) 
- (C:\Users\sprin\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
-File: l3backend-pdftex.def 2021-08-04 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count307
-\l__pdf_internal_box=\box73
-))
-Package: l3keys2e 2021-08-04 LaTeX2e option processing using LaTeX3 keys
-)
+)))
    defining Unicode char U+1F000 (decimal 126976)
    defining Unicode char U+1F001 (decimal 126977)
    defining Unicode char U+1F002 (decimal 126978)
@@ -2145,83 +2142,8 @@ Package: l3keys2e 2021-08-04 LaTeX2e option processing using LaTeX3 keys
    defining Unicode char U+27BD (decimal 10173)
    defining Unicode char U+27BE (decimal 10174)
    defining Unicode char U+27BF (decimal 10175)
-) (C:\Users\sprin\AppData\Local\Programs\MiKTeX\tex/generic/xypic\xy.sty (C:\Users\sprin\AppData\Local\Programs\MiKTeX\tex/generic/xypic\xy.tex Bootstrap'ing: catcodes, docmode, (C:\Users\sprin\AppData\Local\Programs\MiKTeX\tex/generic/xypic\xyrecat.tex) (C:\Users\sprin\AppData\Local\Programs\MiKTeX\tex/generic/xypic\xyidioms.tex)
-
- Xy-pic version 3.8.9 <2013/10/06>
- Copyright (c) 1991-2013 by Kristoffer H. Rose <krisrose@tug.org> and others
- Xy-pic is free software: see the User's Guide for details.
-
-Loading kernel: messages; fonts; allocations: state,
-\X@c=\dimen273
-\Y@c=\dimen274
-\U@c=\dimen275
-\D@c=\dimen276
-\L@c=\dimen277
-\R@c=\dimen278
-\Edge@c=\toks45
-\X@p=\dimen279
-\Y@p=\dimen280
-\U@p=\dimen281
-\D@p=\dimen282
-\L@p=\dimen283
-\R@p=\dimen284
-\Edge@p=\toks46
-\X@origin=\dimen285
-\Y@origin=\dimen286
-\X@xbase=\dimen287
-\Y@xbase=\dimen288
-\X@ybase=\dimen289
-\Y@ybase=\dimen290
-\X@min=\dimen291
-\Y@min=\dimen292
-\X@max=\dimen293
-\Y@max=\dimen294
-\lastobjectbox@=\box74
-\zerodotbox@=\box75
-\almostz@=\dimen295
- direction,
-\d@X=\dimen296
-\d@Y=\dimen297
-\K@=\count308
-\KK@=\count309
-\Direction=\count310
-\K@dXdY=\dimen298
-\K@dYdX=\dimen299
-\xyread@=\read4
-\xywrite@=\write4
-\csp@=\count311
-\quotPTK@=\dimen300
- utility macros; pictures: \xy, positions,
-\swaptoks@@=\toks47
-\connectobjectbox@@=\box76
- objects,
-\styletoks@=\toks48
- decorations; kernel objects: directionals, circles, text; options; algorithms: directions, edges, connections;  Xy-pic loaded) (C:\Users\sprin\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifpdf.sty
-Package: ifpdf 2019/10/25 v3.4 ifpdf legacy package. Use iftex instead.
-)
-Package: xy 2013/10/06 Xy-pic version 3.8.9
- (C:\Users\sprin\AppData\Local\Programs\MiKTeX\tex/generic/xypic\xypdf.tex  Xy-pic option: PDF driver v.1.7 loaded)) (C:\Users\sprin\AppData\Local\Programs\MiKTeX\tex/generic/xypic\xyall.tex  Xy-pic option: All features v.3.8 (C:\Users\sprin\AppData\Local\Programs\MiKTeX\tex/generic/xypic\xycurve.tex  Xy-pic option: Curve and Spline extension v.3.12 curve,
-\crv@cnt@=\count312
-\crvpts@=\toks49
-\splinebox@=\box77
-\splineval@=\dimen301
-\splinedepth@=\dimen302
-\splinetol@=\dimen303
-\splinelength@=\dimen304
- circles,
-\L@=\dimen305
- loaded) Xy-pic pdf driver: `curve' extension support (C:\Users\sprin\AppData\Local\Programs\MiKTeX\tex/generic/xypic\xypdf-cu.tex loaded) (C:\Users\sprin\AppData\Local\Programs\MiKTeX\tex/generic/xypic\xyframe.tex  Xy-pic option: Frame and Bracket extension v.3.14 loaded) Xy-pic pdf driver: `frame' extension support (C:\Users\sprin\AppData\Local\Programs\MiKTeX\tex/generic/xypic\xypdf-fr.tex loaded) (C:\Users\sprin\AppData\Local\Programs\MiKTeX\tex/generic/xypic\xycmtip.tex  Xy-pic option: Computer Modern tip extension v.3.7 (C:\Users\sprin\AppData\Local\Programs\MiKTeX\tex/generic/xypic\xytips.tex  Xy-pic option: More Tips extension v.3.11 loaded) loaded) (C:\Users\sprin\AppData\Local\Programs\MiKTeX\tex/generic/xypic\xyline.tex  Xy-pic option: Line styles extension v.3.10
-\xylinethick@=\dimen306
- loaded) Xy-pic pdf driver: `line' extension support (C:\Users\sprin\AppData\Local\Programs\MiKTeX\tex/generic/xypic\xypdf-li.tex loaded) (C:\Users\sprin\AppData\Local\Programs\MiKTeX\tex/generic/xypic\xyrotate.tex  Xy-pic option: Rotate and Scale extension v.3.8 loaded) Xy-pic pdf driver: `rotate' extension support (C:\Users\sprin\AppData\Local\Programs\MiKTeX\tex/generic/xypic\xypdf-ro.tex loaded) (C:\Users\sprin\AppData\Local\Programs\MiKTeX\tex/generic/xypic\xycolor.tex  Xy-pic option: Colour extension v.3.11 loaded) Xy-pic pdf driver: `color' extension support (C:\Users\sprin\AppData\Local\Programs\MiKTeX\tex/generic/xypic\xypdf-co.tex loaded) (C:\Users\sprin\AppData\Local\Programs\MiKTeX\tex/generic/xypic\xymatrix.tex  Xy-pic option: Matrix feature v.3.14
-\Row=\count313
-\Col=\count314
-\queue@=\toks50
-\queue@@=\toks51
-\qcount@=\count315
-\qcount@@=\count316
-\matrixsize@=\count317
- loaded) (C:\Users\sprin\AppData\Local\Programs\MiKTeX\tex/generic/xypic\xyarrow.tex  Xy-pic option: Arrow and Path feature v.3.9 path, \ar, loaded) (C:\Users\sprin\AppData\Local\Programs\MiKTeX\tex/generic/xypic\xygraph.tex  Xy-pic option: Graph feature v.3.11 loaded) loaded)) (PS1.aux)
-\openout1 = `PS1.aux'.
+)) (hw1.aux)
+\openout1 = `hw1.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 3.
 LaTeX Font Info:    ... okay on input line 3.
@@ -2274,41 +2196,251 @@ LaTeX Font Info:    ... okay on input line 3.
 
 (C:\Users\sprin\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count318
-\scratchdimen=\dimen307
-\scratchbox=\box78
-\nofMPsegments=\count319
-\nofMParguments=\count320
-\everyMPshowfont=\toks52
-\MPscratchCnt=\count321
-\MPscratchDim=\dimen308
-\MPnumerator=\count322
-\makeMPintoPDFobject=\count323
-\everyMPtoPDFconversion=\toks53
+\scratchcounter=\count308
+\scratchdimen=\dimen270
+\scratchbox=\box75
+\nofMPsegments=\count309
+\nofMParguments=\count310
+\everyMPshowfont=\toks44
+\MPscratchCnt=\count311
+\MPscratchDim=\dimen271
+\MPnumerator=\count312
+\makeMPintoPDFobject=\count313
+\everyMPtoPDFconversion=\toks45
 ) (C:\Users\sprin\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
  (C:\Users\sprin\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-\c@lstlisting=\count324
+\c@lstlisting=\count314
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
 (lastpage)             ! on input line 3.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 3.
+ (problem1_4.tex
+LaTeX Font Info:    Trying to load font information for U+msa on input line 1.
  (C:\Users\sprin\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 3.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 1.
  (C:\Users\sprin\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+lasy on input line 3.
- (C:\Users\sprin\AppData\Local\Programs\MiKTeX\tex/latex/base\ulasy.fd
-File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
+Underfull \hbox (badness 10000) in paragraph at lines 1--4
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1--4
+
+ []
+
+
+LaTeX Warning: File `212.PNG' not found on input line 13.
+
+
+problem1_4.tex:13: Package pdftex.def Error: File `212.PNG' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.13         \includegraphics[scale=0.18]{212.PNG}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `216.PNG' not found on input line 18.
+
+
+problem1_4.tex:18: Package pdftex.def Error: File `216.PNG' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.18         \includegraphics[scale=0.18]{216.PNG}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `tictoc4.PNG' not found on input line 27.
+
+
+problem1_4.tex:27: Package pdftex.def Error: File `tictoc4.PNG' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.27 ... \includegraphics[scale=0.18]{tictoc4.PNG}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: Reference `LastPage' on page 1 undefined on input line 33.
+
+[1{C:/Users/sprin/AppData/Local/MiKTeX/pdftex/config/pdftex.map}
+
+] (p1_4.m
+LaTeX Font Info:    Trying to load font information for TS1+pcr on input line 7.
+ (C:\Users\sprin\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1pcr.fd
+File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
 )
-Package xypdf Info: Line width: 0.47998pt on input line 3.
- (problem1.tex
+LaTeX Font Info:    Trying to load font information for OMS+pcr on input line 31.
+ (C:\Users\sprin\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\omspcr.fd
+File: omspcr.fd 
+)
+LaTeX Font Info:    Font shape `OMS/pcr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 31.
+)
+
+LaTeX Warning: Reference `LastPage' on page 2 undefined on input line 35.
+
+[2]) (problem1_5.tex
+Underfull \hbox (badness 10000) in paragraph at lines 1--3
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1--3
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4--8
+
+ []
+
+
+LaTeX Warning: File `151a.PNG' not found on input line 11.
+
+
+problem1_5.tex:11: Package pdftex.def Error: File `151a.PNG' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.11 ...    \includegraphics[scale=0.18]{151a.PNG}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `152a.PNG' not found on input line 15.
+
+
+problem1_5.tex:15: Package pdftex.def Error: File `152a.PNG' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.15 ...    \includegraphics[scale=0.18]{152a.PNG}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `151b.PNG' not found on input line 26.
+
+
+problem1_5.tex:26: Package pdftex.def Error: File `151b.PNG' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.26 ...    \includegraphics[scale=0.18]{151b.PNG}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `152b.PNG' not found on input line 30.
+
+
+problem1_5.tex:30: Package pdftex.def Error: File `152b.PNG' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.30 ...    \includegraphics[scale=0.18]{152b.PNG}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: Reference `LastPage' on page 3 undefined on input line 35.
+
+[3] (p1_5_1a.m) (p1_5_2a.m)
+
+LaTeX Warning: Reference `LastPage' on page 4 undefined on input line 37.
+
+[4]
+
+LaTeX Warning: Reference `LastPage' on page 5 undefined on input line 38.
+
+[5] (p1_5_1b.m) (p1_5_2b.m)
+
+LaTeX Warning: Reference `LastPage' on page 6 undefined on input line 42.
+
+[6]) (problem1_6.tex
+Underfull \hbox (badness 10000) in paragraph at lines 1--9
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1--9
+
+ []
+
+
+LaTeX Warning: File `16.PNG' not found on input line 42.
+
+
+problem1_6.tex:42: Package pdftex.def Error: File `16.PNG' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.42         \includegraphics[scale=0.18]{16.PNG}
+                                                 
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: Reference `LastPage' on page 7 undefined on input line 45.
+
+[7]
+
+LaTeX Warning: Reference `LastPage' on page 8 undefined on input line 47.
+
+[8] (p1_6.m)
+
+LaTeX Warning: Reference `LastPage' on page 9 undefined on input line 49.
+
+[9]) (problem2_6.tex
+Underfull \hbox (badness 10000) in paragraph at lines 1--3
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1--3
+
+ []
+
+)
+
+LaTeX Warning: Reference `LastPage' on page 10 undefined on input line 23.
+
+[10] (problem2_7.tex
 Underfull \hbox (badness 10000) in paragraph at lines 1--5
 
  []
@@ -2318,113 +2450,139 @@ Underfull \hbox (badness 10000) in paragraph at lines 1--5
 
  []
 
-) [1{C:/Users/sprin/AppData/Local/MiKTeX/pdftex/config/pdftex.map}
 
-] (problem2.tex
-Underfull \hbox (badness 10000) in paragraph at lines 1--3
-
- []
+LaTeX Warning: File `273.PNG' not found on input line 13.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1--3
+problem2_7.tex:13: Package pdftex.def Error: File `273.PNG' not found: using draft setting.
 
- []
-
-) [2] (problem3.tex
-Underfull \hbox (badness 10000) in paragraph at lines 1--3
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1--3
-
- []
-
-) [3] (problem4.tex
-Underfull \hbox (badness 10000) in paragraph at lines 1--3
-
- []
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.13         \includegraphics[scale=0.2]{273.PNG}
+                                                 
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1--3
-
- []
-
-) [4] (problem5.tex
-Underfull \hbox (badness 10000) in paragraph at lines 1--5
-
- []
+LaTeX Warning: File `274.PNG' not found on input line 17.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 6--13
+problem2_7.tex:17: Package pdftex.def Error: File `274.PNG' not found: using draft setting.
 
- []
-
-) [5] (problem6.tex
-Underfull \hbox (badness 10000) in paragraph at lines 1--2
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1--2
-
- []
-
-) [6] (problem7.tex
-Underfull \hbox (badness 10000) in paragraph at lines 1--3
-
- []
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.17         \includegraphics[scale=0.2]{274.PNG}
+                                                 
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1--3
-
- []
-
-) [7] (problem8.tex
-Underfull \hbox (badness 10000) in paragraph at lines 1--2
-
- []
+LaTeX Warning: File `275.PNG' not found on input line 21.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1--2
+problem2_7.tex:21: Package pdftex.def Error: File `275.PNG' not found: using draft setting.
 
- []
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.21         \includegraphics[scale=0.2]{275.PNG}
+                                                 
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
 
-) [8] (problem9.tex
-Underfull \hbox (badness 10000) in paragraph at lines 1--3
+
+LaTeX Warning: File `276.PNG' not found on input line 25.
+
+
+problem2_7.tex:25: Package pdftex.def Error: File `276.PNG' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.25         \includegraphics[scale=0.2]{276.PNG}
+                                                 
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: Reference `LastPage' on page 11 undefined on input line 32.
+
+[11] (p2_7.m)
+
+LaTeX Warning: Reference `LastPage' on page 12 undefined on input line 34.
+
+[12]) (problem3_5.tex
+Underfull \hbox (badness 10000) in paragraph at lines 1--6
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1--3
-
- []
-
-) [9] (problem10.tex
-Underfull \hbox (badness 10000) in paragraph at lines 1--3
+Underfull \hbox (badness 10000) in paragraph at lines 1--6
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1--3
+LaTeX Warning: Reference `LastPage' on page 13 undefined on input line 14.
+
+[13] (p3_5.m)
+
+LaTeX Warning: Reference `LastPage' on page 14 undefined on input line 16.
+
+[14]) (problem3_6.tex
+Underfull \hbox (badness 10000) in paragraph at lines 1--4
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1--4
+
+ []
+
+)
+
+LaTeX Warning: Reference `LastPage' on page 15 undefined on input line 29.
+
+[15] (problem4_3.tex
+Underfull \hbox (badness 10000) in paragraph at lines 1--6
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1--6
 
  []
 
 ) 
 AED: lastpage setting LastPage
-[10] (PS1.aux) ) 
+
+LaTeX Warning: Reference `LastPage' on page 16 undefined on input line 33.
+
+[16] (hw1.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 21589 strings out of 478868
- 386635 string characters out of 2848809
- 732996 words of memory out of 3000000
- 39103 multiletter control sequences out of 15000+600000
- 410496 words of font info for 59 fonts, out of 8000000 for 9000
+ 19759 strings out of 478868
+ 363893 string characters out of 2848809
+ 801813 words of memory out of 3000000
+ 37298 multiletter control sequences out of 15000+600000
+ 410783 words of font info for 56 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 88i,11n,92p,3295b,323s stack positions out of 5000i,500n,10000p,200000b,80000s
-<C:/Users/sprin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/sprin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/sprin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/sprin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/sprin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/sprin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/sprin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/sprin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/sprin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/sprin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/sprin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on PS1.pdf (10 pages, 146665 bytes).
+ 88i,11n,92p,516b,1500s stack positions out of 5000i,500n,10000p,200000b,80000s
+{C:/Users/sprin/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:/Users/sprin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/sprin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/sprin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/sprin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/sprin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/sprin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/sprin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/sprin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/sprin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/sprin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/sprin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/sprin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/sprin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Users/sprin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/sprin/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb>
+Output written on hw1.pdf (16 pages, 198807 bytes).
 PDF statistics:
- 93 PDF objects out of 1000 (max. 8388607)
+ 133 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
