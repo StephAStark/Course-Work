@@ -1,21 +1,16 @@
-(\#8 a, b in 2.2) Let $f:X\to Y$ and $g:Y\to Z$ be any functions.
-Prove that if $f$ is one-to-one and $g$ is one-to-one, then $g\circ f:X\to Z$ is one-to-one. Is the
-converse true?\\
-If $g$ is onto and $f$ is onto, then is $g\circ f$ always onto? Is the converse true?\\
+(\# 7a in 6.2) A space $X_{\tau}$ is said to be \textit{totally disconnected} if every subspace of $X$
+with more than one element is disconnected (in the subspace topology). Show that every discrete space is
+totally disconnected.\\
 
 \begin{solution}\renewcommand{\qedsymbol}{}\ \\
-    Let $f$ and $g$ be one-to-one functions as given above with $X, Y,$ and $Z$ as sets. Now, assume
-    that $g(f(x_1))=g(f(x_2))$ for some $x_1, x_2\in X$. Since $g$ is injective, $f(x_1)=f(x_2)$. Also,
-    since $f$ is injective, $x_1=x_2$ and thus $g\circ f:X\rightarrow Z$ is injective as desired. The
-    converse is not true however. Consider $f:\mathbb{R}\rightarrow[0,\infty)$ and
-    $g:[0,\infty)\rightarrow[0,\infty)$ given by $f(x)=x^2$ and $g(x)=\sqrt{x}$. Clearly
-    $g(f(x))=x$ is one-to-one, but $f(x)$ is not.\\
-
-    Let $f$ and $g$ be as given with sets $X, Y$, and $Z$. Assume that $f$ and $g$ are onto. Now, let
-    $z\in Z$. Since $g$ is onto, there exists $y\in Y$ such that $g(y)=z$. Now, since $f$ is onto, there
-    exists $x\in X$ such that $f(x)=y$. Thus, there exists $x\in X$ such that $g(f(x))=z$ and so
-    $g\circ f:X\rightarrow Z$ is onto as desired. The converse is not always true. Consider
-    $f:[0,\infty)\rightarrow\mathbb{R}$ and $g:\mathbb{R}\rightarrow[0,\infty)$ defined by
-    $f(x)=\sqrt[3]{x}$ and $g(x)=x^2$. So clearly $g(f(x))=x^{\frac23}$ is onto, but $f$ is not.
+    Let $X$ be a set with the discrete topology. If $X$ itself has only one element, then
+    $X_{\mathcal{D}}$ is vacuously totally disconnected. So, let $Card(X)\geq2$. Now, let $U$ be a
+    subspace of $X_{\mathcal{D}}$ such that $Card(U)\geq2$. Then, consider the sets $V\subset U$ such
+    that $V\neq\emptyset$ and $U\setminus V$. Hence $V, U\setminus V\neq\emptyset$,
+    $V\cap(U\setminus V)=\emptyset$, and $V\cup(U\setminus V)=U$. Now, $V,(U\setminus V)$ are both open
+    in the subspace topology, since $V$ and $(U\setminus V)$ are both open in $X_{\mathcal{D}}$, so $U$
+    is disconnected. Since $U$ was an arbitrary subspace with $Card(U)\geq2$, $X_{\mathcal{D}}$ is
+    totally disconnected. Since $X_{\mathcal{D}}$ was also arbitrary, we have that every discrete space
+    is totally disconnected as desired.
 
 \end{solution}

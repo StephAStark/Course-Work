@@ -1,21 +1,18 @@
-(\#8 a, b in 2.2) Let $f:X\to Y$ and $g:Y\to Z$ be any functions.
-Prove that if $f$ is one-to-one and $g$ is one-to-one, then $g\circ f:X\to Z$ is one-to-one. Is the
-converse true?\\
-If $g$ is onto and $f$ is onto, then is $g\circ f$ always onto? Is the converse true?\\
+Suppose that $X$ is any set and that $\tau$ and $\sigma$ are topologies on $X$. If $A\subseteq X$,
+denote the closure of $A$ with respect to $\tau$ by $\text{Cl}_{\tau} (A)$ and the closure of $A$ with
+respect to $\sigma$ by $\text{Cl}_{\sigma} (A)$. That is, $\text{Cl}_{\tau} (A)$ is the smallest
+$\tau$-closed set containing $A$, and $\text{Cl}_{\sigma} (A)$ is the smallest $\sigma$-closed set
+containing $A$.\\
+Prove that if $\tau$ is finer than $\sigma$, then
+$\text{Cl}_{\tau} (A)\subseteq \text{Cl}_{\sigma} (A)$.\\\\
+
 
 \begin{solution}\renewcommand{\qedsymbol}{}\ \\
-    Let $f$ and $g$ be one-to-one functions as given above with $X, Y,$ and $Z$ as sets. Now, assume
-    that $g(f(x_1))=g(f(x_2))$ for some $x_1, x_2\in X$. Since $g$ is injective, $f(x_1)=f(x_2)$. Also,
-    since $f$ is injective, $x_1=x_2$ and thus $g\circ f:X\rightarrow Z$ is injective as desired. The
-    converse is not true however. Consider $f:\mathbb{R}\rightarrow[0,\infty)$ and
-    $g:[0,\infty)\rightarrow[0,\infty)$ given by $f(x)=x^2$ and $g(x)=\sqrt{x}$. Clearly
-    $g(f(x))=x$ is one-to-one, but $f(x)$ is not.\\
-
-    Let $f$ and $g$ be as given with sets $X, Y$, and $Z$. Assume that $f$ and $g$ are onto. Now, let
-    $z\in Z$. Since $g$ is onto, there exists $y\in Y$ such that $g(y)=z$. Now, since $f$ is onto, there
-    exists $x\in X$ such that $f(x)=y$. Thus, there exists $x\in X$ such that $g(f(x))=z$ and so
-    $g\circ f:X\rightarrow Z$ is onto as desired. The converse is not always true. Consider
-    $f:[0,\infty)\rightarrow\mathbb{R}$ and $g:\mathbb{R}\rightarrow[0,\infty)$ defined by
-    $f(x)=\sqrt[3]{x}$ and $g(x)=x^2$. So clearly $g(f(x))=x^{\frac23}$ is onto, but $f$ is not.
+    Let $X$ be a set with topologies $\tau$ and $\sigma$. Let $A\subseteq X$, and assume that $\tau$ is
+    finer than $\sigma$. That is $\sigma\subseteq\tau$. Well, Cl$_{\sigma}(A)=Y$ such that
+    $Y\subseteq X$, $Y$ is $\sigma-$closed, and $A\subseteq Y$. Since $Y$ is $\sigma-$closed, we have
+    that $X\setminus Y$ is $\sigma-$open. That is, $X\setminus Y\in\sigma$. So, $X\setminus Y\in\tau$
+    and is $\tau-$open. Hence, $Y$ is a $\tau-$closed set that contains $A$. Thus,
+    Cl$_{\tau}(A)\subseteq Y=$Cl$_{\sigma}(A)$.
 
 \end{solution}

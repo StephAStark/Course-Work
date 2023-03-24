@@ -1,16 +1,26 @@
-(\#3 in 2.2) Prove or disprove the following: For $B\subseteq Y$ and $f:X\to Y$,
-$f^{-1}(Y\backslash B)=X\backslash f^{-1}(B)$.\\\\
+Let $X=X_1\times X_2\times \cdots \times X_n$ be a product of topological spaces. Define an equivalence
+relation $\sim$ on $X$ by declaring that $(x_1, x_2, \ldots,x_n)\sim (y_1,y_2,\ldots,y_n)$ if and only
+if $x_1 = y_1$. Show that $X/\sim$ is homeomorphic to $X_1$.\\\\
 
 \begin{solution}\renewcommand{\qedsymbol}{}\ \\
-    Prove: Let $B, X,$ and $Y$ be sets, $B\subseteq Y$, and $f:X\rightarrow Y$ be a function. First
-    assume that $B=\emptyset$. Then $Y\setminus B=Y$. So,
-    $f^{-1}(Y\setminus B)=f^{-1}(Y)=X=X\setminus f^{-1}(B)$. So, assume that $B\neq\emptyset$ Let
-    $x\in f^{-1}(Y\backslash B)$. Then, we have that $f(x)\in Y\setminus B$. So, by definition,
-    $f(x)\in Y$ and $f(x)\notin B$. Again by definition, $x\in X$ but $x\notin f^{-1}(B)$. Therefore
-    $x\in X\backslash f^{-1}(B)$ and $f^{-1}(Y\backslash B)\subseteq X\backslash f^{-1}(B)$. On the
-    other hand, assume $x\in X\backslash f^{-1}(B)$. Well, we have then that $x\in X$ and
-    $x\notin f^{-1}(B)$. So, by definition, $f(x)\in Y$, but also $f(x)\notin B$ Thus,
-    $f(x)\in Y\setminus B$ and so $x\in f^{-1}(Y\backslash B)$. Therefore
-    $f^{-1}(Y\backslash B)=X\backslash f^{-1}(B)$ as desired.
+    Let $\tau_1, \tau_2,\ldots, \tau_n$ be topologies on $X_1, X_2,\ldots, X_n$ respectively such that
+    they are the topologies considered in $X$. Consider the function $f:X/\sim\rightarrow X_1$ defined
+    by $f([(x_1, x_2,\ldots, x_n)])=x_1$. Now, let
+    $[(x_1, x_2,\ldots, x_n)],[(y_1, y_2,\ldots, y_n)]\in X/\sim$ and assume that
+    $f([(x_1, x_2,\ldots, x_n)])=f([(y_1, y_2,\ldots, y_n)])$. Then, $x_1=y_1$ and by definition,
+    $(x_1, x_2, \ldots,x_n)\sim (y_1,y_2,\ldots,y_n)$. Hence
+    $[(x_1, x_2, \ldots,x_n)]=[(y_1,y_2,\ldots,y_n)]$ and $f$ is injective. Now, let $x_1\in X_1$. Then
+    there exists $[(x_1, x_2,\ldots x_n)]\in X/\sim$ such that $f([(x_1, x_2,\ldots, x_n)])=x_1$ by
+    definition of $X$ and $X/\sim$. So, $f$ is also onto and therefore bijective. Now, let $U$ be an
+    open set in $X_1$. Now, $(f\circ\nu)^{-1}(U)=\nu^{-1}(f^{-1}(U))$. Now, for every
+    $(x_1, x_2,\ldots, x_n)\in\nu^{-1}(f^{-1}(U))$, we have that
+    $(x_1, x_2,\ldots, x_n)\in U\times X_2\times\cdots\times X_n\subseteq\nu^{-1}(f^{-1}(U))$, and so
+    $\nu^{-1}(f^{-1}(U))$ is open in $X$. Therefore, we have that $f$ is continuous. Now, let $U$ be an
+    open set in $X/\sim$. So, $\nu^{-1}(U)$ is open in $X$. That is, for every
+    $(x_1, x_2,\ldots, x_n)\in\nu^{-1}(U)$ there exists
+    $V_1\times V_2\times\cdots\times V_n\in\tau_1\times\tau_2\times\cdots\times\tau_n$ such that
+    $(x_1, x_2,\ldots, x_n)\in V_1\times V_2\times\cdots\times V_n\subseteq\nu^{-1}(U)$. Since,
+    $f(U)=V_1$ and since $V_1$ is open in $X_1$, we have that $f$ is also an open map. Therefore, $f$ is
+    a homeomorphism. Thus, $X/\sim\cong X_1$ as desired.
 
 \end{solution}

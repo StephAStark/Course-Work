@@ -1,68 +1,56 @@
-\documentclass[12pt]{article}
-\usepackage[margin=1in]{geometry} 
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{amsthm}
-\usepackage{accents}
-
-
-\setlength{\oddsidemargin}{0in}
-\setlength{\textwidth}{6.5in}
-\setlength{\topmargin}{-.55in}
-\setlength{\textheight}{9in}
-\pagestyle{empty}
-\renewcommand \d{\displaystyle}
-\renewcommand \a{\shortstack{$\rightarrow$\\$u$}}
-\renewcommand \b{\shortstack{$\rightarrow$\\$v$}}
+\input{settings}
 
 \begin{document}
-\noindent Math 5510
 
-\noindent Topology
+\lhead{Stephanie Klumpe}
 
-\noindent Stephanie Klumpe
+\chead{Problem Set 6}
 
-\vspace{.2in}
-\begin{center}
-Problem Set 6
-\end{center}
+\rhead{MATH 5510}
 
- \begin{enumerate}%\setlength{\itemindent}{-1.5em}
-\item Prove Theorem 4.4.3: For any subset $A$ of a topological space $X_{\tau}$,\\ $\text{Cl($A$)}=\text{Int($A$)}\cup\text{Bdy($A$)}$.\\\\
+\cfoot{\thepage\ of \pageref{LastPage}}
 
-Let $X_{\tau}$ be a topological space, and let $A\subseteq X_{\tau}$. Assume first that $A=\emptyset$. Then, we have that $\text{Cl($A$)}=\emptyset=\text{Int($A$)}\cup\text{Bdy($A$)}=\emptyset\cup\emptyset=\emptyset$. So, assume that $A\neq\emptyset$. We will first show that $\text{Int($A$)}\cup\text{Bdy($A$)}\subseteq\text{Cl($A$)}$. Well, $\text{Int}(A)\subseteq\text{Cl}(A)$ by definition, so we only need $\text{Bdy}(A)\subseteq\text{Cl}(A)$. So, let $x\in\text{Bdy}(A)$. So, for every neighborhood $N_x$ of $x$, $A\cap N_x$ and $N_x\cap(X\setminus A)$ are nonempty. Since every neighborhood $N_x$ of x meets $A$, we have that $x\in\text{Cl}(A)$ by Theorem 4.3.2. Therefore, since $\text{Int}(A), \text{Bdy}(A)\subseteq\text{Cl}(A)$, we have $\text{Int($A$)}\cup\text{Bdy($A$)}\subseteq\text{Cl($A$)}$. Now, assume that $x\notin\text{Int($A$)}\cup\text{Bdy($A$)}$. So, $x\notin$Int$(A)$ and $x\notin$Bdy$(A)$. So, there is no open neighborhood, $N_x$, of $x$ such that $N_x\subseteq A$ by Theorem 4.4.1. Also, there exists a neighborhood of $x$ such that $N_x\cap A=\emptyset$ or $N_x\cap(X\setminus A)=\emptyset$. If $N_x\cap A=\emptyset$ we have that $x\notin$Cl$(A)$ by Theorem 4.3.2. If $N_x\cap(X\setminus A)=\emptyset$, then $N_x\subseteq A$, otherwise $N_x=\emptyset$, which contradicts $x\notin$Int$(A)$. So, by the contrapositive, if $x\in$Cl$(A)$, then $x\in\text{Int($A$)}\cup\text{Bdy($A$)}$. Thus, $\text{Cl($A$)}=\text{Int($A$)}\cup\text{Bdy($A$)}$ as desired.\\[20pt]
+ \begin{enumerate}
 
-%See the hints on page 83 of the text.
-%\item Prove that for $A$ and $B$ any subsets of a topological space $X_{\tau}$,\\ $\text{Bdy($A\cup B$)}\subseteq \text{Bdy($A$)}\cup\text{Bdy($B$)}$.
-\item (\#6 in 4.4) Let $X_{\tau}$ be a topological space and let $A\subseteq X$.
-\begin{enumerate}
-\item Show that the sets $\text{Int}(A), \text{Bdy}(A)$ and $\text{Ext}(A)$ are pairwise disjoint.\\\\
+   \item \input{problem1}
+   \pagebreak
+   \item \input{problem2}
+   \pagebreak
+   \item \input{problem3}
+   \pagebreak
+   \item \input{problem4}
+   \pagebreak
+   \item \input{problem5}
+   \pagebreak
+   \item \input{problem6}
 
-Let $X_{\tau}$ and $A$ be as given. We need to show that $\text{Int}(A)\cap\text{Bdy}(A)=\emptyset, \text{Int}(A)\cap\text{Ext}(A)=\emptyset,$ and $\text{Bdy}(A)\cap\text{Ext}(A)=\emptyset$. Well, $\text{Int}(A)\cap\text{Bdy}(A)=\emptyset$ since for every $x\in$Bdy$(A)$, no neighborhood of $x$, $N_x$, is a subset of $A$, and for every $x\in$Int$(A)$, there exists a neighborhood of $x, N_x$, such that $N_x\subseteq A$. Therefore, no x is in $\text{Int}(A)$ and $\text{Bdy}(A)$. Similarly, $\text{Bdy}(A)\cap\text{Ext}(A)=\emptyset$ since for every $x\in$Bdy$(A)$, no neighborhood of $x, N_x$, is a subset of $X\setminus A$, and for every $x\in$Ext$(A)$, there exists a neighborhood of $x, N_x$ such that $N_x\subseteq(X\setminus A)$. Therefore, no $x$ can be in $\text{Bdy}(A)$ and $\text{Ext}(A)$. Finally, let $x\in$Int$(A)$. Then there exists a neighborhood of $x, N_x$, such that $N_x\subseteq A$. Hence, $x\notin$Int$(X\setminus A)$. Similarly, if $x\in$Ext$(A)$, there exists a neighborhood of $x, N_x$, such that $N_x\subseteq(X\setminus A)$ and so $x\notin$Int$(A)$. Thus, Int$(A)\cap$Ext$(A)=\emptyset$. Therefore $\text{Int}(A), \text{Bdy}(A)$ and $\text{Ext}(A)$ are pairwise disjoint.\\
+ \end{enumerate}
 
-\item Prove that $X = \text{Int}(A)\cup \text{Bdy}(A) \cup \text{Ext}(A)$. (Hint: first show that $\text{Bdy}(A)=X\backslash (\text{Int}(A)\cup \text{Ext}(A))$).\\\\
-
-Let $X_{\tau}$ and $A$ be as given. We will first show that $\text{Bdy}(A)=X\backslash (\text{Int}(A)\cup \text{Ext}(A))$. So, let $x\in$Bdy$(A)\subseteq X$. By above, we see that $x\notin$Int$(A)$ and $x\notin$Ext$(A)$. So, $x\in(X\setminus\text{Int}(A))\cap(X\setminus\text{Ext}(A))=X\setminus(\text{Int}(A)\cup \text{Ext}(A))$. Now, let $x\in X\setminus(\text{Int}(A)\cup \text{Ext}(A))$. So, $x\in X$ and $x\notin$Int$(A)\cup$Ext$(A)$. Hence, $x\in X$ and $x\notin$Int$(A)$ and $x\notin$Ext$(A)$. Since $x\notin$Int$(A)$ and $x\notin$Ext$(A)$ and $\text{Int}(A), \text{Bdy}(A)$ and $\text{Ext}(A)$ are pairwise disjoint, we have that $x\in$Bdy$(A)$. Therefore $\text{Bdy}(A)=X\backslash (\text{Int}(A)\cup \text{Ext}(A))$. So, $\text{Int}(A)\cup \text{Bdy}(A) \cup \text{Ext}(A)=X\backslash (\text{Int}(A)\cup \text{Ext}(A))\cup(\text{Int}(A)\cup \text{Ext}(A))=X$ as desired.\\
-
-\end{enumerate}
-
-%\item (\#4 in 4.5) Let $A\subseteq X_{\tau}$ and let $f:X_{\tau} \to Y_{\nu}$ be continuous. If $x$ is a limit point of $A$, must $f(x)$ be a limit point of $f(A)\subseteq Y$? Explain.
-
-\item (\#5 in 5.2) Prove Theorem 5.2.3: If $X_{\tau}$ and $Y_{\sigma}$ are any topological spaces, with basepoints $x_0\in X$ and $y_0\in Y$, then the inclusion maps $$i_X:X_{\tau}\hookrightarrow X_{\tau}\times Y_{\sigma}$$ and $$i_Y:Y_{\sigma}\hookrightarrow X_{\tau}\times Y_{\sigma}$$ are both continuous, where $X_{\tau}\times Y_{\sigma}$ denotes the Cartesian product endowed with the product topology.\\\\
-
-\textbf{Proof}: Let $X_{\tau}, Y_{\sigma}, x_0, y_0, i_X$, and $i_Y$ be as stated above. Now we need only show that $p_X\circ i_X, p_Y\circ i_X, p_X\circ i_Y$ and $p_Y\circ i_Y$ are continuous. We will start with $i_X$. Let $U$ be an open set in $X_{\tau}$. Now, $(p_x\circ i_x)^{-1}(U)=i_X^{-1}(p_X^{-1}(U))$. Since $p_X$ is continuous, we have that $p_X^{-1}(U)$ is open in $X_{\tau}\times Y_{\sigma}$. Now, $p_X^{-1}(U)=\{(x,y)\in X_{\tau}\times Y_{\sigma}|p_X((x,y))=x\in U\}=U\times Y$. So, $i_X^{-1}(p_X^{-1}(U))=\{x\in X|i_X(x)=(x,y_0)\in p_X^{-1}(U)\}=U$, so $p_X\circ i_X$ is continuous. Now, let $U$ be an open set in $Y_{\sigma}$. Well, $(p_Y\circ i_x)^{-1}(U)=i_X^{-1}(p_Y^{-1}(U))$ and $p_Y^{-1}(U)=\{(x,y)\in X_{\tau}\times Y_{\sigma}|p_Y((x,y))=y\in U\}=X\times U$ is open in $X_{\tau}\times Y_{\sigma}$ since $p_Y$ is continuous. Now $i_X^{-1}(p_Y^{-1}(U))=\emptyset$ if $y_0\notin U$ since for all $x\in X$, $i_X(x)=(x,y_0)\notin p_Y^{-1}(U)$. If, on the other hand, $y_0\in U$, then $i_X^{-1}(p_Y^{-1}(U))=X$ since for all $x\in X$, $i_X(x)=(x,y_0)\in p_Y^{-1}(U)$. In either case, $i_X^{-1}(p_Y^{-1}(U))$ is open in $X_{\tau}$, so $p_Y\circ i_X$ is continuous. Therefore, by one of the theorem 5.2.2, $i_X$ is contiuous. Now we will show $i_Y$ is continuous. Let $U$ be an open set in $Y_{\sigma}$. Then $(p_Y\circ i_Y)^{-1}(U)=i_Y^{-1}(p_Y^{-1}(U))$ and $p_Y^{-1}(U)$ is open in $X_{\tau}\times Y_{\sigma}$ since $p_Y$ is continuous. So, $i_Y^{-1}(p_Y^{-1}(U))=\{y\in Y|i_Y(y)=(x_0,y)\in p_Y^{-1}(U)\}=U$ so $p_Y\circ i_Y$ is continuous. Now let $U$ be open in $X_{\tau}$. We have that $(p_X\circ i_Y)^{-1}(U)=i_Y^{-1}(p_X^{-1}(U))$ where $p_X^{-1}(U)$ is open in $X_{\tau}\times Y_{\sigma}$ since $p_X$ is continuous. Now $i_Y^{-1}(p_X^{-1}(U))=\emptyset$ if $x_0\notin U$ since for all $y\in Y, i_Y(y)=(x_0,y)\notin p_X^{-1}(U)$. On the other hand $i_Y^{-1}(p_X^{-1}(U))=Y$ if $x_0\in U$ since for all $y\in Y, i_Y(y)=(x_0,y)\in p_X^{-1}(U)$. So, $(p_Y\circ i_Y)$ and by the same theorem as above, $i_Y$ is also continuous. So, $i_X$ and $i_Y$ are both continuous.
-
-\item Let $f: A \to B$ and $g: C \to D$ be continuous functions. Define a map $f\times g: A\times C \to B\times D$ by the equation $$(f\times g)(a,c) = (f(a), g(c)).$$ Show that $f\times g$ is continuous.\\\\
-
-\textbf{Proof}: Let $f, g$, and $f\times g$ be as given above. Let $\tau_A, \tau_B, \tau_C$, and $\tau_D$ be topologies on $A, B, C$, and $D$ respectively. Let $U$ be open in $B$. Now, $(p_B\circ(f\times g))^{-1}(U)=(f\times g)^{-1}(p_B^{-1}(U))=\{(a,c)\in A\times C|(f\times g)((a,c))=(f(a),g(c))\in p_B^{-1}(U)\}$ where $p_B^{-1}(U)$ is open in $B\times D$ since $p_B$ is continuous. Well, $p_B^{-1}(U)=\{(b,d)\in B\times D|p_B((b,d))=b\in U\}=U\times D$. So, $f(a)\in U$ and $g(c)\in D$ imples that $a\in f^{-1}(U)$ and $c\in g^{-1}(D)=C$. Therefore, $(p_B\circ(f\times g))^{-1}(U)=f^{-1}(U)\times C$ and since $f$ is continuous, $f^{-1}(U)$ and hence $f^{-1}(U)\times C$ is open. So, we see that $(p_B\circ(f\times g))^{-1}(U)$ is open in $A\times C$. Hence, $p_B\circ(f\times g)$ is continuous. Now let $U$ be open in $D$. So, $(p_D\circ(f\times g))^{-1}(U)=(f\times g)^{-1}(p_D^{-1}(U))=\{(a,c)\in A\times C|(f\times g)((a,c))=(f(a),g(c))\in p_D^{-1}(U)\}$ where $p_D^{-1}(U)=B\times U$ is open in $B\times D$ since $p_D$ is continuous. Now, $f(a)\in B$ and $g(c)\in U$ gives us $a\in f^{-1}(B)=A$ and $c\in g^{-1}(U)$. Since $g$ is continuous, $g^{-1}(U)$ is open. Thus, $(p_D\circ(f\times g))^{-1}(U)=A\times g^{-1}(U)$ which is open in $A\times C$. Thus, $p_D\circ(f\times g)$ is continuous, and so $(f\times g)$ is continuous by theorem 5.2.2. 
-
-\item Let $\{X_i\}$, $i\in \mathbb{N}$ be a countable collection of topological spaces. Let $P(\mathbb{N})$ be a permutation of $\mathbb{N}$ (that is, a bijection from $\mathbb{N}$ to $\mathbb{N}$). Prove that the product space $\prod X_i$ is homeomorphic to the product space $\prod X_{P(i)}$. (Hint: start by looking at a finite product, and a permutation of the coordinates to convince yourself of what the homeomorphism should be).\\\\
-
-Let $\{X_i\}, P(\mathbb{N}), \prod X_i$, and $\prod X_{P(i)}$ be as stated. Consider the function $f((x_1, x_2,\ldots))=(x_{P(1)}, x_{P(2)},\dots)$ where $x_i\in X_i$ for all $i\in\mathbb{N}$. Now, let $(x_1, x_2,\ldots), (y_1, y_2,\ldots)\in\prod X_i$ and assume that $f((x_1, x_2,\ldots))=f( (y_1, y_2,\ldots))$. Then $(x_{P(1)}, x_{P(2)},\ldots)=(y_{P(1)}, y_{P(2)},\ldots)$. Since $P(\mathbb{N})$ is a bijection, we see that $(x_1, x_2,\ldots)=(y_1, y_2,\ldots)$, so $f$ is injective. Now, let $(x_{P(1)}, x_{P(2)},\ldots)\in\prod X_{P(i)}$. Since $P$ is bijective, $P$ is onto, and so there exists a $(x_1, x_2,\ldots)\in\prod X_i$ such that $f((x_1, x_2,\ldots))=(x_{P(1)}, x_{P(2)},\ldots)$. So, $f$ is onto and therefore $f$ is bijective. Now, let $p_i$ be the projection map $\prod X_{i}\rightarrow X_{i}$ and $p_{P(i)}$ be the projection map $\prod X_{P(i)}\rightarrow X_{P(i)}$. Consider $p_{P{i}}\circ f:\prod X_i\rightarrow X_{P(i)}$. We see that $(p_{P(i)}\circ f)((x_1, x_2,\ldots))=x_{P(i)}$ which is the permutation of $x_i$ and still a component of $(x_1, x_2,\ldots)$. Similarly, if we consider $p_i\circ f^{-1}:\prod X_{P(i)}\rightarrow X_i$, then we have that $(p_i\circ f^{-1})((x_{P(1)}, x_{P(2)},\ldots))=x_i$ which is still a component of $(x_{P(1)}, x_{P(2)},\ldots)$. Hence, $p_{P(i)}\circ f$ and $p_i\circ f^{-1}$ are projection maps, and are therefore continuous. Thus, both $f$ and $f^{-1}$ are continuous and so $f$ is a homeomorphism. So, $\prod X_i\cong \prod X_{P(i)}$ as desired.
-
-%Now let $U$ be an open set in $X_{P(i)}$ and let $p_i$ be the projection map $\prod X_{P(i)}\rightarrow X_{P(i)}$. So, $(p_{i}\circ f)^{-1}(U)=f^{-1}(p_{i}^{-1}(U))$. Well, $p_{i}$ is continuous for all $i\in\mathbb{N}$, so $p_{i}^{-1}(U)$ is open in $\prod X_{P(i)}$. Then for every $(x_{P(1)},x_{P(2)},\ldots)\in p_i^{-1}(U)$, there exists $V_{P(1)}\times V_{P(2)}\times\cdots\in\tau_{P(1)}\times\tau_{P(2)}\times\cdots$ such that $(x_{P(1)}, x_{P(2)},\ldots)\in V_{P(1)}\times V_{P(2)}\subseteq p_i^{-1}(U)$ where $\tau_{P(1)}\times\tau_{P(2)}\times\cdots$ is the product topology and $\tau_{P(i)}$ is the respective topology on $X_{P(i)}$. So, $f^{-1}(p_{i}^{-1}(U))$ is open in $\prod X_{i}$ since for every $(x_1, x_2,\ldots)\in f^{-1}(p_{i}^{-1}(U))$ we have that $(x_1, x_2,\ldots)\in V_1\times V_2\times\cdots\subseteq f^{-1}(p_{i}^{-1}(U))$ where $\prod V_{P(i)}$ is the permutation of $\prod V_i$, and so $\prod V_i\in\prod\tau_i$. Since $i\in\mathbb{N}$ was arbitrary, we have that $p_{i}\circ f$ is continuous for every $i$. Therefore $f$ is continuous. Now, let $U$ be open in $\prod X_{i}$. So, for every $(x_1, x_2,\ldots)\in U$, there exists $V_1\times V_2\times\cdots\in\tau_1\times\tau_2\times\cdots$ such that $(x_1, x_2,\ldots)\in V_1\times V_2\times\cdots\subseteq U$ where $\prod \tau_i$ is the product topology and $\tau_i$ is the topology on $X_i$ respectively. So, for every $(x_{P(1)}, x_{P(2)},\ldots)\in f(U)$, we have $(x_{P(1)}, x_{P(2)},\ldots)\in V_{P(1)}\times V_{P(2)}\times\cdots\subseteq f(U)$. Therefore, $f(U)$ is open in $\prod X_{P(i)}$. Thus, $f$ is an open map. Therefore $f$ is a homeomorphism and so $X_{P(i)}\cong\prod X_{P(i)}$. 
-
-\end{enumerate}
-
-\noindent \textbf{Bonus}  (\#1 in 5.3) Prove that the basis for the box topology on $\prod X_{\alpha}$, $\mathcal{B}=\prod \tau_{\alpha}$, is in fact a basis. That is, show that it satisfies the two conditions of Definition 4.2.1.
 \end{document}
+
+%\item Prove that for $A$ and $B$ any subsets of a topological space $X_{\tau}$,\\ 
+% $\text{Bdy($A\cup B$)}\subseteq \text{Bdy($A$)}\cup\text{Bdy($B$)}$.
+
+%\item (\#4 in 4.5) Let $A\subseteq X_{\tau}$ and let $f:X_{\tau} \to Y_{\nu}$ be continuous. If $x$ is
+% a limit point of $A$, must $f(x)$ be a limit point of $f(A)\subseteq Y$? Explain.
+
+%Now let $U$ be an open set in $X_{P(i)}$ and let $p_i$ be the projection map
+% $\prod X_{P(i)}\rightarrow X_{P(i)}$. So, $(p_{i}\circ f)^{-1}(U)=f^{-1}(p_{i}^{-1}(U))$. Well,
+% $p_{i}$ is continuous for all $i\in\mathbb{N}$, so $p_{i}^{-1}(U)$ is open in $\prod X_{P(i)}$. Then
+% for every $(x_{P(1)},x_{P(2)},\ldots)\in p_i^{-1}(U)$, there exists
+% $V_{P(1)}\times V_{P(2)}\times\cdots\in\tau_{P(1)}\times\tau_{P(2)}\times\cdots$ such that
+% $(x_{P(1)}, x_{P(2)},\ldots)\in V_{P(1)}\times V_{P(2)}\subseteq p_i^{-1}(U)$ where
+% $\tau_{P(1)}\times\tau_{P(2)}\times\cdots$ is the product topology and $\tau_{P(i)}$ is the respective
+% topology on $X_{P(i)}$. So, $f^{-1}(p_{i}^{-1}(U))$ is open in $\prod X_{i}$ since for every
+% $(x_1, x_2,\ldots)\in f^{-1}(p_{i}^{-1}(U))$ we have that
+% $(x_1, x_2,\ldots)\in V_1\times V_2\times\cdots\subseteq f^{-1}(p_{i}^{-1}(U))$ where
+% $\prod V_{P(i)}$ is the permutation of $\prod V_i$, and so $\prod V_i\in\prod\tau_i$. Since
+% $i\in\mathbb{N}$ was arbitrary, we have that $p_{i}\circ f$ is continuous for every $i$. Therefore
+% $f$ is continuous. Now, let $U$ be open in $\prod X_{i}$. So, for every $(x_1, x_2,\ldots)\in U$,
+% there exists $V_1\times V_2\times\cdots\in\tau_1\times\tau_2\times\cdots$ such that
+% $(x_1, x_2,\ldots)\in V_1\times V_2\times\cdots\subseteq U$ where $\prod \tau_i$ is the product
+% topology and $\tau_i$ is the topology on $X_i$ respectively. So, for every
+% $(x_{P(1)}, x_{P(2)},\ldots)\in f(U)$, we have
+% $(x_{P(1)}, x_{P(2)},\ldots)\in V_{P(1)}\times V_{P(2)}\times\cdots\subseteq f(U)$. Therefore, $f(U)$
+% is open in $\prod X_{P(i)}$. Thus, $f$ is an open map. Therefore $f$ is a homeomorphism and so
+% $X_{P(i)}\cong\prod X_{P(i)}$. 

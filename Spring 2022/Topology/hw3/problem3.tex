@@ -1,16 +1,17 @@
-(\#3 in 2.2) Prove or disprove the following: For $B\subseteq Y$ and $f:X\to Y$,
-$f^{-1}(Y\backslash B)=X\backslash f^{-1}(B)$.\\\\
+Find the closure and the interior of the interval [1,3] in $\mathbb{R}_{\mathcal{FC}}$.\\\\
+
 
 \begin{solution}\renewcommand{\qedsymbol}{}\ \\
-    Prove: Let $B, X,$ and $Y$ be sets, $B\subseteq Y$, and $f:X\rightarrow Y$ be a function. First
-    assume that $B=\emptyset$. Then $Y\setminus B=Y$. So,
-    $f^{-1}(Y\setminus B)=f^{-1}(Y)=X=X\setminus f^{-1}(B)$. So, assume that $B\neq\emptyset$ Let
-    $x\in f^{-1}(Y\backslash B)$. Then, we have that $f(x)\in Y\setminus B$. So, by definition,
-    $f(x)\in Y$ and $f(x)\notin B$. Again by definition, $x\in X$ but $x\notin f^{-1}(B)$. Therefore
-    $x\in X\backslash f^{-1}(B)$ and $f^{-1}(Y\backslash B)\subseteq X\backslash f^{-1}(B)$. On the
-    other hand, assume $x\in X\backslash f^{-1}(B)$. Well, we have then that $x\in X$ and
-    $x\notin f^{-1}(B)$. So, by definition, $f(x)\in Y$, but also $f(x)\notin B$ Thus,
-    $f(x)\in Y\setminus B$ and so $x\in f^{-1}(Y\backslash B)$. Therefore
-    $f^{-1}(Y\backslash B)=X\backslash f^{-1}(B)$ as desired.
+    Well, Cl$([1,3])$ is the smallest subset $A\subseteq\mathbb{R}_{\mathcal{FC}}$ such that $A$ is
+    closed and $[1,3]\subseteq A$. Now, Cl$([1,3])=\mathbb{R}$. Assume by way of contradiction that
+    there exists $X\subset\mathbb{R}$ such that $[1,3]\subseteq X$ and $X$ is closed in
+    $\mathbb{R}_{\mathcal{FC}}$. Then $\mathbb{R}\setminus X$ is open in $\mathbb{R}_{\mathcal{FC}}$ and
+    so $X$ is finite. This is a contradiction though since there is no finite set $X$ such that
+    $[1,3]\subseteq X$. Next, Int$([1,3])$ is the largest open subset of $[1,3]$. So,
+    Int$([1,3])=\emptyset$. Assume by way of contradiction that there exists an open set
+    $X\subseteq[1,3]$ such that $X\neq\emptyset$ and $X$ is open in $\mathbb{R}_{\mathcal{FC}}$ Then
+    $\mathbb{R}\setminus X$ is finite. However, even if $X=[1,3]$, $\mathbb{R}\setminus X$ would not be
+    finite. Hence, there exists no nonempty subset $X$ of $[1,3]$ such that $X$ is open in
+    $\mathbb{R}_{\mathcal{FC}}$.
 
 \end{solution}

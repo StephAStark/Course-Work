@@ -1,10 +1,14 @@
-(\#3 in 2.1) Consider the subset $D$ of $\mathbb{R}^2$ defined by $D=\{(x,y)|x\leq y^2\}$. Is this set a
-Cartesian product of two subsets of $\mathbb{R}$? Explain.\\\\
+(\#2 in 3.3) Prove that no nonempty proper subset of $\mathbb{R}_{\mathcal{FC}}$ is simultaneously open
+and closed.\\\\
 
 \begin{solution}\renewcommand{\qedsymbol}{}\ \\
-    $D$ is not a cartesian product. Assume by way of contradiction that $D$ is a cartesian product.
-    Well, we can see that the points $(1,1)$ and $(0,0)$ are elements of $D$. Since we assume that $D$
-    is a cartesian product, we would then have the points $(0,1),(1,0)\in D$. However, $1\nleq 0^2=0$
-    which is a contradiction. Therefore, $D$ is not a cartesian product.
+    Let $A\subset\mathbb{R}_{\mathcal{FC}}$ be such that $A\neq\emptyset$. Assume by way of
+    contradiction that $A$ is both open and closed in $\mathbb{R}_{\mathcal{FC}}$. Since $A$ is open, we
+    have that $A\subseteq\mathbb{R}_{\mathcal{FC}}$ and therefore $A$ is infinite by definition. So,
+    $\mathbb{R}\setminus A$ is finite since $A$ is nonempty. Since $A$ is closed, we have that
+    $\mathbb{R}\setminus A$ is open. That is $\mathbb{R}\setminus A\in\mathcal{FC}$. So,
+    $\mathbb{R}\setminus(\mathbb{R}\setminus A)=A$ is finite since $A\neq\mathbb{R}$. However, this
+    contradicts $A\in\mathcal{FC}$ and $A$ being infinite. Since $A$ was an arbitrary nonempty proper
+    subset, we have that no such subset of $\mathbb{R}_{\mathcal{FC}}$ is both open and closed.
 
 \end{solution}

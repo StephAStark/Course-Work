@@ -1,21 +1,12 @@
-(\#8 a, b in 2.2) Let $f:X\to Y$ and $g:Y\to Z$ be any functions.
-Prove that if $f$ is one-to-one and $g$ is one-to-one, then $g\circ f:X\to Z$ is one-to-one. Is the
-converse true?\\
-If $g$ is onto and $f$ is onto, then is $g\circ f$ always onto? Is the converse true?\\
+If $p$ is an isolated point of a subset $A$ in a topological space $X_{\tau}$, show that there exists a
+$\tau$-open set $U$ such that $U\cap A = \{p\}$.\\\\
 
 \begin{solution}\renewcommand{\qedsymbol}{}\ \\
-    Let $f$ and $g$ be one-to-one functions as given above with $X, Y,$ and $Z$ as sets. Now, assume
-    that $g(f(x_1))=g(f(x_2))$ for some $x_1, x_2\in X$. Since $g$ is injective, $f(x_1)=f(x_2)$. Also,
-    since $f$ is injective, $x_1=x_2$ and thus $g\circ f:X\rightarrow Z$ is injective as desired. The
-    converse is not true however. Consider $f:\mathbb{R}\rightarrow[0,\infty)$ and
-    $g:[0,\infty)\rightarrow[0,\infty)$ given by $f(x)=x^2$ and $g(x)=\sqrt{x}$. Clearly
-    $g(f(x))=x$ is one-to-one, but $f(x)$ is not.\\
-
-    Let $f$ and $g$ be as given with sets $X, Y$, and $Z$. Assume that $f$ and $g$ are onto. Now, let
-    $z\in Z$. Since $g$ is onto, there exists $y\in Y$ such that $g(y)=z$. Now, since $f$ is onto, there
-    exists $x\in X$ such that $f(x)=y$. Thus, there exists $x\in X$ such that $g(f(x))=z$ and so
-    $g\circ f:X\rightarrow Z$ is onto as desired. The converse is not always true. Consider
-    $f:[0,\infty)\rightarrow\mathbb{R}$ and $g:\mathbb{R}\rightarrow[0,\infty)$ defined by
-    $f(x)=\sqrt[3]{x}$ and $g(x)=x^2$. So clearly $g(f(x))=x^{\frac23}$ is onto, but $f$ is not.
+    Let $X_{\tau}$ be a topological space and let $A\subseteq X_{\tau}$ with $p$ an isolated point of
+    $A$. By definition, $p\notin A'$. Then $p\notin\{x|$for all neighborhoods $N_x$ of
+    $x, (N_x\setminus\{x\})\cap A\neq\emptyset\}$. That is, there exists a neighborhood, $N_p$, of $p$
+    such that $(N_p\setminus\{p\})\cap A=\emptyset$. By definition of neighborhood,
+    $N_p$ is $\tau-$open. Thus, there exists a $\tau-$open set, $N_p$, such that $N_p\cap A=\{p\}$
+    as desired.
 
 \end{solution}

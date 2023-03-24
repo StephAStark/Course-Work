@@ -1,12 +1,10 @@
-(\#5 in 2.2) Prove \textbf{Theorem 2.2.5}: For $A\subseteq X$ and $f:X\to Y$ any function, we have
-$A\subseteq f^{-1}(f(A))$. If, in addition, $f$ is one-to-one, then $A=f^{-1}(f(A))$.\\\\
+(\#7 in 4.3) Prove that if $A$ is any subset of the indiscrete space $X_{\mathcal{I}}$, with
+$\text{Card($A$)}\geq 2$, then $A' = X$.\\\\
 
 \begin{solution}\renewcommand{\qedsymbol}{}\ \\
-    Let $A\subseteq X$ and $f:X\to Y$ be any function. Assume $x\in A$. Then $f(x)=y$ for some $y\in Y$.
-    So by definition of image, we have that $f(x)\in f(A)$. Then by definition of inverse image, we have
-    that $x\in f^{-1}(f(A))$, and so $A\subseteq f^{-1}(f(A))$ as desired. Now, assume that $f$ is
-    injective. Also, let $x\in f^{-1}(f(A))$. So, $f(x)\in f(A)$. Therefore, by definition, there is an
-    $a\in A$ such that $f(x)=f(a)$. Now, since $f$ is one-to-one, we have that $x=a$. Hence $x\in A$.
-    So, by the preiviuos proof, we have that $A=f^{-1}(f(A))$ as was to be done.
+    Let $A\subseteq X_{\mathcal{I}}$ with Card$(A)\geq2$. We have that $A'\subseteq X$ by definition.
+    So, let $x\in X$. Since $\mathcal{I}=\{X,\emptyset\}$, every neighborhood of $x$ is $X$ itself.
+    Since $A\subseteq X_{\mathcal{I}}$ with Card$(A)\geq2$, $(X\setminus\{x\})\cap A\neq\emptyset$.
+    Therefore $x\in A'$. Thus, $X=A'$.
 
 \end{solution}

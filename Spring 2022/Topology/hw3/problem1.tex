@@ -1,26 +1,20 @@
-(\#1 in 2.1) Prove \textbf{Theorem 2.1.3 (ii)} (DeMorgan's law): If $X$ is any set and
-$\{A_{\lambda}|\lambda\in\Lambda\}$ is any indexed collection of sets, then
-$X\backslash \bigcap_{\lambda\in\Lambda} A_{\lambda} = 
-\bigcup_{\lambda\in\Lambda}(X\backslash A_{\lambda})$.\\\\
+In the topology $\mathcal{U}$ on $\mathbb{R}$, give an example of an infinite union of closed sets that
+is open (and bounded).\\\\
 
 \begin{solution}\renewcommand{\qedsymbol}{}\ \\
-    Let $X$ be a set and $\{A_{\lambda}|\lambda\in\Lambda\}$ be an indexed collection of sets. First
-    consider the case $\bigcup_{\lambda\in\Lambda}(X\backslash A_{\lambda})=\emptyset$. Then
-    $X\backslash A_{\lambda}=\emptyset$ for every $\lambda\in\Lambda$. So, $A_{\lambda}=X$ for all
-    $\lambda\in\Lambda$. Hence $\bigcap_{\lambda\in\Lambda}A_{\lambda}=X$, and thus
-    $X\backslash \bigcap_{\lambda\in\Lambda} A_{\lambda} =\emptyset$, preserving equality. So, assume
-    that $X\backslash \bigcap_{\lambda\in\Lambda} A_{\lambda}\neq\emptyset$. Now, let
-    $x\in X\backslash \bigcap_{\lambda\in\Lambda} A_{\lambda}$. Then, $x\in X$, but
-    $x\notin\bigcap_{\lambda\in\Lambda} A_{\lambda}$. So, by definition of intersection,
-    $x\notin A_{\lambda}$ for at least one $\lambda\in\Lambda$. So, for some $\lambda\in\Lambda$, we
-    have that $x\in X\setminus A_{\lambda}$. Hence
-    $x\in\bigcup_{\lambda\in\Lambda}(X\backslash A_{\lambda})$. Conversely, assume that
-    $x\in\bigcup_{\lambda\in\Lambda}(X\backslash A_{\lambda})$. So, for some $\lambda\in\Lambda$
-    $x\in X\backslash A_{\lambda}$. So, by definition, we have that $x\in X$ and $x\notin A_{\lambda}$
-    for at least one $\lambda\in\Lambda$. Therefore $x\in X$ but
-    $x\notin\bigcap_{\lambda\in\Lambda} A_{\lambda}$. Thus
-    $x\in X\backslash \bigcap_{\lambda\in\Lambda} A_{\lambda}$ and therefore
-    $X\backslash \bigcap_{\lambda\in\Lambda} A_{\lambda} = 
-    \bigcup_{\lambda\in\Lambda}(X\backslash A_{\lambda})$ as desired.
+    Consider the union $\bigcup_{n\in\mathbb{N}}[\frac{1}{n+1},1-\frac{1}{n+1}]$. Well,
+    $[\frac{1}{n+1},1-\frac{1}{n+1}]$ is closed in $\mathbb{R}_{\mathcal{U}}$ since
+    $\mathbb{R}\setminus[\frac{1}{n+1},1-\frac{1}{n+1}]=(-\infty,\frac{1}{n+1})\cup(1-\frac{1}{n+1})$ is
+    open in $\mathbb{R}_{\mathcal{U}}$. Now,
+
+    $$\bigcup_{n\in\mathbb{N}}[\frac{1}{n+1},1-\frac{1}{n+1}]=\{\frac12\}\cup[\frac13,\frac23]
+    \cup[\frac14,\frac34]\cup\ldots=(0,1)$$
+    
+    which is open in $\mathbb{R}_{\mathcal{U}}$. Now,
+    $\bigcup_{n\in\mathbb{N}}[\frac{1}{n+1},1-\frac{1}{n+1}]=(0,1)$ since
+    $\lim_{n\rightarrow\infty}(\frac{1}{n+1})=0$ and $\lim_{n\rightarrow\infty}(1-\frac{1}{n+1})=1$, and
+    so every real number between 0 and 1 will be in
+    $\bigcup_{n\in\mathbb{N}}[\frac{1}{n+1},1-\frac{1}{n+1}]$. Therefore an infinite union of closed
+    sets need not be closed.
 
 \end{solution}

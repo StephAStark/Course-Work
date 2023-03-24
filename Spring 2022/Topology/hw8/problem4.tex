@@ -1,12 +1,14 @@
-(\#5 in 2.2) Prove \textbf{Theorem 2.2.5}: For $A\subseteq X$ and $f:X\to Y$ any function, we have
-$A\subseteq f^{-1}(f(A))$. If, in addition, $f$ is one-to-one, then $A=f^{-1}(f(A))$.\\\\
+Prove that any quotient space of a path-connected space is path-connected. That is, if $X_{\tau}$ is a
+path-connected space and $\sim$ is an equivalence relation on $X$, then the quotient space $X/\sim$ is
+path-connected.\\\\
 
 \begin{solution}\renewcommand{\qedsymbol}{}\ \\
-    Let $A\subseteq X$ and $f:X\to Y$ be any function. Assume $x\in A$. Then $f(x)=y$ for some $y\in Y$.
-    So by definition of image, we have that $f(x)\in f(A)$. Then by definition of inverse image, we have
-    that $x\in f^{-1}(f(A))$, and so $A\subseteq f^{-1}(f(A))$ as desired. Now, assume that $f$ is
-    injective. Also, let $x\in f^{-1}(f(A))$. So, $f(x)\in f(A)$. Therefore, by definition, there is an
-    $a\in A$ such that $f(x)=f(a)$. Now, since $f$ is one-to-one, we have that $x=a$. Hence $x\in A$.
-    So, by the preiviuos proof, we have that $A=f^{-1}(f(A))$ as was to be done.
+    Let $X_{\tau}$ be a path-connected topological space and $\sim$ an equivalence relation on $X$.
+    Then, for every $x_0,x_1\in X$, there exists a path $\alpha:[0,1]\rightarrow X_{\tau}$ with
+    $\alpha(0)=x_0$ and $\alpha(1)=x_1$. Let $[y_0],[y_1]\in X/\sim$. Let $x_0\sim y_0$ and
+    $x_1\sim y_1$. Since there exists a path $\alpha$ between $x_0$ and $x_1$ and $x_0\sim y_0$ and
+    $x_1\sim y_1$, we see that $\nu\circ\alpha:[0,1]\rightarrow X/\sim$ is also a path in $X/\sim$ by
+    composition of continuous functions and since $(\nu\circ\alpha)(0)=\nu(\alpha(0))=\nu(x_0)=[y_0]$
+    and $(\nu\circ\alpha)(1)=\nu(\alpha(1))=\nu(x_1)=[y_1]$. Therefore, $X/\sim$ is path-connected.
 
 \end{solution}

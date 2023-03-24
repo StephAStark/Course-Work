@@ -1,11 +1,19 @@
-(\#3 in 2.5) Verify that the set $\{1,4,7,10,\ldots\}$ is infinite, by Definition 2.5.2.\\\\
+(\#7 in 7.3) Prove the Closed Graph Theorem: If $f: X_{\tau} \to Y_{\nu}$ is continuous, with $Y$ both
+compact and Hausdorff, then the graph
+
+$$G_f = \{(x,y) \in X\times Y | y=f(x)\}$$
+
+is closed in $X_{\tau}\times Y_{\nu}$.\\\\
 
 \begin{solution}\renewcommand{\qedsymbol}{}\ \\
-    Let $A=\{1,4,7,10,\ldots\}$. Define $B=\{4,7,10,13,\ldots\}\subset A$. Also define
-    $f:A\rightarrow B$ by $f(x)=x+3$. Now, assume that $f(x_1)=f(x_2)$. So, $x_1+3=x_2+3$, whence
-    $x_1=x_2$. Hence $f$ is injective. Now $y\in Y$ such that $y=x+3$ for some $x\in X$. Therefore,
-    $x=y-3$. So, $f(x)=f(y-3)=(y-3)+3=y$. Since $y$ was arbitrary, we have that $f$ is also onto. So,
-    $f$ is bijective. Thus, $A=B$ and we have that $A$ is equal to a proper subset of itself. Thus by
-    definition, $A$ is infinite as desired.
+    Let $X_{\tau}$ and $Y_{\nu}$ be topological spaces with $Y_{\nu}$ compact and Hausdorff and let
+    $f:X_{\tau}\rightarrow Y_{\nu}$ be continuous. We will show that $(X\times Y)\setminus G_f$ is open.
+    So, let $(x,y)\in(X\times Y)\setminus G_f$. So, for this $(x,y)$, we have that $y\neq f(x)$. Since
+    $Y$ is Hausdorff, there exist disjoint $\nu-$open sets $U,V$ such that $y\in U$ and $f(x)\in V$. Let
+    $M_{f(x)}$ be an open neighborhood of $f(x)$. Since $f$ is continuous, there exists a $\tau$-open
+    neighborhood, $N_x$, of $x$ such that $N_x\subseteq f^{-1}(M_{f(x)})$. Since
+    $y\neq f(x), U\subset Y$ and $(x,y)\in N_x\times U\subset(X\times Y)\setminus G_f$, and since
+    $(x,y)\in(X\times Y)\setminus G_f$ was arbitrary, we have that $(X\times Y)\setminus G_f$ is open.
+    Thus, $G_f$ is closed in $X\times Y$ as desired.
 
 \end{solution}

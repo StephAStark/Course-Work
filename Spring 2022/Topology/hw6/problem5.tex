@@ -1,21 +1,26 @@
-(\#8 a, b in 2.2) Let $f:X\to Y$ and $g:Y\to Z$ be any functions.
-Prove that if $f$ is one-to-one and $g$ is one-to-one, then $g\circ f:X\to Z$ is one-to-one. Is the
-converse true?\\
-If $g$ is onto and $f$ is onto, then is $g\circ f$ always onto? Is the converse true?\\
+Let $f: A \to B$ and $g: C \to D$ be continuous functions. Define a map
+$f\times g: A\times C \to B\times D$ by the equation
+
+$$(f\times g)(a,c) = (f(a), g(c)).$$
+
+Show that $f\times g$ is continuous.\\\\
 
 \begin{solution}\renewcommand{\qedsymbol}{}\ \\
-    Let $f$ and $g$ be one-to-one functions as given above with $X, Y,$ and $Z$ as sets. Now, assume
-    that $g(f(x_1))=g(f(x_2))$ for some $x_1, x_2\in X$. Since $g$ is injective, $f(x_1)=f(x_2)$. Also,
-    since $f$ is injective, $x_1=x_2$ and thus $g\circ f:X\rightarrow Z$ is injective as desired. The
-    converse is not true however. Consider $f:\mathbb{R}\rightarrow[0,\infty)$ and
-    $g:[0,\infty)\rightarrow[0,\infty)$ given by $f(x)=x^2$ and $g(x)=\sqrt{x}$. Clearly
-    $g(f(x))=x$ is one-to-one, but $f(x)$ is not.\\
-
-    Let $f$ and $g$ be as given with sets $X, Y$, and $Z$. Assume that $f$ and $g$ are onto. Now, let
-    $z\in Z$. Since $g$ is onto, there exists $y\in Y$ such that $g(y)=z$. Now, since $f$ is onto, there
-    exists $x\in X$ such that $f(x)=y$. Thus, there exists $x\in X$ such that $g(f(x))=z$ and so
-    $g\circ f:X\rightarrow Z$ is onto as desired. The converse is not always true. Consider
-    $f:[0,\infty)\rightarrow\mathbb{R}$ and $g:\mathbb{R}\rightarrow[0,\infty)$ defined by
-    $f(x)=\sqrt[3]{x}$ and $g(x)=x^2$. So clearly $g(f(x))=x^{\frac23}$ is onto, but $f$ is not.
+    Let $f, g$, and $f\times g$ be as given above. Let $\tau_A, \tau_B, \tau_C$, and $\tau_D$ be
+    topologies on $A, B, C$, and $D$ respectively. Let $U$ be open in $B$. Now,
+    $(p_B\circ(f\times g))^{-1}(U)=(f\times g)^{-1}(p_B^{-1}(U))=
+    \{(a,c)\in A\times C|(f\times g)((a,c))=(f(a),g(c))\in p_B^{-1}(U)\}$ where $p_B^{-1}(U)$ is open
+    in $B\times D$ since $p_B$ is continuous. Well,
+    $p_B^{-1}(U)=\{(b,d)\in B\times D|p_B((b,d))=b\in U\}=U\times D$. So, $f(a)\in U$ and $g(c)\in D$
+    imples that $a\in f^{-1}(U)$ and $c\in g^{-1}(D)=C$. Therefore,
+    $(p_B\circ(f\times g))^{-1}(U)=f^{-1}(U)\times C$ and since $f$ is continuous, $f^{-1}(U)$ and
+    hence $f^{-1}(U)\times C$ is open. So, we see that $(p_B\circ(f\times g))^{-1}(U)$ is open in
+    $A\times C$. Hence, $p_B\circ(f\times g)$ is continuous. Now let $U$ be open in $D$. So,
+    $(p_D\circ(f\times g))^{-1}(U)=(f\times g)^{-1}(p_D^{-1}(U))=\{(a,c)\in A\times C|(f\times g)((a,c))
+    =(f(a),g(c))\in p_D^{-1}(U)\}$ where $p_D^{-1}(U)=B\times U$ is open in $B\times D$ since $p_D$ is
+    continuous. Now, $f(a)\in B$ and $g(c)\in U$ gives us $a\in f^{-1}(B)=A$ and $c\in g^{-1}(U)$. Since
+    $g$ is continuous, $g^{-1}(U)$ is open. Thus, $(p_D\circ(f\times g))^{-1}(U)=A\times g^{-1}(U)$
+    which is open in $A\times C$. Thus, $p_D\circ(f\times g)$ is continuous, and so $(f\times g)$
+    is continuous by theorem 5.2.2. 
 
 \end{solution}

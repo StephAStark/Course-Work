@@ -1,77 +1,31 @@
-\documentclass[12pt]{article}
-\usepackage[margin=1in]{geometry} 
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{amsthm}
-\usepackage{accents}
-
-
-\setlength{\oddsidemargin}{0in}
-\setlength{\textwidth}{6.5in}
-\setlength{\topmargin}{-.55in}
-\setlength{\textheight}{9in}
-\pagestyle{empty}
-\renewcommand \d{\displaystyle}
-\renewcommand \a{\shortstack{$\rightarrow$\\$u$}}
-\renewcommand \b{\shortstack{$\rightarrow$\\$v$}}
+\input{settings}
 
 \begin{document}
-\noindent Math 5510
 
-\noindent Topology
+\lhead{Stephanie Klumpe}
 
-\noindent Stephanie Klumpe
+\chead{Problem Set 4}
 
-\vspace{.2in}
-\begin{center}
-Problem Set 4
-\end{center}
+\rhead{MATH 5510}
 
- \begin{enumerate}%\setlength{\itemindent}{-1.5em}
-\item \begin{enumerate}\item(\#3 in 3.4) Prove that if $A\subseteq X$ is $\tau$-open, then any $\tau_{A}$-open set is also $\tau$-open.\\\\
-Let $A\subseteq X$ be $\tau-$open. Let $U$ be any $\tau_{A}-$open set. Then $U=A\cap V$ for some $V\in\tau$. Since $A$ is $\tau-$open, $U$ is the intersection of $\tau-$open sets. Since $\tau$ is a topology, $U\in\tau$ and is thus $\tau-$open. Since $U$ was an arbitrary $\tau_{A}-$open set, any $\tau_{A}-$open set is $\tau-$open as desired.\\[20pt]
+\cfoot{\thepage\ of \pageref{LastPage}}
 
-\item State and prove an analogous statement about closed sets.\\\\
-If $A\subseteq X$ is $\tau-$closed, then any $\tau_{A}-$closed set is also $\tau-$closed.\\
-\textbf{Proof}: Let $A\subseteq X$ be $\tau-$closed. Let $U$ be an arbitrary $\tau_{A}-$closed set. By theorem 3.4.2, we have that $U=A\cap K$ for some $K\subseteq X$ such that $K$ is $\tau-$closed. Since $A$ is $\tau-$closed, $U$ is the intersection of $\tau-$closed sets, and is therefore $\tau$-closed. Since $U$ was arbitrary, we have that any $\tau_{A}-$closed set is $\tau-$closed.\\[20pt]
-\end{enumerate}
-\item Prove the following:
-\begin{enumerate}
-\item If $A$ is a subspace of $X_{\tau}$, the inclusion map $j:A\hookrightarrow X$ is continuous.\\\\
-Let $A$ be a subspace of $X_{\tau}$. Let $V$ be a $\tau-$open subset of $X$. Assume first that $V\cap A=V$. Then $j^{-1}(V)\subseteq A$ and $j^{-1}(V)=j^{-1}(V\cap A)=j^{-1}(V)\cap j^{-1}(A)=V\cap A=V$ by definition of the inclusion map. Thus $V$ is $\tau_{A}-$open by definition of the subspace topology. Next assume that $V\cap A=\emptyset$. Then, $j^{-1}(V)=\emptyset$ by the definition of the inclusion map. Hence $j^{-1}(V)$ is open since $\tau_{A}$ is a topology. Finally assume that $V\cap A\neq V$ and $V\cap A\neq\emptyset$. Then we can take $V=V_1\cup V_2$ such that $V_1\cap V_2=\emptyset$, $V_1\cap A=V_1$, and $V_2\cap A=\emptyset$. Then $j^{-1}(V)=j^{-1}(V_1\cup V_2)=j^{-1}(V_1)\cup j^{-1}(V_2)=V_1$ be definition of the inclusion map. Since $V_1=V_1\cap A$, $j^{-1}(V)$ is $\tau_{A}-$open. Thus, $j:A\hookrightarrow X$ is continuous.\\[20pt]
+ \begin{enumerate}
 
-\item (\#5 in 3.5) If $f:X\to Y$ is continuous and if $A$ is a subspace of $X_{\tau}$, then the restriction of $f$ to $A$, $f|_{A}:A\to Y$ is continuous.\\\\
-Let $f:X\to Y$ be continuous and $A$ be a subspace of $X_{\tau}$. Let $V\subseteq Y$ be open in $Y$. Assume first that $f|_{A}^{-1}(V)\cap A=\emptyset$. Then $f|_{A}^{-1}(V)=\emptyset$ by definition of the restriction map. So, $f|_{A}^{-1}(V)$ is $\tau_{A}-$open. Next asssume that $f|_{A}^{-1}(V)\cap A=f|_{A}^{-1}(V)$. Since $f$ is continuous, $f^{-1}(V)$ is $\tau-$open and so $f|_{A}^{-1}(V)$ is also $\tau-$open. Therefore $f|_{A}^{-1}(V)$ is $\tau_{A}-$open by definition of $\tau_{A}$. Finally assume that $f|_{A}^{-1}(V)\cap A\neq\emptyset$ and $f|_{A}^{-1}(V)\cap A\neq f|_{A}^{-1}(V)$. So $f|_{A}^{-1}(V)=f|_{A}^{-1}(V_1)\cup f|_{A}^{-1}(V_2)$ such that $f|_{A}^{-1}(V_1)\cap f|_{A}^{-1}(V_2)=\emptyset$, $f|_{A}^{-1}(V_1)\cap A=f|_{A}^{-1}(V_1)$, and $f|_{A}^{-1}(V_2)\cap A=\emptyset$. Hence $f|_{A}^{-1}(V)=f|_{A}^{-1}(V_1)=f|_{A}^{-1}\cap A$, and is thus $\tau_{A}-$open by definition. Thus the restriction of $f$ to $A$, $f|_{A}:A\to Y$ is continuous.\\[20pt]
-\end{enumerate}
+   \item \input{problem1}
+   \pagebreak
+   \item \input{problem2}
+   \pagebreak
+   \item \input{problem3}
+   \pagebreak
+   \item \input{problem4}
+   \pagebreak
+   \item \input{problem5}
+   \pagebreak
+   \item \input{problem6}
+   \pagebreak
+   \item \input{problem7}
 
-\item On a previous homework, you listed all the possible topologies on a set with three elements. However, some of the resulting topological spaces are homeomorphic. Which are homeomorphic? Divide the set of 29 topological spaces into homeomorphism classes, and be sure to justify your choices. There are 9 homeomorphism classes in total. 
-
-To justify your choices, explain why the spaces within each class are homeomorphic to each other. Give the functions explicitly and explain why they are homeomorphisms. (You can be somewhat loose with that explanation). 
-
-Also explain why spaces in two different classes are not homeomorphic.\\\\
-Let $X$ be a set with three elelments given by $\{a,b,c\}$. First, we will label all 29 topologies. Let $$\tau_1=\mathcal{P}(X), \tau_2=\{X,\emptyset\}, \tau_3=\{\emptyset, \{a\}, X\}, \tau_4=\{\emptyset, \{b\}, X\}, \tau_5=\{\emptyset, \{c\}, X\}, \tau_6=\{\emptyset, \{a,b\}, X\}$$ $$\tau_7=\{\emptyset, \{a,c\}, X\}, \tau_8=\{\emptyset, \{b,c\}, X\}, \tau_9=\{\emptyset, \{a\}, \{a,b\}, X\}, \tau_{10}=\{\emptyset, \{a\}, \{a,c\}, X\}$$ $$\tau_{11}=\{\emptyset, \{b\}, \{a,b\}, X\}, \tau_{12}=\{\emptyset, \{b\}, \{b,c\}, X\}, \tau_{13}=\{\emptyset, \{c\}, \{a,c\}, X\}, \tau_{14}=\{\emptyset, \{c\}, \{b,c\}, X\}$$ $$\tau_{15}=\{\emptyset, \{a\}, \{b,c\}, X\}, \tau_{16}=\{\emptyset, \{b\}, \{a,c\}, X\}, \tau_{17}=\{\emptyset, \{c\}, \{a,b\}, X\}$$ $$\tau_{18}=\{\emptyset, \{a\}, \{b\}, \{a,b\}, X\}, \tau_{19}=\{\emptyset, \{a\}, \{c\}, \{a,c\}, X\}, \tau_{20}=\{\emptyset, \{b\}, \{c\}, \{b,c\}, X\}$$ $$\tau_{21}=\{\emptyset, \{a\}, \{a,b\}, \{a,c\}, X\}, \tau_{22}\{\emptyset, \{b\}, \{a,b\}, \{b,c\}, X\}, \tau_{23}=\{\emptyset, \{c\}, \{a,c\}, \{b,c\}, X\}$$ $$\tau_{24}=\{\emptyset, \{a\}, \{b\}, \{a,b\}, \{a,c\}, X\}, \tau_{25}=\{\emptyset, \{a\}, \{b\}, \{a,b\}, \{b,c\}, X\}$$ $$\tau_{26}=\{\emptyset, \{a\}, \{c\}, \{a,b\}, \{a,c\}, X\}, \tau_{27}=\{\emptyset, \{a\}, \{c\}, \{a,c\}, \{b,c\}, X\}$$ $$\tau_{28}=\{\emptyset, \{b\}, \{c\}, \{a,b\}, \{b,c\}, X\}, \tau_{29}=\{\emptyset, \{b\}, \{c\}, \{a,c\}, \{b,c\}, X\}$$\\
-
-To start, $X_{\tau_1}$ is homeomorphic only to itself under the identitiy map. Since there is no other topology on $X$ with 8 elements, there is no other topological space homeomorphic to $X_{\tau_1}$. Since the identity map is mapping $X_{\tau_1}$ to itself, it is a homeomorphism since it is clearly bijective and is continuous and open by a theorem since $\tau_1$ and $\tau_1$ are the same size. Also, $X_{\tau_2}$ is homeomorphic only to itself by the identity map as well by a similar argument. Now, $X_{\tau_3}, X_{\tau_4},$ and $X_{\tau_5}$ are all homeomorphic. Consider the function $f:X_{\tau_3}\rightarrow X_{\tau_4}$ defined by $f(a)=b, f(b)=a,$ and $f(c)=c$. This is clearly bijective since all elements are mapped to and no element is mapped to more than one. Also, we can see that $\{a\}\mapsto\{b\}, \{b\}\mapsto\{a\}, \emptyset\mapsto\emptyset$, and by definition of the function, $X\mapsto X$. So, we have that $f$ is continuous and open since open sets are mapped to open sets by both $f$ and $f^{-1}$. Hence $f$ is a homeomorphism. By changing the function based on the elements in the domain and the codomain, we can clearly see that all of them are homeomorphic. Now, the topological spaces $X_{\tau_6}, X_{\tau_7}$, and $X_{\tau_8}$ are also homeomorphic. Take the function $f:X_{\tau_6}\rightarrow X_{\tau_7}$ definied by $f(a)=a, f(b)=c$, and $f(c)=b$. Then, we see that by similar logic as above, $f$ is bijective. We can now see that $\{a,b\}\mapsto\{a,c\}, \{a,c\}\mapsto\{a,b\}, \emptyset\mapsto\emptyset$, and again by the definition of our function, $X\mapsto X$. So, $f$ is a homeomorphism, and if we change the domain and codomain, we need only adjust the function slightly to preserve the homeomorphic property. Next we have $X_{\tau_9}, X_{\tau_{10}}, X_{\tau_{11}}, X_{\tau_{12}}, X_{\tau_{13}}, X_{\tau_{14}}$ all being homeomorphic. Take the function $f:X_{\tau_9}\rightarrow X_{\tau_{10}}$ defined by $f(a)=a, f(b)=c,$ and $f(c)=b$. By similar logic as the last function we defined above, $f$ is a homeomorphism since $\{a\}\mapsto\{a\}, \{a,b\}\mapsto\{a,c\}, \{a,c\}\mapsto\{a,b\}, \emptyset\mapsto\emptyset$, and $X\mapsto X$. Since we can change the function only slightly to match the different domains and codomians, we have that they are all homeomorphic. Now, the spaces $X_{\tau_{15}}, X_{\tau_{16}}$, and $X_{\tau_{17}}$ are homeomorphic as well. Let's consider the function $f:X_{\tau_{15}}\rightarrow X_{\tau_{16}}$ defined by $f(a)=b, f(b)=a,$ and $f(c)=c$. By repeating the same logic as the first function we defined, we have that $f$ is again a homeomorphism since $\{a\}\mapsto\{b\}, \{b\}\mapsto\{a\}, \{b,c\}\mapsto\{a,c\}, \{a,c\}\mapsto\{b,c\}, \emptyset\mapsto\emptyset$, and $X\mapsto X$. So, again by editing the function to match the domain and the codomain, we have that they are all homeomorphic. We also have that $X_{\tau_{18}}, X_{\tau_{19}}$, and $X_{\tau_{20}}$ are all homeomorphic topological spaces. Take the function $f:X_{\tau_{18}}\rightarrow X_{\tau_{19}}$ defined by $f(a)=a, f(b)=c$, and $f(c)=b$. This is similar to one of the functions that we defined above, so we already have that $f$ is a bijection. Now, $\{a\}\mapsto\{a\}, \{b\}\mapsto\{c\}, \{c\}\mapsto\{b\}, \{a,b\}\mapsto\{a,c\}, \{a,c\}\mapsto\{a,b\}, \emptyset\mapsto\emptyset$, and $X\mapsto X$. So, we have that $f$ is open and continuous since open sets are mapped to open sets, so $f$ is a homeomorphism. Then by changing the function depending on the element of the spaces, we have that they are all homeomorphic. Next, the spaces $X_{\tau_{21}}, X_{\tau_{22}}, X_{\tau_{23}}$ are homeomorphic too. Consider the function $f:X_{\tau_{21}}\rightarrow X_{\tau_{22}}$ defined by $f(a)=b, f(b)=c$, and  $f(c)=c,$. This function is similar to the other function that we defined earlier, and so we have that it is a bijection and we see that it is open and continuous since $\{a\}\mapsto\{b\}, \{b\}\mapsto\{a\}, \{a,b\}\mapsto\{a,b\}, \{a,c\}\mapsto\{b,c\}, \{a,b\}\mapsto\{b,c\}, \emptyset\mapsto\emptyset$, and $X\mapsto X$. Finally, we have that $X_{\tau_{24}}, X_{\tau_{25}}, X_{\tau_{26}}, X_{\tau_{27}}, X_{\tau_{28}}$, and $X_{\tau_{29}}$ are all homeomorphic. To see this, take the function $f:X_{\tau_{24}}\rightarrow X_{\tau_{26}}$ defined by $f(a)=a, f(b)=c,$ and $f(c)=b$. We again have already defined this function for smaller topological spaces, but the argument is the same, so we have that $f$ is still a homeomorphism since $\{a\}\mapsto\{a\}, \{b\}\mapsto\{c\}, \{c\}\mapsto\{b\}, \{a,b\}\mapsto\{a,c\}, \{a,c\}\mapsto\{a,b\}, \emptyset\mapsto\emptyset$, and $X\mapsto X$.\\
-Now clealy, no two topological spaces that are of different sizes canbe homeomorphic as there would be no bijective continuous map between the two. Now, for any two spaces with the same number of elements across two classes, we see that there would be no well defined continuous mapping between any two. For example, $X_{\tau_3}$ cannot be homeomorphic to $X_{\tau_6}$ since there is no way for $\{a\}$ to map to $\{a,b\}$ and vice versa.\\[20pt] 
-
-\item In $\mathbb{R}_{\mathcal{U}}$, prove that any open interval $(a,b)$ is homeomorphic to the interval $(0,1)$. (Hint: what is the ``obvious" function $f:(a,b)\to(0,1)$ for which $f(a) = 0$ and $f(b) = 1$? Show that this map is a homeomorphism by showing that it is a continuous bijection with a continuous inverse.)\\\\
-Consider $f:(a,b)\to(0,1)$ given by $f(x)=\frac{x-a}{b-a}$. Let $x_1,x_2\in(a,b)$ and assume that $f(x_1)=f(x_2)$. Then $\frac{x_1-a}{b-a}=\frac{x_2-1}{b-a}$. So, $x_1-a=x_2-a$ and hence $x_1=x_2$. Therefore $f$ is injective. Now, let $y\in(0,1)$. Take $x=(b-a)y+a$. Since $0<y<1$, $0<(b-a)y<(b-a)$ and hence $a<(b-a)y+a<b-a+a$. So, $a<x<b$. Then $f(x)=\frac{x-a}{b-a}=\frac{(b-a)y+a-a}{b-a}=\frac{(b-a)y}{b-a}=y$. Thus $f$ is onto and therefore $f$ is bijective. Now, let $U=(s,t)\subseteq(0,1)$ be an open set in $(0,1)$. Then $f^{-1}(U)=\{x\in(a,b)|f(x)\in U\subseteq(0,1)\}=(\tilde{s},\tilde{t})$ where $a\leq\tilde{s}<\tilde{t}\leq b$. $f^{-1}(U)$ is an interval since $f^{-1}$ maps every point inbetween two endpoints to unique points between two endpoints. Hence $f^{-1}(U)$ is open $(a,b)$. Now, let $U$ be an arbitrary open set in $(0,1)$. Then $U$ is a union of open intervals in $(0,1)$. So, $f^{-1}(U)$ is the preimage of unions, and by a theorem, we have that $f^{-1}(U)$ is a union of preimages. Since each preimage is that of an open interval in $(0,1)$, each preimage is open in $(a,b)$, so the union of all of them, $f^{-1}(U)$ is also open in $(a,b)$. So, $f$ is continuous. Now, we have that $f^{-1}:(0,1)\rightarrow(a,b)$ defined by $f^{-1}(x)=(b-a)x+a$ which is a function since $f$ is bijective. Now, let $V=(\tilde{a},\tilde{b})\subseteq(a,b)$ be an open set in $(a,b)$. Then $f(V)=\{x\in(0,1)|f^{-1}(x)\in V\subseteq(a,b)\}=(s,t)$ where $0\leq s<t\leq1$ by the definition of $f$. Now, $f$ maps intervals to intervals since $f$ takes each element from an interval and maps it to a unique element between two endpoints that are the mappings of the endpoints of the original interval. So, $f(V)$ is open in $(0,1)$. Now, let $V$ be an arbitrary open set in $(a,b)$. Then $V$ is the union of open intervals in $(a,b)$. By similar logic as above, we have that $f(V)$ is the union of open intervals in $(0,1)$. Therefore, we have that $f^{-1}$ is also continuous. Thus $f$ is a homeomorphism between $(a,b)$ and $(0,1)$, and so $(a,b)\cong(0,1)$ as desired.\\[20pt]
-
-\item Let $A$ be the subspace $(-\infty,-1)\cup [0,\infty)$ of $\mathbb{R}$ with the usual topology, and consider the map $f:A\to \mathbb{R}$ defined as follows:
-\[f(x)=\left\{ \begin{array}{ll}
-                  x+1 & \mbox{$x<-1$}\\
-                  x      & \mbox{$x\geq 0$}
-                  \end{array}
-          \right. \]
-Show that $f$ is bijective and continuous. Is $f$ a homeomorphism?\\\\
-Let $A$ and $f$ be as given above. Now, let $x_1,x_2\in A$ and assume that $f(x_1)=f(x_2)$. Without loss of generality, first let $x_1<-1$ and $x_2\geq0$. Then $f(x_1)=x_1+1<0$ and $f(x_2)=x_2\geq0$ contradicting $f(x_1)=f(x_2)$. So, either $x_1+1=x_2+1$ which yields $x_1=x_2$, or $x_1=x_2$. Hence, we have that $f$ is injective. Now, let $y\in\mathbb{R}$. Assume first that $y\geq0$. Take $x=y$. Then $f(x)=x=y$. Now assume that $y<0$. So, take $x=y-1$. Then $x<-1$ and  $f(x)=x+1=(y-1)+1=y$, and therefore $f$ is onto as well. Thus, $f$ is bijective.\\Now, let $V$ be an open set in $\mathbb{R}_{\mathcal{U}}$. Assume that $V\subseteq(0,\infty)$. Then $f^{-1}(V)=A\cap V=V$ which is $\tau_{A}-$open by definition. Now assume that $V\subseteq(-\infty,-1)$. Then $f^{-1}(V)=A\cap V=V$ and is thus again $\tau_{A}-$open. Finally assume that $V=(a,b)$ where $a<-1<0<b$. Then $f^{-1}(V)=(a,-1)\cup[0,b)=A\cap V$. So, $f^{-1}(V)$ is open in the subspace $A$. Therefore $f$ is continuous.\\Now, $f$ is not a homeomorphism. We can see that $f^{-1}:\mathbb{R}\rightarrow A$ is defined by \[f^{-1}(x)=\left\{ \begin{array}{ll}
-                  x-1 & \mbox{$x<0$}\\
-                  x      & \mbox{$x\geq 0$}
-                  \end{array}
-          \right. \]
-Consider the interval $W=[0,1)\in A$ which is open in $A$ since we can write $W$ as $W=A\cap(-0.5,1)$ where $(-0.5,1)$ is open in $\mathbb{R}_{\mathcal{U}}$. Then $f(W)=[0,1)$, which is not open in $\mathbb{R}_{\mathcal{U}}$. Thus $f^{-1}$ is not continuous and so $f$ is not a homeomorphism as claimed.
-\end{enumerate}
-
-\textbf{Recommended but not required:} (\#6(b) in 3.5) Show that $\mathbb{R}_{\mathcal{R}}\cong \mathbb{R}_{\mathcal{L}}$. 
+ \end{enumerate}
 
 \end{document}

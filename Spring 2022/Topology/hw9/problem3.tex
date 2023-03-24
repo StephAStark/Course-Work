@@ -1,16 +1,12 @@
-(\#3 in 2.2) Prove or disprove the following: For $B\subseteq Y$ and $f:X\to Y$,
-$f^{-1}(Y\backslash B)=X\backslash f^{-1}(B)$.\\\\
+(\#4 in 7.3)  Prove that a subspace of a Hausdorff space is Hausdorff.\\\\
 
 \begin{solution}\renewcommand{\qedsymbol}{}\ \\
-    Prove: Let $B, X,$ and $Y$ be sets, $B\subseteq Y$, and $f:X\rightarrow Y$ be a function. First
-    assume that $B=\emptyset$. Then $Y\setminus B=Y$. So,
-    $f^{-1}(Y\setminus B)=f^{-1}(Y)=X=X\setminus f^{-1}(B)$. So, assume that $B\neq\emptyset$ Let
-    $x\in f^{-1}(Y\backslash B)$. Then, we have that $f(x)\in Y\setminus B$. So, by definition,
-    $f(x)\in Y$ and $f(x)\notin B$. Again by definition, $x\in X$ but $x\notin f^{-1}(B)$. Therefore
-    $x\in X\backslash f^{-1}(B)$ and $f^{-1}(Y\backslash B)\subseteq X\backslash f^{-1}(B)$. On the
-    other hand, assume $x\in X\backslash f^{-1}(B)$. Well, we have then that $x\in X$ and
-    $x\notin f^{-1}(B)$. So, by definition, $f(x)\in Y$, but also $f(x)\notin B$ Thus,
-    $f(x)\in Y\setminus B$ and so $x\in f^{-1}(Y\backslash B)$. Therefore
-    $f^{-1}(Y\backslash B)=X\backslash f^{-1}(B)$ as desired.
+    \textbf{Proof}: Let $X_{\tau}$ be a Hausdorff space and let $A_{\tau_A}$ be a subspace of
+    $X_{\tau}$. Let $a,b\in A$ with $a\neq b$. Since $X_{\tau}$ is Hausdorff, there exist
+    $\tau-$open sets $U,V$ such that $U\cap V=\emptyset, a\in U$, and $b\in V$. Since $U$ and $V$ are
+    $\tau-$open, we have that $A\cap U$ and $A\cap V$ are $\tau_A$-open. Also,
+    $(A\cap U)\cap(A\cap V)=\emptyset$ since $U\cap V=\emptyset$. Since $a\in(A\cap U)$ and
+    $b\in(A\cap V)$ where $(A\cap U)$ and $(A\cap V)$ are disjoint $\tau_A-$open sets, $A$ is Hausdorff,
+    as desired.
 
 \end{solution}

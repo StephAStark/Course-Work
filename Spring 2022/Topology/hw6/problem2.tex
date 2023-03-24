@@ -1,10 +1,20 @@
-(\#3 in 2.1) Consider the subset $D$ of $\mathbb{R}^2$ defined by $D=\{(x,y)|x\leq y^2\}$. Is this set a
-Cartesian product of two subsets of $\mathbb{R}$? Explain.\\\\
+(\#6 in 4.4) Let $X_{\tau}$ be a topological space and let $A\subseteq X$.\\
+Show that the sets $\text{Int}(A), \text{Bdy}(A)$ and $\text{Ext}(A)$ are pairwise disjoint.\\\\
 
 \begin{solution}\renewcommand{\qedsymbol}{}\ \\
-    $D$ is not a cartesian product. Assume by way of contradiction that $D$ is a cartesian product.
-    Well, we can see that the points $(1,1)$ and $(0,0)$ are elements of $D$. Since we assume that $D$
-    is a cartesian product, we would then have the points $(0,1),(1,0)\in D$. However, $1\nleq 0^2=0$
-    which is a contradiction. Therefore, $D$ is not a cartesian product.
+    Let $X_{\tau}$ and $A$ be as given. We need to show that
+    $\text{Int}(A)\cap\text{Bdy}(A)=\emptyset, \text{Int}(A)\cap\text{Ext}(A)=\emptyset,$ and
+    $\text{Bdy}(A)\cap\text{Ext}(A)=\emptyset$. Well, $\text{Int}(A)\cap\text{Bdy}(A)=\emptyset$ since
+    for every $x\in$Bdy$(A)$, no neighborhood of $x$, $N_x$, is a subset of $A$, and for every
+    $x\in$Int$(A)$, there exists a neighborhood of $x, N_x$, such that $N_x\subseteq A$. Therefore, no
+    x is in $\text{Int}(A)$ and $\text{Bdy}(A)$. Similarly, $\text{Bdy}(A)\cap\text{Ext}(A)=\emptyset$
+    since for every $x\in$Bdy$(A)$, no neighborhood of $x, N_x$, is a subset of $X\setminus A$, and for
+    every $x\in$Ext$(A)$, there exists a neighborhood of $x, N_x$ such that
+    $N_x\subseteq(X\setminus A)$. Therefore, no $x$ can be in $\text{Bdy}(A)$ and $\text{Ext}(A)$.
+    Finally, let $x\in$Int$(A)$. Then there exists a neighborhood of $x, N_x$, such that
+    $N_x\subseteq A$. Hence, $x\notin$Int$(X\setminus A)$. Similarly, if $x\in$Ext$(A)$, there exists a
+    neighborhood of $x, N_x$, such that $N_x\subseteq(X\setminus A)$ and so $x\notin$Int$(A)$. Thus,
+    Int$(A)\cap$Ext$(A)=\emptyset$. Therefore $\text{Int}(A), \text{Bdy}(A)$ and $\text{Ext}(A)$ are
+    pairwise disjoint.
 
 \end{solution}

@@ -1,21 +1,22 @@
-(\#8 a, b in 2.2) Let $f:X\to Y$ and $g:Y\to Z$ be any functions.
-Prove that if $f$ is one-to-one and $g$ is one-to-one, then $g\circ f:X\to Z$ is one-to-one. Is the
-converse true?\\
-If $g$ is onto and $f$ is onto, then is $g\circ f$ always onto? Is the converse true?\\
+(\#2 in 7.5) Prove that any finite union of compact subsets of a topological space is compact.\\\\
 
 \begin{solution}\renewcommand{\qedsymbol}{}\ \\
-    Let $f$ and $g$ be one-to-one functions as given above with $X, Y,$ and $Z$ as sets. Now, assume
-    that $g(f(x_1))=g(f(x_2))$ for some $x_1, x_2\in X$. Since $g$ is injective, $f(x_1)=f(x_2)$. Also,
-    since $f$ is injective, $x_1=x_2$ and thus $g\circ f:X\rightarrow Z$ is injective as desired. The
-    converse is not true however. Consider $f:\mathbb{R}\rightarrow[0,\infty)$ and
-    $g:[0,\infty)\rightarrow[0,\infty)$ given by $f(x)=x^2$ and $g(x)=\sqrt{x}$. Clearly
-    $g(f(x))=x$ is one-to-one, but $f(x)$ is not.\\
-
-    Let $f$ and $g$ be as given with sets $X, Y$, and $Z$. Assume that $f$ and $g$ are onto. Now, let
-    $z\in Z$. Since $g$ is onto, there exists $y\in Y$ such that $g(y)=z$. Now, since $f$ is onto, there
-    exists $x\in X$ such that $f(x)=y$. Thus, there exists $x\in X$ such that $g(f(x))=z$ and so
-    $g\circ f:X\rightarrow Z$ is onto as desired. The converse is not always true. Consider
-    $f:[0,\infty)\rightarrow\mathbb{R}$ and $g:\mathbb{R}\rightarrow[0,\infty)$ defined by
-    $f(x)=\sqrt[3]{x}$ and $g(x)=x^2$. So clearly $g(f(x))=x^{\frac23}$ is onto, but $f$ is not.
+    Let $X_{\tau}$ be a topological space and let $A_1, A_2,\ldots, A_n$ be compact subsets of $X$ for
+    some $n\in\mathbb{N}$. Let $\mathcal{C}$ be an arbitrary open cover for $\bigcup_{i=1}^nA_i$. So,
+    $\bigcup_{C\in\mathcal{C}}C=\bigcup_{i=1}^nA_i$. Then, every $C\in\mathcal{C}$ has the form
+    $C=V\cap(\bigcup_{i=1}^nA_i)$ where $V$ is $\tau$-open. So,
+    $C=(V\cap A_1)\cup(V\cap A_2)\cup\cdots\cup(V\cap A_n)$. Since $V$ is $\tau-$open, $V\cap A_i$ is
+    open in $\tau_{A_i}$ for $0\leq i\leq n$. Therefore,
+    $\bigcup_{C\in\mathcal{C}}C=V_i\cap(\bigcup_{i=1}^nA_i)$. Hence, we can see that $\mathcal{C}$ is
+    also an arbitrary open cover for each $A_i$. Since each $A_i$ is compact, each $A_i$ has a finite
+    open subcover for $\mathcal{C}$. Let $\mathcal{B}_i$ be such a finite open subcover for $A_i$. Then
+    $\bigcup_{B\in\mathcal{B}_i}=A_i$. Thus,
+    $\bigcup_{i=1}^n(\bigcup_{B\in\mathcal{B}})=\bigcup_{i=1}^nA_i$. Since $\tau$ is a topology, we have
+    that $\bigcup_{i=1}^n(\bigcup_{j=1}^{m_i}V_{i_j})$ is open in $\tau$ where $V_{i_j}$ is a
+    $\tau$-open set such that $B_{i_j}=V_{i_j}\cap A_i$. Thus,
+    $\bigcup_{i=1}^n(\bigcup_{j=1}^{m_i}V_{i_j})\bigcup_{i=1}^nA_i$ is open in
+    $\tau_{\bigcup_{i=1}^nA_i}$. Therefore, $\bigcup_{i=1}^n(\bigcup_{B\in\mathcal{B}})$ is an open
+    finite subcover of $\bigcup_{i=1}^nA_i$, and since $\mathcal{C}$ was arbitrary, we have that
+    $\bigcup_{i=1}^nA_i$ is compact as desired.
 
 \end{solution}

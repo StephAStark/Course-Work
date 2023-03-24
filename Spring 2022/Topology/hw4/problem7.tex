@@ -1,15 +1,33 @@
-Prove that if $B\subseteq A$ and $B$ is infinite, then $A$ is infinite. Conclude that every subset
-of a finite set is finite.\\\\
+Let $A$ be the subspace $(-\infty,-1)\cup [0,\infty)$ of $\mathbb{R}$ with the usual topology, and
+consider the map $f:A\to \mathbb{R}$ defined as follows:
+\[f(x)=\left\{ \begin{array}{ll}
+                  x+1 & \mbox{$x<-1$}\\
+                  x      & \mbox{$x\geq 0$}
+                  \end{array}
+          \right. \]
+Show that $f$ is bijective and continuous. Is $f$ a homeomorphism?\\\\
 
 \begin{solution}\renewcommand{\qedsymbol}{}\ \\
-    Let $A$ and $B$ be sets, and $B\subseteq A$. Let $B$ be infinite. Assume first that $B=A$. Then
-    clearly $A$ is infinite. So, assume that $B\subset A$. Now, since $B$ is infinite, there exists an
-    injective function $f:\mathbb{N}\rightarrow B$. So for any $x\in\mathbb{N}$, $f(x)\in B$. Now
-    consider the function $g:B\rightarrow A$ defined by $g(x)=x$ since $B\subset A$. Now, let
-    $x_1,x_2\in B$ and assume that $g(x_1)=g(x_2)$. Then $x_1=x_2$ and so $g(x)$ is injective. So, by
-    above we have that $(g\circ f):\mathbb{N}\rightarrow A$ is injective. Since we have an injective
-    function from $\mathbb{N}$ to $A$, we have that $A$ is infinite by definition. Still letting
-    $B\subseteq A$, we have that if $A$ is finite, then $B$ is also finite by the contrapositive of the
-    above proven statement.
+    Let $A$ and $f$ be as given above. Now, let $x_1,x_2\in A$ and assume that $f(x_1)=f(x_2)$. Without
+    loss of generality, first let $x_1<-1$ and $x_2\geq0$. Then $f(x_1)=x_1+1<0$ and $f(x_2)=x_2\geq0$
+    contradicting $f(x_1)=f(x_2)$. So, either $x_1+1=x_2+1$ which yields $x_1=x_2$, or $x_1=x_2$. Hence,
+    we have that $f$ is injective. Now, let $y\in\mathbb{R}$. Assume first that $y\geq0$. Take $x=y$.
+    Then $f(x)=x=y$. Now assume that $y<0$. So, take $x=y-1$. Then $x<-1$ and  $f(x)=x+1=(y-1)+1=y$, and
+    therefore $f$ is onto as well. Thus, $f$ is bijective.\\Now, let $V$ be an open set in
+    $\mathbb{R}_{\mathcal{U}}$. Assume that $V\subseteq(0,\infty)$. Then $f^{-1}(V)=A\cap V=V$ which is
+    $\tau_{A}-$open by definition. Now assume that $V\subseteq(-\infty,-1)$. Then $f^{-1}(V)=A\cap V=V$
+    and is thus again $\tau_{A}-$open. Finally assume that $V=(a,b)$ where $a<-1<0<b$. Then
+    $f^{-1}(V)=(a,-1)\cup[0,b)=A\cap V$. So, $f^{-1}(V)$ is open in the subspace $A$. Therefore $f$ is
+    continuous.\\
+    Now, $f$ is not a homeomorphism. We can see that $f^{-1}:\mathbb{R}\rightarrow A$ is defined by 
+    \[f^{-1}(x)=\left\{ \begin{array}{ll}
+        x-1 & \mbox{$x<0$}\\
+        x      & \mbox{$x\geq 0$}
+        \end{array}
+                \right. \]
+    Consider the interval $W=[0,1)\in A$ which is open in $A$ since we can write $W$ as
+    $W=A\cap(-0.5,1)$ where $(-0.5,1)$ is open in $\mathbb{R}_{\mathcal{U}}$. Then $f(W)=[0,1)$, which
+    is not open in $\mathbb{R}_{\mathcal{U}}$. Thus $f^{-1}$ is not continuous and so $f$ is not a
+    homeomorphism as claimed.
 
 \end{solution}

@@ -1,26 +1,25 @@
-(\#1 in 2.1) Prove \textbf{Theorem 2.1.3 (ii)} (DeMorgan's law): If $X$ is any set and
-$\{A_{\lambda}|\lambda\in\Lambda\}$ is any indexed collection of sets, then
-$X\backslash \bigcap_{\lambda\in\Lambda} A_{\lambda} = 
-\bigcup_{\lambda\in\Lambda}(X\backslash A_{\lambda})$.\\\\
+Prove Theorem 4.4.3: For any subset $A$ of a topological space $X_{\tau}$,\\
+$\text{Cl($A$)}=\text{Int($A$)}\cup\text{Bdy($A$)}$.\\\\
 
 \begin{solution}\renewcommand{\qedsymbol}{}\ \\
-    Let $X$ be a set and $\{A_{\lambda}|\lambda\in\Lambda\}$ be an indexed collection of sets. First
-    consider the case $\bigcup_{\lambda\in\Lambda}(X\backslash A_{\lambda})=\emptyset$. Then
-    $X\backslash A_{\lambda}=\emptyset$ for every $\lambda\in\Lambda$. So, $A_{\lambda}=X$ for all
-    $\lambda\in\Lambda$. Hence $\bigcap_{\lambda\in\Lambda}A_{\lambda}=X$, and thus
-    $X\backslash \bigcap_{\lambda\in\Lambda} A_{\lambda} =\emptyset$, preserving equality. So, assume
-    that $X\backslash \bigcap_{\lambda\in\Lambda} A_{\lambda}\neq\emptyset$. Now, let
-    $x\in X\backslash \bigcap_{\lambda\in\Lambda} A_{\lambda}$. Then, $x\in X$, but
-    $x\notin\bigcap_{\lambda\in\Lambda} A_{\lambda}$. So, by definition of intersection,
-    $x\notin A_{\lambda}$ for at least one $\lambda\in\Lambda$. So, for some $\lambda\in\Lambda$, we
-    have that $x\in X\setminus A_{\lambda}$. Hence
-    $x\in\bigcup_{\lambda\in\Lambda}(X\backslash A_{\lambda})$. Conversely, assume that
-    $x\in\bigcup_{\lambda\in\Lambda}(X\backslash A_{\lambda})$. So, for some $\lambda\in\Lambda$
-    $x\in X\backslash A_{\lambda}$. So, by definition, we have that $x\in X$ and $x\notin A_{\lambda}$
-    for at least one $\lambda\in\Lambda$. Therefore $x\in X$ but
-    $x\notin\bigcap_{\lambda\in\Lambda} A_{\lambda}$. Thus
-    $x\in X\backslash \bigcap_{\lambda\in\Lambda} A_{\lambda}$ and therefore
-    $X\backslash \bigcap_{\lambda\in\Lambda} A_{\lambda} = 
-    \bigcup_{\lambda\in\Lambda}(X\backslash A_{\lambda})$ as desired.
+    Let $X_{\tau}$ be a topological space, and let $A\subseteq X_{\tau}$. Assume first that
+    $A=\emptyset$. Then, we have that
+    $\text{Cl($A$)}=\emptyset=\text{Int($A$)}\cup\text{Bdy($A$)}=\emptyset\cup\emptyset=\emptyset$.
+    So, assume that $A\neq\emptyset$. We will first show that
+    $\text{Int($A$)}\cup\text{Bdy($A$)}\subseteq\text{Cl($A$)}$. Well,
+    $\text{Int}(A)\subseteq\text{Cl}(A)$ by definition, so we only need
+    $\text{Bdy}(A)\subseteq\text{Cl}(A)$. So, let $x\in\text{Bdy}(A)$. So, for every neighborhood $N_x$
+    of $x$, $A\cap N_x$ and $N_x\cap(X\setminus A)$ are nonempty. Since every neighborhood $N_x$ of x
+    meets $A$, we have that $x\in\text{Cl}(A)$ by Theorem 4.3.2. Therefore, since
+    $\text{Int}(A), \text{Bdy}(A)\subseteq\text{Cl}(A)$, we have
+    $\text{Int($A$)}\cup\text{Bdy($A$)}\subseteq\text{Cl($A$)}$. Now, assume that
+    $x\notin\text{Int($A$)}\cup\text{Bdy($A$)}$. So, $x\notin$Int$(A)$ and $x\notin$Bdy$(A)$. So, there
+    is no open neighborhood, $N_x$, of $x$ such that $N_x\subseteq A$ by Theorem 4.4.1. Also, there
+    exists a neighborhood of $x$ such that $N_x\cap A=\emptyset$ or $N_x\cap(X\setminus A)=\emptyset$.
+    If $N_x\cap A=\emptyset$ we have that $x\notin$Cl$(A)$ by Theorem 4.3.2. If
+    $N_x\cap(X\setminus A)=\emptyset$, then $N_x\subseteq A$, otherwise $N_x=\emptyset$, which
+    contradicts $x\notin$Int$(A)$. So, by the contrapositive, if $x\in$Cl$(A)$, then
+    $x\in\text{Int($A$)}\cup\text{Bdy($A$)}$. Thus, $\text{Cl($A$)}=\text{Int($A$)}\cup\text{Bdy($A$)}$
+    as desired.
 
 \end{solution}

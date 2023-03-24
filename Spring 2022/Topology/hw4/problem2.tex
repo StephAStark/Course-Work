@@ -1,10 +1,12 @@
-(\#3 in 2.1) Consider the subset $D$ of $\mathbb{R}^2$ defined by $D=\{(x,y)|x\leq y^2\}$. Is this set a
-Cartesian product of two subsets of $\mathbb{R}$? Explain.\\\\
+State and prove an analogous statement about closed sets.\\\\
 
 \begin{solution}\renewcommand{\qedsymbol}{}\ \\
-    $D$ is not a cartesian product. Assume by way of contradiction that $D$ is a cartesian product.
-    Well, we can see that the points $(1,1)$ and $(0,0)$ are elements of $D$. Since we assume that $D$
-    is a cartesian product, we would then have the points $(0,1),(1,0)\in D$. However, $1\nleq 0^2=0$
-    which is a contradiction. Therefore, $D$ is not a cartesian product.
+    If $A\subseteq X$ is $\tau-$closed, then any $\tau_{A}-$closed set is also $\tau-$closed.\\
+
+    Let $A\subseteq X$ be $\tau-$closed. Let $U$ be an arbitrary $\tau_{A}-$closed set. By
+    theorem 3.4.2, we have that $U=A\cap K$ for some $K\subseteq X$ such that $K$ is $\tau-$closed.
+    Since $A$ is $\tau-$closed, $U$ is the intersection of $\tau-$closed sets, and is therefore
+    $\tau$-closed. Since $U$ was arbitrary, we have that any $\tau_{A}-$closed set is $\tau-$closed.
+
 
 \end{solution}

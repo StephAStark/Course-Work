@@ -1,53 +1,27 @@
-\documentclass[12pt]{article}
-\usepackage[margin=1in]{geometry} 
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{amsthm}
-\usepackage{accents}
-
-
-\setlength{\oddsidemargin}{0in}
-\setlength{\textwidth}{6.5in}
-\setlength{\topmargin}{-.55in}
-\setlength{\textheight}{9in}
-\pagestyle{empty}
-\renewcommand \d{\displaystyle}
-\renewcommand \a{\shortstack{$\rightarrow$\\$u$}}
-\renewcommand \b{\shortstack{$\rightarrow$\\$v$}}
+\input{settings}
 
 \begin{document}
-\noindent Math 5510
 
-\noindent Topology
+\lhead{Stephanie Klumpe}
 
-\noindent Stephanie Klumpe
+\chead{Problem Set 8}
 
-\vspace{.2in}
-\begin{center}
-Problem Set 8
-\end{center}
+\rhead{MATH 5510}
 
- \begin{enumerate}%\setlength{\itemindent}{-1.5em}
-  \item(\#5 in 6.2) Prove Theorem 6.2.4: Let $A_{\tau_A}$ be a connected subspace of a space $X_{\tau}$, and let $B$ be a subset of $X$ with $A\subseteq B\subseteq \text{Cl($A$)}$. Then $B$ is also connected in the subspace topology.\\\\
-Let $X_{\tau}, A_{\tau_A}$, and $B$ be as given. Assume by way of contradiction that $B$ is disconnected in the subspace topology. Then, there exist $C,D\in\tau_{B}$ such that $C,D\neq\emptyset, C\cap D=\emptyset$ and $C\cup D=B$. Since $C,D\in\tau_{B}$, $C=U\cap B$ and $D=V\cap B$ for $U,V\in\tau$. Then $A\subseteq C\cup D\subseteq$Cl$(A)$. Consider $C\cap A$ and $D\cap A$. Then we have that $(U\cap B)\cap A=U\cap(B\cap A)=U\cap A$ and $(V\cap B)\cap A=V\cap(B\cap A)=V\cap A$. By definition, $C\cap A$ and $D\cap A$ are both $\tau_A$-open. Also, $(C\cap A)\cap(D\cap A)=(C\cap D)\cap A=\emptyset\cap A=\emptyset$. In addition, we have $(C\cap A)\cup(D\cap A)=(C\cup D)\cap A=B\cap A=A$. Now, let $x\in C$. Since $C\subset B$, $C\subset$Cl$(A)$. So, by Theorem 4.3.2, $C\cap A\neq\emptyset$. By a very similar argument, we have that $D\cap A\neq\emptyset$. Therefore, $A$ has a disconnection, which is a contradiction to $A$ being connected. Thus, $B$ is connected in the subsapace topology as desired.\\
+\cfoot{\thepage\ of \pageref{LastPage}}
 
-\item Let $X_{\tau}$ be a space with the property that given any $x\in X$ and any neighborhood $U$ of $x$, there is a neighborhood $V$ of $x$ such that Cl($V$) is a proper subset of $U$. 
-\begin{enumerate}
-\item Give an example that shows that $X$ need not be connected.\\
-Consider the set $X=(0,1)\cup(2,3)$ as a subspace of $\mathbb{R}$ with the usual topology. As we can see, $X$ is disconnected by $(0,1)$ and $(2,3)$. Now, let $x\in X$. Without loss of generality, let $x\in(0,1)$, and let $U$ be an open neighborhood of $x$. Then in general $U=(a,1)\cup(2,b)$ where $0\leq a<x<b\leq3$ or $U=(a,b)$ where $0\leq a<x<b\leq1$ or $2\leq a<x<b\leq3$. Now, by the continuity properties of $\mathbb{R}$, we have $\alpha,\beta\in\mathbb{R}$ such that $0<a<\alpha<x<\beta<1$. Then $V=(\alpha,\beta)$ is an open neighborhood of $x$ with Cl$(V)=[\alpha,\beta]\subset U$. So, $X$ satisfies the above properties and is disconnected. In particular, let $x=\frac12$. Then, let $U=(\frac14,\frac34)$ which is an open neighborhood of $\frac12$. Now, we have $V=(\frac38,\frac58)$ is also an open neighborhood of $\frac12$, and Cl$(V)=[\frac38,\frac58]\subset U$, but $X$ is still disconnected.\\
-\item If we add the condition that for every $x\in X$ and every neighborhood $U$ of $x$ there is a connected neighborhood $V_x$ of $x$ such that $x\in V_x\subseteq \text{Cl($V_x$)}\subseteq U$, is this sufficient to make $X$ connected? Explain.\\
-Well, if we let $X$ be the same set as above, we see that $V=(\alpha,\beta)$ as given above is connected, so $X$ still satisfies the desired propperties, but $X$ is still disconnected. However, if we require that for any $x\in X$ and any neighborhood $U$ of $x$, if every open neighborhood $V$ of $x$ such that $x\in V\subseteq$Cl$(V)\subset U$, $V$ is connected, and for all open neighborhoods $V$ of $x$, the arbitrary intersection of them is nonempty, then this would be a sufficient condition for $X$ to be connected.\\
-\end{enumerate}
+ \begin{enumerate}
 
-\item(\#6 in 6.4) Prove that if $X_{\tau}$ is path-connected and $\tau' \subseteq \tau$, then $X_{\tau'}$ is also path-connected.\\\\
-Let $X_{\tau}$ be path-connected and let $\tau'\subseteq\tau$. Then, for every pair of points $x_0,x_1\in X$, there exists a continuous function $\alpha:[0,1]\rightarrow X_{\tau}$ with $\alpha(0)=x_0$ and $\alpha(1)=x_1$. Since $\tau'\subseteq\tau$, we have that $\alpha:[0,1]\rightarrow X_{\tau'}$ is also continuous. Hence, for every pair of points $x_0,x_1\in X$, there exists a path $\alpha:[0,1]\rightarrow X_{\tau'}$ with $\alpha(0)=x_0$ and $\alpha(1)=x_1$. Therefore, $X_{\tau'}$ is also path-connected as desired.\\
+   \item \input{problem1}
+   \pagebreak
+   \item \input{problem2}
+   \pagebreak
+   \item \input{problem3}
+   \pagebreak
+   \item \input{problem4}
+   \pagebreak
+   \item \input{problem5}
 
-\item Prove that any quotient space of a path-connected space is path-connected. That is, if $X_{\tau}$ is a path-connected space and $\sim$ is an equivalence relation on $X$, then the quotient space $X/\sim$ is path-connected.\\\\
-Let $X_{\tau}$ be a path-connected topological space and $\sim$ an equivalence relation on $X$. Then, for every $x_0,x_1\in X$, there exists a path $\alpha:[0,1]\rightarrow X_{\tau}$ with $\alpha(0)=x_0$ and $\alpha(1)=x_1$. Let $[y_0],[y_1]\in X/\sim$. Let $x_0\sim y_0$ and $x_1\sim y_1$. Since there exists a path $\alpha$ between $x_0$ and $x_1$ and $x_0\sim y_0$ and $x_1\sim y_1$, we see that $\nu\circ\alpha:[0,1]\rightarrow X/\sim$ is also a path in $X/\sim$ by composition of continuous functions and since $(\nu\circ\alpha)(0)=\nu(\alpha(0))=\nu(x_0)=[y_0]$ and $(\nu\circ\alpha)(1)=\nu(\alpha(1))=\nu(x_1)=[y_1]$. Therefore, $X/\sim$ is path-connected.\\
+ \end{enumerate}
 
-\item Show that if $U$ is an open connected subset of $\mathbb{R}^2$, then $U$ is path-connected. (Hint: Show that given a point $x_0\in U$, the set of points in $U$ that can be joined to $x_0$ by a path in $U$ is both open and closed.)\\\\
-
-Let $U$ be an open connected subset of $\mathbb{R}^2$. If $U=\mathbb{R}^2$, then $U$ is path connected. So, assume $U\subset\mathbb{R}^2$. Fix $(x_0,y_0)\in U$. Let $V$ be the set of points $(x,y)\in U$ such that $(x,y)$ can be joined to $(x_0,y_0)$ by a path in $U$. Then $V\subseteq U$ and $V\neq\emptyset$ since $(x_0,y_0)\in V$. Now, let $(x,y)\in V$ and let $B_1$ be a basis set of $\mathcal{U}^2$ such that $(x,y)\in B_1$. Now, take $(x_1,y_1)\in B_1$ where $x\neq x_1$. Let $m=\frac{y_1-y}{x_1-x}$ and define $\alpha:[0,1]\rightarrow\mathbb{R}^2$ by $\alpha(t)=(x+mt,y+mt)$. Now, $p_x\circ\alpha=x+mt$ and $p_y\circ\alpha=y+mt$ are both continuous since they are both linear, and by Theorem 5.2.2, $\alpha$ is continuous. Hence, we have that $B_1$ is path connected. So, let $(x',y')\in B_1$ with $(x',y')\neq(x,y)$. Since $B_1$ is path-connected, $(x',y')$ can be joined to $(x,y)$ by a path and therefore can be joined to $(x_0,y_0)$ by a path. So, $(x',y')\in V$. Hence, $B_1\subseteq V$ and so $V$ is open. Now, let $(x,y)\in\mathbb{R}^2\setminus V$ and let $B_2$ be a basis set such that $(x,y)\in B_2$. Again, since $B_2$ is a basis set, $B_2$ is path-connected. Now, let $(x',y')\in B_2$. Since $B_2$ is path-connected, $(x',y')$ can be joined to $(x,y)$ by a path. So, $(x',y')\in\mathbb{R}^2\setminus V$ and hence $B_2\subseteq\mathbb{R}^2\setminus V$. So, $\mathbb{R}^2\setminus V$ is open and by definition, $V$ is closed. Since $U$ has a subset that is both open and closed and $U$ is connected, we have that $U=V$. Since $V$ is the set of all points $(x,y)\in U$ such that $(x,y)$ can be joined to $(x_0,y_0)$ by a path in $U$ and $U=V$, we have $U$ is path-connected.
-
-\end{enumerate}
 \end{document}

@@ -1,16 +1,16 @@
-(\#3 in 2.2) Prove or disprove the following: For $B\subseteq Y$ and $f:X\to Y$,
-$f^{-1}(Y\backslash B)=X\backslash f^{-1}(B)$.\\\\
+If $A$ is a subspace of $X_{\tau}$, the inclusion map $j:A\hookrightarrow X$ is continuous.\\\\
+
 
 \begin{solution}\renewcommand{\qedsymbol}{}\ \\
-    Prove: Let $B, X,$ and $Y$ be sets, $B\subseteq Y$, and $f:X\rightarrow Y$ be a function. First
-    assume that $B=\emptyset$. Then $Y\setminus B=Y$. So,
-    $f^{-1}(Y\setminus B)=f^{-1}(Y)=X=X\setminus f^{-1}(B)$. So, assume that $B\neq\emptyset$ Let
-    $x\in f^{-1}(Y\backslash B)$. Then, we have that $f(x)\in Y\setminus B$. So, by definition,
-    $f(x)\in Y$ and $f(x)\notin B$. Again by definition, $x\in X$ but $x\notin f^{-1}(B)$. Therefore
-    $x\in X\backslash f^{-1}(B)$ and $f^{-1}(Y\backslash B)\subseteq X\backslash f^{-1}(B)$. On the
-    other hand, assume $x\in X\backslash f^{-1}(B)$. Well, we have then that $x\in X$ and
-    $x\notin f^{-1}(B)$. So, by definition, $f(x)\in Y$, but also $f(x)\notin B$ Thus,
-    $f(x)\in Y\setminus B$ and so $x\in f^{-1}(Y\backslash B)$. Therefore
-    $f^{-1}(Y\backslash B)=X\backslash f^{-1}(B)$ as desired.
+    Let $A$ be a subspace of $X_{\tau}$. Let $V$ be a $\tau-$open subset of $X$. Assume first that
+    $V\cap A=V$. Then $j^{-1}(V)\subseteq A$ and
+    $j^{-1}(V)=j^{-1}(V\cap A)=j^{-1}(V)\cap j^{-1}(A)=V\cap A=V$ by definition of the inclusion map.
+    Thus $V$ is $\tau_{A}-$open by definition of the subspace topology. Next assume that
+    $V\cap A=\emptyset$. Then, $j^{-1}(V)=\emptyset$ by the definition of the inclusion map. Hence
+    $j^{-1}(V)$ is open since $\tau_{A}$ is a topology. Finally assume that $V\cap A\neq V$ and
+    $V\cap A\neq\emptyset$. Then we can take $V=V_1\cup V_2$ such that $V_1\cap V_2=\emptyset$,
+    $V_1\cap A=V_1$, and $V_2\cap A=\emptyset$. Then
+    $j^{-1}(V)=j^{-1}(V_1\cup V_2)=j^{-1}(V_1)\cup j^{-1}(V_2)=V_1$ be definition of the inclusion map.
+    Since $V_1=V_1\cap A$, $j^{-1}(V)$ is $\tau_{A}-$open. Thus, $j:A\hookrightarrow X$ is continuous.
 
 \end{solution}

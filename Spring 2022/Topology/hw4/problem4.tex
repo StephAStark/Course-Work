@@ -1,12 +1,18 @@
-(\#5 in 2.2) Prove \textbf{Theorem 2.2.5}: For $A\subseteq X$ and $f:X\to Y$ any function, we have
-$A\subseteq f^{-1}(f(A))$. If, in addition, $f$ is one-to-one, then $A=f^{-1}(f(A))$.\\\\
+(\#5 in 3.5) If $f:X\to Y$ is continuous and if $A$ is a subspace of $X_{\tau}$, then the restriction
+of $f$ to $A$, $f|_{A}:A\to Y$ is continuous.\\\\
 
 \begin{solution}\renewcommand{\qedsymbol}{}\ \\
-    Let $A\subseteq X$ and $f:X\to Y$ be any function. Assume $x\in A$. Then $f(x)=y$ for some $y\in Y$.
-    So by definition of image, we have that $f(x)\in f(A)$. Then by definition of inverse image, we have
-    that $x\in f^{-1}(f(A))$, and so $A\subseteq f^{-1}(f(A))$ as desired. Now, assume that $f$ is
-    injective. Also, let $x\in f^{-1}(f(A))$. So, $f(x)\in f(A)$. Therefore, by definition, there is an
-    $a\in A$ such that $f(x)=f(a)$. Now, since $f$ is one-to-one, we have that $x=a$. Hence $x\in A$.
-    So, by the preiviuos proof, we have that $A=f^{-1}(f(A))$ as was to be done.
+    Let $f:X\to Y$ be continuous and $A$ be a subspace of $X_{\tau}$. Let $V\subseteq Y$ be open in $Y$.
+    Assume first that $f|_{A}^{-1}(V)\cap A=\emptyset$. Then $f|_{A}^{-1}(V)=\emptyset$ by definition of
+    the restriction map. So, $f|_{A}^{-1}(V)$ is $\tau_{A}-$open. Next asssume that
+    $f|_{A}^{-1}(V)\cap A=f|_{A}^{-1}(V)$. Since $f$ is continuous, $f^{-1}(V)$ is $\tau-$open and so
+    $f|_{A}^{-1}(V)$ is also $\tau-$open. Therefore $f|_{A}^{-1}(V)$ is $\tau_{A}-$open by definition of
+    $\tau_{A}$. Finally assume that $f|_{A}^{-1}(V)\cap A\neq\emptyset$ and
+    $f|_{A}^{-1}(V)\cap A\neq f|_{A}^{-1}(V)$. So $f|_{A}^{-1}(V)=f|_{A}^{-1}(V_1)\cup f|_{A}^{-1}(V_2)$
+    such that
+    $f|_{A}^{-1}(V_1)\cap f|_{A}^{-1}(V_2)=\emptyset$, $f|_{A}^{-1}(V_1)\cap A=f|_{A}^{-1}(V_1)$, and
+    $f|_{A}^{-1}(V_2)\cap A=\emptyset$. Hence $f|_{A}^{-1}(V)=f|_{A}^{-1}(V_1)=f|_{A}^{-1}\cap A$, and
+    is thus $\tau_{A}-$open by definition. Thus the restriction of $f$ to $A$, $f|_{A}:A\to Y$ is
+    continuous.
 
 \end{solution}
