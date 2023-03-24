@@ -1,0 +1,11 @@
+Given that $n$ observations will produce a binomial parameter estimator, $\frac{X}{n}$, having a margin
+of error equal to 0.06, how many observations are required for the proportion to have a margin of error
+half that size?\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Well, assuimg a standard $95\%$ confidence interval, we have that $z=1.96$, and hence
+    $n=\frac{1.96^2}{4*0.06^2}=266.667$. So, $n=267$. Now, let $\tilde{n}=\frac{1.96^2}{4*0.03^2}$. So,
+    for a margin of error to be 0.03, we have that $\tilde{n}=1067.11$. Thus the number of observations
+    needed is $\tilde{n}=1068$.
+
+\end{solution}

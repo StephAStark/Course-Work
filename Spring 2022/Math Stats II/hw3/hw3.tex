@@ -1,42 +1,31 @@
-\documentclass[12pt]{article}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{amsthm}
-\usepackage{accents}
-\usepackage{graphicx}
-\setlength{\oddsidemargin}{0in}
-\setlength{\textwidth}{6.5in}
-\setlength{\topmargin}{-.55in}
-\setlength{\textheight}{9in}
-\pagestyle{empty}
-\renewcommand \d{\displaystyle}
+\input{settings}
+
 \begin{document}
-\noindent Dallas Klumpe
 
-\noindent Math 5820
+\lhead{Stephanie Klumpe}
 
-\noindent HW 3
+\chead{HW 3}
 
-5.3.2. In persons with no lung dysfunction, the norm for $FEV_1/VC$ ratios is 0.80. Based on the data (175) of 19 workers, is it believable that exposure to the Bacillus subtilis enzyme has no effect on the $FEV_1/VC$ ratio? Answer the question by constructing a $95\%$ confidence interval. Assume that $FEV_1/VC$ ratios are normally distributed with $\sigma=0.09$.\\
-Well, based off the data, we have that $n=19$, and $\bar{x}=.76632$. Since we want a $95\%$ confidence interval, we have that the z-score is 1.96. SO, the confidence interval is given by $[.76632-1.96(\frac{.09}{\sqrt{19}}),.76632+1.96(\frac{.09}{\sqrt19})]=[0.7259,0.8068]$. So, we are $95\%$ confident the population mean is within this interval. So, it is believable to assume that the enzime has little to no effect on the $FEV_1/VC$ ratio.\\[20pt]
+\rhead{MATH 5820}
 
-5.3.5. Suppose a sample of size $n$ is to be drawn from a normal distribution where $\sigma$ is known to be 14.3. How large does n have to be to guarantee that the length of the $95\%$ confidence interval for $\mu$ will be less than 3.06?\\
-The margin of error for a normal distribution is given by $d=z_{\alpha/2}\frac{\sigma}{\sqrt{n}}$. Hence $n=\frac{z_{\alpha/2}^2\sigma^2}{d^2}$. Since we want the interval to be no bigger than $3.06$, we have that $d=\frac{3.06}{2}=1.53$. So, $n=\frac{1.96^214.3^2}{1.53^2}=335.58$. So, we need $n\geq336$ for the interval to be no bigger than $3.06$.\\[20pt]
+\cfoot{\thepage\ of \pageref{LastPage}}
 
-5.3.9. If the standard deviation $\sigma$ associated with the pdf that produced the following sample is 3.6, would it be correct to claim that $(2.61-1.96*\frac{3.6}{\sqrt{20}},2.61+1.96*\frac{3.6}{\sqrt{20}})=(1.03, 4.19)$ is a $95\%$ confidence interval for $\mu$?\\
-The given interval and standard deviation are calculated correctly given the data, but the given data does not appear to be normal. That is, the data does not seem to fit a normal distribution, as it is very left scewed. So, claiming that the $95\%$ confidence interval is for $\mu$ would be incorrect.\\[20pt]
+ \begin{enumerate}
 
-5.3.22.a. A public health official is planning for the supply of influenza vaccine needed for the upcoming flu season. She took a poll of 350 local citizens and found that only 126 said they would be vaccinated. Find the $90\%$ confidence interval for the true proportion of people who plan to get the vaccine.\\
-Well, since we want a $90\%$ confidence interval, the z-score is $1.64$. Now, the sample proportion is $\hat{p}=\frac{126}{350}=0.36$. So, the interval is given by $[.36-1.64(\sqrt{\frac{.36(1-.36)}{350}}), .36+1.64(\sqrt{\frac{.36(1-.36)}{350}})]=[0.3179, 0.4021]$. So, we are $90\%$ confident the true population proportion is within $[0.3179, 0.4021]$.\\
+   \item[5.3.2.] \input{problem5_3_2}
+   \pagebreak
+   \item[5.3.5.] \input{problem5_3_5}
+   \pagebreak
+   \item[5.3.9.] \input{problem5_3_9}
+   \pagebreak
+   \item[5.3.22.a.] \input{problem5_3_22a}
+   \pagebreak
+   \item[5.3.22.b.] \input{problem5_3_22b}
+   \pagebreak
+   \item[5.3.23.] \input{problem5_3_23}
 
-b. Construct the confidence interval assuming that the towns population is 3000.\\
-Assuming the same sample proportion $\hat{p}=.36$ and confidence level $z=1.64$, we have that the confidence interval is $[.36-1.64(\sqrt{\frac{.36(1-.36)}{3000}}), .36+1.64(\sqrt{\frac{.36(1-.36)}{3000}})]=[0.3456, 0.3744]$. \\[20pt]
-
-5.3.23. Given that $n$ observations will produce a binomial parameter estimator, $\frac{X}{n}$, having a margin of error equal to 0.06, how many observations are required for the proportion to have a margin of error half that size?\\
-Well, assuimg a standard $95\%$ confidence interval, we have that $z=1.96$, and hence $n=\frac{1.96^2}{4*0.06^2}=266.667$. So, $n=267$. Now, let $\tilde{n}=\frac{1.96^2}{4*0.03^2}$. So, for a margin of error to be 0.03, we have that $\tilde{n}=1067.11$. Thus the number of observations needed is $\tilde{n}=1068$.\\
-
-
-
-
+ \end{enumerate}
 
 \end{document}
+%\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+%\end{solution}
