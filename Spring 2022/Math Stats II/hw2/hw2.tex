@@ -1,38 +1,27 @@
-\documentclass[12pt]{article}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{amsthm}
-\usepackage{accents}
-\usepackage{graphicx}
-\setlength{\oddsidemargin}{0in}
-\setlength{\textwidth}{6.5in}
-\setlength{\topmargin}{-.55in}
-\setlength{\textheight}{9in}
-\pagestyle{empty}
-\renewcommand \d{\displaystyle}
+\input{settings}
+
 \begin{document}
-\noindent Dallas Klumpe
 
-\noindent Math 5820
+\lhead{Stephanie Klumpe}
 
-\noindent HW 2
+\chead{HW 2}
 
-5.2.17. Let $y_1, y_2,\dots, y_n$ be a random sample of size $n$ from the pdf $f_Y (y;\theta)=\frac{2y}{\theta^2}, 0\leq y\leq\theta$. Find a formula for the method of moments estimate for $\theta$. Compare the values of the method of moments estimate and the maximum likelihood estimate if a random sample of size $5$ consists of the numbers $17, 92, 46, 39$, and $56$\\
-Well, set $EX=\int_0^{\theta}y\frac{2y}{\theta^2}dy$. Hence $\int_0^{\theta}y\frac{2y}{\theta^2}dy=\frac{1}{\theta^2}\int_0^{\theta}2y^2dy=\frac{1}{\theta^2}(\frac23y^3|_0^\theta)=\frac23\theta=\bar{y}$. So, $\theta_e=\frac32\bar{y}$. Now, $\bar{y}=50$, therefore $\theta_e=75$. Now, setting $L(\theta)=\prod_{i=1}^n\frac{2y_i}{\theta^2}$. So, we will set $l(\theta)=\ln(L(\theta))=\sum_{i=1}^n\ln(\frac{2y_i}{\theta^2})=\sum_{i=1}^n\ln(2y_i)-2n\ln(\theta)$. Whence $l'(\theta)=\frac{-2n}{\theta}$. So, we have that $\frac{-2n}{\theta}=0$ yields no MLE. So, since $l'(\theta)<0$, $l(\theta)$ is decreasing and we will take $\theta_e=y_{max}=92$.\\[20pt]
+\rhead{MATH 5820}
 
-5.2.20. Find the method of moments estimate for $\lambda$ if a random sample of size $n$ is taken from the exponential pdf $f_Y(y;\lambda)=\lambda e^{-\lambda y}, y\geq0$.\\
-Take $EX=\int_0^{\infty}y\lambda e^{-\lambda y}=\lambda\int_0^{\infty}ye^{-\lambda y}=\lambda*-\frac{e^{-\lambda y}(\lambda y+1)}{\lambda^2}=\frac{1}{\lambda}$. Hence $\frac{1}{\lambda}=\bar{y}$ and so $\frac{1}{\bar{y}}=\lambda_e$, which matches perfectly with the expected value for an exponential distribution.\\[20pt]
+\cfoot{\thepage\ of \pageref{LastPage}}
 
-5.2.21. Suppose that $Y_1 = 8.3, Y_2 = 4.9, Y_3 = 2.6$, and $Y_4 = 6.5$ is a random sample of size 4 from the two parameter uniform pdf $f_Y(y; \theta_1, \theta_2)=\frac{1}{2\theta_2}, \theta_1-\theta_2\leq y\leq\theta_1+\theta_2$. Use the method of moments to calculate $\theta_{1e}$ and $\theta_{2e}$.\\
-Well, $EX=\int_{\theta_1-\theta_2}^{\theta_1+\theta_2}y\frac{1}{2\theta_2}dy=\frac{1}{4\theta_2}y^2|_{\theta_1-\theta_2}^{\theta_1+\theta_2}=\frac{\theta_1^2+2\theta_1\theta_2+\theta_2^2-\theta_1^2+2\theta_1\theta_2-\theta_2^2}{4\theta_2}=\theta_{1e}=\bar{y}$. Also, $EX^2=\int_{\theta_1-\theta_2}^{\theta_1+\theta_2}y^2\frac{1}{2\theta_2}dy=\frac{1}{6\theta_2}y^3|_{\theta_1-\theta_2}^{\theta_1+\theta_2}=\frac{6\theta_1^2\theta_2+2\theta_2^3}{6\theta_2}=\theta_1^2+\frac13\theta_2^2=\bar{y}^2+\frac13\theta_2^2$. Now, $EX^2=\frac1n\sum_{i=1}^ny_i^2$, so $\frac1n\sum_{i=1}^ny_i^2=\bar{y}^2+\frac13\theta_2^2$. Thus, $\theta_{2e}=\sqrt{3(\frac1n\sum_{i=1}^ny_i^2-\bar{y}^2)}$. So, for the random sample, we have that $\theta_{1e}=5.575$ and $\theta_{2e}=3.632$.\\[20pt]
+ \begin{enumerate}
 
-5.2.24. Find the method of moments estimates for $\mu$ and $\sigma^2$, based on a random sample of size $n$ drawn from a normal pdf, where $\mu=E(Y)$ and $\sigma^2=Var(Y)$. Compare your answers with the maximum likelihood estimates.\\
-Well, we have $EY=\mu=\bar{y}=\hat{\mu_1}$. Also, $\sigma^2=EY^2-(EY)^2=EY^2-\mu^2$. Hence, $EY^2=\sigma^2+\mu^2=\hat{\mu_2}$. So, set $\hat{\mu}=\bar{y}$ and $\hat{\sigma}^2=\sigma^2+\mu^2$. Then $\hat{\sigma}^2=\frac1n\sum_{i=1}^ny_i^2-\bar{y}^2$. Clearly the MLE and the moment estimator for $\mu$ are identical. Now, the MLE for $\sigma^2=\frac1n\sum_{i=1}^n(y_i-\bar{y})^2=\frac1n\sum_{i=1}^n(y_i^2-2y_i\bar{y}+\bar{y}^2)=\frac1n(\sum_{i=1}^ny_i^2-2\bar{y}\sum_{i=1}^ny_i+n\bar{y}^2)=\frac1n\sum_{i=1}^ny_i^2-2\bar{y}^2+\bar{y}^2=\frac1n\sum_{i=1}^ny_i^2-\bar{y}^2$ which is the moment estimator. Thus, the estimators for moments and MLE are the same for the normal distribution.\\[20pt]
+   \item[5.2.17.] \input{problem5_2_17}
+   \pagebreak
+   \item[5.2.20.] \input{problem5_2_20}
+   \pagebreak
+   \item[5.2.21.] \input{problem5_2_21}
+   \pagebreak
+   \item[5.2.24.] \input{problem5_2_24}
+   \pagebreak
+   \item[5.2.25.] \input{problem5_2_25}
 
-5.2.25. Use the method of moments to derive estimates for the parameters $r$ and $\lambda$ in the gamma pdf $f_Y(y;r,\lambda)=\frac{\lambda^r}{\Gamma(r)}y^{r-1}e^{-\lambda y}, y\geq0$.\\
-We know that $EY=\frac{r}{\lambda}$ and $VarY=\frac{r}{\lambda^2}$. So, $\hat{\mu_1}=\bar{y}=EY$. Also, $EY^2=\frac1n\sum_{i=1}^n=\hat{\mu_2}=VarY+(EY^2)=\frac{r}{\lambda^2}+\frac{r^2}{\lambda^2}$. Now, we have that $r=\bar{y}\lambda$, so $EY^2=\frac{\bar{y}\lambda}{\lambda^2}+\frac{\bar{y}^2\lambda^2}{\lambda^2}=\frac{\bar{y}}{\lambda}+\bar{y}^2$. Hence, $\lambda=\frac{\bar{y}}{\hat{\mu_2}-\bar{y}^2}$. Thus, substituting $\lambda$ back into $r$, we get $r=\frac{\bar{y}^2}{\hat{\mu_2}-\bar{y}^2}$ for both of our moment estimators.\\[20pt]
-
-
-
+ \end{enumerate}
 
 \end{document}

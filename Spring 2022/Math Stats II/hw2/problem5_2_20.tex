@@ -1,0 +1,14 @@
+Find the method of moments estimate for $\lambda$ if a random sample of size $n$ is taken from the
+exponential pdf $f_Y(y;\lambda)=\lambda e^{-\lambda y}, y\geq0$.\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Take
+    
+    $$EX=\int_0^{\infty}y\lambda e^{-\lambda y}
+    =\lambda\int_0^{\infty}ye^{-\lambda y}=\lambda*-\frac{e^{-\lambda y}(\lambda y+1)}{\lambda^2}
+    =\frac{1}{\lambda}$$
+    
+    Hence $\frac{1}{\lambda}=\bar{y}$ and so $\frac{1}{\bar{y}}=\lambda_e$, which matches perfectly
+    with the expected value for an exponential distribution.
+
+\end{solution}

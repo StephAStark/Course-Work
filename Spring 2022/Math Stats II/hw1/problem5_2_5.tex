@@ -1,0 +1,19 @@
+Given that $y_1=2.3$, $y_2=1.9$, and $y_3=4.6$ is a random sample from
+$f_Y(y;\theta)=\frac{y^3e^{-\frac{y}{\theta}}}{6\theta^4}$, $y\geq0$, calculate the MLE for
+$\theta$.\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Well, set $L(\theta)=\prod_{i=1}^n\frac{y_i^3e^{-\frac{y_i}{\theta}}}{6\theta^4}$. Now take
+    $l(\theta)=\ln (L(\theta))=\sum_{i=1}^n\ln\frac{y_i^3e^{-\frac{y_i}{\theta}}}{6\theta^4}$ So,
+
+    $$l(\theta)=\sum_{i=1}^n(\ln y_i^3-\frac{y_i}{\theta}-\ln6\theta^4)=
+    \sum_{i=1}^n(3\ln y_i-\frac{y_i}{\theta}-4\ln6\theta)$$
+    $$=3n\sum_{i=1}^ny_i-\frac{1}{\theta}\sum_{i=1}^ny_i-4n\ln6\theta$$
+    Hence, $l'(\theta)=\frac{1}{\theta^2}\sum_{i=1}^ny_i-\frac{4n}{6\theta}$. Setting
+    $l'(\theta)=0=\frac{1}{\theta^2}\sum_{i=1}^ny_i-\frac{4n}{6\theta}$ yields
+    $\frac{1}{\theta^2}\sum_{i=1}^ny_i=\frac{4n}{6\theta}$. Therefore
+    $\theta_e=\frac{1}{4n}\sum_{i=1}^ny_i=\frac{\bar{y}}{4}$ is the MLE for this distribution with the
+    given density function. So, for the given samples, we have that
+    $\theta_e=\frac{1}{4*3}(2.3+1.9+4.6)=0.733$.
+
+\end{solution}
