@@ -1,0 +1,32 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{accents}
+\usepackage{graphicx}
+\setlength{\oddsidemargin}{0in}
+\setlength{\textwidth}{6.5in}
+\setlength{\topmargin}{-.55in}
+\setlength{\textheight}{9in}
+\pagestyle{empty}
+\renewcommand \d{\displaystyle}
+\begin{document}
+\noindent Dallas Klumpe
+
+\noindent Math 5820
+
+\noindent HW 12
+
+9.5.3. Construct two $99\%$ confidence intervals for $\mu_X-\mu_Y$ using the data of Case Study 9.2.3, first assuming the variances are equal, and then assuming they are not.\\
+First assume that the variances are equal for the datat of case study 9.2.3. The case study gicves us that $\bar{x}=18.6$ and $\bar{y}=21.9$. Also by the data, we have that $s_p=\sqrt{\frac{115.9929(11)+35.7604(11)}{22}}=8.7107$. Hence our $99\%$ confidence interval is $[(18.6-21.9)-2.8188(8.7107)(\sqrt{\frac{1}{12}+\frac{1}{12}}), (18.6-21.9)+2.8188(8.7107)(\sqrt{\frac{1}{12}+\frac{1}{12}})]=[-13.324, 6.724]$. Next, assume that the variances are unequal. Then, our degrees of freedom is $\nu=\frac{(\frac{115.9929}{35.7604}+\frac{12}{12})^2}{\frac{10.521}{11}+\frac{1}{11}}=17.19$. That is, we have 17 degrees of freedom. So, our $99\%$ confidence interval is $[-3.3-(2.8982)\sqrt{\frac{115.9929}{12}+\frac{35.7604}{12}}, -3.3+(2.8982)\sqrt{\frac{115.9929}{12}+\frac{35.7604}{12}}]=[-13.6064, 7.0064]$.\\[20pt]
+
+9.5.6. Construct a $95\%$ confidence interval for $\frac{\sigma_X^2}{\sigma_Y^2}$ based on the data in Case Study 9.2.1. The hypothesis test referred to tacitly assumed that the variances were equal. Does that agree with your confidence interval? Explain.\\
+Well, the sample variances given in the case study are $s_X^2=0.0002103$ and $s_Y^2=0.0000955$. Hence, the $95\%$ confidence interval is $[\frac{0.0002103}{0.0000955}(0.238), \frac{0.0002103}{0.0000955}(4.82)]=[0.5241, 10.6141]$. Now, we are $95\%$ confident that the true proportion of the variances is in this interval. Since 1 lies within this confidence interval, we can say, with $95\%$ confidence, that the variances are equal. So, we can reasonably say that the variances are equal.\\[20pt]
+
+9.5.12. Find a $95\%$ confidence interval for the difference in complication rates. Is there evidence that the new sutures are better?\\
+Well, we have that $n=77$ and $m=73$. So, the sample complication rates are $\hat{p}_x=\frac{9}{77}=0.1169$ and $\hat{p}_y=\frac{6}{73}=0.0822$. Then, our confidence interval is $[(0.1169-0.0822)-1.96\sqrt{\frac{.1169(.8831)}{77}+\frac{.0822(.9178)}{73}}, (0.1169-0.0822)+1.96\sqrt{\frac{.1169(.8831)}{77}+\frac{.0822(.9178)}{73}}]=[-0.0608, 0.1302]$. Since we have that the interval is of positive numbers, we can say that we are $95\%$ confident that the true difference in complication rates $p_x-p_y$ is in the interval. So, we can reasonably say that the new sutures are better in that they have a lower complication rate.
+
+
+
+
+\end{document}

@@ -1,0 +1,35 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{accents}
+\usepackage{graphicx}
+\setlength{\oddsidemargin}{0in}
+\setlength{\textwidth}{6.5in}
+\setlength{\topmargin}{-.55in}
+\setlength{\textheight}{9in}
+\pagestyle{empty}
+\renewcommand \d{\displaystyle}
+\begin{document}
+\noindent Dallas Klumpe
+
+\noindent Math 5820
+
+\noindent HW 9
+
+7.4.7. Construct a $90\%$ confidence interval for the true average absorption rate for a sample size of 20.\\
+Well, the data gives us an average of $\bar{x}=1.427$ and a sample standard deviation of $s=0.05639$. Now, we need $-t_{0.05}$ and $t_{0.05}$. Since $n=20$ we have 19 degrees of freedom and so $-t_{0.05}=-1.7291$ and $t_{0.05}=1.7291$. Thus, the $90\%$ confidence interval for $\mu$ is $[1.427-1.7291(\frac{0.05639}{\sqrt{20}}), 1.427+1.7291(\frac{0.05639}{\sqrt{20}})]=[1.4052, 1.4488]$.\\[20pt]
+
+7.4.22. For 317 games the margin of victory was recorded. The data gives $\bar{y}=4.57$ and $s=18.29$. Test the existance of a home feild advantage with $H_0:\mu=0$ and $H_1:\mu>0$ at the 0.05 significance level.\\
+Well, we have $n=317$, so we have 316 degrees of freedom. By the limitations of the t-table, we have $\infty$ degrees of freedom. So, $t_{0.05}=1.64$. Now, $t_n=\frac{4.57-0}{\frac{18.29}{\sqrt{317}}}=4.4487$. Now, $4.4487>1.64$, so we reject $H_0$.\\[20pt]
+
+7.5.9.a. Assume that match lengths are normally distributed. Use Theorem 7.5.1 to construct a $95\%$ confidence interval for the standard deviation of the match lengths.\\
+Well, the data gives us a sample size of $n=16$, an average of $\bar{x}=94.625$, and a sample standard deviation of $s=27.2467$. Now, we have 15 degrees of freedom, so $\chi^2_{0.025}=6.262$ and $\chi^2_{0.975}=27.488$. Thus, by Theorem 7.5.1, the $95\%$ confidence interval for $\sigma$ is $[\frac{\sqrt{15}(27.2467)}{\sqrt{27.488}}, \frac{\sqrt{15}(27.2467)}{\sqrt{6.262}}]=[20.1274, 42.1699]$.\\[20pt]
+
+7.5.16. Test $H_0:\sigma^2=1$ versus $H_1:\sigma^2>1$ using the $\alpha=0.05$ significance level assuming the weights are normally distributed. Use the sums $\sum_{i=1}^{30}y_i=758.62$ and $\sum_{i=1}^{30}y_i^2=19195.7938$.\\
+By the given sums, we have that $n=30$. So, there are 29 degrees of freedom. Also, the sample variance is $s^2=\frac{30(19195.7938)-(758.62)^2}{(30)(29)}=0.4247$ So, $\chi^2_{0.95}=42.557$. Then, by theorem 7.5.1, we have that $\chi^2=\frac{(29)0.4247}{1}=12.31699$. Since $12.31699<42.557$, we fail to reject $H_0$.
+
+
+
+
+\end{document}

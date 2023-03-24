@@ -1,0 +1,45 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{accents}
+\usepackage{graphicx}
+\setlength{\oddsidemargin}{0in}
+\setlength{\textwidth}{6.5in}
+\setlength{\topmargin}{-.55in}
+\setlength{\textheight}{9in}
+\pagestyle{empty}
+\renewcommand \d{\displaystyle}
+\begin{document}
+\noindent Dallas Klumpe
+
+\noindent Math 5820
+
+\noindent HW 5
+
+5.4.17.a. Let $X_1, X_2,\ldots, X_n$ denote the outcomes of a series of $n$ independent trials, where  
+$$f(x)=\left\{ \begin{array}{lr}
+      1 & $with proability $p \\
+      0 & $with probability $1-p \\
+\end{array} \right.$$for $i=1,2,\ldots, n$. Let $X=X_1+\ldots+X_n$. Show $\hat{p}_1=X_1$ and $\hat{p}_2=\frac{X}{n}$ are unbiased estimators for $p$.\\
+Well, here we have Bernoulli random variables, so $E(\hat{p}_1)=E(X_1)=p$. This also gives us $E(\hat{p}_2)=E(\frac{X}{n})=\frac1n(E(X_1)+\ldots+E(X_n))=\frac1n(np)=p$. Thus, both estimators for $p$ are unbiased.\\
+b. Verify that $\hat{p}_2$ is a better estimator than $\hat{p}_1$ by comparing variances.\\
+Well, $Var(\hat{p}_1)=p(1-p)$. Now, $Var(\hat{p}_2)=Var(\frac{X}{n})=\frac{1}{n^2}(Var(X_1)+\ldots+Var(X_n))=\frac{1}{n^2}(n(p(1-p)))=\frac{p(1-p)}{n}$. Thus, we have that $Var(\hat{p}_2)<Var(\hat{p}_1)$ and so $\hat{p}_2$ is a better estimator.\\[20pt]
+
+5.4.19.a. Let $Y_1,Y_2,\ldots,Y_n$ be a random sample of size $n$ from the pdf $f_Y(y;\theta)=\frac{1}{\theta}e^{-\frac{y}{\theta}}, y>0$. Show that $\hat{\theta}_1=Y_1, \hat{\theta}_2=\bar{Y}$, and $\hat{\theta}_3=n*Y_{min}$ are all unbiased estimators for $\theta$.\\
+Well, $E(Y)=\int_0^{\infty}y\frac{1}{\theta}e^{-\frac{y}{\theta}}dy=\frac{1}{\theta}\int_0^{\infty}ye^{-\frac{y}{\theta}}dy=-ye^{-\frac{y}{\theta}}|_0^{\infty}+\int_0^{\infty}e^{-\frac{y}{\theta}}dy=-ye^{-\frac{y}{\theta}}-\theta e^{-\frac{y}{\theta}}=\theta$. Now, since $Y_1$ has the same distribution, $E(\hat{\theta}_1)E(Y_1)=\theta$. Now, $E(\hat{\theta}_2)=E(\bar{Y})=\frac1n(E(Y_1)+\ldots+E(Y_n))=\frac1n(n\theta)=\theta$. Finally, $F_Y(Y)=\int_0^y\frac{1}{\theta}e^{-\frac{t}{\theta}}dt=\frac{1}{\theta}\int_0^ye^{-\frac{t}{\theta}}dt=1-e^{-\frac{y}{\theta}}.$ Hence, $f_{Y_{min}}(Y)=n(1-(1-e^{-\frac{y}{\theta}}))\frac{1}{\theta}e^{-\frac{y}{\theta}}=\frac{n}{\theta}e^{-\frac{y(n-1)}{\theta}}e^{-\frac{y}{\theta}}=\frac{n}{\theta}e^{-\frac{ny}{\theta}}$. Thus, we have that $E(\hat{\theta}_3)=E(n*Y_{min})=n*(\int_0^{\infty}y\frac{n}{\theta}e^{-\frac{ny}{\theta}}dy)=\frac{n^2}{\theta}\int_0^{\infty}ye^{-\frac{ny}{\theta}}dy=\frac{n^2}{\theta}(\frac{\theta^2}{n})=\theta$. Therefore, we have that all three estimators are unbiased.\\
+b.  Find the variances of $\hat{\theta}_1, \hat{\theta}_2$, and $\hat{\theta}_3$.\\
+Since $f_Y$ is a gamma distribution, we have that $Var(\hat{\theta}_1)=Var(Y_1)=\theta^2$. Also, $Var(\hat{\theta}_2)=Var(\bar{Y})=\frac{1}{n^2}(n\theta^2)=\frac{\theta^2}{n}$. Finally, we have that $Var(\hat{\theta}_3)=Var(n*Y_{min})=\theta^2$.\\
+c. Calculate the relative efficiencies of $\hat{\theta}_1$ to $\hat{\theta}_3$ and $\hat{\theta}_2$ to $\hat{\theta}_3$.\\
+We have $\frac{Var(\hat{\theta}_3)}{Var(\hat{\theta}_1)}=\frac{\theta^2}{\theta^2}=1$ as the relative efficieny of $\hat{\theta}_1$ to $\hat{\theta}_3$ and $\frac{\theta^2}{\frac{\theta^2}{n}}=n$ as the relative efficiency of $\hat{\theta}_2$ to $\hat{\theta}_3$.\\[20pt]
+
+5.4.20. Given a random sample of size $n$ from a Poisson distribution, $\hat{\lambda}_1=X_1$ and $\hat{\lambda}_2=\bar{X}$ are two unbiased estimators for $\lambda$. Calculate the relative efficiency of $\hat{\lambda}_1$ to $\hat{\lambda}_2$.\\
+Since $\hat{\lambda}_1$ and $\hat{\lambda}_2$ are both from a Poisson distribution, we have that $Var(\hat{\lambda}_1)=Var(X_1)=\lambda$ and $Var(\hat{\lambda}_2)=Var(\bar{X})=\frac{1}{n^2}(n\lambda)=\frac{\lambda}{n}.$ Hence, the relative efficiency is $\frac{Var(\hat{\lambda}_2)}{Var(\hat{\lambda}_1)}=\frac{\frac{\lambda}{n}}{\lambda}=\frac1n$.\\[20pt]
+
+5.4.22. Suppose that $W_1$ is a random variable with mean $\mu$ and variance $\sigma^2_1$ and $W_2$ is a random variable with mean $\mu$ and variance $\sigma^2_2$. From Example 5.4.3, we know that $cW_1+(1-c)W_2$ is an unbiased estimator of $\mu$ for any constant $c>0$. If $W_1$ and $W_2$ are independent, for what value of $c$ is the estimator $cW_1+(1-c)W_2$ most efficient?\\
+Since $W_1$ and $W_2$ are independent, we have that $Var(cW_1+(1-c)W_2)=c^2Var(W_1)+(1-c)^2Var(W_2)=c^2\sigma_1^2+(1-c)^2\sigma_2^2$. Next take the derivative with respect to $c$ and set it equal to $0$ to get $2c\sigma_1^2-2(1-c)\sigma_2^2=0$ Thus, $c=\frac{\sigma_2^2}{\sigma_1^2-\sigma_2^2}$
+
+
+
+
+\end{document}

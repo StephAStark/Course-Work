@@ -1,0 +1,44 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{accents}
+\usepackage{graphicx}
+\setlength{\oddsidemargin}{0in}
+\setlength{\textwidth}{6.5in}
+\setlength{\topmargin}{-.55in}
+\setlength{\textheight}{9in}
+\pagestyle{empty}
+\renewcommand \d{\displaystyle}
+\begin{document}
+\noindent Dallas Klumpe
+
+\noindent Math 5820
+
+\noindent HW 1
+
+5.2.1. A random sample of 8; $x_1=1$, $x_2=0$, $x_3=1$ $x_4=1$, $x_5=0$, $x_6=1$, $x_7=1$, and $x_8=0$ is taken from the probability function $p_X(k;\theta)=\theta^k(1-\theta)^{1-k}$, $k=0,1$, $0<\theta<1$. Find the MLE for $\theta$.\\
+Well, we know that the MLE for an identical scenario is given by $\frac1n\sum_{i=1}^nx_i$, and as such, the MLE for $\theta$ is $\frac18\sum_{i=1}^8x_i=\frac18(5)=\frac58$.\\[20pt]
+
+5.2.3. Use the sample $y_1=8.2$, $y_2=9.1$, $y_3=10.6$, and $y_4=4.9$ to calculate the MLE for $\lambda$ in the exponential pdf $f_Y(y;\lambda)=\lambda e^{-\lambda y}$, $y\geq0$.\\
+Take $L(\lambda)=\prod_{i=1}^n\lambda e^{-\lambda y_i}.$ Then set $l(\lambda)=\ln(L(\lambda))=\sum_{i=1}^n\ln(\lambda e^{-\lambda y_i})=\sum_{i=1}^n(\ln\lambda-\lambda y_i)=n\ln\lambda-\lambda\sum_{i=1}^ny_i$. Hence $l'(\lambda)=\frac{n}{\lambda}-\sum_{i=1}^ny_i$. Setting $l'(\lambda)=0$ yields $\lambda=\frac{n}{\sum_{i=1}^ny_i}$. So, $\lambda_e=\frac{4}{8.2+9.1+10.6+4.9}=0.122$.\\[20pt]
+
+5.2.5. Given that $y_1=2.3$, $y_2=1.9$, and $y_3=4.6$ is a random sample from $f_Y(y;\theta)=\frac{y^3e^{-\frac{y}{\theta}}}{6\theta^4}$, $y\geq0$, calculate the MLE for $\theta$.\\
+Well, set $L(\theta)=\prod_{i=1}^n\frac{y_i^3e^{-\frac{y_i}{\theta}}}{6\theta^4}$. Now take $l(\theta)=\ln (L(\theta))=\sum_{i=1}^n\ln\frac{y_i^3e^{-\frac{y_i}{\theta}}}{6\theta^4}$ So, $l(\theta)=\sum_{i=1}^n(\ln y_i^3-\frac{y_i}{\theta}-\ln6\theta^4)=\sum_{i=1}^n(3\ln y_i-\frac{y_i}{\theta}-4\ln6\theta)=3n\sum_{i=1}^ny_i-\frac{1}{\theta}\sum_{i=1}^ny_i-4n\ln6\theta$. Hence, $l'(\theta)=\frac{1}{\theta^2}\sum_{i=1}^ny_i-\frac{4n}{6\theta}$. Setting $l'(\theta)=0=\frac{1}{\theta^2}\sum_{i=1}^ny_i-\frac{4n}{6\theta}$ yields $\frac{1}{\theta^2}\sum_{i=1}^ny_i=\frac{4n}{6\theta}$. Therefore $\theta_e=\frac{1}{4n}\sum_{i=1}^ny_i=\frac{\bar{y}}{4}$ is the MLE for this distribution with the given density function. So, for the given samples, we have that $\theta_e=\frac{1}{4*3}(2.3+1.9+4.6)=0.733$.\\[20pt]
+
+5.2.6. Estimate $\theta$ in the pdf $f_Y(y;\theta)=\frac{\theta}{2\sqrt{y}}e^{-\theta\sqrt{y}}$, $y\geq0$. Evaluate $\theta_e$ for the random sample size of 4; $y_1=6.2$, $y_2=7.0$, $y_3=2.5$, and $y_4=4.2$.\\
+Define $L(\theta)=\prod_{i=1}^n\frac{\theta}{2\sqrt{y_i}}e^{-\theta\sqrt{y_i}}$. Now, let $l(\theta)=\ln(L(\theta))=\sum_{i=1}^n\ln(\frac{\theta}{2\sqrt{y_i}}e^{-\theta\sqrt{y_i}})$. Then $l(\theta)=\sum_{i=1}^n(\ln\theta-\ln2\sqrt{y_i}-\theta\sqrt{y_i})=n\ln\theta-\sum_{i=1}^n\ln2\sqrt{y_i}-\theta\sum_{i=1}^n\sqrt{y_i}$. Hence $l'(\theta)=\frac{n}{\theta}-\sum_{i=1}^n\sqrt{y_i}$. Now, setting $l'(\theta)=0$ gives us $\theta=\frac{n}{\sum_{i=1}^n\sqrt{y_i}}$ as the MLE for the distribution. Thus, we have that $\theta_e=\frac{4}{\sqrt{6.2}+\sqrt{7.0}+\sqrt{2.5}+\sqrt{4.2}}=0.456$.\\[20pt]
+
+5.2.8. Suppose data follows a geometric distribution $p_X(k;p)=(1-p)^{k-1}p, k=1,2,\dotsc$. Estimate $p$ and compare the observed and expected frequencies.\\
+The MLE for a geometric distribution is given by $p_e=\frac{n}{\sum_{i=1}^nk_i}$. So, by the data we have that $n=1011$ and $\sum_{i=1}^6k_i=678+(2)227+(3)56+(4)28+(5)8+(6)14=1536$. Therefore $p_e=\frac{1011}{1536}=0.658203$. Now, the expected values are $1011(0.658203)=665.4434$, $1011((1-0.658203)0.658203)=227.4465$, $1011(1-0.658203)^20.658203=77.7405$, $1011(1-0.658203)^30.658203=26.5715$, $1011(1-0.658203)^40.658203=9.082$, and $1011(1-0.658203)^50.658203=3.1042$. So, we can see that the data fits pretty well for $k_1, k_2, k_4,$ and $k_5$. The data and expected values for $k_3$ and $k_6$ are not really close at all.\\[20pt]
+
+5.2.9.a. Assume that the data follows a Poisson distribution, $p_X(k;\lambda)=e^{-\lambda}\frac{\lambda^k}{k!}, k=0,1,2,\dotsc$. Estimate $\lambda$ and compare the observed and expected frequencies.\\
+We know that the MLE for a Poisson distribution is given by $\lambda_e=\bar{k}$. Hence, we estimate $\lambda=\frac{(0)6+(1)19+(2)12+(3)13+(4)9}{59}=\frac{118}{59}=2$. Now, the expected frequencies are $59*e^{-2}=7.985$, $59*e^{-2}\frac{2}{1}=15.97$, $59*e^{-2}\frac{2^2}{2}=15.97$, $59*e^{-2}\frac{2^3}{3!}=10.646$, and $59-(7.985+15.97+15.97+10.646)=8.429$. These expected frequencies match pretty well with the observed frequencies with minimal overall discrepency.\\[20pt]
+
+5.2.10.a. Based on the random sample $Y_1=6.3, Y_2=1.8, Y_3=14.2$, and $Y_4=7.6$, estimate the parameter $\theta$ in the uniform pdf $f_Y(y;\theta)=\frac{1}{\theta}$, $0\leq y\leq\theta$.\\
+It is known that the MLE for a uniform distribution is given by $\theta_e=y_{max}$. Hence, $\theta_e=14.2$.
+
+
+
+
+\end{document}

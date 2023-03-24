@@ -1,0 +1,32 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{accents}
+\usepackage{graphicx}
+\setlength{\oddsidemargin}{0in}
+\setlength{\textwidth}{6.5in}
+\setlength{\topmargin}{-.55in}
+\setlength{\textheight}{9in}
+\pagestyle{empty}
+\renewcommand \d{\displaystyle}
+\begin{document}
+\noindent Dallas Klumpe
+
+\noindent Math 5820
+
+\noindent HW 8
+
+6.4.1. Calculate the power of the 6.2.1 test when the true mean is 500.\\
+Well, we have that $H_0:\mu=494$ and $H_1:\mu\neq494$ given $\sigma=124, \alpha=0.05$, and $n=86$. So, we now have that $H_1:\mu=500$. So, $-1.96\leq\frac{\bar{y}-494}{\frac{124}{\sqrt{86}}}\leq1.96$. Hence, $494-1.96(\frac{124}{sqrt{86}})=467.7923\leq\bar{y}\leq520.2077=494+1.96(\frac{124}{\sqrt{86}})$. Since this is a two sided test, the power is $P(\frac{\bar{y}-500}{\frac{124}{\sqrt{86}}}=z\leq\frac{467.7923-500}{\frac{124}{\sqrt{86}}})+P(z\geq\frac{520.2077-500}{\frac{124}{\sqrt{86}}})=P(z\leq-2.4087)+P(z\geq1.5113)=0.008+(1-0.9345)=0.0735$.\\[20pt]
+
+6.4.3. For the decision rule found in 6.2.2 to test $H_0:\mu=95$ versus $H_1:\mu\neq95$ at the $\alpha=0.06$ significance level, calculate $1-\beta$ when $\mu=90$.\\
+We have that $H_0:\mu=95$ and $H_1:\mu\neq95$ given that $\sigma=15, \alpha=0.06$, and $n=22$. By 6.2.2, we also have that the decision rule is $89.2436\leq\bar{y}\leq100.7564$. So, given that $H_1:\mu=90$, we have that $1-\beta=P(z\leq\frac{89.2436-90}{\frac{15}{\sqrt{22}}})+P(z\geq\frac{100.7564-90}{\frac{15}{\sqrt{22}}})=P(z\leq-0.2365)+P(z\geq3.3635)=0.4052+0.0012=0.4064$.\\[20pt]
+
+6.4.7. If $H_0:\mu=200$ is to be tested against $H_1:\mu<200$ at the $\alpha=0.1$ significance level with a sample size of $n$ from a normal distribution where $\sigma=15$, what is the smallest sample size $n$ that will make the power equal to at least 0.75 when $\mu=197$?\\
+Well, we have that $z=1.28=\frac{\bar{y}-200}{\frac{15}{\sqrt{n}}}$. Hence, $\bar{y}=200-1.28(\frac{15}{\sqrt{n}})$. Now, $1-\beta=P(z\leq\frac{\bar{y}-197}{\frac{15}{\sqrt{n}}})=0.75$. That means $\frac{\bar{y}-197}{\frac{15}{\sqrt{n}}}=0.67$. So, $\bar{y}=197+0.67(\frac{15}{\sqrt{n}})$. Therefore $200-1.28(\frac{15}{\sqrt{n}})=197+0.67(\frac{15}{\sqrt{n}})$. So, $3=0.67(\frac{15}{\sqrt{n}})+(1.28(\frac{15}{\sqrt{n}}))$ and hence $3\sqrt{n}=0.67(15)+1.28(15)$. Thus, we have that $n=(0.67(5)+1.28(5))^2=95.0625$. Therefore the smallest sample size for the desired result is $n=96$.
+
+
+
+
+\end{document}

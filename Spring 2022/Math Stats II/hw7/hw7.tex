@@ -1,0 +1,41 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{accents}
+\usepackage{graphicx}
+\setlength{\oddsidemargin}{0in}
+\setlength{\textwidth}{6.5in}
+\setlength{\topmargin}{-.55in}
+\setlength{\textheight}{9in}
+\pagestyle{empty}
+\renewcommand \d{\displaystyle}
+\begin{document}
+\noindent Dallas Klumpe
+
+\noindent Math 5820
+
+\noindent HW 7
+
+6.2.1.a. $H_0:\mu=120$ versus $H_1:\mu<120; \bar{y}=114.2, n = 25, \sigma=18, \alpha=0.08$\\
+We reject $H_0$ if $z=\frac{\bar{y}-\mu}{\frac{\sigma}{\sqrt{n}}}=\frac{114.2-120}{\frac{18}{5}}\leq -z_{\alpha}=-1.41$. Now, $z=-1.6111<-z_{\alpha}$, so we reject the null hypothesis.\\
+b. $H_0:\mu=42.9$ versus $H_1:\mu\neq42.9; \bar{y}=45.1, n=16, \sigma=3.2, \alpha=0.01$\\
+We reject the null hypothesis if $z=\frac{\bar{y}-\mu}{\frac{\sigma}{\sqrt{n}}}=\frac{45.1-42.9}{\frac{3.2}{4}}<-z_{\alpha/2}=-2.58$ or if $z>z_{\alpha/2}=2.58$. Well, $z=2.75>z_{\alpha/2}$.Thus, we reject $H_0$.\\
+c. $H_0:\mu=14.2$ versus $H_1:\mu>14.2; \bar{y}=15.8, n=9, \sigma=4.1, \alpha=0.13$\\
+We reject the $H_0$ if $z=\frac{\bar{y}-\mu}{\frac{\sigma}{\sqrt{n}}}=\frac{15.8-14.2}{\frac{4.1}{3}}>z_{\alpha}=1.13$. Since $z=1.1707>z_{\alpha}$, we reject $H_0$.\\[20pt]
+
+6.2.2. A random sample of twenty-two children diagnosed with the condition have been drinking Berry Smart daily for two months. Past experience suggests that children with ADD score an average of 95 on the IQ test with a standard deviation of 15. If the data are to be analyzed using the $\alpha=0.06$ level of significance, what values of $\bar{y}$ would cause $H_0$ to be rejected? Assume that $H_1$ is two-sided.\\
+Well, if we wanted to fail to reject $H_0$, then we would want $-z_{\alpha/2}<\frac{\bar{y}-\mu}{\frac{\sigma}{\sqrt{n}}}<z_{\alpha/2}$. That is we would want $-1.88<\frac{\bar{y}-95}{\frac{15}{\sqrt{22}}}<1.88$. Therefore we would have $89.2436<\bar{y}<100.7564$. Thus, to reject $H_0$, we would need $\bar{y}\leq89.2436$ or $\bar{y}\geq100.7564$.\\[20pt]
+
+6.2.5. If $H_0:\mu=\mu_0$ is rejected in favor of $H_1:\mu>\mu_0$, will it necessarily be rejected in favor of $H_1:\mu\neq\mu_0$? Assume that $\alpha$ remains the same.\\
+No. If we were to assume that $\alpha=0.05$, then $z_{\alpha}=1.64$ and $z_{\alpha/2}=1.96$. So, if $z=1.72$, then $H_0$ would be rejected for $H_1:\mu>\mu_0$, but not for $H_1:\mu\neq\mu_0$.\\[20pt]
+
+6.3.3. A newly released poll claims to have contacted a random sample of one hundred twenty of the politician’s current supporters and found that seventy-two were men. In the election that he lost, exit polls indicated that $65\%$ of those who voted for him were men. Using an $\alpha=0.05$ level of significance, test the null hypothesis that the proportion of hismale supporters has remained the same. Make the alternative hypothesis one-sided.\\
+Well, we have a sample proportion of $\hat{p}=\frac{72}{120}=0.6$. So, we will set the alternative hypothesis to $H_1:p<0.65$. Now, or critical value is $z=\frac{72-120(0.65)}{\sqrt{120(0.65)(0.35)}}=-1.1483$. However, $z>z_{\alpha}=-1.64$, so we fail to reject $H_0:p=0.65$.\\[20pt]
+
+6.3.4. Suppose $H_0:p=0.45$ is to be tested against $H_1:p>0.45$ at the $\alpha=0.14$ level of significance, where $p =P$(ith trial ends in success). If the sample size is two hundred, what is the smallest number of successes that will cause $H_0$ to be rejected?\\
+Well, our critical value is $z=\frac{X-200(0.45)}{\sqrt{200(0.45(0.55))}}$. If we wish to reject $H_0$, then we need $z\geq z_{\alpha}=1.08$. That is $\frac{X-200(0.45)}{\sqrt{200(0.45(0.55))}}\geq1.08$. Hence $x\geq1.08(\sqrt{200(0.45)(0.55)})+200(0.45)=97.5985$. So, we would need at least $98$ succeses to reject $H_0$.
+
+
+
+\end{document}

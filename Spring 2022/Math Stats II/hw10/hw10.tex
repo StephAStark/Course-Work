@@ -1,0 +1,34 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{accents}
+\usepackage{graphicx}
+\setlength{\oddsidemargin}{0in}
+\setlength{\textwidth}{6.5in}
+\setlength{\topmargin}{-.55in}
+\setlength{\textheight}{9in}
+\pagestyle{empty}
+\renewcommand \d{\displaystyle}
+\begin{document}
+\noindent Dallas Klumpe
+
+\noindent Math 5820
+
+\noindent HW 10
+
+9.2.5. The group of ninety-three students receiving no college credit had a mean score of 4.17 on the validation test with a sample standard deviation of 3.70. For the twenty-eight students who received credit from a high school dual-enrollment class, the mean score was 4.61 with a sample standard deviation of 4.28. Is there a significant difference in these means at the $\alpha=0.01$ level? Assume the variances are equal.\\
+We have $n=93$, $\bar{x}=4.17$, $s_x=3.7$, $m=28$, $\bar{y}=4.61$, $s_y=4.28$, and $\alpha=0.01$. We also assume that $\sigma_x^2=\sigma_y^2$. We will test $H_0:\mu_x=\mu_y$ against $H_1:\mu_x<\mu_y$. Well, we have a pooled variance of $s_p^2=\frac{(3.7)^2(92)+(4.28)^2(27)}{119}=14.74014$. So, we have a t value of $t=\frac{4.17-4.61}{(\sqrt{14.74014(\frac{1}{93}+\frac{1}{28})})}=-0.53165$. Now, we have $93+28-2=119$ degrees of freedom, so $-t_{\alpha}=-2.33$. Therefore $t>t_{\alpha}$, so we do not have evidence to reject $H_0$, and thus we fail to reject $H_0$.\\[20pt]
+
+9.2.8. Is there evidence here that women $(n=6)$ metabolize methylmercury at a different rate than men $(m=9)$ do? Do an appropriate two-sample $t$ test at the $\alpha=0.01$ level of significance. The two sample standard deviations for these data are $s_X=15.1$ and $s_Y=8.1$.\\
+We have $n=6, \bar{x}=70.83, s_x=15.1, m=9, \bar{y}=79.33,$ and $s_y=8.1$. We will test $H_0:\mu_x=\mu_y$ against $H_1:\mu_x\neq\mu_y$. So, we have a pooled varaince $s_p^2=\frac{(15.1)^2(5)+(8.1)^2(8)}{13}=128.07154$. Hence $t=\frac{70.83-79.33}{\sqrt{128.07154(\frac{1}{6}+\frac{1}{9})}}=-1.4251$. Now with $6+9-2=13$ degrees of freedom, we have $t_{\alpha/2}=3.0123$. Then $-3.0123<t<3.0123$, so we fail to reject $H_0$.\\[20pt]
+
+9.2.15. If $X_1, X_2,\ldots, X_n$ and $Y_1, Y_2,\ldots,Y_m$ are independent random samples from normal distributions with the same $\sigma^2$, prove that their pooled sample variance, $S_p^2$, is an unbiased estimator for $\sigma^2$.\\
+Well, $E(s_p^2)=E(\frac{s_x^2(n-1)+s_y^2(m-1)}{m+n-2})=\frac{1}{m+n-2}(E(s_x^2(n-1))+E(s_y^2(m-1)))=\frac{1}{m+n-2}((n-1)E(s_x^2)+(m-1)E(s_y^2))=\frac{1}{m+n-2}((n-1)\sigma^2+(m-1)\sigma^2)=\frac{1}{m+n-2}((m+n-2)\sigma^2)=\sigma^2$. Thus, we have that $s_p^2$, the pooled variance, is an unbiased estimator for $\sigma^2$.\\[20pt]
+
+9.3.5. Test that the heat-output variances for normal subjects $(n=10)$ and those with Raynaud’s syndrome $(m=10)$ are the same. Use a two-sided alternative and the 0.05 level of significance.\\
+We will test $H_0:\sigma_x^2=\sigma_y^2$ against $H_1:\sigma_x^2\neq\sigma_y^2$. Well, the data gives us that $s_x^2=(0.37)^2=0.1369$ and $s_y^2=(0.2)^2=0.04$. So, $F=\frac{0.04}{0.1369}=0.2922$. Now, $F_{\alpha/2}=0.248$ and $F_{1-\alpha/2}=4.03$. So, $0.248<F<4.03$ and thus we fail to reject $H_0$.
+
+
+
+\end{document} 

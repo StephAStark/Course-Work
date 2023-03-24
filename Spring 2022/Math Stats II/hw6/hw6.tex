@@ -1,0 +1,32 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{accents}
+\usepackage{graphicx}
+\setlength{\oddsidemargin}{0in}
+\setlength{\textwidth}{6.5in}
+\setlength{\topmargin}{-.55in}
+\setlength{\textheight}{9in}
+\pagestyle{empty}
+\renewcommand \d{\displaystyle}
+\begin{document}
+\noindent Dallas Klumpe
+
+\noindent Math 5820
+
+\noindent HW 6
+
+5.5.1. Let $Y_1,Y_2,\ldots,Y_n$ be a random sample from $f_Y(y;\theta)=\frac{1}{\theta}e^{-\frac{y}{\theta}}, y>0$. Compare the Cramer-Rao lower bound for $f_Y(y;\theta)$ to the variance of the maximum likelihood estimator for $\theta$, $\hat{\theta}=\frac1n\sum_{i=1}^nY_i$. Is $\bar{Y}$ a best estimator for $\theta$?\\
+Well, $\ln(f_Y(y;\theta))=\ln(\frac{1}{\theta}e^{-\frac{y}{\theta}})=-\ln(\theta)-\frac{y}{\theta}$. Now, $\frac{d}{d\theta}(ln(f_Y(y;\theta)))=-\frac{1}{\theta}+\frac{y}{\theta^2}$. Then $(\frac{y}{\theta^2}-\frac{1}{\theta})^2=\frac{y^2}{\theta^4}-\frac{2y}{\theta^3}+\frac{1}{\theta^2}$. Hence, $E(\frac{y^2}{\theta^4}-\frac{2y}{\theta^3}+\frac{1}{\theta^2})=\frac{1}{\theta^4}E(y^2)-\frac{2}{\theta^3}E(y)+\frac{1}{\theta^2}=\frac{1}{\theta^2}$. Therefore, the CRLB is $\frac{1}{n\frac{1}{\theta^2}}=\frac{\theta^2}{n}$. Now, $Var(\bar{Y})=\frac{\theta^2}{n}=$CRLB, so $\bar{Y}$ is the best estimator for $\theta$.\\[20pt]
+
+5.5.3. Suppose a random sample of size $n$ is taken from a normal distribution with mean $\mu$ and variance $\sigma^2$, where $\sigma^2$ is known. Compare the Cramer-Rao lower bound for $f_Y(y;\mu)$ with the variance of $\hat{\mu}=\bar{Y}$. Is $\bar{Y}$ an efficient estimator for $\mu$?\\
+Well, $f_Y(y;\mu)=\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(\bar{Y}-\mu)^2}{2\sigma^2}}$. So, $\ln(f_Y(y;\mu))=-\frac12\ln(2\pi)-\ln(\sigma)-\frac{(\bar{Y}-\mu)^2}{2\sigma^2}$. Then, $\frac{d}{d\mu}(\ln(f_Y(y;\mu)))=\frac{\bar{Y}-\mu}{\sigma^2}$. Hence $\frac{d}{d\mu}(-\frac{\bar{Y}-\mu}{\sigma^2})=-\frac{1}{\sigma^2}$. Thus, $-E(-\frac{1}{\sigma^2})=\frac{1}{\sigma^2}$. Therefore, we have the the CRLB is $\frac{\sigma^2}{n}$. Since $Var(\bar{Y})=\frac{\sigma^2}{n}$, $\bar{Y}$ is an efficient estimator.\\[20pt]
+
+5.5.4. Let $Y_1,Y_2,\ldots,Y_n$ be a random sample from the uniform pdf $f_Y(y;\theta)=\frac{1}{\theta}, 0\leq y\leq\theta$. Compare the Cramer-Rao lower bound for $f_Y(y;\theta)$ with the variance of the unbiased estimator $\hat{\theta}=\frac{n+1}{n}*Y_{max}$. Discuss.\\
+We have that $\ln(f_Y(y;\theta))=\ln(\frac{1}{\theta})=-\ln(\theta)$. Hence $\frac{d}{d\theta}(-\ln{\theta})=-\frac{1}{\theta}$. So, $(-\frac{1}{\theta})^2=\frac{1}{\theta^2}$. Therefore $E(\frac{1}{\theta^2})=\frac{1}{\theta^2}$. Thus, the CRLB is given by $\frac{\theta^2}{n}.$ Now, the variance of $\hat{\theta}=\frac{\theta^2}{n(n+2)}$ by class work. Now, since $Var(\hat{\theta})<$CRLB, we have that we cannot apply the Cramer Rao Lower Bound to this pdf. This is because $f_Y(y;\theta)=0$ depends on $\theta$.
+
+
+
+
+\end{document}

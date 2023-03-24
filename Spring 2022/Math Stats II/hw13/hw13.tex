@@ -1,0 +1,39 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{accents}
+\usepackage{graphicx}
+\setlength{\oddsidemargin}{0in}
+\setlength{\textwidth}{6.5in}
+\setlength{\topmargin}{-.55in}
+\setlength{\textheight}{9in}
+\pagestyle{empty}
+\renewcommand \d{\displaystyle}
+\begin{document}
+\noindent Dallas Klumpe
+
+\noindent Math 5820
+
+\noindent HW 13
+
+12.2.2. Do these data suggest that the direction of the Earth’s magnetic field shifted over the time period spanned by the eruptions? Let $\alpha=0.05$.\\
+We are testing $H_0:\mu_1=\mu_2=\mu_3$ against $H_1:$not all$\mu_i$ are equal. Well, given the data, we have that $n=n_1+n_2+n_3=3+3+3=9$, $\bar{y}_1=59.4333, \bar{y}_2=55.9667, \bar{y}_3=51.7,$ and $\bar{y}=\frac19\sum_{i=1}^33(\bar{y}_i)=55.7$. Hence, we have $SSTR=90.02667$ and $SSE=17.6733$. So, our $F=15.28178$. Now, $F_{\alpha}=5.14$. Clearly $F>F_{\alpha}$, so we reject the magnetic field being the same over the years. That is, we can say with $95\%$ confidence that the Earth's magnetic field has shifted between the eruptions.\\[20pt]
+
+12.2.5.  Based on the results shown in the following table, is it conceivable that the four tribes were contemporaries of one another? Let $\alpha=0.01$.\\
+We are testing $H_0:\mu_1=\mu_2=\mu_3=\mu_4$. Now, $n=12$, $\bar{y}_1=983.3333, \bar{y}_2=950, \bar{y}_3=1466.6667, \bar{y}_4=1100$, and $\bar{y}=1125$. So, $SSTR=504166.6667$ and $SSE=363333.3333$. Therefore, we have that $F=3.7003$. Now, $F_{\alpha}=7.59$. Since $F<F_{\alpha}$, we fail to reject $H_0$. So, we can say with $99\%$ confidence that the tribes were contemporaries.\\[20pt]
+
+12.2.7. Fill in the entries missing from the following ANOVA table.(Bold text was the given values)
+\begin{center}
+\begin{tabular}{ c|   c   c   c   c  }
+Source & df & SS & MS & F\\
+\hline
+Treatment & $\textbf{4}$ & 271.36 & 67.68 & $\textbf{6.40}$\\
+Error & 10 & 106 & $\textbf{10.60}$ & \\
+Total & 14 & $\textbf{377.36}$ &  & 
+\end{tabular}
+\end{center}
+
+
+
+\end{document}

@@ -1,0 +1,29 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{accents}
+\usepackage{graphicx}
+\setlength{\oddsidemargin}{0in}
+\setlength{\textwidth}{6.5in}
+\setlength{\topmargin}{-.55in}
+\setlength{\textheight}{9in}
+\pagestyle{empty}
+\renewcommand \d{\displaystyle}
+\begin{document}
+\noindent Dallas Klumpe
+
+\noindent Math 5820
+
+\noindent HW 10
+
+9.4.4. Let $p_S$ and $p_{NS}$ denote the true probabilities of ‘‘Saucer on ground’’ in Spain and not in Spain, respectively. Test $H_0:p_S=p_{NS}$ against a two-sided $H_1$. Let $\alpha=0.01$.
+We have $n=91$, and $m=1117$ and we are testing against $H_1:p_S\neq p_{NS}$. From the data, we have that $p_e=\frac{53+705}{91+1117}=\frac{758}{1208}=0.6275$. So, we get $z=\frac{\frac{53}{91}-\frac{705}{1117}}{\sqrt{\frac{0.6275(0.3725)}{91}+\frac{0.6275(0.3725)}{1117}}}=-0.9247$. Now, $z_{0.005}=2.58$. We see that $-2.58<z<2.58$, so we fail to reject the null hypothesis.\\[20pt]
+
+9.4.6. Suppose $H_0:p_X=p_Y$ is being tested against $H_1:p_X \neq p_Y$ on the basis of two independent sets of one hundred Bernoulli trials. If $x$, the number of successes in the first set, is sixty and $y$, the number of successes in the second set, is forty-eight, what $P$-value would be associated with the data?
+Well, $p_e=\frac{60+48}{100+100}=\frac{108}{200}=0.54$. Hence $z=\frac{0.6-0.48}{\sqrt{\frac{0.54(0.46)}{100}+\frac{0.54(0.46)}{100}}}=1.7025$. Now, $P(z\leq-1.7025)+P(z\geq1.7025)=2P(z\leq-1.7025)=2(0.0446)=0.0892$. So, the $P$-value is $0.0892$.
+
+
+
+
+\end{document}
