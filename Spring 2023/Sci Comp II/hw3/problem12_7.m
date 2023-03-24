@@ -5,7 +5,7 @@ clear
 close all
 clc
 
-N = 30
+N = 30;
 deg = 20;     % Degree of the desired expansion
 realco = zeros(length(deg));
 error = zeros(length(deg));
@@ -20,7 +20,7 @@ tayco = real(fft(f(rho),N)/length(rho));
 
 xx=linspace(-6,6);
 
-fxn = log(1+xx./2);  % Plot the original function
+%fxn = log(1+xx./2);  % Plot the original function
 
 disp(tayco(2:deg))   % Display the 19 coefficients
 
@@ -41,7 +41,7 @@ for j = 1:deg
 end
 
 title('Error per Computed Taylor Coefficient');
-xlabel('Coefficient Index') 
+xlabel('Coefficient Index')
 ylabel('|T_n-a_n|')
 
 print('-dpng', 'problem12_7.png')
