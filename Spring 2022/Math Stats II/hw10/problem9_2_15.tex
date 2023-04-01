@@ -1,0 +1,14 @@
+If $X_1, X_2,\ldots, X_n$ and $Y_1, Y_2,\ldots,Y_m$ are independent random samples from normal
+distributions with the same $\sigma^2$, prove that their pooled sample variance, $S_p^2$, is an
+unbiased estimator for $\sigma^2$.\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Well,
+    
+    $$E(s_p^2)=E(\frac{s_x^2(n-1)+s_y^2(m-1)}{m+n-2})=\frac{1}{m+n-2}(E(s_x^2(n-1))+E(s_y^2(m-1)))$$
+    $$=\frac{1}{m+n-2}((n-1)E(s_x^2)+(m-1)E(s_y^2))=\frac{1}{m+n-2}((n-1)\sigma^2+(m-1)\sigma^2)$$
+    $$=\frac{1}{m+n-2}((m+n-2)\sigma^2)=\sigma^2$$
+    
+    Thus, we have that $s_p^2$, the pooled variance, is an unbiased estimator for $\sigma^2$.
+
+\end{solution}

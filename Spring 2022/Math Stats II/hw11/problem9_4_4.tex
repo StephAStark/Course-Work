@@ -1,0 +1,17 @@
+Let $p_S$ and $p_{NS}$ denote the true probabilities of "Saucer on ground" in Spain and not in Spain,
+respectively. Test $H_0:p_S=p_{NS}$ against a two-sided $H_1$. Let $\alpha=0.01$.\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    We have $n=91$, and $m=1117$ and we are testing against $H_1:p_S\neq p_{NS}$. From the data, we have
+    that
+    
+    $$p_e=\frac{53+705}{91+1117}=\frac{758}{1208}=0.6275$$
+    
+    So, we get
+    
+    $$z=\frac{\frac{53}{91}-\frac{705}{1117}}{\sqrt{\frac{0.6275*0.3725}{91}+\frac{0.6275*0.3725}{1117}}}
+    =-0.9247$$
+    
+    Now, $z_{0.005}=2.58$. We see that $-2.58<z<2.58$, so we fail to reject the null hypothesis.
+
+\end{solution}
