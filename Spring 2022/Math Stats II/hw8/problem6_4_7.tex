@@ -1,0 +1,20 @@
+If $H_0:\mu=200$ is to be tested against $H_1:\mu<200$ at the $\alpha=0.1$ significance level with a
+sample size of $n$ from a normal distribution where $\sigma=15$, what is the smallest sample size $n$
+that will make the power equal to at least 0.75 when $\mu=197$?\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Well, we have that $z=1.28=\frac{\bar{y}-200}{\frac{15}{\sqrt{n}}}$. Hence,
+    $\bar{y}=200-1.28(\frac{15}{\sqrt{n}})$. Now,
+    
+    $$1-\beta=P(z\leq\frac{\bar{y}-197}{\frac{15}{\sqrt{n}}})=0.75$$
+    
+    That means $\frac{\bar{y}-197}{\frac{15}{\sqrt{n}}}=0.67$. So,
+    $\bar{y}=197+0.67(\frac{15}{\sqrt{n}})$. Therefore
+    
+    $$200-1.28(\frac{15}{\sqrt{n}})=197+0.67(\frac{15}{\sqrt{n}})$$
+    
+    So, $3=0.67(\frac{15}{\sqrt{n}})+(1.28(\frac{15}{\sqrt{n}}))$ and hence
+    $3\sqrt{n}=0.67(15)+1.28(15)$. Thus, we have that $n=(0.67(5)+1.28(5))^2=95.0625$. Therefore the
+    smallest sample size for the desired result is $n=96$.
+
+\end{solution}

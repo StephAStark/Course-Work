@@ -1,0 +1,31 @@
+Let $Y_1,Y_2,\ldots,Y_n$ be a random sample from
+
+$$f_Y(y;\theta)=\frac{1}{\theta}e^{-\frac{y}{\theta}}, y>0$$
+
+Compare the Cramer-Rao lower bound for $f_Y(y;\theta)$ to the variance of the maximum likelihood
+estimator for $\theta$, $\hat{\theta}=\frac1n\sum_{i=1}^nY_i$. Is $\bar{Y}$ a best estimator for
+$\theta$?\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Well,
+    
+    $$\ln(f_Y(y;\theta))=\ln(\frac{1}{\theta}e^{-\frac{y}{\theta}})=-\ln(\theta)-\frac{y}{\theta}$$
+
+    Now,
+    
+    $$\frac{d}{d\theta}(ln(f_Y(y;\theta)))=-\frac{1}{\theta}+\frac{y}{\theta^2}$$
+    
+    Then
+    
+    $$(\frac{y}{\theta^2}-\frac{1}{\theta})^2$$
+    $$=\frac{y^2}{\theta^4}-\frac{2y}{\theta^3}+\frac{1}{\theta^2}$$.
+    
+    Hence,
+    
+    $$E(\frac{y^2}{\theta^4}-\frac{2y}{\theta^3}+\frac{1}{\theta^2})$$
+    $$=\frac{1}{\theta^4}E(y^2)-\frac{2}{\theta^3}E(y)+\frac{1}{\theta^2}=\frac{1}{\theta^2}$$
+    
+    Therefore, the CRLB is $\frac{1}{n\frac{1}{\theta^2}}=\frac{\theta^2}{n}$. Now,
+    $Var(\bar{Y})=\frac{\theta^2}{n}=$CRLB, so $\bar{Y}$ is the best estimator for $\theta$.
+
+\end{solution}

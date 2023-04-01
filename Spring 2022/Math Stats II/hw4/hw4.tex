@@ -1,36 +1,27 @@
-\documentclass[12pt]{article}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{amsthm}
-\usepackage{accents}
-\usepackage{graphicx}
-\setlength{\oddsidemargin}{0in}
-\setlength{\textwidth}{6.5in}
-\setlength{\topmargin}{-.55in}
-\setlength{\textheight}{9in}
-\pagestyle{empty}
-\renewcommand \d{\displaystyle}
+\input{settings}
+
 \begin{document}
-\noindent Dallas Klumpe
 
-\noindent Math 5820
+\lhead{Stephanie Klumpe}
 
-\noindent HW 4
+\chead{HW 4}
 
-5.4.4. A sample of size $n=16$ is drawn from a normal distribution where $\sigma=10$ but $\mu$ is unknown. If $\mu=20$, what is the probability that the estimator $\hat{\mu}=Y$ will lie between 19.0 and 21.0?\\
-Well, the probability is given by $P(19\leq X\leq21)=P(19-20\leq X-20\leq21-20)=P(\frac{19-20}{10/4}\leq Z\leq\frac{21-20}{10/4})=P(-0.4\leq Z\leq0.4)=0.3108$. So, the probability is $0.3108$ or $31.08\%$.\\[20pt]
+\rhead{MATH 5820}
 
-5.4.5. Suppose $X_1, X_2,\ldots, X_n$ is a random sample of size $n$ drawn from a Poisson pdf where $\lambda$ is an unknown parameter. Show that $\hat{\lambda}=\bar{X}$ is unbiased for $\lambda$. For what type of parameter, in general, will the sample mean necessarily be an unbiased estimator?\\
-Well, $E(\lambda)=E(\bar{X})=E(\frac{X_1+\ldots+X_n}{n})=\frac1n(E(X_1+\ldots+X_n))=\frac1n(E(X_1)+\ldots+E(X_n))=\frac1n(\lambda+\ldots+\lambda)=\frac1n(n\lambda)=\lambda$. Hence $E(\lambda)=\lambda$ and so $\lambda$ is an unbiased estimator.\\[20pt]
+\cfoot{\thepage\ of \pageref{LastPage}}
 
-5.4.6. Let $Y_{min}$ be the smallest order statistic in a random sample of size $n$ drawn from the uniform pdf, $f_Y (y;\theta)=\frac{1}{\theta}, 0\leq y\leq\theta$. Find an unbiased estimator for $\theta$ based on $Y_{min}$.\\
-Take $\hat{\theta}_1=Y_{min}$. Then, using Theorem 3.10.1, we have that $f_{Y_{min}}(y)=n(1-\frac{y}{\theta})^{n-1}\frac{1}{\theta}$. Hence $E(Y_{min})=\int_0^{\theta}yn(1-\frac{y}{\theta})^{n-1}\frac{1}{\theta}dy=\frac{n}{\theta}=\int_0^{\theta}y(1-\frac{y}{\theta})^{n-1}dy$. Now, substitue $u=1-\frac{y}{\theta}$ and so $du=-\frac{1}{\theta}dy$. Therefore $E(Y_{min})=\frac{n}{\theta}(\theta^2)\int_0^{\theta}(u-1)u^{n-1}du=n\theta\int_0^{\theta}u^n-u^{n-1}du=n\theta(\frac{1}{n+1}u^{n+1}-\frac1nu^n|_0^{\theta})=n\theta(\frac{1}{n+1}(1-\frac{y}{\theta})-\frac1n(1-\frac{y}{\theta})|_0^{\theta})=n\theta(\frac1n-\frac{1}{n+1})=\frac{\theta}{n+1}\neq\theta$. So, set $\hat{\theta}_2=(n+1)Y_{min}$. Thus, we have that $E(\hat{\theta}_2)=E((n+1)Y_{min})=(n+1)E(Y_{min})=(n+1)\frac{\theta}{n+1}=\theta$ which is an unbiased estimator as desired.\\[20pt]
+ \begin{enumerate}
 
-5.4.12.  We showed in Example 5.4.4 that $\hat{\sigma}^2=\frac1n\sum_{i=1}^n(Y_i -Y)^2$ is biased for $\sigma^2$. Suppose $\mu$ is known and does not have to be estimated by $\bar{Y}$. Show that $\hat{\sigma}^2=\frac1n\sum_{i=1}^n(Y_i-\mu)^2$ is unbiased for $\sigma^2$.\\
-Well, $E(\hat{\sigma}^2)=E(\frac1n\sum_{i=1}^n(Y_i-\mu)^2)=\frac1n\sum_{i=1}^nE((Y_i-\mu^2)^2)=\frac1n\sum_{i=1}^n(\sigma^2)=\frac1n(n\sigma^2)=\sigma^2$. Thus, we have that $\hat{\sigma}^2$ is an unbiased estimator for $\sigma^2$ as desired.
+   \item[5.4.4.] \input{problem5_4_4}
+   \pagebreak
+   \item[5.4.5.] \input{problem5_4_5}
+   \pagebreak
+   \item[5.4.6.] \input{problem5_4_6}
+   \pagebreak
+   \item[5.4.12.] \input{problem5_4_12}
 
-
-
-
+ \end{enumerate}
 
 \end{document}
+%\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+%\end{solution}
