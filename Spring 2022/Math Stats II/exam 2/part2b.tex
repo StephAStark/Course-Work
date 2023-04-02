@@ -1,0 +1,40 @@
+Construct $95\%$ Tukey's and Fisher's intervals to test the pariwise subhypothesis of the 3 groups.\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    \textbf{Tukey}: We have
+    $\alpha=0.05, r=\frac{3}{\frac15+\frac16+\frac14}=4.8649\approx5, \bar{y}_1=12, \bar{y}_2=12$, and
+    $\bar{y}_3=16$. Then, $Q_{\alpha}=3.77$ and $D=\frac{3.77}{\sqrt{4.8649}}=1.7093$. So, our general
+    Tukey interval will be
+
+    $$[(\bar{y}_i-\bar{y}_j)-1.7093\sqrt{7.3333}, (\bar{y}_i-\bar{y}_j)+1.7093\sqrt{7.3333})]$$
+    
+    Then we have the following table:
+
+    \begin{center}
+        \begin{tabular}{ c   c   c  }
+            $\mu_1-\mu_2$ & [-4.6288, 4.6288] & fail to reject\\
+            $\mu_1-\mu_3$ & [-8.6288, 0.6288] & fail to reject\\
+            $\mu_2-\mu_3$ & [-8.6288, 0.6288] & fail to reject
+        \end{tabular}
+    \end{center}
+
+    So, we fail to reject all means being equal.\\
+    \textbf{Fisher}: Using the same data, we have that $t_{\alpha/2}=2.1788$. So our general Fisher
+    interval is
+    
+    $$[(\bar{y}_i-\bar{y}_j)-2.1788\sqrt{7.3333(\frac{1}{n_i}+\frac{1}{n_j})},
+    (\bar{y}_i-\bar{y}_j)+2.1788\sqrt{7.3333(\frac{1}{n_i}+\frac{1}{n_j})}]$$
+    
+    Thus, we have the following pairwise table:
+
+    \begin{center}
+        \begin{tabular}{ c   c   c  }
+            $\mu_1-\mu_2$ & [-2.2532, 2.2532] & fail to reject\\
+            $\mu_1-\mu_3$ & [-6.2532, -1.7468] & reject\\
+            $\mu_2-\mu_3$ & [-6.2532, -1.7468] & reject
+        \end{tabular}
+    \end{center}
+
+    Hence, we reject $\mu_1=\mu_3$ and $\mu_2=\mu_3$.
+
+\end{solution}
