@@ -1,31 +1,23 @@
-\documentclass[12pt]{article}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{amsthm}
-\usepackage{accents}
-\usepackage{graphicx}
-\setlength{\oddsidemargin}{0in}
-\setlength{\textwidth}{6.5in}
-\setlength{\topmargin}{-.55in}
-\setlength{\textheight}{9in}
-\pagestyle{empty}
-\renewcommand \d{\displaystyle}
+\input{settings}
+
 \begin{document}
-\noindent Dallas Klumpe
 
-\noindent Math 5820
+\lhead{Stephanie Klumpe}
 
-\noindent HW 17
+\chead{HW 17}
 
-11.2.20.a. Fit an exponential curve to the data.\\
-Given the data and the sums, we have that $b=\frac{10(137.97415)-(35)(41.35720)}{10(169)-(35)^2}=-0.145722$ and $\ln a=\frac{41.35720-(-0.145722)(35)}{10}=104.1409$. So, we have the exponetial curve $y=104.1409e^{-0.1457x}$.\\
-b. Estimate the half life of $^{195}$Au--aurothiomalate.\\
-Well, the half life would be $50\%$. So, $50=104.1409e^{-0.1457x}$. Hence $x=\frac{\ln(\frac{50}{104.1409})}{-0.1457}=5.0358$. That is, the half life of the gold in a persons blood is about 5.04 days.\\[20pt]
+\rhead{MATH 5820}
 
-11.3.6. Prove that $\sum_{i=1}^n(y_i-\hat{\beta}_0-\hat{\beta}_1x_i)^2=\sum_{i=1}^ny_i^2-\hat{\beta}_0\sum_{i=1}^ny_i-\hat{\beta}_1\sum_{i=1}^ny_ix_i$.\\
-Well, $\sum_{i=1}^n(y_i-\hat{\beta}_0-\hat{\beta}_1x_i)^2=\sum_{i=1}^n(y_i-(\bar{y}-\hat{\beta}_1\bar{x})-\hat{\beta}_1x_i)^2=\sum_{i=1}^n((y_i-\bar{y})-\hat{\beta}_1(x_i-\bar{x}))^2=\sum_{i=1}^n(y_i-\bar{y})^2+\hat{\beta}_1^2\sum_{i=1}^n(x_i-\bar{x})^2-2\hat{\beta}_1\sum_{i=1}^n(x_i-\bar{x})(y_i-\bar{y})=$ $$\sum_{i=1}^n(y_i-\bar{y})^2+\hat{\beta}_1(\frac{\sum_{i=1}^n(x_i-\bar{x})(y_i-\bar{y})}{\sum_{i=1}^n(x_i-\bar{x})^2})\sum_{i=1}^n(x_i-\bar{x})^2-2\hat{\beta}_1\sum_{i=1}^n(x_i-\bar{x})(y_i-\bar{y})=$$ $$\sum_{i=1}^n(y_i-\bar{y})^2-\hat{\beta}_1\sum_{i=1}^n(x_i-\bar{x})(y_i-\bar{y})=$$ $$\sum_{i=1}^ny_i^2-n\bar{y}^2-\hat{\beta}_1(\sum_{i=1}^nx_iy_i-\frac1n(\sum_{i=1}^nx_i)(\sum_{i=1}^ny_i))=$$ $$\sum_{i=1}^ny_i^2-\hat{\beta}_1\sum_{i=1}^nx_iy_i-n\bar{y}^2+\hat{\beta}_1\frac1n(\sum_{i=1}^nx_i)(\sum_{i=1}^ny_i)=$$ $$\sum_{i=1}^ny_i^2-\hat{\beta}_1\sum_{i=1}^nx_iy_i-(\bar{y}+\hat{\beta}_1\bar{x})(\sum_{i=1}^ny_i)=$$ $$\sum_{i=1}^ny_i^2-\hat{\beta}_0\sum_{i=1}^ny_i-\hat{\beta}_1\sum_{i=1}^ny_ix_i$$
+\cfoot{\thepage\ of \pageref{LastPage}}
 
+ \begin{enumerate}
 
+   \item[11.2.20.] \input{problem11_2_20}
+   \pagebreak
+   \item[11.3.6.] \input{problem11_3_6}
 
+ \end{enumerate}
 
 \end{document}
+%\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+%\end{solution}

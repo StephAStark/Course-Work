@@ -1,33 +1,23 @@
-\documentclass[12pt]{article}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{amsthm}
-\usepackage{accents}
-\usepackage{graphicx}
-\setlength{\oddsidemargin}{0in}
-\setlength{\textwidth}{6.5in}
-\setlength{\topmargin}{-.55in}
-\setlength{\textheight}{9in}
-\pagestyle{empty}
-\renewcommand \d{\displaystyle}
+\input{settings}
+
 \begin{document}
-\noindent Dallas Klumpe
 
-\noindent Math 5820
+\lhead{Stephanie Klumpe}
 
-\noindent HW 21
+\chead{HW 21}
 
-11.4.5. Prove that $\rho(a+bX,c+dY)=\rho(X,Y)$ for constants $a, b, c$, and $d$ where $b$ and $d$ are positive.\\
-Well, $\rho(a+bX,c+dY)=\frac{\text{Cov}(a+bX,c+dY)}{\sigma_{a+bX}\sigma_{c+dY}}=\frac{bd\text{Cov}(X,Y)}{\sqrt{\text{Var}(a+bX)}\sqrt{\text{Var}(c+dY)}}=\frac{bd\text{Cov}(X,Y)}{b\sigma_Xd\sigma_Y}=\frac{\text{Cov}(X,Y)}{\sigma_X\sigma_Y}=\rho(X,Y)$.\\[20pt]
+\rhead{MATH 5820}
 
-11.4.12.a. Find $R$ given the data.\\
-Given the data, we have that $R=\frac{30(7807.36)-(1300.69)(323)}{\sqrt{30(86754.6939-1691794.4761)}\sqrt{30(11881-104329)}}=-0.38795$.\\
-b. Test $H_0:\rho=0$ versus $H_1:\rho\neq0$ with $\alpha=0.05$.\\
-Now, $t=\frac{R\sqrt{n-2}}{\sqrt{1-R^2}}=\frac{-0.38795\sqrt{28}}{\sqrt{1-0.1505}}=-2.2273$. Also, $t_{\alpha/2}=2.0484$. We see that $t<-t_{\alpha/2}$, so we reject $H_0$.
+\cfoot{\thepage\ of \pageref{LastPage}}
 
+ \begin{enumerate}
 
+   \item[11.4.5.] \input{problem11_4_5}
+   \pagebreak
+   \item[11.4.12.] \input{problem11_4_12}
 
-
-
+ \end{enumerate} 
 
 \end{document}
+%\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+%\end{solution}

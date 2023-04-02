@@ -1,0 +1,12 @@
+For random variables $X$ and $Y$, show that Cov$(X+Y, X-Y)=$Var$(X)-$Var$(Y)$.\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Let $X$ and $Y$ be random varaibales. Well,
+    
+    $$\text{Cov}(X+Y, X-Y)=E((X+Y)(X-Y))-E(X+Y)E(X-Y)$$
+    $$=E(X^2-Y^2)-(E(X)+E(Y))(E(X)-E(Y))=E(X^2)-E(Y^2)-((E(X))^2-(E(Y))^2)$$
+    $$=E(X^2)-(E(X))^2-E(Y^2)+(E(Y))^2=\text{Var}(X)-\text{Var}(Y)$$
+    
+    as desired.
+
+\end{solution}

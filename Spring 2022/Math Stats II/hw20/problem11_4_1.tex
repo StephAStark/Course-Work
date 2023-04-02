@@ -1,0 +1,29 @@
+Let $X$ and $Y$ have the joint pdf
+
+$$f_{X,Y}(x,y)=\left \{ \begin{array}{cc}
+                        \frac{x+2y}{22} & \text{for}  (x,y)=(1,1), (1,3), (2,1), (2,3) \\
+                         0 & \text{otherwise} \end{array} \right.$$
+
+Find Cov$(X,Y)$ and $\rho(X,Y)$.\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Well,
+    
+    $$E(XY)=(\frac{3}{22}+3*\frac{7}{22}+2*\frac{4}{22}+6*\frac{8}{22})=\frac{40}{11}$$
+    $$E(X)=(\frac{3}{22}+\frac{7}{22}+2*\frac{4}{22}+2*\frac{8}{22})=\frac{17}{11}$$
+    
+    and
+    
+    $$E(Y)=(\frac{3}{22}+3*\frac{7}{22}+\frac{4}{22}+3*\frac{8}{22})=\frac{26}{11}$$
+    
+    Hence, Cov$(X,Y)=E(XY)-E(X)E(Y)=\frac{40}{11}-\frac{17}{11}\frac{26}{11}=\frac{-2}{121}$. Now, 
+    $E(X^2)=(\frac{3}{22}+\frac{7}{22}+4*\frac{4}{22}+4*\frac{8}{22})=\frac{29}{11}$ and
+    $E(Y^2)=(\frac{3}{22}+9*\frac{7}{22}+\frac{4}{22}+9*\frac{8}{22})=\frac{71}{11}$. Therefore,
+    Var$(X)=\frac{29}{11}-(\frac{17}{11})^2=\frac{30}{121}$ and
+    Var$(Y)=\frac{71}{11}-(\frac{26}{11})^2=\frac{105}{121}$. Thus,
+    
+    $$\rho(X,Y)=\frac{\frac{-2}{121}}{\sqrt{\frac{30}{121}}\sqrt{\frac{105}{121}}}$$
+    $$=\frac{\frac{-2}{121}}{\frac{\sqrt{3150}}{121}}=\frac{-2}{\sqrt{3150}}=\frac{-2}{15\sqrt{14}}$$
+    $$=-0.0356$$
+
+\end{solution}

@@ -1,26 +1,21 @@
-\documentclass[12pt]{article}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{amsthm}
-\usepackage{accents}
-\usepackage{graphicx}
-\setlength{\oddsidemargin}{0in}
-\setlength{\textwidth}{6.5in}
-\setlength{\topmargin}{-.55in}
-\setlength{\textheight}{9in}
-\pagestyle{empty}
-\renewcommand \d{\displaystyle}
+\input{settings}
+
 \begin{document}
-\noindent Dallas Klumpe
 
-\noindent Math 5820
+\lhead{Stephanie Klumpe}
 
-\noindent HW 15
+\chead{HW 15}
 
-12.5.6.a. Do an F-test and a subhypothesis test of $\mu_a=\mu_b$ with $\alpha=0.05$.\\
-We will test $H_0:\mu_a=\mu_b=\mu_c=\mu_d$. Well, given the data, we see that $SSTR=558.9167$ with $3$ degrees of freedom, and $SSE=2241.3333$ with $8$ degrees of freedom. Hence, $MSTR=\frac{558.9167}{3}=186.3056$ and $MSE=\frac{2241.3333}{8}=280.1667$. So, we have $F=0.664981$. Now, with $F_{\alpha}=4.07$. Therefore, we fail to reject $H_0$. Now, we will test the subhypothesis $H_0:\mu_a=\mu_b$. Now, $\hat{c}=26-40.3333=-14.3333$. Also, $\sum_{j=1}^2(\frac{c_j^2}{n_j})=\frac23$. So, $SS_c=\frac{(-14.3333)^2}{\frac23}=308.1652$. Hence, we have that $F=\frac{308.1652}{280.1667}=1.0999$ Now, $F_{\alpha}=5.32$. Since $F<F_{\alpha}$, we fail to reject the subhypothesis $H_0$.
+\rhead{MATH 5820}
 
+\cfoot{\thepage\ of \pageref{LastPage}}
 
+ \begin{enumerate}
 
+   \item[12.5.6.a.] \input{problem12_5_6a}
+
+ \end{enumerate}
 
 \end{document}
+%\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+%\end{solution}
