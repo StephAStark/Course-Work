@@ -1,0 +1,11 @@
+Let $f(x)=|x|$ for $x\in\mathbb{R}$. Is there a power series $\sum a_nx^n$ such that
+$f(x)=\sum_{n=0}^{\infty} a_nx^n$ for all $x$?\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Assume by way of contradiction that there exists a power series representation of $f(x)$ for all
+    $x$. So, we have that $f(x)=|x|=\sum_{n=0}^{\infty} a_nx^n$ for all $x$. So this power series
+    converges on $(-\infty,\infty)$. However, by theorem 26.5, this would mean that we can differentiate
+    the function such that $f'(x)=\sum_{n=0}^{\infty} na_nx^{n-1}$, but that contradicts $f(x)$ not
+    being differentiable at $x=0$. So, no such power series of $f(x)=|x|$ exists for all $x$.
+
+\end{solution}

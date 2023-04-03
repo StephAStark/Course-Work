@@ -1,52 +1,31 @@
-\documentclass[12pt]{article}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{amsthm}
-\usepackage{accents}
-\usepackage{graphicx}
-\usepackage{amsfonts}
-\setlength{\oddsidemargin}{0in}
-\setlength{\textwidth}{6.5in}
-\setlength{\topmargin}{-.55in}
-\setlength{\textheight}{9in}
-\pagestyle{empty}
-\renewcommand \d{\displaystyle}
+\input{settings}
+
 \begin{document}
-\noindent Dallas Klumpe
 
-\noindent Math 4310
+\lhead{Stephanie Klumpe}
 
-\noindent HW 3\\
+\chead{HW 3}
 
-2.a. Observe $\sum_{n=0}^{\infty}nx^n=\frac{x}{(1-x)^2}$ for $|x|<1$.\\
-Let $f(x)=\sum_{n=0}^{\infty}nx^n$, for $|x|<1$. Well, $f(x)=x\sum_{n=0}^{\infty}nx^{n-1}=x\frac{d}{dx}\sum_{n=0}^{\infty}x^n=x\frac{d}{dx}(\frac{1}{1-x})=x(\frac{1}{(1-x)^2})=\frac{x}{(1-x)^2}$.\\
-b. Evaluate $\sum_{n=1}^{\infty}\frac{n}{2^n}$.\\
-So, let $f(x)=\sum_{n=0}^{\infty}nx^n$. Set $x=\frac12$. So, we get $f(\frac12)=\sum_{n=0}^{\infty}n(\frac12)^n=\frac{\frac12}{(1-\frac12)^2}=\frac{\frac12}{\frac14}=2$.\\
-c. Evaluate $\sum_{n=1}^{\infty}\frac{n}{3^n}$ and $\sum_{n=1}^{\infty}\frac{(-1)^nn}{3^n}$.\\
-Again, let $f(x)=\sum_{n=0}^{\infty}nx^n$ and set $x=\frac13$. By the same proces above, we get that $f(\frac13)=\frac{\frac13}{\frac49}=\frac34$. Now, set $x=\frac{-1}{3}$. By the same process we get $f(\frac{-1}{3})=\frac{\frac{-1}{3}}{\frac{16}{9}}=\frac{-3}{16}$.\\
+\rhead{MATH 4310}
 
-3.a. Use exercise 2 to derive an explicit formula for $\sum_{n=0}^{\infty}n^2x^n$.\\
-Well, let $f(x)=\sum_{n=0}^{\infty}n^2x^n$. Clearly, $f(x)=x\sum_{n=0}^{\infty}n^2x^{n-1}=x\frac{d}{dx}\sum_{n=0}^{\infty}nx^n=x\frac{d}{dx}(\frac{x}{(1-x)^2})=x(\frac{1-x^2}{(1-x)^4})=\frac{x-x^3}{(1-x)^4}$.\\
-b. Evaluate $\sum_{n=1}^{\infty}\frac{n^2}{2^n}$ and $\sum_{n=1}^{\infty}\frac{n^2}{3^n}$.\\
-Let $f(x)=\sum_{n=0}^{\infty}n^2x^n$ and first set $x=\frac12$. By the formula derived above, we notice that $f(\frac12)=\frac{\frac12-(\frac12)^3}{(\frac12)^4}=\frac{\frac12-\frac18}{\frac{1}{16}}=\frac{\frac38}{{1}{16}}=6$. Now set $x=\frac13$. By the same formula, we can conclude $f(\frac13)=\frac{\frac13-(\frac13)^3}{(\frac23)^4}=\frac{\frac{8}{27}}{\frac{16}{81}}=\frac32$.\\
+\cfoot{\thepage\ of \pageref{LastPage}}
 
-4.a. Observe $e^{-x^2}=\sum_{n=0}^{\infty}\frac{(-1)^n}{n!}x^{2n}$ for $x\in\mathbb{R}$ since $e^x=\sum_{n=0}^{\infty}\frac{1}{n!}x^{n}$ for $x\in\mathbb{R}$.\\
-Well, define $y=-x^2$. Notice we have $e^y=\sum_{n=0}^{\infty}\frac{1}{n!}y^{n}=\sum_{n=0}^{\infty}\frac{1}{n!}(-x^2)^{n}=\sum_{n=0}^{\infty}\frac{1}{n!}(-1)^n(x^2)^{n}=\sum_{n=0}^{\infty}\frac{(-1)^n}{n!}x^{2n}$.\\
-b. Express $F(x)=\int_{0}^{x} e^{-t^2} \,dt$ as a power series.\\
-Well, $F(x)=\int_{0}^{x} e^{-t^2} \,dt=\int_{0}^{x}\sum_{n=0}^{\infty}\frac{(-1)^n}{n!}t^{2n}\,dt=\sum_{n=0}^{\infty}\frac{(-1)^n}{(n!)(2n+1)}x^{2n+1}$.\\
+Section 24
 
-7. Let $f(x)=|x|$ for $x\in\mathbb{R}$. Is there a power series $\sum a_nx^n$ such that $f(x)=\sum_{n=0}^{\infty} a_nx^n$ for all $x$?\\
-Assume by way of contradiction that there exists a power series representation of $f(x)$ for all $x$. So, we have that $f(x)=|x|=\sum_{n=0}^{\infty} a_nx^n$ for all $x$. So this power series converges on $(-\infty,\infty)$. However, by theorem 26.5, this would mean that we can differentiate the function such that $f'(x)=\sum_{n=0}^{\infty} na_nx^{n-1}$, but that contradicts $f(x)$ not being differentiable at $x=0$. So, no such power series of $f(x)=|x|$ exists for all $x$.\\
+ \begin{enumerate}
 
-8.a. Show $\sum_{n=0}^{\infty}(-1)^nx^{2n}=\frac{1}{1+x^2}$ for $x\in(-1,1)$.\\
-Let $x\in(-1,1)$. Set $y=-x^2$. So, $-y=x^2$. Hence, $\sum_{n=0}^{\infty}(-1)^nx^{2n}=\sum_{n=0}^{\infty}(-1)^n(-y)^{n}=\sum_{n=0}^{\infty}(y)^n=\frac{1}{1-y}=\frac{1}{1+x^2}$ as desired.\\
-b. Show $arctan(x)=\sum_{n=0}^{\infty}\frac{(-1)^n}{2n+1}x^{2n+1}$ for $x\in(-1,1)$.\\
-Let $x\in(-1,1)$. Well, $arctan(x)=\int_{0}^{x}\frac{1}{1+t^2}\,dt=\int_{0}^{x}\sum_{n=0}^{\infty}(-1)^nt^{2n}\,dt=\sum_{n=0}^{\infty}\frac{(-1)^n}{2n+1}x^{2n+1}$.\\
-c. Show the equality in b also holds for $x=1$. Use this to find a nice formula for $\pi$.\\
-Set $x=1$. So, the series becomes $\sum_{n=0}^{\infty}\frac{(-1)^n}{2n+1}$. This converges by the alternating series test, so we get that the equality holds at x=1 by Abel's Theorem. Well, $arctan(1)=\frac{\pi}{4}=\sum_{n=0}^{\infty}\frac{(-1)^n}{2n+1}$. Thus, we get that $\pi=4\times\sum_{n=0}^{\infty}\frac{(-1)^n}{2n+1}$.\\
-d.What happens at $x=-1$?\\
-Define $x=-1$. Then the series becomes $\sum_{n=0}^{\infty}\frac{(-1)^n}{2n+1}(-1)^{2n+1}=\sum_{n=0}^{\infty}\frac{(-1)^n}{2n+1}(-1)$ since $2n+1$ is odd for all $n$ and $(-1)^m=-1$ if $m$ is odd. So, we get $(-1)\sum_{n=0}^{\infty}\frac{(-1)^n}{2n+1}=-\frac{\pi}{4}=acrtan(-1)$. Therefore the equality holds for $x=-1$ as well.\\
+   \item[2] \input{problem2}
+   \pagebreak
+   \item[3] \input{problem3}
+   \pagebreak
+   \item[4] \input{problem4}
+   \pagebreak
+   \item[7] \input{problem7}
+   \pagebreak
+   \item[8] \input{problem8}
 
-
+ \end{enumerate}
 
 \end{document}
+%\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+%\end{solution}
