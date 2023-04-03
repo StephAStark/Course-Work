@@ -1,0 +1,64 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{accents}
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\setlength{\oddsidemargin}{0in}
+\setlength{\textwidth}{6.5in}
+\setlength{\topmargin}{-.55in}
+\setlength{\textheight}{9in}
+\pagestyle{empty}
+\renewcommand \d{\displaystyle}
+\begin{document}
+\noindent Dallas Klumpe
+
+\noindent Math 4310
+
+\noindent HW 7\\
+
+1. Prove that a monotonically decreasing function $f$ on $[a,b]$ is integrable.\\
+Assume $f$ is a decreasing function on $[a,b]$ and $f(a)>f(b)$. So, $f(a)\geq f(x)\geq f(b)$ for all $x\in[a,b]$ and $f$ is clearly bounded. Now, let $\epsilon>0$ and $P$ be a partition of $[a,b]$ such that $mesh(P)<\frac{\epsilon}{f(a)-f(b)}$. Then, $U(f,P)-L(f,P)=\sum_{k=1}^n(M-m)(t_k-t_{k-1})=\sum_{k=1}^n(f(t_{k-1})-f(t_k))(t_k-t_{k-1})<\sum_{k=1}^n(f(t_{k-1})-f(t_k))(\frac{\epsilon}{f(a)-f(b)})=(f(a)-f(b))(\frac{\epsilon}{f(a)-f(b)})=\epsilon$. Thus, by Theorem 32.5, $f$ is integrable. So, a monotonically decreasing function on $[a,b]$ is integrable.\\[20pt]
+
+3.a. Show that step function $f$ is integrable and evaluate $\int_a^bf$.\\
+Let $f$ be a step function on $[a,b]$, and let $P$ be a partition of $[a,b]$. By definition of step function, $f$ is constant on each subinterval $(t_{k-1},t_k)$. Therefore for $\epsilon,\delta>0$ and any $x,y\in(t_{k-1},t_k)$, if $|x-y|<\delta$, we have $|f(x)-f(y)|=c_j-c_j=0<\epsilon$. Hence, $f$ is uniformally continuous on each subinterval and thus, $f$ is piecewise continuous. Therefore, $f$ is integrable. Now, $\int_a^bf(x)=\int_a^{t_1}c_1+...+\int_{t_{k-1}}^bc_k=\sum_{j=1}^nc_j(t_j-t_{j-1})$.\\
+b. Evaluate the integral $\int_0^4P(x)dx$ for the postage stamp function $P(x)$.\\
+Well, $\int_0^4P(x)=\int_0^1A+\int_1^2A+B+\int_2^3A+2B+\int_3^4A+3B=A+(A+B)+(A+2B)+(A+3B)=4A+6B$.\\[20pt]
+
+4. Give an example of a function $f$ on $[0,1]$ that is not integrable for which $|f|$ is integrable.\\
+Consider the function $f:[0,1]\rightarrow\mathbb{R}$ definded by $f(x)=1$ for $x\in\mathbb{Q}$ and $f(x)=-1$ for $x\in\mathbb{R}\setminus\mathbb{Q}$. Then by a similar calculation as in example 2 of section 32, we see that $U(f,P)=1$ and $L(f,P)=-1$. So, the upper and lower Darboux sums don't agree and $f$ is not integrbale. However, $|f(x)|=1$ on $[0,1]$. Thus, $f$ is constant and therefore continuous, and hence integrable on $[0,1]$.\\[20pt]
+
+6. Prove $M(|f|,S)-m(|f|,S)\leq M(f,S)-m(f,S)$ for any subset $S$ of $[a,b]$.\\
+Let $S$ be a subset of $[a,b]$, and let $x_0,y_0\in S$. Well, we have that $|f(x_0)|-|f(y_0)|\leq|f(x_0)-f(y_0)|\leq M(f,S)-m(f,S)$. Now, by the reverse triangle inequality, we have that $||f(x_0)|-|f(y_0)||\leq M(f,S)-m(f,S)$. Thus, we have that $M(|f|,S)-m(|f|,S)\leq M(f,S)-m(f,S)$.\\
+
+7. Let $f$ be bounded function on $[a,b]$, so that there exists $B>0$ such that $|f(x)|\leq B$ for all $x\in[a,b]$.\\
+a. Show $U(f^2,P)-L(f^2,P)\leq2B[U(f,P)-L(f,P)]$ for all partitions $P$ of $[a,b]$.\\
+Let $f$ and $B$ be as given, $x,y\in[a,b]$, and $P$ be a partition of $[a,b]$. Then $f(x)^2-f(y)^2=(f(x)+f(y))(f(x)-f(y))$. So, $f(x)^2-f(y)^2\leq|f(x)+f(y)||f(x)-f(y)|\leq|f(x)|+|f(y)|(|f(x)-f(y)|)\leq2B|f(x)-f(y)|\leq2B(M(f,S)-m(f,S))$. Hence $M(f^2,P)-m(f^2,P)\leq 2B(M(f,S)-m(f,S))$ Therefore $(M(f^2,S)-m(f^2,S))(t_k-t_{k-1})\leq2B(M(f,S)-m(f,S))(t_k-t_{k-1})$, and so $U(f^2,P)-L(f^2,P)=\sum_{k=1}^n(M(f^2,S)-m(f^2,S))(t_k-t_{k-1})\leq2B\sum_{k=1}^n(M(f,S)-m(f,S))(t_k-t_{k-1})=2B[U(f,P)-L(f,P)]$ as desired.\\
+b. Show that if $f$ is integrable on $[a,b]$, then $f^2$ is also integrable on $[a,b]$.\\
+Assume that $f$ is integrable on $[a,b]$. Let $\epsilon>0$. So, $\frac{\epsilon}{2B}>0$. Since $f$ is integrable, there exists a partition $P$ such that $U(f,P)-L(f,P)<\frac{\epsilon}{2B}$. By part a above, we have that $U(f^2,P)-L(f^2,P)\leq2B2B[U(f,P)-L(f,P)]<2b\frac{\epsilon}{2B}=\epsilon$. Thus, $f^2$ is integrable on $[a,b]$.\\[20pt]
+
+9. Let $(f_n)$ be a sequence of integrable functions on $[a,b]$ and suppose $f_n\rightarrow f$ uniformly on $[a,b]$. Prove that $f$ is integrable and $\int_a^bf=\lim_{n\rightarrow\infty}\int_a^bf_n$.\\
+Let $\epsilon>0$ and $P$ a partition of $[a,b]$. Well, take $m\in\mathbb{N}$ such that $|f(x)-f_m(x)|<\frac{\epsilon}{2(b-1)}$ for all $x\in[a,b]$. So, $-\frac{\epsilon}{2}\leq L(f-f_m,P)\leq U(f-f_m,P)\leq\frac{\epsilon}{2}$. Since $f_m$ is integrable, let $P'$ be a partition of $[a,b]$ such that $U(f_m,P')-L(f_m,P')<\frac{\epsilon}{2}$. Since we know $f=(f-f_m)+f_m$, we have that $(U(f-f_m,P')+U(f_m,P'))-(L(f-f_m,P')+L(f_m,P'))<\epsilon$. Therefore $U(f,P')-L(f,P')<\epsilon$ and so $f$ is integrbale. Now, since $f$ and $f_n$ are integrable, we have that $f-f_n$ is integrable. Since $f_n\rightarrow f$ uniformly, there exists $N$ such that $|f-f_n|<\frac{\epsilon}{b-a}$ for all $x\in[a,b]$ and all $n>N$. Hence, $|\int_a^bf-\int_a^bf_n|=|\int_a^bf-f_n|\leq\int_a^b|f-f_n|<\int_a^b\frac{\epsilon}{b-a}=\epsilon$. Thus, $\int_a^bf=\lim_{n\rightarrow\infty}\int_a^bf_n$\\[20pt]
+
+11. Let $f(x)=x \newcommand{\sgn}{\operatorname{sgn}}\sgn(\sin\frac1x)$ for $x\neq0$ and $f(0)=0$.\\
+a. Show $f$ is not piecewise continuous on $[-1,1]$.\\
+Well, let $(t_{k-1},t_k)$ be a subinterval of $[-1,1]$ such that $0\in(t_{k-1},t_k)$. Now, let $n,\delta>0$ and $\epsilon=\frac{1}{(n+1)\pi}>0$. Now, let $x\in(t_{k-1},t_k)$ be defined as $x=\frac{1}{n\pi}$. Then, whenever $|x-0|=x<\delta$, we have that $|f(x)-f(0)|=|f(x)|=x$ and $x>\epsilon$, so $f$ is discontinuous on $[-1,1]$ and thus is not piecewise continuous.\\
+b. Show $f$ is not piecewise monotonic on $[-1,1]$.\\
+Again, let $(t_{k-1},t_k)$ be a subinterval of $[-1,1]$ such that $0\in(t_{k-1},t_k)$. Also, let $x,y\in(t_{k-1},t_k)$ such that $x=\frac{1}{2n\pi+\frac{\pi}{2}}$ and $y=\frac{1}{2n\pi+\frac{3\pi}{2}}$ and $x,y>0$. Then clearly, $0<y<x$, however, $f(x)=x$ and $f(y)=-y$ and $f(0)=0$, so we have that $f$ is not monotonic on $(t_{k-1},t_k)$, and thus not piecewise monotonic.\\
+c. Show $f$ is integrable on $[-1,1]$\\
+Let $\epsilon>0$. Now, $f(x)$ is piecewise continuous on $[\frac{\epsilon}{8},1]$, so there exists a partition $P$ of $[\frac{\epsilon}{8},1]$ such that $U(f,P)-L(f,P)<\frac{\epsilon}{4}$. Also, $f(x)$ is piecewise continuous on $[-1,-\frac{\epsilon}{8}]$ and so there exists another partition $P'$ of $[-1,-\frac{\epsilon}{8}]$ such that $U(f,P')-L(f,P')<\frac{\epsilon}{4}$. So, let $\tilde{P}=P\cup P'$ be a partition of $[-1,1]$. Therefore $(M(f,[-\frac{\epsilon}{8},\frac{\epsilon}{8}])-m(f,[-\frac{\epsilon}{8},\frac{\epsilon}{8}]))([\frac{\epsilon}{8}+\frac{\epsilon}{8}])=(M(f,[-\frac{\epsilon}{8},\frac{\epsilon}{8}])-m(f,[-\frac{\epsilon}{8},\frac{\epsilon}{8}]))(\frac{\epsilon}{4})\leq2\frac{\epsilon}{4}=\frac{\epsilon}{2}$, and hence $U(f,P)-L(f,P)<\epsilon$. Thus, we have that $f$ is integrable on $[-1,1]$.\\[20pt]
+
+13. Suppose $f$ and $g$ are continuous functions on $[a,b]$ such that $\int_a^bf=\int_a^bg$. Prove that there exists $x\in(a,b)$ such that $f(x)=g(x)$.\\
+Since $f$ and $g$ are continuous, $f-g$ is continuous and therefore integrable. So, by the Intermediate Value Theorem for Integrals, there exists $x\in(a,b)$ such that $(f-g)(x)=f(x)-g(x)=\frac{1}{b-1}\int_a^bf-g=\frac{1}{b-a}(\int_a^bf-\int_a^bg)$. Since $\int_a^bf=\int_a^bg$, we have that $f(x)-g(x)=0$. Thus, there exists $x\in(a,b)$ such that $f(x)=g(x)$.\\[20pt]
+
+14.a. If $f$ and $g$ are continuous functions on $[a,b]$ and $g(t)\geq0$ for all $t\in[a,b]$, prove there exists $x\in(a,b)$ such that $\int_a^bf(t)g(t)dt=f(x)\int_a^bg(t)dt$.\\
+Well, if $g(t)=0$, then we see that $0=\int_a^bf(t)*0dt=f(x)\int_a^b0dt$ for all $x\in(a,b)$. So, assume now that $g(t)>0$ for all $t\in[a,b]$. Now, since $f$ is continuous, there exists a maximum $M$ and a minimum $m$ for whcih there is some $x_0,y_0\in[a,b]$ such that $f(x_0)=m$ and $f(y_0)=M$. So, $\int_a^bf(x_0)g(t)dt\leq\int_a^bf(t)g(t)dt\leq\int_a^bf(y_0)g(t)dt$, and hence $f(x_0)\int_a^bg(t)dt\leq\int_a^bf(t)g(t)dt\leq f(y_0)\int_a^bg(t)dt$. So, by the Intermediate Value Theorem, there exists $x\in(a,b)$ such that $f(x)\int_a^bg(t)dt=\int_a^bf(t)g(t)dt$ as desired.\\
+b. Show Theorem 33.9 is a special case of part a.\\
+Well, if we let $g(t)=1$, then by part a, we see there exists $x\in[a,b]$ such that $\int_a^bf(t)*1dt=f(x)\int_a^b1dt=f(x)(b-a)$. Hence there exists $x\in[a,b]$ such that $f(x)=\frac{1}{b-a}\int_a^bf$ as desired.\\
+c. Does the conclusion of part a hold if $[a,b]=[-1,1]$ and $f(t)=g(t)=t$ for all $t$?\\
+No, the conclusion doesn't hold. We would get $\int_{-1}^1t^2dt=x\int_{-1}^1tdt$ which yields $\frac23=x*0=0$ which is not true. The conclusion doesn't hold beacsue the hypothesis is not met since $g(t)<0$ on $[-1,0)\subset[-1,1]$.
+
+
+
+\end{document}

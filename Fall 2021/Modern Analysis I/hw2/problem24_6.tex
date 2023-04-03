@@ -1,0 +1,17 @@
+Let $f_n(x)=(x-\frac1n)^2$ for $x\in[0,1]$.\\
+
+a. Determine pointwise convergence on $[0,1]$ and give the limit function if possible.\\
+
+b. Determine uniform convergence on $[0,1]$.\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Well, $limf_n(x)=lim(x-\frac1n)^2=(x-0)^2=x^2=f(x)$. So, $f_n(x)\rightarrow f(x)=x^2$ pointwise.\\
+
+    Let $S=[0,1]$. Then, for $x\in S$,
+    
+    $$\lim\sup|f_n(x)-f(x)|=\lim\sup|(x-\frac1n)^2-x^2|=\lim\sup|\frac{1}{n^2}-\frac{2x}{n}|$$
+    $$=\lim|\frac{1}{n^2}|=0$$
+    
+    Thus, we have that $f_n(x)\rightarrow f(x)$ uniformly on $[0,1]$.
+
+\end{solution}
