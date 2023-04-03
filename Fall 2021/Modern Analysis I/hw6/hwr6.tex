@@ -1,42 +1,29 @@
-\documentclass[12pt]{article}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{amsthm}
-\usepackage{accents}
-\usepackage{graphicx}
-\usepackage{amsfonts}
-\setlength{\oddsidemargin}{0in}
-\setlength{\textwidth}{6.5in}
-\setlength{\topmargin}{-.55in}
-\setlength{\textheight}{9in}
-\pagestyle{empty}
-\renewcommand \d{\displaystyle}
+\input{settings}
+
 \begin{document}
-\noindent Dallas Klumpe
 
-\noindent Math 4310
+\lhead{Stephanie Klumpe}
 
-\noindent HW 6\\
+\chead{HW 6}
 
-1. FInd the upper and lower Darboux integrals for $f(x)=x^3$ on the interval $[0,b]$.\\
-Well, on the subinterval $[t_{k-1},t_k]$ we have that $M=t_k^3$ and $m=t_{k-1}^3$. Now, let $t_k=\frac{kb}{n}$. So, for any partition $P$, $U(f,P)=\sum_{k=1}^nt_k^3(t_k-t_{k-1})=\sum_{k=1}^n(\frac{kb}{n})^3(\frac{kb}{n}-\frac{(k-1)b}{n})=\sum_{k=1}^n\frac{k^3b^3}{n^3}(\frac{b}{n})=\sum_{k=1}^n\frac{k^3b^4}{n^4}=\frac{b^4}{n^4}\sum_{k=1}^nk^3=\frac{b^4}{n^4}(\frac{n^2(n-1)^2}{4})$. Also, $L(f,P)=\sum_{k=1}^nt_{k-1}^3(t_k-t_{k-1})=\sum_{k=1}^n(\frac{(k-1)b}{n})^3(\frac{b}{n})=\frac{b^4}{n^4}\sum_{k=1}^n(t_{k-1})^3=\frac{b^4}{n^4}(\frac{(n-1)^2(n-2)^2}{4})$. For large $n$, $\frac{b^4}{n^4}(\frac{(n-1)^2(n-2)^2}{4})$ and $\frac{b^4}{n^4}(\frac{(n)^2(n-1)^2}{4})$ both approach $\frac{b^4}{4}$, so $\frac{b^4}{4}\leq L(f)\leq U(f)\leq\frac{b^4}{4}$. Therefore $L(f)=U(f)=\frac{b^4}{4}$.\\[20pt]
+\rhead{MATH 4310}
 
-2. Let $f(x)=x$ for $x\in\mathbb{Q}$ and $f(x)=0$ for $x\in\mathbb{R}\setminus\mathbb{Q}$.\\
-a. Calculate the upper and lower Darboux integrals for $f$ on the interval $[0,b]$.\\
-Let $P$ be a partition. Well, on the subinterval $[t_{k-1},t_k]$, $M=t_k$ and $m=0$. So, $L(f,P)=0$ and $U(f,P)=\sum_{k=1}^nt_k(t_k-t_{k-1})$. Let $t_k=\frac{bk}{n}$. Then $U(f,P)=\sum_{k=1}^n\frac{bk}{n}(\frac{b}{k})=\frac{b^2}{n^2}\sum_{k=1}^nk=\frac{b^2}{n^2}(\frac{n(n+1)}{2})$ which approaches $\frac{b^2}{2}$. Thus, $L(f)=0$ and $U(f)=\frac{b^2}{2}$.\\
-b. Is $f$ integrable on $[0,b]$?\\
-No. The upper and lower Darboux integrals don't agree.\\[20pt]
+\cfoot{\thepage\ of \pageref{LastPage}}
 
-6. Let $f$ be a bounded function on $[a,b]$. Suppose there exist sequences $(U_n)$ and $(L_n)$ of upper and lower Darboux sums of $f$ such that $\lim(U_n-L_n)=0$. Show $f$ is integrable and $\int_a^bf=\lim U_n=\lim L_n$.\\
-Well, since $\lim(U_n-L_n)=0$, we have that for all $\epsilon>0$, $|U_n-L_n|<\epsilon$, Now since $f$ is fixed, we have that $U_n=U(f,P_n)$ and $L_n=L(f,Q_n)$ for some sequence of partitions $P_n$ and $Q_n$. Take $\tilde{P}_n=P_n\cup Q_n$. So, $|U_n-L_n|=|U(f,P_n)-L(f,Q_n)|$, and $|U(f,\tilde{P}_n)-L(f,\tilde{P}_n)|\leq|U(f,P_n)-L(f,Q_n)|$ since $\tilde{P}_n$ is a refinement, thus $|U(f,\tilde{P}_n)-L(f,\tilde{P}_n)|<\epsilon$ for all $\epsilon>0$ and thus $f$ is integrable on $[a,b]$. Now, $L_n\leq\int_a^bf\leq U_n$, and since $\lim(U_n-L_n)=0$, we have that $\lim L_n=\int_a^bf=\lim U_n$.\\[20pt]
+ \begin{enumerate}
 
-7. Let $f$ be integrable on $[a,b]$ and suppose $g$ is a function on $[a,b]$ such that $g(x)=f(x)$ exept at finitely many $x\in[a,b]$. Show $g$ is integrable and $\int_a^bf=\int_a^bg$.\\
-Frist, assume that $f(x)=g(x)$ except at one point, call it $x_1\in[a,b]$. Since $f$ is integarble and $f(x)=g(x)$ except at $x_1$, we have that $f$ and $g$ are bounded. So, $|f|, |g|<M$ for some $M>0$. Let $\epsilon>0$. Since $f$ is integrable, we have that there exsits a partition $P$ of $[a,b]$ such that $U(f,P)-L(f,P)<\frac{\epsilon}{3}$. Now, for any interval $[t_{k-1}-t_k]$, assume that $t_k-t_{k-1}<\frac{\epsilon}{12M}$. Now, $x_1$ is in at most two intervals $[t_{k-1}-t_k]$, so $|U(f,P)-U(g,P)|\leq2((M+M)(t_k-t_{k-1}))<4M(\frac{\epsilon}{12M})=\frac{\epsilon}{3}$. Similarly, $|L(f,P)-L(g,P)|\leq2((M+M)(t_k-t_{k-1}))<4M(\frac{\epsilon}{12M})=\frac{\epsilon}{3}$. So, $|U(g,P)-L(g,P)|<|U(g,P)-U(f,P)|+|U(f,P)-L(f,P)|+|L(f,P)-L(g,P)|<\epsilon$. Thus $g$ is integrable. Now, assume this is true for $n$ points $x_i\in[a,b]$ for $1\leq i\leq n$. Now assume that $f(x)=g(x)$ except at $n+1$ points $x_i\in[a,b]$ for $1\leq i\leq n+1$. Again, let $P$ be a partition of $[a,b]$, $\epsilon>0$, and $M>0$ be the bound of $f$ and $g$. Assume that $t_k-t_{k-1}<\frac{\epsilon}{12M(n+1)}$ for any interval $[t_{k-1}-t_k]$. Then, each $x_i$ is in at most two intervals $[t_{k-1}-t_k]$. So, $|U(f,P)-U(g,P)|\leq2(n+1)((M+M)(t_k-t_{k-1}))<4M(n+1)(\frac{\epsilon}{12M(n+1)})=\frac{\epsilon}{3}$. The same is true for $|L(f,P)-L(g,P)|$, so $|L(f,P)-L(g,P)|<\frac{\epsilon}{3}$. Hence, $|U(g,P)-L(g,P)|<|U(g,P)-U(f,P)|+|U(f,P)-L(f,P)|+|L(f,P)-L(g,P)|<\epsilon$, and $g$ is integrable. So, by induction, $g$ is integrable if f is integrable and $f(x)=g(x)$ except at finitely many points in $[a,b]$. Now clearly, $|\int_a^bf-\int_a^bg|<\epsilon$ for any $\epsilon>0$. Thus $\int_a^bf=\int_a^bg$ as desired.\\[20pt]
+   \item \input{problem1}
+   \pagebreak
+   \item \input{problem2}
+   \pagebreak
+   \item[6] \input{problem6}
+   \pagebreak
+   \item[7] \input{problem7}
+   \pagebreak
+   \item[8] \input{problem8}
 
-8. Show that if $f$ is integrable on $[a,b]$, then $f$ is integrable on every $[c,d]\subseteq[a,b]$.\\
-Well, since $f$ is integrable on $[a,b]$, then there exists a $\delta>0$ such that for all $\epsilon>0$, we have $mesh(P)<\delta$ imples $U(f,P)-L(f,P)<\epsilon$ for all partitions $P$ of $[a,b]$. We also have that $f$ is bounded. Let $[c,d]\subseteq[a,b]$ and $\epsilon>0$. For any partition P, let $\tilde{P}$ be the partition of $[c,d]$ such that $\tilde{P}\subseteq P$ and $mesh(\tilde{P})=mesh(P)$. Then $mesh(\tilde{P})<\delta$, and so on $[c,d]$, we have that $U(f,\tilde{P})-L(f,\tilde{P})<\epsilon$. Thus, we have that $f$ is integrable on $[c,d]$ as desired.
-
-
-
+ \end{enumerate}
 
 \end{document}
+%\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+%\end{solution}
