@@ -1,0 +1,10 @@
+Let $f$ and $g$ be differentiable functions on an open interval $I$. Suppose $a,b\in I$ satisfy $a<b$
+and $f(a)=f(b)=0$. Show $f'(x)+f(x)g'(x)=0$ for some $x\in(a, b)$.\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Let $f$, $g$, $a$, and $b$ be as given. Consider $h(x)=f(x)e^{g(x)}$. Well $h(a)=h(b)=0$ by
+    assumption. So, by Rolle's Theorem, we have that $f'(x)e^{g(x)}+f(x)e^{g(x)}g'(x)=0$ for some
+    $x\in I$. Dividing by $e^{g(x)}$, we get $f'(x)+f(x)g'(x)=0$ for some $x\in(a, b)$ since
+    $e^{g(x)}\neq0$.
+
+\end{solution}

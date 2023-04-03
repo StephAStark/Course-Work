@@ -1,0 +1,21 @@
+c. Find the limit of $\lim_{x\rightarrow0}(\frac{1}{\sin x}-\frac{1}{x})$ if it exists.\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Notice
+    
+    $$\lim_{x\rightarrow0}(\frac{1}{\sin x}-\frac{1}{x})=\lim_{x\rightarrow0}\frac{x-\sin x}{x\sin x}
+    =\frac00$$
+    
+    By L'Hospitals rule, we get
+    
+    $$\lim_{x\rightarrow0}\frac{x-\sin x}{x\sin x}=\lim_{x\rightarrow0}\frac{1-\cos x}{\sin x+x\cos x}$$
+    $$=\frac{1-1}{0+0}=\frac00$$
+    
+    By L'Hospitals rule again, we get
+    
+    $$\lim_{x\rightarrow0}\frac{x-\sin x}{x\sin x}=\lim_{x\rightarrow0}\frac{1-\cos x}{\sin x+x\cos x}$$
+    $$=\lim_{x\rightarrow0}\frac{\sin x}{\cos x-x\sin x+\cos x}=\frac02=0$$.
+    
+    So, $\lim_{x\rightarrow0}(\frac{1}{\sin x}-\frac{1}{x})=0$
+
+\end{solution}

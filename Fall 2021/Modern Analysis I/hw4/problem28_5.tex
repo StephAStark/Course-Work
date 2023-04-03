@@ -1,0 +1,23 @@
+Let $f(x)=x^2\sin{\frac{1}{x}}$ for $x\neq0$, $f(0)=0$, and $g(x)=x$ for $x\in\mathbb{R}$.\\
+
+a. Observe $f$ and $g$ are differentiable on $\mathbb{R}$.\\
+
+b. Calculate $f(x)$ for $x=\frac{1}{n\pi}$, $n\in\mathbb{Z^+}\cup\mathbb{Z^-}$.\\
+
+c. Explain why $\lim_{x\rightarrow0}\frac{g(f(x))-g(f(0))}{f(x)-f(0)}$ is meaningless.\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Clearly $g$ is differentiable on $\mathbb{R}$, and by above , we know that $f$ is also
+    differentiable on $\mathbb{R}$.\\
+
+    Well, for $x=\frac{1}{n\pi}$, $n\in\mathbb{Z^+}\cup\mathbb{Z^-}$,
+    $f(x)=(\frac{1}{n\pi})^2\sin{n\pi}=0$ as we reccognized above that $\sin n\pi=0$ for
+    $n\in\mathbb{Z}$.\\
+
+    Well, $g(x)=x$ is the identity with respect to composition, so the above limit becomes
+    
+    $$\lim_{x\rightarrow0}\frac{f(x)-f(0)}{f(x)-f(0)}=\lim_{x\rightarrow0}1=1$$
+    
+    which tells us nothing about the functions.
+
+\end{solution}

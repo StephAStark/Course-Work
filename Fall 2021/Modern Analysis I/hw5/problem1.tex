@@ -1,0 +1,12 @@
+Find the Taylor series of $f(x)=\cos x$ and indicate why it converges to $\cos x$ for all
+$x\in\mathbb{R}$.\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Well, centering at $x=0$, we get $f(0)=1$. Also, $f'(x)=-\sin x$, $f''(x)=-\cos x$,
+    $f'''(x)=\sin x$, and $f^{(4)}(x)=\cos x=f(x)$. So, we see that every fourth derivative gives back
+    the original function. So, $f'(0)=0$, $f''(0)=-1$, $f'''(0)=0$, and $f^{(4)}(0)=1$. Therefore
+    
+    $$\cos x=1-\frac{x^2}{2}+\frac{x^4}{4!}-\frac{x^6}{6!}+...
+    =\sum_{n=0}^{\infty}\frac{(-1)^nx^{2n}}{(2n!)}$$
+
+\end{solution}

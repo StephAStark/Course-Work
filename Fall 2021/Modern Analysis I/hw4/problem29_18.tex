@@ -1,0 +1,36 @@
+Let $f$ be differentiable on $\mathbb{R}$ with $a=sup\{|f'(x)|:x\in\mathbb{R}\}<1$.\\
+
+a. Select $s_0\in\mathbb{R}$ and define $s_n=f(s_{n-1})$ for $n\geq1$. Thus $s_1=f(s_0)$, $s_2=f(s_1)$,
+etc. Prove $s_n$ is a convergent sequence.\\
+
+b. Show $f$ has a fixed point.\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Well, since $f$ is differentiable on $\mathbb{R}$, we have that $f$ is continuous on $\mathbb{R}$ as
+    well. Therefore on the interval $(s_n, s_{n-1})$ there exists $x\in(s_n, s_{n-1})$ such that
+    $f'(x)=\frac{f(s_n)-f(s_{n-1})}{s_n-s_{n-1}}$. By assumption, we then have
+    
+    $$|\frac{f(s_n)-f(s_{n-1})}{s_n-s_{n-1}}|=|\frac{s_{n+1}-s_n}{s_n-s_{n-1}}|=|f'(x)|\leq a$$
+    
+    Hence $|s_{n+1}-s_n|\leq a|s_n-s_{n+1}|$. So,
+    
+    $$|s_n-s_m|=|s_n-s_{n-1}+s_{n-1}-s_{n-2}+...+s_{m+1}-s_m|$$
+    $$\leq|s_n-s_{n-1}|+|s_{n-1}-s_{n-2}|+...+|s_{m+1}-s_m|$$
+    $$\leq a^{n-1}|s_1-s_0|+a^{n-2}|s_1-s_0|+...+a^m|s_1-s_0|=(a^{n-1}+a^{n-2}+...+a^m)|s_1-s_0|$$
+    $$\leq\frac{a^m}{1-a}|s_1-s_0|$$
+    
+    Let $\epsilon>0$ and let $N\in\mathbb{N}$ with $m,n>N$. Since $a<1$, we have $a^m<a^N$. Let
+    $\epsilon=\frac{a^N}{1-a}|s_1-s_0|$. Since $s_1\neq s_0$, we have
+    
+    $$|s_n-s_m|\leq\frac{a^m}{1-a}|s_1-s_0|<\frac{a^N}{1-a}|s_1-s_0|=\epsilon$$
+    
+    So, the sequence $(s_n)$ is Cauchy and therefore convergent.\\
+
+    Since we know that the sequence $s_n$ converges, lets set $\lim_{n\rightarrow\infty}s_n=c$ where
+    $c\in\mathbb{R}$. Now, $f(s_n)=s_{n+1}$, so
+    
+    $$\lim_{n\rightarrow\infty}f(s_n)=\lim_{n\rightarrow\infty}s_{n+1}=\lim_{n\rightarrow\infty}s_n=c$$
+    
+    Thus we have that $f(c)=c$, and so $f$ has a fixed point as desired.
+
+\end{solution}

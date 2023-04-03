@@ -1,0 +1,16 @@
+Find the Taylor series for $\sinh x$ and $\cosh x$ and indicate why the respective series converge to
+the corresponding functions.\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    First take $\sinh x$ centered at $x=0$. Well, $\sinh x=\frac{e^x-e^{-x}}{2}$, and the Taylor series
+    of $e^x=\sum_{n=0}^{\infty}\frac{x^n}{n!}$ centered at $x=0$. So, the Taylor series of
+    $e^{-x}=\sum_{n=0}^{\infty}\frac{(-1)^nx^n}{n!}$. Hence,
+    
+    $$e^x-e^{-x}=2x+\frac{2x^3}{3!}+\frac{2x^5}{5!}+...=2\sum_{n=0}^{\infty}\frac{x^{2n+1}}{(2n+1)!}$$
+    
+    Therefore $\sinh x=\sum_{n=0}^{\infty}\frac{x^{2n+1}}{(2n+1)!}$, and since the power series
+    representation of a function is unique, this is the Taylor series for all $x\in\mathbb{R}$. Now take
+    $\cosh x$. Since $\cosh x=\frac{e^x+e^{-x}}{2}$, we have that the Taylor series of
+    $\cosh x=\sum_{n=0}^{\infty}\frac{x^{2n}}{(2n)!}$ by the same logic as above.
+
+\end{solution}

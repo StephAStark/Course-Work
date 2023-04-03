@@ -1,46 +1,29 @@
-\documentclass[12pt]{article}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{amsthm}
-\usepackage{accents}
-\usepackage{graphicx}
-\usepackage{amsfonts}
-\setlength{\oddsidemargin}{0in}
-\setlength{\textwidth}{6.5in}
-\setlength{\topmargin}{-.55in}
-\setlength{\textheight}{9in}
-\pagestyle{empty}
-\renewcommand \d{\displaystyle}
+\input{settings}
+
 \begin{document}
-\noindent Dallas Klumpe
 
-\noindent Math 4310
+\lhead{Stephanie Klumpe}
 
-\noindent HW 5\\
+\chead{HW 4}
 
-1. Fid the Taylor series of $f(x)=\cos x$ and indicate why it converges to $\cos x$ for all $x\in\mathbb{R}$.\\
-Well, centering at $x=0$, we get $f(0)=1$. Also, $f'(x)=-\sin x$, $f''(x)=-\cos x$, $f'''(x)=\sin x$, and $f^{(4)}(x)=\cos x=f(x)$. So, we see that every fourth derivative gives back the original function. So, $f'(0)=0$, $f''(0)=-1$, $f'''(0)=0$, and $f^{(4)}(0)=1$. Therefore $\cos x=1-\frac{x^2}{2}+\frac{x^4}{4!}-\frac{x^6}{6!}+...=\sum_{n=0}^{\infty}\frac{(-1)^nx^{2n}}{(2n!)}$.\\[20pt]
+\rhead{MATH 4310}
 
-2. Find the Taylor series for $\sinh x$ and $\cosh x$ and indicate why the respective series converge to the corresponding functions.\\
-First take $\sinh x$ centered at $x=0$. Well, $\sinh x=\frac{e^x-e^{-x}}{2}$, and the Taylor series of $e^x=\sum_{n=0}^{\infty}\frac{x^n}{n!}$ centered at $x=0$. So, the Taylor series of $e^{-x}=\sum_{n=0}^{\infty}\frac{(-1)^nx^n}{n!}$. Hence, $e^x-e^{-x}=2x+\frac{2x^3}{3!}+\frac{2x^5}{5!}+...=2\sum_{n=0}^{\infty}\frac{x^{2n+1}}{(2n+1)!}$. Therefore $\sinh x=\sum_{n=0}^{\infty}\frac{x^{2n+1}}{(2n+1)!}$, and since the power series representation of a function is unique, this is the Taylor series for all $x\in\mathbb{R}$. Now take $\cosh x$. Since $\cosh x=\frac{e^x+e^{-x}}{2}$, we have that the Taylor series of $\cosh x=\sum_{n=0}^{\infty}\frac{x^{2n}}{(2n)!}$ by the same logic as above.\\[20pt]
+\cfoot{\thepage\ of \pageref{LastPage}}
 
-5. Let $g(x)=e^{-\frac{1}{x^2}}$ for $x\neq0$ and $g(0)=0$.\\
-a. Show $g^{(n)}(0)=0$ for all $n\in\mathbb{N}$.\\
-Clearly $g^{(0)}(0)=0$ by assumption. Now, let $f(x)=e^{-\frac{1}{x}}$. So we see that $g(x)=f(x^2)*1$. Now, assume there exists a polynomial $p_n$ such that $g^{(n)}(x)=f(x^2)p_n(\frac{1}{x^2})$ for $n>0$. That is assume the polynomial is of the form $p_n(t)=a_0+a_1t+...+a_{3n}t^{3n}$ for $n>3$. Well, we can see that $g^{(n)}(x)=f(x^2)\sum_{k=1}^{3n}\frac{a_k}{x^k}$. So $g^{(n+1)}(x)=f'(x^2)[-\sum_{k=1}^{3n}\frac{ka_k}{x^(k+1)}]+[\sum_{k=1}^{3n}\frac{a_k}{x^k}]f(x^2)(\frac{1}{x^3})$. So, we see that our polynomial is of the form $p_{n+1}= -\sum_{k=1}^{3n}ka_kt^{(k+1)}+[\sum_{k=1}^{3n}\frac{a_k}{x^k}](t^3)$. So, for all $n$, there exists a polynomial that satisfies $g^{(n)}(x)=f(x^2)p_n(\frac{1}{x^2})$. Now assume that $g^{(n)}(0)=0$ for some $n>0$. So, by example 3, we see that to show this is true for $n+1$, we need $\lim_{y\rightarrow}\frac{y^{(k+1)}}{e^y}=0$ when we set $y=\frac{1}{x^2}$. Well, this is true by $k+1$ applications of L'Hospitals Rule, so we have that $g^{(n)}(0)=0$ for all $n\in\mathbb{N}$.\\
-b. Show the Taylor sereis for $g$ about $0$ agrees with $g$ only at $0$.\\
-Well, since $g^{(n)}(0)=0$ for all $n\in\mathbb{N}$, we have that the Taylor series for $g$ about $0$ is simply $\sum_{n=0}^{\infty}0=0$. Clearly for $x\neq0$, $g(x)\neq0$, and so $g$ does not agree with the Taylor series for any $x$ aside from $x=0$.\\[20pt]
+ \begin{enumerate}
 
-6. Assume $x>0$, let $M$ be as in the proof for theorem 31.3, and let $$F(t)=f(t)+\sum_{k=1}^{n-1}\frac{(x-t)^k}{k!}f^{(k)}(t)+M\frac{(x-t)^n}{n!}$$for $t$ in $[0,x]$.\\
-a. Show $F$ is differentiable on $[0,x]$ and $F'(t)=\frac{(x-t)^{n-1}}{(n-1)!}(f^{(n)}(t)-M)$.\\
-Well, since $f$ is differentiable by assumption, and is also $n$ times differentiable. Also, we know that $x^n$ is differentiable, so we are left with $\sum_{k=1}^{n-1}\frac{(x-t)^k}{k!}f^{(k)}(t)$. Since $t\in[0,x]$ and $f$ is $n$ times differentiable, we have that $\sum_{k=1}^{n-1}\frac{(x-t)^k}{k!}f^{(k)}(t)$ is also differentiable. Therefore $F$ is differentiable on $[0,x]$. So, since $F$ is differentiable, we have that $$F'(t)=f'(t)+\sum_{k=1}^{n-1}\frac{(x-t)^k}{k!}f^{(k+1)}(t)-\sum_{k=1}^{\infty}\frac{(x-t)^{(k-1)}}{(k-1)!}f^{(k)}(t)-M\frac{(x-t)^{(n-1)}}{(n-1)!}=$$ $$\sum_{k=1}^{n-1}\frac{(x-t)^k}{k!}f^{(k+1)}(t)-\sum_{k=2}^{\infty}\frac{(x-t)^{(k-1)}}{(k-1)!}f^{(k)}(t)-M\frac{(x-t)^{(n-1)}}{(n-1)!}=$$ $$\frac{(x-t)^{(n-1)}}{(n-1)!}f^{(n)}(t)-M\frac{(x-t)^{(n-1)}}{(n-1)!}=\frac{(x-t)^{(n-1)}}{(n-1)!}(f^{(n)}(t)-M)$$as desired.\\
-b. Show $F(0)=F(x)$.\\
-Clearly $F(x)=f(x)$. Well, by choice of $M$ from the proof of Theorem 31.3, we have that $F(0)=f(0)+\sum_{k=1}^{n-1}\frac{x^k}{k!}f^{(k)}(0)+M\frac{x^n}{n!}=f(0)+\sum_{k=1}^{n-1}\frac{x^k}{k!}f^{(k)}(0)+f(x)-\sum_{k=1}^{n-1}\frac{x^k}{k!}f^{(k)}(0)=f(0)+f(x)$. By definition of $f$, we arrive at $F(0)=0+f(x)=f(x)=F(x)$ as desired.\\
-c. Apply Rolle's Theorem to $F$ to obtain $y$ in $(0,x)$ such that $f^{(n)}(y)=M$.\\
-Since $F$ is differentiable on $[0,x]$, $F$ is continuous on $[a,b]$, and since $F(0)=F(x)$, we can apply Rolle's Theorem to $F$. So, there exists $y\in(0,x)$ such that $F'(y)=0$. That is $\frac{(x-y)^{(n-1)}}{(n-1)!}(f^{(n)}(y)-M)=0$. Since $x\neq y$, we have that $f^{(n)}(y)-M=0$. Thus, $f^{(n)}(y)=M$.\\[20pt]
+   \item \input{problem1}
+   \pagebreak
+   \item \input{problem2}
+   \pagebreak
+   \item[5] \input{problem5}
+   \pagebreak
+   \item[6] \input{problem6}
+   \pagebreak
+   \item[11] \input{problem11}
 
-11. Suppose $f$ is differentiable on $(a,b)$, $f'$ is bounded on $(a,b)$, $f'$ never vanishes on $(a,b)$ and the sequence $(x_n)$ in $(a,b)$ converges to $\overline{x}$ in $(a,b)$. Show that if $x_n=x_{n-1}-\frac{f(x_{n-1})}{f'(x_{n-1})}$ for all $n\geq1$, then $f(\overline{x})=0$.\\
-Let $f$, $f'$, and $x_n$ be as given. We can rewrite $x_n$ as $f(x_{n-1})=(x_{n-1}-x_n)f'(x_{n-1})$. Since $f'$ is bounded, there exists some $M\in\mathbb{R}$ such that $|f'(x)|\leq M$ for all $x\in(a,b)$. So, $|f(x_{n-1})|=|x_{n-1}-x_n||f'(x_{n-1})|\leq|x_{n-1}-x_n|M$. Hence $|f(\overline{x})|=\lim_{n\rightarrow\infty}|f(x_{n-1})|\leq\lim_{n\rightarrow\infty}M|x_{n-1}-x_n|=M\lim_{n\rightarrow\infty}|x_{n-1}-x_n|=M|\overline{x}-\overline{x}|=0$. Thus $|f(\overline{x})|\leq0$, and therefore $f(\overline{x})=0$ as desired.
-
-
+ \end{enumerate}
 
 \end{document}
+%\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+%\end{solution}
