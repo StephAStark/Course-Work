@@ -1,0 +1,10 @@
+a. Calculate $\lim_{x\rightarrow0}\frac1x\int_0^xe^{t^2}dt$.\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Let $f(x)=\int_0^xe^{t^2}dt$. Then $\frac1x\int_0^xe^{t^2}dt=\frac{f(x)}{x}$. Now, by the second
+    fundamental theorem of calculus and L'Hospital's rule, we have that
+    
+    $$\lim_{x\to0}\frac1x\int_0^xe^{t^2}dt=\lim_{x\to0}\frac{f(x)}{x}$$
+    $$=\lim_{x\to0}\frac{e^{x^2}}{1}=\frac11=1$$
+
+\end{solution}

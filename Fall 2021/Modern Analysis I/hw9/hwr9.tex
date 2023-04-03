@@ -1,49 +1,29 @@
-\documentclass[12pt]{article}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{amsthm}
-\usepackage{accents}
-\usepackage{graphicx}
-\usepackage{amsfonts}
-\setlength{\oddsidemargin}{0in}
-\setlength{\textwidth}{6.5in}
-\setlength{\topmargin}{-.55in}
-\setlength{\textheight}{9in}
-\pagestyle{empty}
-\renewcommand \d{\displaystyle}
+\input{settings}
+
 \begin{document}
-\noindent Dallas Klumpe
 
-\noindent Math 4310
+\lhead{Stephanie Klumpe}
 
-\noindent HW 9\\
+\chead{HW 9}
 
-4.a. Let $F(t)=\sin t$ for $t\in[-\frac{\pi}{2},\frac{\pi}{2}]$. Calculate $\int_0^{\frac{\pi}{2}}xdF(x)$.\\
-Well, $f(x)=x$ which s continuous, and on $[-\frac{\pi}{2},\frac{\pi}{2}]$, $F$ is increasing and continuously differentiable. So, $\int_0^{\frac{\pi}{2}}xdF(x)=\int_0^{\frac{\pi}{2}}xF'(x)dx=\int_0^{\frac{\pi}{2}}x\cos xdx=\frac{\pi}{2}-1$ by integration by parts.\\[20pt]
+\rhead{MATH 4310}
 
-6. Let $(f_n)$ be a sequence of $F$-integrable functions on $[a,b]$, and suppose $f_n\rightarrow f$ uniformly on $[a,b]$. Show $f$ is $F$-integrable and $\int_a^bfdF=\lim_{n\rightarrow\infty}\int_a^bf_ndF$.\\
-Let $\epsilon>0$ and $P$ be a partition of $[a,b]$. Take $m\in\mathbb{N}$ such that $|f(x)-f_m(x)|<\frac{\epsilon}{2(b-a)}$ for all $x\in[a,b]$. Then, $-\frac{\epsilon}{2}\leq L_F((f-f_m),P)\leq U_F((f-f_m),P)\leq\frac{\epsilon}{2}$. Now, since $f_m$ is $F$-integrable, let $P'$ be a partition of $[a,b]$ such that $U_F(f_m,P')-L_F(f_m,P')<\frac{\epsilon}{2}$. Well, $f=(f-f_m)+f_m$, so we have that $(U_F((f-f_m),P')+U_F(f_m,P'))-(L_F((f-f_m),P')+L_F(f_m,P'))<\epsilon$. Hence $U_F(f_,P')-L_F(f,P')<\epsilon$ and so $f$ is $F$-integrable. Now, we have that $f-f_n$ is $F$-integrable and since $f_n\rightarrow f$ uniformly, there exists $N$ such that $|f-f_n|<\frac{\epsilon}{b-a}$ for all $x\in[a,b]$ and all $n\geq N$. Therefore $|\int_a^bfdF-int_a^bf_ndF|=|\int_a^b(f-f_n)dF|\leq\int_a^b|f-f_n|dF<\int_a^b\frac{\epsilon}{b-a}dF=\epsilon$. Thus, $\int_a^bfdF=\lim_{n\rightarrow\infty}\int_a^bf_ndF$.\\[20pt]
+\cfoot{\thepage\ of \pageref{LastPage}}
 
-7. Let $f$ and $g$ be $F$-integrable functions on $[a,b]$. Show:\\
-a. $f^2$ is $F$-integrable.\\
-Let $f$ be as given and $\epsilon>0$. Now, let $K>0$ be such that $|f|\leq K$ since $f$ is $F$-integrable. So, $\frac{\epsilon}{2K}>0$. Now, let $x,y\in[a,b]$ and $P$ be a partition of $[a,b]$. Well, $f(x)^2-f(y)^2=(f(x)+f(y))(f(x)-f(y))$. So, $f(x)^2-f(y)^2\leq|f(x)+f(y)||f(x)-f(y)|\leq|f(x)|+|f(y)|(|f(x)-f(y)|)\leq2K|f(x)-f(y)|\leq2K(M(f,S)-m(f,S))$. Hence $M(f^2,P)-m(f^2,P)\leq 2K(M(f,S)-m(f,S))$ Therefore $(M(f^2,S)-m(f^2,S))(t_k-t_{k-1})\leq2K(M(f,S)-m(f,S))(t_k-t_{k-1})$, and so $U_F(f^2,P)-L_F(f^2,P)=\sum_{k=1}^n(M(f^2,S)-m(f^2,S))(t_k-t_{k-1})\leq2K\sum_{k=1}^n(M(f,S)-m(f,S))(t_k-t_{k-1})=2K[U_F(f,P)-L_F(f,P)]$. Since $f$ is $F$-integrable, there exists a partition $P'$ of $[a,b]$ such that $U_F(f,P')-L_F(f,P')<\frac{\epsilon}{2K}$. So, we have that $U_F(f^2,P')-L_F(f^2,P')\leq2K[U_F(f,P')-L-F(f,P')]<2K\frac{\epsilon}{2K}=\epsilon$. Thus, $f^2$ is $F$-integrable on $[a,b]$.\\
-b. $fg$ is $F$-integrable.\\
-Let $f$ and $g$ be as given. Clearly if $f=g$, then $fg$ is $F$-integrable by part a. So, assusme that $f\neq g$. Now, $4fg=(f+g)^2-(f-g)^2$. Well, since $f$ and $g$ are $F$-integrable and $(f+g)$ is $F$-integrable, by part a above, we have that $(f+g)^2$ and $(f-g)^2$ are both $F$-integrable. Hence, we have that $(f+g)^2-(f-g)^2$ is also $F$-integrable. Thus, $4fg$ is $F$-integrable and so $fg$ is $F$-integrable.\\
-c. $\max(f,g)$ and $\min(f,g)$ are $F$-integrable.\\
-Well, $\max(f,g)=\frac12(f+g)-\frac12|f-g|$. Now, $(f+g)$ and $(f-g)$ are $F$-integrable and so is $|f-g|$, so $\frac12(f+g)$ and $-\frac12|f-g|$ are as well. Thus $\max(f,g)=\frac12(f+g)-\frac12|f-g|$ is $F$-integrable. Now, since $\min(f,g)=-\max(-f,-g)$, we have that $\min=\frac12|g-f|-\frac12(-f-g)$ is also $F$-integrble by the same reasons as above.\\[20pt]
+ \begin{enumerate}
 
-8. Let $g$ be continuous on $[a,b]$ where $g(x)\geq0$ for all $x\in[a,b]$, and define $F(t)=\int_a^tg(x)dx$ for $t\in[a,b]$. Show that if $f$ is continuous then $\int_a^bfdF=\int_a^bf(x)g(x)dx$.\\
-Well, since $g$ is contiuous, by the second part of the Fundamental Theorem of Calculus, we have that, for $F(x)=\int_a^xg(t)dt$, $F'(x)=g(x)$. Now, since $f$ is also continuous and $F$ is differentiable, we have that $\int_a^bfdF=\int_a^bf(x)g(x)dx$ as desired.\\[20pt]
+   \item[4] \input{problem4}
+   \pagebreak
+   \item[6] \input{problem6}
+   \pagebreak
+   \item[7] \input{problem7}
+   \pagebreak
+   \item[8] \input{problem8}
+   \pagebreak
+   \item[9] \input{problem9}
 
-9. Let $f$ be continuous on $[a,b]$.\\
-a. Show $\int_a^bfdF=f(x)(F(b)-F(a))$ for some $x\in[a,b]$.\\
-Since $f$ is continuous, let $m<M$ be such that $m\leq f(x)\leq M$ for all $x\in[a,b]$. Then $\int_a^bmdF\leq\int_a^bfdF\leq\int_a^bMdF$. Hence $m\leq\frac{\int_a^bfdF}{F(b)-F(a)}\leq M$. Now, since $f(x)$ is continuous, we have that there exists $x\in[a,b]$ such that $f(x)=\frac{\int_a^bfdF}{F(b)-F(a)}$. That is, there exists $x\in[a,b]$ such that $\int_a^bfdF=f(x)(F(b)-F(a))$.\\
-b. Show problem 33.14 is a special case of part a.\\
-Well, let $F(x)$ be as in problem 8, and $f$ and $g$ be as in problem 33.14. Then by part a, we have that there exists $x\in[a,b]$ such that $\int_a^bf(x)g(x)dx=\int_a^bfdF=f(x)(F(b)-F(a))=f(x)\int_a^bg(x)dx$. So, 33.14 is a special case of part a.
-
-
-
-
-
+ \end{enumerate}
 
 \end{document}
+%\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+%\end{solution}

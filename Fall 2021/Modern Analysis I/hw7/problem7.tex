@@ -1,0 +1,44 @@
+Let $f$ be bounded function on $[a,b]$, so that there exists $B>0$ such that $|f(x)|\leq B$ for all
+$x\in[a,b]$.\\
+
+a. Show $U(f^2,P)-L(f^2,P)\leq2B[U(f,P)-L(f,P)]$ for all partitions $P$ of $[a,b]$.\\
+
+b. Show that if $f$ is integrable on $[a,b]$, then $f^2$ is also integrable on $[a,b]$.\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Let $f$ and $B$ be as given, $x,y\in[a,b]$, and $P$ be a partition of $[a,b]$. Then
+    
+    $$f(x)^2-f(y)^2=(f(x)+f(y))(f(x)-f(y))$$
+    
+    So,
+    
+    $$f(x)^2-f(y)^2\leq|f(x)+f(y)||f(x)-f(y)|\leq|f(x)|+|f(y)|(|f(x)-f(y)|)$$
+    $$\leq2B|f(x)-f(y)|\leq2B(M(f,S)-m(f,S))$$
+    
+    Hence
+    
+    $$M(f^2,P)-m(f^2,P)\leq 2B(M(f,S)-m(f,S))$$
+    
+    Therefore
+    
+    $$(M(f^2,S)-m(f^2,S))(t_k-t_{k-1})\leq2B(M(f,S)-m(f,S))(t_k-t_{k-1})$$
+    
+    and so
+    
+    $$U(f^2,P)-L(f^2,P)=\sum_{k=1}^n(M(f^2,S)-m(f^2,S))(t_k-t_{k-1})$$
+    $$\leq2B\sum_{k=1}^n(M(f,S)-m(f,S))(t_k-t_{k-1})=2B[U(f,P)-L(f,P)]$$
+    
+    as desired.\\
+
+    Assume that $f$ is integrable on $[a,b]$. Let $\epsilon>0$. So, $\frac{\epsilon}{2B}>0$. Since $f$
+    is integrable, there exists a partition $P$ such that
+    
+    $$U(f,P)-L(f,P)<\frac{\epsilon}{2B}$$
+    
+    By part a above, we have that
+    
+    $$U(f^2,P)-L(f^2,P)\leq2B2B[U(f,P)-L(f,P)]<2b\frac{\epsilon}{2B}=\epsilon$$
+    
+    Thus, $f^2$ is integrable on $[a,b]$.
+
+\end{solution}

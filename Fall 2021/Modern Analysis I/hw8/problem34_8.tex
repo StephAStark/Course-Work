@@ -1,0 +1,11 @@
+a,b. Use integration by parts to evaluate $\int_0^1x\arctan xdx$.\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Let $u(x)=\arctan(x)$ and $v(x)=\frac{x^2+1}{2}$. Then $u'(x)=\frac{1}{1+x^2}$ and $v'(x)=x$. So,
+    using intergration by parts, we get
+    
+    $$\int_0^1x\arctan xdx=(\arctan(x)\frac{x^2+1}{2})|_0^1-
+    \int_0^1(\frac{x^2+1}{2})(\frac{1}{1+x^2})dx=$$
+    $$(\arctan(x)\frac{x^2+1}{2})|_0^1-\int_0^1\frac12dx=$$ $$\frac{\pi}{4}-\frac12$$.
+
+\end{solution}

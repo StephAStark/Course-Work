@@ -1,0 +1,25 @@
+Let $(f_n)$ be a sequence of $F$-integrable functions on $[a,b]$, and suppose $f_n\rightarrow f$
+uniformly on $[a,b]$. Show $f$ is $F$-integrable and
+$\int_a^bfdF=\lim_{n\rightarrow\infty}\int_a^bf_ndF$.\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Let $\epsilon>0$ and $P$ be a partition of $[a,b]$. Take $m\in\mathbb{N}$ such that
+    $|f(x)-f_m(x)|<\frac{\epsilon}{2(b-a)}$ for all $x\in[a,b]$. Then,
+    
+    $$-\frac{\epsilon}{2}\leq L_F((f-f_m),P)\leq U_F((f-f_m),P)\leq\frac{\epsilon}{2}$$
+    
+    Now, since $f_m$ is $F$-integrable, let $P'$ be a partition of $[a,b]$ such that
+    $U_F(f_m,P')-L_F(f_m,P')<\frac{\epsilon}{2}$. Well, $f=(f-f_m)+f_m$, so we have that
+    
+    $$(U_F((f-f_m),P')+U_F(f_m,P'))-(L_F((f-f_m),P')+L_F(f_m,P'))<\epsilon$$
+    
+    Hence $U_F(f_,P')-L_F(f,P')<\epsilon$ and so $f$ is $F$-integrable. Now, we have that $f-f_n$ is
+    $F$-integrable and since $f_n\rightarrow f$ uniformly, there exists $N$ such that
+    $|f-f_n|<\frac{\epsilon}{b-a}$ for all $x\in[a,b]$ and all $n\geq N$. Therefore
+    
+    $$|\int_a^bfdF-int_a^bf_ndF|=|\int_a^b(f-f_n)dF|\leq\int_a^b|f-f_n|dF$$
+    $$<\int_a^b\frac{\epsilon}{b-a}dF=\epsilon$$
+    
+    Thus, $\int_a^bfdF=\lim_{n\rightarrow\infty}\int_a^bf_ndF$.
+
+\end{solution}
