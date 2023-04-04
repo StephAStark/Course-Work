@@ -1,0 +1,42 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{accents}
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\setlength{\oddsidemargin}{0in}
+\setlength{\textwidth}{6.5in}
+\setlength{\topmargin}{-.55in}
+\setlength{\textheight}{9in}
+\pagestyle{empty}
+\renewcommand \d{\displaystyle}
+\begin{document}
+\noindent Dallas Klumpe
+
+\noindent Math 4140
+
+\noindent HW 12\\
+
+1.a. Let $G$ be a group and $H$ a subgroup of $G$. Define the relation $R$ on $G$ by $R=\{(x,y)\in G\times G:xy^{-1}\in H\}$. Prove R is symmetric.\\
+Let $G, H$, and $R$ be as given. Let $x,y\in G$ and $(x,y)\in R$. That means $xy^{-1}\in H$. Since $H$ is a subgroup of $G$, we have that $x,y^{-1}\in H$. Hence $x^{-1},y\in H$. Therefore $yx^{-1}\in H$ and thus we have that $(y,x)\in R$.\\
+b. Prove $R$ is transitive.\\
+Let $G, H$, and $R$ be as given. Let $x,y,z\in G$ and let $(x,y),(y,z)\in R$. So, $xy^{-1}\in H$ and $yz^{-1}\in H$. Since $H$ is closed under the operation by being a subgroup of $G$, we have that $xy^{-1}yz^{-1}=xez^{-1}=xz^{-1}\in H$ Thus, $(x,z)\in R$ and $R$ is transitive.\\
+c. Prove that for any $g\in G$, we have $[g]=Hg$.\\
+Let $G, H$, and $R$ be as given and let $g\in G$. Let $x\in [g]$. Then $x\in G$ and $(g,x)\in R$. So, $gx^{-1}\in H$. So, $h=gx^{-1}$ for some $h\in H$. Hence $x^{-1}=g^{-1}h$ and therefore, $x=(g^{-1}h)^{-1}=h^{-1}g$. Since $H$ is a subgroup of $G$, $h^{-1}\in H$. Thus $x\in Hg$. Now, let $x\in Hg$. Then $x=hg$ for some $h\in H$, and so $xg^{-1}=h\in H$. So, $(x,g)\in R$, and since $R$ is symmetric, we have that $(g,x)\in R$. Thus, $x\in [g]$. Hence $[g]=Hg$ as desired.\\[20pt]
+
+2.a. Let $S$ be a nonempty set and $R$ an equivalence relation on $S$. Prove for every $s\in S$, we have $s\in[s]$.\\
+Let $S$ and $R$ be as above. Let $s\in S$. Since $R$ is reflexive, we have that $(s,s)\in R$ for all $s\in S$. Thus, for all $s\in S$, $s\in[s]$ as desired.\\
+b. Let $s,t\in S$ and suppose that $[s]\cap[t]\neq\varnothing$. Prove $[s]=[t]$.\\
+Let $S$ and $R$ be as above and let $s,t\in S$. Assume that $[s]\cap[t]\neq\varnothing$. So, there exists $x\in S$ such that $x\in[s]$ and $x\in[t]$. Then $(s,x),(t,x)\in R$. Hence $(x,t)\in R$ by symmetry and by transitivity $(s,t)\in R$. Thus $t\in[s]$. By symmetry $(t,s)\in R$, so $s\in[t]$. Now, let $y\in[s]$. Then $(s,y)\in R$. Since $(t,s)\in R$ as well, by transitivity, we have that $(t,y)\in R$. Hence $y\in[t]$ and $[s]\subseteq[t]$. Now, let $y\in[t]$. Then, $(t,y)\in R$. Also, $(s,t)\in R$, and therefore $(s,y)\in R$ by transitivity. Thus $y\in[s]$ and $[s]=[t]$.\\
+c. Let $\mathcal{P}=\{[s]:s\in S\}$. Prove $\mathcal{P}$ is a partition of $S$.\\
+Let $P, S$, and $R$ be as given. Well, by a, we have that each $[s]\neq\varnothing$ for each $[s]\in\mathcal{P}$. Also, by part b, we have that if $[s]\cap[t]\neq\varnothing$, then $[s]=[t]$ for all distinct $[s],[t]\in\mathcal{P}$. Now, for all $s\in S$, we have that $[s]\in\mathcal{P}$ and since for all $s\in S$, $s\in[s]$, we have that $\cup\mathcal{P}=S$. Thus $\mathcal{P}$ is a partition of $S$.\\[20pt]
+
+3.a. Let $S$ be a nonempty set and suppose $\mathcal{P}$ is a partition of $S$. Define the relation $R$ on $S$ by $R=\{(x,y)\in S\times S:x,y\in P$ for some $P\in\mathcal{P}\}$. Prove $R$ is an equivalence relation.\\
+Let $S, \mathcal{P}$, and $R$ be as above. Now, let $s\in S$. Then, $s\in P$ for some $P\in\mathcal{P}$. Hence $(s,s)\in R$ and so $R$ is reflexive. Now, let $x,y\in S$ and $(x,y)\in R$. Then, $x,y\in P$ for some $P\in\mathcal{P}$. So, $y,x\in P$ and hence $(y,x)\in R$. Thus $R$ is symmetric. Finally, let $x,y,z\in S$, $(x,y)\in R$, and $(y,z)\in R$. Then $x,y\in P_1$ and $y,z\in P_2$ for some $P_1,P_2\in\mathcal{P}$. Since $\mathcal{P}$ is a partition of $S$, and $P_1\cap P_2\neq\varnothing$, $P_1=P_2$. Thus $x,y,z\in P_1$ and so $(x,z)\in R$. Therefore $R$ is transitive and an equivalance relation.\\
+b. Let $G$ be a group. Define $R$ on $G$ by $R=\{(x,y)\in G\times G:y=gxg^{-1}$ for some $g\in G\}$. Prove $R$ is an eqivalence relation.\\
+Let $G$ and $R$ be as given. Let $x\in G$. Since $G$ is a group, $e\in G$. Now, $x=exe^{-1}$. Thus $(x,x)\in R$ and so $R$ is reflexive. Now, let $x,y\in G$ and $(x,y)\in R$. Then $y=gxg^{-1}$ for some $g\in G$. So, $x=g^{-1}yg=g^{-1}y(g^{-1})^{-1}$. Hence $(y,x)\in R$ and $R$ is symmetric. Finally let $x,y,z\in G$, $(x,y)\in R$, and $(y,z)\in R$. Then $y=gxg^{-1}$ and $z=hyh^{-1}$ for some $g,h\in G$. So, $z=hgxg^{-1}h^{-1}=hgx(hg)^{-1}$, and thus $(x,z)\in R$ since $G$ is a group and closed under the operation. Therefore $R$ is transitive and an equivalence relation as desired.
+
+
+
+\end{document}

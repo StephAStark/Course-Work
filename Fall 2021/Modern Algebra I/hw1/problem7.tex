@@ -1,0 +1,11 @@
+Show by induction that every positive integer is either even or odd.\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Let $n$ be a positive integer. (Base case) First let $n=1$. Well, clearly $1=2(0)+1$, so $1$ is odd.
+    (Inductive step) Now, assume $n$ is either even or odd, since no integer can be both even and odd by
+    number 5, and show that $n+1$ is either even or odd. Well, if $n$ is even, then $n=2k$ where $k$ is
+    some integer. Then $n+1=(2k)+1$ for some $k\in \mathbb{Z}$, and $n+1$ is odd. Now, if $n$ is odd,
+    then $n=2j+1$ for some $j\in \mathbb{Z}$. Hence, $n+1=(2j+1)+1=2(j+1)$, and by assumption 2, $j+1$
+    is an integer. Therefore $n+1$ is even. Thus, every positive integer is either even or odd.
+
+\end{solution}

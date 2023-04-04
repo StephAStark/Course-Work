@@ -1,0 +1,9 @@
+Prove or disprove that every operation on a set with two elements is associative.\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Counter example: Take the set $S=\{0,1\}$ and define $*$ on $S$ by $x*y=x^y$. Define $0^0=1$, then
+    we can take any two elements from $S$ and combine them using $*$ to get a unique element that is
+    still in $S$. So, $*$ is an operation. Take $x=z=0$ and $y=1$. So, $x*(y*z)=0*(1*0)=0*(1^0)=0^1=0$
+    and $(x*y)*z=(0*1)*0=(0^1)*0=0*0=0^0=1$. Thus, $x*(y*z)\neq(x*y)*z$.
+
+\end{solution}

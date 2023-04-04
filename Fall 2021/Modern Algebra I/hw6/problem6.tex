@@ -1,0 +1,13 @@
+Suppose that $f:B\rightarrow C$ and $g:A\rightarrow B$ are functions where $A, B$, and $C$ are sets.
+Prove that if $f$ and $g$ are bijective, then so is $f\circ g$\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Let $A, B, C, f,$ and $g$ be as given. Assume that $f$ and $g$ are bijective. Well, first let
+    $x,y\in A$. Assume that $(f\circ g)(x)=(f\circ g)(y)$. So, $f(g(x))=f(g(y))$. Since $f$ is
+    injective, $g(x)=g(y)$, and since $g$ is also injective, $x=y$. Therefore, $f\circ g$ is
+    one-to-one. Now, let $z\in C$. Well, since $f$ is onto, there exists $y\in B$ such that $f(y)=z$.
+    Now since $g$ is also onto, there exists $x\in A$ such that $g(x)=y$. So, there exists $x\in A$ such
+    that $f(g(x))=z$ and since $z$ was arbitrary, we have that $f\circ g$ is also surjective, and thus
+    is bijective as desired.
+
+\end{solution}

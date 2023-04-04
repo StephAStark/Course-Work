@@ -1,0 +1,78 @@
+Let $S$ be the set of $2\times2$ real matricies of the form
+
+$$\left ( \begin{array}{cc} m & b\\ 0 & 1 \end{array} \right )$$
+
+where $m\neq0$. Prove the following:\\
+
+a. If $A, B\in S$, then $AB\in S$.\\
+
+b. $S$ has an identity element with respect to multiplication.\\
+
+c.Every member of $S$ has an inverse with respect to multiplication.\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Let $A, B\in S$. We will show $AB\in S$. Since $A\in S$,
+    
+    $$A=\left ( \begin{array}{cc} m & a\\ 0 & 1 \end{array} \right )$$
+    
+    where $m\neq0$ and since $B\in S$,
+    
+    $$B=\left ( \begin{array}{cc} n & b\\ 0 & 1 \end{array} \right )$$
+    
+    where $n\neq0$ where $a, b\in\mathbb{R}$. So,
+    
+    $$AB=\left(\begin{array}{cc} m & a\\ 0 & 1 \end{array}\right)
+    \left(\begin{array}{cc} n & b\\ 0 & 1 \end{array}\right)$$
+    $$=\left(\begin{array}{cc} mn & mb+a\\ 0 & 1 \end{array}\right)$$
+    
+    Since $m,n\neq0$, $mn\neq0$, and since $m,n,a,b\in\mathbb{R}$, then $mb+a\in\mathbb{R}$. Thus $AB$
+    is a real matrix of the form
+    
+    $$\left ( \begin{array}{cc} m & b\\ 0 & 1 \end{array} \right )$$
+    
+    where $m\neq0$ and so $AB\in S$.\\
+
+    Let
+    
+    $$A=\left ( \begin{array}{cc} 1 & 0\\ 0 & 1 \end{array} \right )$$
+    
+    Clearly $A\in S$. Let $B\in S$ be arbitrary. So,
+    
+    $$B=\left ( \begin{array}{cc} m & b\\ 0 & 1 \end{array} \right )$$
+    
+    where $m\neq0$. Hence,
+    
+    $$AB=\left(\begin{array}{cc} 1 & 0\\ 0 & 1 \end{array}\right)
+    \left(\begin{array}{cc} m & b\\ 0 & 1 \end{array}\right)$$
+    $$=\left(\begin{array}{cc} m & b\\ 0 & 1 \end{array}\right)=B=
+    \left(\begin{array}{cc} m & b\\ 0 & 1 \end{array}\right)$$
+    $$=\left(\begin{array}{cc} m & b\\ 0 & 1 \end{array}\right)
+    \left(\begin{array}{cc} 1 & 0\\ 0 & 1 \end{array}\right)=BA$$
+    
+    Since $B$ was arbitrary, we have that $A$ is the identity in $S$ with respect to multiplication.\\
+
+    Let $A\in S$ be arbitrary. So,
+    
+    $$A=\left ( \begin{array}{cc} m & b\\ 0 & 1 \end{array} \right )$$
+    
+    where $m\neq0$. Now, assume
+    
+    $$B=\left ( \begin{array}{cc} \frac1m & -\frac{b}{m}\\ 0 & 1 \end{array} \right )$$
+    
+    Since $m\neq0$, we have that $\frac1m\neq0$ and $\frac1m,-\frac{b}{m}\in\mathbb{R}$, so $B\in S$.
+    Therefore
+    
+    $$AB=\left(\begin{array}{cc} m & b\\ 0 & 1 \end{array}\right)
+    \left(\begin{array}{cc} \frac1m & -\frac{b}{m}\\ 0 & 1 \end{array}\right)$$
+    $$=\left(\begin{array}{cc} 1 & 0\\ 0 & 1 \end{array}\right)$$
+    
+    and
+    
+    $$BA=\left(\begin{array}{cc} \frac1m & -\frac{b}{m}\\ 0 & 1 \end{array}\right)
+    \left(\begin{array}{cc} m & b\\ 0 & 1 \end{array}\right)=
+    \left(\begin{array}{cc} 1 & 0\\ 0 & 1 \end{array}\right)$$
+    
+    So both $AB$ and $BA$ are the identity matrix and since $A\in S$ was arbitrary and $B$ depends on
+    $A$, every element of $S$ has an inverse.
+
+\end{solution}

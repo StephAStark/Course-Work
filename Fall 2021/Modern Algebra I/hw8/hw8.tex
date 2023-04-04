@@ -1,0 +1,44 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{accents}
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\setlength{\oddsidemargin}{0in}
+\setlength{\textwidth}{6.5in}
+\setlength{\topmargin}{-.55in}
+\setlength{\textheight}{9in}
+\pagestyle{empty}
+\renewcommand \d{\displaystyle}
+\begin{document}
+\noindent Dallas Klumpe
+
+\noindent Math 4140
+
+\noindent HW 8\\
+
+1. Let $(G,*_1)$, $(H,*_2)$, and $(K,*_3)$ be groups. Suppose that $G\cong H$ and $H\cong K$. Prove that $G\cong K$.\\
+Let $(G,*_1)$, $(H,*_2)$, and $(K,*_3)$ be groups, and assume that $G\cong H$ and $H\cong K$. Since $G\cong H$, there exists an isomorphism $g:G\rightarrow H$. Also there exists an isomorphism $f:H\rightarrow K$ since $H\cong K$. Now take the function $f\circ g:G\rightarrow K$. Since $f$ and $g$ are isomorphisms, they are bijective, and by problem 6 of homework 6, that means that $f\circ g$ is also bijective. So, we need only show that $f(g(x*_1y))=f(g(x))*_3f(g(y))$. So, let $x,y\in G$. Well, since $g$ is an isomorphism,, $f(g(x*_1y))=f(g(x)*_2g(y))$, and since $f$ is an isomorphism, $f(g(x)*_2g(y))=f(g(x))*_3f(g(y))$. Thus $f(g(x*_1y))=f(g(x))*_3f(g(y))$ and so $f\circ g$ is an isomorphism between $G$ and $K$, hence $G\cong K$.\\[20pt]
+
+2. Let $(G,*)$ be a group and let $g,h\in G$. Prove that if $\varphi_g=\varphi_h$, then $g=h$.\\
+Let $G, g$, and $h$ be as given. Assume that $\varphi_g=\varphi_h$. Then $g*x=h*x$ for all $x\in G$. Now, by cancellation law, we have that $g=h$ as desired.\\[20pt]
+
+3. Let $X$ and $Y$ be sets, and suppose that $f:X\rightarrow Y$ is a bijection.\\
+i) For any $h\in S_X$, prove that $f\circ h\circ f^{-1}\in S_Y$.\\
+Let $X, Y$, and $f$ be as given. Let $h\in S_Y$. Now, let $y\in Y$. Then clearly $f(h(f^{-1}(y)))\in Y$. So we need only show that $f\circ h\circ f^{-1}$ is bijective. Then, let $x,y\in Y$ and assume $f(h(f^{-1}(x)))=f(h(f^{-1}(y)))$. Since $f$ is injective, $h(f^{-1}(x))=h(f^{-1}(y))$. Now, since $h$ is one-to-one, we have that $f^{-1}(x)=f^{-1}(y)$. Similarly, since $f$ is bijective, so to is $f^{-1}$, and so $f^{-1}$ is injective, thus $x=y$. So, $f\circ h\circ f^{-1}$ is one-to-one. Now, let $y\in Y$. Since $f$ is onto, there exists $x\in X$ such that $f(x)=y$. SInce $h$ is also surjective, there exists $w\in X$ such that $h(w)=x$. Finally, since $f$ is bijective, $f^{-1}$ is also bijective, so $f^{-1}$ is onto. Therefore there exists $v\in Y$ such that $f^{-1}(v)=w$. Thus $f(h(f^{-1}(v)))=y$ and so $f\circ h\circ f^{-1}$ is onto. Since $h$ is arbitrary, we have that $f\circ h\circ f^{-1}\in S_Y$ for any $h\in S_X$.\\
+ii) Now consider the map $\varphi:S_X\rightarrow S_Y$ defined by $\varphi(h)=f\circ h\circ f^{-1}$. Prove that $\varphi$ is an isomorphism.\\
+Let $X, Y, f$, and $\varphi$ be as given. Now, let $g,h\in S_X$ and assume that $\varphi(g)=\varphi(h)$. Then $f\circ g\circ f^{-1}=f\circ h\circ f^{-1}$. So, $f^{-1}\circ f\circ g\circ f^{-1}\circ f=f^{-1}\circ f\circ h\circ f^{-1}\circ f$, and therefore $\epsilon\circ g\circ\epsilon=g=h=\epsilon\circ h\circ\epsilon$. Thus $\varphi$ is one-to-one. Now, let $f\circ h\circ f^{-1}\in S_Y$. Since $h\in S_X$, we have that $\varphi(h)=f\circ h\circ f^{-1}$ and so $\varphi$ is onto. Thus $\varphi$ is bijective. Now, let $g,h\in S_X$. Then, $\varphi(g\circ h)=f\circ (g\circ h)\circ f^{-1}=f\circ g\circ h\circ f^{-1}=f\circ g\circ\epsilon\circ h\circ f^{-1}=f\circ g\circ f^{-1}\circ f\circ h\circ f^{-1}=\varphi(g)\circ\varphi(h)$. Thus $\varphi$ is an isomorphism.\\[20pt]
+
+4. Write the following element $f$ of $S_{10}$ as a product of disjoint cycles.\\[5pt]
+$$f=\left(\begin{array}{cccccccccc} 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10\\ 2 & 4 & 7 & 5 & 1 & 6 & 3 & 9 & 10 & 8\end{array}\right)$$
+$$f=\left(\begin{array}{cccccccccc} 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10\\ 2 & 4 & 7 & 5 & 1 & 6 & 3 & 9 & 10 & 8\end{array}\right)=$$
+$$(1\;\:2\;\:4\;\:5)(3\;\:7)(8\;\:9\;\:10)$$
+Write $f^{-1}$ as a product of disjoint cycles.\\
+$$f^{-1}=\left(\begin{array}{cccccccccc} 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10\\ 5 & 1 & 7 & 2 & 4 & 6 & 3 & 10 & 8 & 9\end{array}\right)=$$
+$$(1\;\:5\;\:4\;\:2)(3\;\:7)(8\;\:10\;\:9)$$
+
+
+
+
+\end{document}

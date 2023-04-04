@@ -1,0 +1,50 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{accents}
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\setlength{\oddsidemargin}{0in}
+\setlength{\textwidth}{6.5in}
+\setlength{\topmargin}{-.55in}
+\setlength{\textheight}{9in}
+\pagestyle{empty}
+\renewcommand \d{\displaystyle}
+\begin{document}
+\noindent Dallas Klumpe
+
+\noindent Math 4140
+
+\noindent HW 13\\
+
+0. Let $G$ be a group and suppose $g\in G$ is a nonidentity element such that $g^p=e$ for some prime number $p$. Prove that $g$ has order $p$.\\
+Let $G, g$, and $p$ be as given. Assume by way of contradiction that $g$ has order $n<p$. Then, we have that $n$ is a factor of $p$. Since $p$ is prime $n=1$ or $n=p$. Both are a contradiction to our assumptions of $g$, so we have that $g$ has order $p$.\\[20pt]
+
+1. Let $G$ be a group and let $g\in G$. Suppose the order of $g$ is finite, call it $n$. Suppose further that $p$ is a prime number and that $p$ is a prime factor of $n$. Prove that $\langle g\rangle$ has an element of order $p$.\\
+Let $G, g, n$, and $p$ be as above. Since $p|n$, we have that $n=pm$ for some $m\in\mathbb{Z}$. So, $m=\frac{n}{p}$. Now, by definition of $\langle g\rangle$, there exists $h\in\langle g\rangle$ such that $h=g^m$. So, $h=g^{\frac{n}{p}}$ and hence $h^p=g^{\frac{np}{p}}=g^n=e$. Now, since $m<n$, we have that $h\neq e$ and by problem 0, we have that $h$ has order $p$. Thus, there exists $h\in\langle g\rangle$ such that $h$ has order $p$.\\[20pt]
+
+2. Prove the following: If $G$ is an abelian group of order 1, and $p$ is a prime factor of 1, then $G$ as an element of order $p$.\\
+Let $G$ and $p$ be as given. Well, since $p$ is a prime number, $p>1$ and since $p|1$, it is vacuously true that $G$ has an element of order $p$.\\
+
+3. Now, let $n\in\mathbb{Z}^+$. Assume that for every psitive interger $m\leq n$: if $G$ is an abelian group of order $m$ and $p$ is a prime number such that $p|m$, then $G$ has an element with order $p$. So, assume that $G$ is an abelian group with order $n+1$ and that $p$ is a prime number that divides $n+1$. Fix $g\in G$ where $g\neq e$.\\
+a. Prove $g$ has finite order.\\
+Let everything be as given above. Well, $G$ has order $n+1$, so $G$ has finite order. That is $G$ is finite. So, by homework 5 problem 4, we have that $g$ has finite order, since $g\in G$.\\[8pt]
+b. Assume that $p$ is not a factor of the order of $g$. Prove that $p$ is a factor of the order of $G/H$, where $H=\langle g\rangle$.\\
+Let everything be as given above and assume that $p$ is not a factor of the order of $g$. Well, $G$ is an abelian, so we have that $H$ is a normal subgroup of $G$. So, we have that $|G/H|=|G|/|H|$. Now, $g$ has finite order by above, call it $k\in\mathbb{Z}^+$, so $|H|=|\langle g\rangle|=k$. Hence $|G/H|=\frac{n+1}{k}$. Since $p|n+1$, $n+1=pj$ for some $j\in\mathbb{Z}^+$. Therefore $|G/H|=\frac{pj}{k}$. Now, by Lagrange's Theorem, we have that $k|n+1$. Hence $n+1=ka$ for some $a\in\mathbb{Z}^+$ and $|G/H|=\frac{ka}{k}=a$. So, $\frac{pj}{k}=a$, thus $pj=ka$. This means that $p|ka$. Therefore $p|k$ or $p|a$. If $p|k$, since $p|n+1$, $p$ is a factor of $|G/H|$. Alternativley, if $p|a$, then $p$ is also a factor of $|G/H|$.\\[8pt]
+c. Prove that $1\leq|G/H|<n+1$.\\
+Well, $g\neq e$, so we have that $|H|>1$ and since $|G/H|=|G|/|H|$ and $|G|=n+1$, we have that $|G/H|<n+1$. Now, since $g\neq e$, if $\langle g\rangle=G$, then $|G/H|=1$. Since $H$ is a subgroup of $G$, $|H|\leq|G|$, so $1\leq|G/H|<n+1$ as desired.\\[8pt]
+d. Prove that $G/H$ has an element of order $p$.\\
+Well, $G/H$ is an abelian group and by part b, we know that $p$ is a factor of the order of $G/H$. Now by part c, we also know that the order of $G/H$ is finite. Hence, by $(**)$, we have that $G/H$ has an element of order $p$.\\[8pt]
+e. Prove that $G$ itself has an element of order $p$.\\
+Well, there exists $Hx\in G/H$ for some $x\in G$ such that $(Hx)^p=He$. Now by part a, $x$ has finite order since $G$ has finite order. Call it $m\in\mathbb{Z}^+$. Then, we have that $(Hx)^m=H(x^m)=He$. Now, since $Hx$ has order $p$, we have that $p|m$. So, $\langle x\rangle$ has an element of order $p$ by problem 1. Since $\langle x\rangle\subseteq G$, we conclude there is an element of $G$ with order p as desired.\\[20pt]
+
+\textbf{Bonus}: Suppose that $(R_1,+_1,\cdot_1)$ and $(R_2,+_2,\cdot_2)$ are rings. We can define operations $+$ and $\cdot$ on $R_1\times R_2$ by $(x_1,y_1)+(x_2,y_2)=(x_1+_1y_1,x_2+_2y_2)$ and $(x_1,y_1)\cdot(x_2,y_2)=(x_1\cdot_1y_1,x_2\cdot_2y_2)$. Prove that $R_1\times R_2$ is a ring with these operations.\\
+Let $(R_1,+_1,\cdot_1), (R_2,+_2,\cdot_2)$, and $R_1\times R_2$ with operations $+$ and $\cdot$ be as above. Now, let $(a,b),(c,d)\in R_1\times R_2$. Then clearly, $R_1\times R_2$ is closed under $+$ since $a+b\in R_1$ and $c+d\in R_2$. Now, let $(a,b),(c,d),(e,f)\in R_1\times R_2$. Now, $((a,b)+(b,d))+(e,f)=(a+_1c,b+_2d)+(e,f)=((a+_1c)+_1e,(b+_2d)+_2f)=(a+_1(c+_1e),b+_2(d+_2f))=(a,b)+(c+_1e,d+_2f)=(a,b)+((c,d)+(e,f))$ by associativity of addition on $R_1$ and $R_2$. Next, let $(x,y)\in R_1\times R_2$. Now, $(0_1,0_2)\in R_1\times R_2$ where $0_i$ for $i=1,2$ is the identity of $R_i$. So, $(x,y)+(0_1,0_2)=(x+_10_1,y+_20_2)=(x,y)=(0_1+_1x,0_2+_2y)=(0_1,0_2)+(x,y)$. Hence $R_1\times R_2$ has an identity, namely $(0_1,0_2)$. Let $x,y\in R_1\times R_2$. Now, since $R_1$ and $R_2$ are rings, we have that, since $x\in R_1$ and $y\in R_2$, $-x\in R_1$ and $-y\in R_2$. So, $(-x,-y)\in R_1\times R_2$. Hence $(x,y)+(-x,-y)=(x+_1(-x),y+_2(-y))=(0_1,0_2)=(-x+_1x,-y+_2y)=(-x,-y)+(x,y)$. Therefore $R_1\times R_2$ is closed under additive inverses. Next, let $(a,b),(c,d)\in R_1\times R_2$. Thus, $(a,b)+(c,d)=(a+_1c,b+_2d)=(c+_1a,d+_2b)=(c,d)+(a,b)$ by $(R_1,+_1)$ and $(R_2,+_2)$ being abelian. So, $(R_1\times R_2,+)$ is an abelian group. Now, let $(a,b),(c,d),(e,f)\in R_1\times R_2$. Then $((a,b)\cdot(c,d))\cdot(e,f)=(a\cdot_1c,b\cdot_2d)\cdot(e,f)=((a\cdot_1c)\cdot_1e,(b\cdot_2d)\cdot_2f)=(a\cdot_1(c\cdot_1e),b\cdot_2(d\cdot_2f))=(a,b)\cdot(c\cdot_1e,d\cdot_2f)=(a,b)\cdot((c,d)\cdot(e,f))$ by associativity of multiplication on $R_1$ and $R_2$. Finally, let $(a,b),(c,d),(e,f)\in R_1\times R_2$. Therefore $(a,b)\cdot((c,d)+(e,f))=(a,b)\cdot(c+_1e,d+_2f)=(a\cdot_1(c+_1e),b\cdot_2(d+_2f))=(a\cdot_1c+_1a\cdot_1e,b\cdot_2d+_2b\cdot_2f)$ and $((c,d)+(e,f))\cdot(a,b)=(c+_1e,d+_2f)\cdot(a,b)=((c+_1e)\cdot_1a,(d+_2f)\cdot_2b)=(c\cdot_1a+_1e\cdot_1a,d\cdot_2b+_2f\cdot_2b)$ since $R_1$ and $R_2$ are rings. Thus $(a,b),(c,d),(e,f)\in R_1\times R_2$ is also a ring as desired.
+
+
+
+
+
+
+\end{document}
