@@ -1,49 +1,29 @@
-\documentclass[12pt]{article}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{amsthm}
-\usepackage{accents}
-\usepackage{graphicx}
-\usepackage{amsfonts}
-\setlength{\oddsidemargin}{0in}
-\setlength{\textwidth}{6.5in}
-\setlength{\topmargin}{-.55in}
-\setlength{\textheight}{9in}
-\pagestyle{empty}
-\renewcommand \d{\displaystyle}
+\input{settings}
+
 \begin{document}
-\noindent Dallas Klumpe
 
-\noindent Math 4140
+\lhead{Stephanie Klumpe}
 
-\noindent HW 10\\
+\chead{HW 10}
 
-1. Let $(G,*)$ and $(H,\triangle)$ be groups and suppose that $f:G\rightarrow H$ is a homomorphism. Prove that for any $g\in G$, $f(g^n)=(f(g))^n$ for all $n\in\mathbb{Z}^+$.\\
-Let $G, H$, and $f$ be as given. Now, let $g\in G$ and $n\in\mathbb{Z}+$. Assume first that $n=1$. Then $f(g^1)=f(g)=(f(g))^1$. Now, let $n\geq1$ and assume that $f(g^n)=(f(g))^n$. Then, $f(g^{n+1})=f(g^n*g)=f(g^n)\triangle f(g)=(f(g))^n\triangle (f(g))^1=(f(g))^{n+1}$ since $f$ is a homomorphism. Since $g\in G$ was arbitrary, we have that for all $n\in\mathbb{Z}^+$, $f(g^n)=(f(g))^n$ for any $g\in G$.\\[20pt]
+\rhead{MATH 4140}
 
-2. By Lagrange's Theorem, the order of an element of a finite group is a factor of the order of the group.\\
-a. Suppose that $(G,*)$ is a group of order 4. Prove that every element of $G$ has order 1, 2, or 4.\\
-Well, let $g\in G$. Since all integer powers of $g$ are distinct, then $g$ has finite order $n\leq4$ otherwise it would contradict $G$ having order 4. Well, if $g$ has order 1, then $g^1=g=e$. So, suppose that $g\neq e$. Now, assume by way of contradiction that $g$ has order 3. Then $\langle g\rangle$ also has order 3. Since $\langle g\rangle$ is a subgroup of $G$, we have a contradiction. So, all elements of $G$ have order 1, 2, or 4.\\
-b. Prove that if $(G,*)$ is a group of order 4 with an element of order 4, then $(G,*)\cong(\mathbb{Z}\langle4\rangle,+)$.\\
-Let $G$ be as given, and assume that $g\in G$ has order 4. Then, $G=\langle g\rangle$ is a finite cyclic group with 4 elements. Thus, $(G,*)\cong(\mathbb{Z}\langle4\rangle,+)$.\\
-c. Now suppose that $(G,*)$ is a group of order 4 with no element of order 4. Then by (a), every nonidentity element of $G$ has order 2. Let $a$ and $b$ be distinct, non-identity elements of $G$. Prove that $G=\{e,a,b,a*b\}$.\\
-Let $G$ be as given and assume that no element $g\in G$ has order 4. Now, let $a,b\in G$ be such that $a\neq b$ and $a,b\neq e$. Then by part a, we have that $a$ and $b$ both have order 2. Since $G$ is a group, $a*b\in G$, Now asssume by way of contradiction that $a*b$ has order 1. Then $a*b=e$. Since $b$ has order 2, we have that $a*b=b*b$ and by cancellation law, we have that $a=b$ which contradicts $a\neq b$. Thus $a*b$ has order 2 by part a above.\\
-d. Suppose that $(G,*)$ is as in (c) above. Prove that $G\cong\mathbb{Z}\langle2\rangle\times\mathbb{Z}\langle2\rangle$.\\
-Let $G$ be as in part (c). Now, we have that $a*a=e$, so $a=a^{-1}$. Similarly, we see that $b=b^-1$. Since $(a*b)*(a*b)=e$, we have that $a*b=(a*b)^{-1}=b^{-1}*a^{-1}=b*a$, and so we see that $G$ is an abelian group. Now, let $f:G\rightarrow\mathbb{Z}\langle2\rangle\times\mathbb{Z}\langle2\rangle$ be defined by $f(e)=(\bar{0},\bar{0}), f(a)=(\bar{0},\bar{1}), f(b)=(\bar{1},\bar{0})$, and $f(a*b)=(\bar{1},\bar{1})$. Then, very clearly $f$ is bijective. So, $$f(e*e)=f(e)=(\bar{0},\bar{0})=(\bar{0},\bar{0})+(\bar{0},\bar{0})=f(e)+f(e)$$ $$f(e*a)=f(a*e)=f(a)=(\bar{0},\bar{1})=(\bar{0},\bar{0})+(\bar{0},\bar{1})=f(e)+f(a)$$ $$f(e*b)=f(b*e)=f(b)=(\bar{1},\bar{0})=(\bar{0},\bar{0})+(\bar{1},\bar{0})=f(e)+f(b)$$ $$f(e*(a*b))=f((a*b)*e)=f(a*b)=f(b*a)=(\bar{1},\bar{1})=(\bar{0},\bar{1})+(\bar{1},\bar{0})=f(a)+f(b)$$ $$f(a*a)=f(e)=(\bar{0},\bar{0})=(\bar{0},\bar{1})+(\bar{0},\bar{1})=f(a)+f(a)$$ $$f(b*b)=f(e)=(\bar{0},\bar{0})=(\bar{1},\bar{0})+(\bar{1},\bar{0})=f(b)+f(b)$$ $$f((a*b)*a)=f(a*(a*b))=f((a*a)*b)=f(e*b)=f(b)=(\bar{1},\bar{0})=(\bar{0},\bar{1})+(\bar{1},\bar{1})=f(a)+f(a*b)$$ $$f(b*(a*b))=f((a*b)*b)=f(a*(b*b))=f(a*e)=f(a)=(\bar{0},\bar{1})=(\bar{1},\bar{1})+(\bar{1},\bar{0})=f(a*b)+f(b)$$and finally, $$f((a*b)*(a*b))=f(e)=(\bar{0},\bar{0})=(\bar{1},\bar{1})+(\bar{1},\bar{1})=f(a*b)+f(a*b)$$Therefore, $f$ is an isomorphism between $G$ and $\mathbb{Z}\langle2\rangle\times\mathbb{Z}\langle2\rangle$. Thus, $G\cong\mathbb{Z}\langle2\rangle\times\mathbb{Z}\langle2\rangle$.\\[20pt]
+\cfoot{\thepage\ of \pageref{LastPage}}
 
-3. Define the function $f:\mathbb{C}^*\rightarrow\mathbb{R}^*$ by $f(a+bi)=a^2+b^2$. Prove that $f$ is a homomorphism of the groups $(\mathbb{C}^*,\cdot)$ and $(\mathbb{R}^*,\cdot)$.\\
-Let $f$ be as given. Let $x,y\in\mathbb{C}^*$. THen $x=a+bi$ and $y=c+di$ for some $a,b,c,d\in\mathbb{R}$ with not both $a$ and $b$ equal to $0$ and not both $c$ and $d$ equal to $0$. Then $f(x\cdot y)=f((a+bi)\cdot(c+di))=f(ac+adi+bci-bd)=f((ac-bd)+(ad+bc)i)=(ac-bd)^2+(ad+bc)^2=(a^2c^2-2acbd+b^2d^2)+(a^2d^2+2adbc+b^2c^2)=a^2c^2-2abcd+b^2d^2+a^2d^2+2abcd+b^2c^2=a^2c^2+b^2d^2+a^2d^2+b^2c^2=a^2c^2+a^2d^2+b^2c^2+b^2+d^2=a^2(c^2+d^2)+b^2(c^2+d^2)=(a^2+b^2)(c^2+d^2)=f(a+bi)\cdot f(c+di)=f(x)\cdot f(y)$. Thus, we have that $f$ is a homomorphism between $(\mathbb{C}^*,\cdot)$ and $(\mathbb{R}^*,\cdot)$ as desired.\\[20pt]
+ \begin{enumerate}
 
-4. Prove that the alternating group $A_n$ is a normal subgroup of $S_n$.\\
-Let $g\in A_n$ and $f\in S_n$. Since $S_n$ is a group, $f^{-1}$ exists. Now, assume that $f$ is an even permutation. Then, $f^{-1}$ is also an even permutation. So, $f\circ g\circ f^{-1}$ is the composition of 3 even permutations. Hence $f\circ g\circ f^{-1}$ is an even permuation, and so $f\circ g\circ f^{-1}\in A_n$. On the other hand, assume that $f$ is an odd permutation. Then, $f^{-1}$ is also an odd permutation. So, $f\circ g\circ f^{-1}$ is the composition of an odd, an even, and another odd permutation. Well, the composition of an odd and an even permutation is odd, so then the composition of two odd permutations is then even. So $f\circ g\circ f^{-1}$ is an even permutation and $f\circ g\circ f^{-1}\in A_n$. Thus, $A_n$ is a normal subgroup of $S_n$.\\[20pt]
+   \item \input{problem1}
+   \pagebreak
+   \item \input{problem2}
+   \pagebreak
+   \item \input{problem3}
+   \pagebreak
+   \item \input{problem4}
+   \pagebreak
+   \item \input{problem5}
 
-5.a. Prove that the function $\varphi:(\mathcal{F}(\mathbb{R}),+)\rightarrow(\mathbb{R},+)$ defined by $\varphi(f)=f(c)$ for a fixed constant real number $c$, which is a homomorphism, is surjective.\\
-Let $\varphi$ be as given, and let $c\in\mathbb{R}$ be fixed. Let $y\in\mathbb{R}$. Take $f(x)\in\mathcal{F}(\mathbb{R})$ defined by $f(x)=x+(-c+y)$. Then $\varphi(f)=f(c)=c+(-c+y)=(c+-c)+y=0+y=y$. Thus $\varphi$ is surjective.\\
-b. With $\varphi$ as above and with $c=0$, what is the kernel of $\varphi$?\\ 
-The kernel of $\varphi$ is $Ker(\varphi)=\{$All functions such that $f(0)=0\}$
-
-
-
-
+ \end{enumerate}
 
 \end{document}
+%\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+%\end{solution}

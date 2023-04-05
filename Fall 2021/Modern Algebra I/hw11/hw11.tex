@@ -1,46 +1,33 @@
-\documentclass[12pt]{article}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{amsthm}
-\usepackage{accents}
-\usepackage{graphicx}
-\usepackage{amsfonts}
-\setlength{\oddsidemargin}{0in}
-\setlength{\textwidth}{6.5in}
-\setlength{\topmargin}{-.55in}
-\setlength{\textheight}{9in}
-\pagestyle{empty}
-\renewcommand \d{\displaystyle}
+\input{settings}
+
 \begin{document}
-\noindent Dallas Klumpe
 
-\noindent Math 4140
+\lhead{Stephanie Klumpe}
 
-\noindent HW 11\\
+\chead{HW 11}
 
-1. Show that if $G$ is a group and $\mathcal{F}$ is a nonempty collection of subgroups of $G$, then $\bigcap\mathcal{F}$ is closed under inverses.\\
-Let $G$ and $\mathcal{F}$ be as given. Let $x\in\bigcap\mathcal{F}$ and let $H\in\mathcal{F}$. Then, we have that $x\in H$. Since $x\in H$, there exists $x^{-1}\in H$ such that $xx^{-1}=x^{-1}x=e$. Now, since $H$ was arbitrary, we have that $\bigcap\mathcal{F}$ is closed under inverses.\\[20pt]
+\rhead{MATH 4140}
 
-2. Let $G$ be a group and $S$ a subset of $G$. Let $\mathcal{F}$ be the collection of all subgroups of $G$ which contain $S$ as a subset. Prove that $\mathcal{F}$ is nonempty, and moreover $S\subseteq\bigcap\mathcal{F}$.\\
-Let $G, S$, and $\mathcal{F}$ be as given. Clearly, $G$ is a subgroup of itself and $S\subseteq G$, so $\mathcal{F}$ is nonempty. Now, let $x\in S$ and $H\in\mathcal{F}$. Then, $x\in H$. Since $H$ is arbitrary, we have that $x\in\bigcap\mathcal{F}$. Thus, $S\subseteq\bigcap\mathcal{F}$.\\[20pt]
+\cfoot{\thepage\ of \pageref{LastPage}}
 
-3. Show that the only subgroup of $(\mathbb{Z},+)$ which contains both 2 and 3 is $\mathbb{Z}$. So now what is $\langle2,3\rangle$?\\
-Well, asssume by way of contradiction that $H$ is a subgroup of $\mathbb{Z}$ that contains 2 and 3. Then, $0,-2,-3\in H$. So, since $H$ is a group, $3+(-2)=1\in H$. Now, since $1\in H$, $n1=n\in H$ for $n\in\mathbb{Z}$ since $H$ is closed under addition. Thus $H=\mathbb{Z}$. Since $H$ was arbitrary, $\mathbb{Z}$ is the only subgroup of $\mathbb{Z}$ that contains 2 and 3. Therefore $\langle2,3\rangle=\mathbb{Z}$.\\[20pt]
+ \begin{enumerate}
 
-4. Let $G$ be a group and $S$ a subset of $G$. Show that if $H$ is any subgroup of $G$ for which $S\subseteq H$, then $\langle S\rangle\subseteq H$.\\
-Let $G$ and $S$ be as given. Let $H$ be a subgroup of $G$ such that $S\subseteq H$. Let $x\in\langle S\rangle$. Since $H$ is arbitrary and $S\subseteq H$, by definition $x\in H$. Thus $\langle S\rangle\subseteq H$.\\[20pt]
+   \item \input{problem1}
+   \pagebreak
+   \item \input{problem2}
+   \pagebreak
+   \item \input{problem3}
+   \pagebreak
+   \item \input{problem4}
+   \pagebreak
+   \item \input{problem5}
+   \pagebreak
+   \item \input{problem6}
+   \pagebreak
+   \item \input{problem7}
 
-5. Let $G$ be a group and $H$ a subgroup of $G$. Prove that for every positive integer $n$, if $h_1, h_2,...,h_n\in H$, then $h_1h_2...h_n\in H$.\\
-Let $G$ and $H$ be as given. Let $n\in\mathbb{Z}^+$ and first let $n=1$. Assume that $h_1\in H$. Then trivially, $h1\in H$. Now let $n\geq1$ and assume that $h_1,h_2,...,h_n\in H$ and then $h_1h_2\cdots h_n\in H$. Now, assume that $h_1,h_2,...,h_n,h_{n+1}\in H$. Now, since $h_1,h_2,...,h_n,h_{n+1},h_1h_2\cdots h_n\in H$, we have that $(h_1h_2\cdots h_n)h_{n+1}=h_1h_2\cdots h_nh_{n+1}\in H$. Thus for every positive interger $n$, if $h_1, h_2,...,h_n\in H$, then $h_1h_2...h_n\in H$.\\[20pt]
-
-6. Let $G$ be a group and $H$ a subgroup of $G$. Further, let $h\in H$. Prove that for every $m\in\mathbb{Z}$, $h^m\in H$.\\
-Let $G$ and $H$ be as given and let $h\in H$ and $m\in\mathbb{Z}$. Now, since $h^0=e$ and $H$ is a subgroup of $G$, $h^0\in H$. Now, let $m=1$. Then $h^m=h^1=h\in H$. Now, let $m>1$ and assume that $h^m\in H$. Then $h^{m+1}=h^mh^1$. Since $H$ is a subgroup of $G$, and $h^m,h\in H$, we have that $h^{m+1}=h^mh^1=h^mh\in H$. So, $h^m\in H$ for every positive integer $m$. Now, since $H$ is a subgroup of $G$, $H$ is closed under inverses. So, for every $m\in\mathbb{Z}+$, $h^mh^{-m}=h^{m-m}=h^0=e$, and thus the inverse of $h^m$ is $h^{-m}$ for every positive integer $m$. Thus $h^{-m}\in H$. Therefore $h^m\in H$ for all $m\in\mathbb{Z}$.\\[20pt]
-
-7. Let $G$ be a group and $S$ a nonempty subset of $G$. Prove that $\langle S\rangle=\{s_1^{m_1}s_2^{m_2}\cdots s_k^{m_k}:s_i\in S,m_i\in\mathbb{Z},k\in\mathbb{Z}^+\}=H$.\\
-Let $G, S$, and $H$ be as given. Well, let $k=1$, $m_1=0$, and $s_1\in S$. Then $s_1^{m_1}=e\in H$. Now, let $x,y\in H$. Then $x=s_1^{m_1}s_2^{m_2}\cdots s_k^{m_k}$ and $y=t_1^{n_1}t_2^{n_2}\cdots t_j^{n_j}$ for $s_i,t_l\in S$, $m_i,n_l\in\mathbb{Z}$, and $k,j\in\mathbb{Z}^+$. Then $xy=s_1^{m_1}s_2^{m_2}\cdots s_k^{m_k}t_1^{n_1}t_2^{n_2}\cdots t_j^{n_j}\in H$. Next, let $x\in H$. Then $x=s_1^{m_1}s_2^{m_2}\cdots s_k^{m_k}$. Now, $y=(s_k^{m_k})^{-1}\cdots(s_2^{m_2})^{-1}(s_1^{m_1})^{-1}=s_k^{-m_k}\cdots s_2^{-m_2}s_1^{-m_1}\in H$, and $xy=s_1^{m_1}s_2^{m_2}\cdots s_k^{m_k}s_k^{-m_k}\cdots s_2^{-m_2}s_1^{-m_1}=e=s_k^{-m_k}\cdots s_2^{-m_2}s_1^{-m_1}s_1^{m_1}s_2^{m_2}\cdots s_k^{m_k}=yx$. Thus $H$ is a subgroup of $G$. Now, clearly $S\subseteq H$, so by 4 above, $\langle S\rangle\subseteq H$. Now, let $K$ be a subgroup of $G$ such that $S\subseteq K$. Since $S$ is nonempty, we have that $s_1,...,s_k\in K$ for some $k\in\mathbb{Z}^+$. So, by 5 and 6 above, we have that $s_1^{m_1}\cdots s_k^{m_k}\in K$ for $m_i\in\mathbb{Z}$ and some $k\in\mathbb{Z}$. Thus, $H\subseteq K$, and since $K$ was arbitrary, we have that $H\subseteq\langle S\rangle$. Thus, $H=\langle S\rangle$ as desired.
-
-
-
-
+ \end{enumerate}
 
 \end{document}
+%\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+%\end{solution}

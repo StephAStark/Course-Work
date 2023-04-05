@@ -1,0 +1,25 @@
+a. Let $S$ be a nonempty set and $R$ an equivalence relation on $S$. Prove for every $s\in S$, we have
+$s\in[s]$.\\
+
+b. Let $s,t\in S$ and suppose that $[s]\cap[t]\neq\varnothing$. Prove $[s]=[t]$.\\
+
+c. Let $\mathcal{P}=\{[s]:s\in S\}$. Prove $\mathcal{P}$ is a partition of $S$.\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Let $S$ and $R$ be as above. Let $s\in S$. Since $R$ is reflexive, we have that $(s,s)\in R$ for all
+    $s\in S$. Thus, for all $s\in S$, $s\in[s]$ as desired.\\
+
+    Let $S$ and $R$ be as above and let $s,t\in S$. Assume that $[s]\cap[t]\neq\varnothing$. So, there
+    exists $x\in S$ such that $x\in[s]$ and $x\in[t]$. Then $(s,x),(t,x)\in R$. Hence $(x,t)\in R$ by
+    symmetry and by transitivity $(s,t)\in R$. Thus $t\in[s]$. By symmetry $(t,s)\in R$, so $s\in[t]$.
+    Now, let $y\in[s]$. Then $(s,y)\in R$. Since $(t,s)\in R$ as well, by transitivity, we have that
+    $(t,y)\in R$. Hence $y\in[t]$ and $[s]\subseteq[t]$. Now, let $y\in[t]$. Then, $(t,y)\in R$. Also,
+    $(s,t)\in R$, and therefore $(s,y)\in R$ by transitivity. Thus $y\in[s]$ and $[s]=[t]$.\\
+
+    Let $P, S$, and $R$ be as given. Well, by a, we have that each $[s]\neq\varnothing$ for each
+    $[s]\in\mathcal{P}$. Also, by part b, we have that if $[s]\cap[t]\neq\varnothing$, then $[s]=[t]$
+    for all distinct $[s],[t]\in\mathcal{P}$. Now, for all $s\in S$, we have that $[s]\in\mathcal{P}$
+    and since for all $s\in S$, $s\in[s]$, we have that $\cup\mathcal{P}=S$. Thus $\mathcal{P}$ is a
+    partition of $S$.
+
+\end{solution}

@@ -1,0 +1,14 @@
+Prove that the alternating group $A_n$ is a normal subgroup of $S_n$.\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Let $g\in A_n$ and $f\in S_n$. Since $S_n$ is a group, $f^{-1}$ exists. Now, assume that $f$ is an
+    even permutation. Then, $f^{-1}$ is also an even permutation. So, $f\circ g\circ f^{-1}$ is the
+    composition of 3 even permutations. Hence $f\circ g\circ f^{-1}$ is an even permuation, and so
+    $f\circ g\circ f^{-1}\in A_n$. On the other hand, assume that $f$ is an odd permutation. Then,
+    $f^{-1}$ is also an odd permutation. So, $f\circ g\circ f^{-1}$ is the composition of an odd, an
+    even, and another odd permutation. Well, the composition of an odd and an even permutation is odd,
+    so then the composition of two odd permutations is then even. So $f\circ g\circ f^{-1}$ is an even
+    permutation and $f\circ g\circ f^{-1}\in A_n$. Thus, $A_n$ is a normal subgroup of $S_n$.
+
+
+\end{solution}

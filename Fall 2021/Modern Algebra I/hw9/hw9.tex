@@ -1,46 +1,27 @@
-\documentclass[12pt]{article}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{amsthm}
-\usepackage{accents}
-\usepackage{graphicx}
-\usepackage{amsfonts}
-\setlength{\oddsidemargin}{0in}
-\setlength{\textwidth}{6.5in}
-\setlength{\topmargin}{-.55in}
-\setlength{\textheight}{9in}
-\pagestyle{empty}
-\renewcommand \d{\displaystyle}
+\input{settings}
+
 \begin{document}
-\noindent Dallas Klumpe
 
-\noindent Math 4140
+\lhead{Stephanie Klumpe}
 
-\noindent HW 9\\
+\chead{HW 9}
 
-1. Consider the group $G=\mathbb{Z}/\langle\bar{10}\rangle$ and let $H=\{\bar{0},\bar{2},\bar{4},\bar{6},\bar{8}\}$. Then $H$ is a subgroup of $G$.\\
-a. List the elements of the coset $H+\bar{1}$.\\
-Wel, $H+\bar{1}=\{\bar{0}+\bar{1},\bar{2}+\bar{1},\bar{4}+\bar{1},\bar{6}+\bar{1},\bar{8}+\bar{1}\}=\{\bar{1},\bar{3},\bar{5},\bar{7},\bar{9}\}$\\
-b. List the elements of $H+\bar{4}$.\\
-Well, $H+\bar{4}=\{\bar{0}+\bar{4},\bar{2}+\bar{4},\bar{4}+\bar{4},\bar{6}+\bar{4},\bar{8}+\bar{4}\}=\{\bar{4},\bar{6},\bar{8},\bar{0},\bar{2}\}=\{\bar{0},\bar{2},\bar{4},\bar{6},\bar{8}\}=H$.\\
-c. How many different right cosets of $H$ are there total?\\
-There are 2 different right cosets of $H$. There is $H$ and $H+\bar{1}$ since all $H+\bar{n}$ where $n\in\mathbb{Z}/\langle\bar{10}\rangle$ and $\bar{n}$ is even are just $H$ and all $H+\bar{m}$ where $m\in\mathbb{Z}/\langle\bar{10}\rangle$ and $\bar{m}$ is odd are just $H+\bar{1}$.\\[20pt]
+\rhead{MATH 4140}
 
-2. Let $G$ be a group and let $H$ be a subgroup of $G$. Further, let $a,b\in G$. Determine a necessary and sufficent condition in order for $aH=bH$ and prove this condition is correct.\\
-For a group $G$ and a subgroup $H$ of $G$, and $a,b\in G$, $aH=bH$ if and only if $b^{-1}*a\in H$.\\
-\underline{\textbf{Proof}}: Let $G, H, a$, and $b$ be as given. Assume first that $aH=bH$. Let $x\in aH$. Then $x=a*h_1$ for some $h_1\in H$. Since $aH=bH$, we have that $x\in bH$ and so $x=b*h_2$ for some $h_2\in H$. Hence, $a*h_1=b*h_2$. Since $H$ is group, $h_1^{-1}$ exists such that $h_1*h_1^{-1}=h_1^{-1}*h_1=e$ where $e\in H$ is the identity. Since $G$ is a group, we also have that $b^{-1}$ exists such that $b*b^{-1}=b^{-1}*b=e$. Therefore, if we operate on the right of both sides by $h_1^{-1}$ and on the left of both sides by $b^{-1}$ for $a*h_1=b*h_2$, we get $b^{-1}*a=h_2*h_1^{-1}$. Since $H$ is a group and $h_1^{-1}, h_2\in H$, $h_2*h_1^{-1}\in H$. Thus $b^{-1}*a\in H$. On the other hand, assume that $b^{-1}*a\in H$. Then we know that $b^{-1}*a=h'$ for some $h'\in H$. Now, let $x\in aH$. Then $x=a*h_1$ for some $h_1\in H$. Now, $a=b*h'$, so we have that $x=(b*h')*h_1=b*(h'*h_1)$ by associativity since $H$ is a group. Also since $H$ is a group, we have that $h'*h_1\in H$ and thus $x\in bH$. Now, let $x\in bH$. So $x=b*h_2$ for some $h_2\in H$. Well, since $G$ is a group, we have that $h'^{-1}$ exists such that $h'*h'^{-1}=h'^{-1}*h'=e$ and hence $b=a*h'^{-1}$. Therefore, $x=(a*h'^{-1})*h_2=a*(h'^{-1}*h_2)$ by associativity. Thus, since $h'^{-1}*h_2\in H$ by $H$ being a group, we have that $x\in aH$. Thus, $aH=bH$.\\[20pt]
+\cfoot{\thepage\ of \pageref{LastPage}}
 
-3. Consider the group $G=\mathbb{Z}/\langle\bar{2}\rangle\times\mathbb{Z}/\langle\bar{4}\rangle$. Now let $H=\{(\bar{0},\bar{0}), (\bar{1},\bar{2})\}$. Then $H$ is a subgroup of $G$. List all the different right cosets of $H$ in $G$.\\
-Well, there is  are four right cosets of $H$ given by:$$H+(\bar{0},\bar{0})=H=H+(\bar{1},\bar{2})$$ $$H+(\bar{0},\bar{1})=\{(\bar{0},\bar{1}),(\bar{1},\bar{3})\}=H+(\bar{1},\bar{3})$$ $$H+(\bar{0},\bar{2})=\{(\bar{0},\bar{2}),(\bar{1},\bar{0})\}=H+(\bar{1},\bar{0})$$ $$H+(\bar{0},\bar{3})=\{(\bar{0},\bar{3}),(\bar{1},\bar{1})\}=H+(\bar{1},\bar{1})$$\\[20pt]
+ \begin{enumerate}
 
-4. Now, let $(G,*)$ be a group and suppose that $H$ is a subgroup of $G$. For any $a,b\in G$, consider the set $aHb=\{a*h*b:h\in H\}$. prove the following:\\
-a. For any $g\in G$, $gHg^{-1}$ is a subgroup of $G$.\\
-Let $G, H$, and $g$ be as given. Then the set $gHg^{-1}=\{g*h*g^{-1}:h\in H\}$. Well, since $H$ is a subgroup of $G$, the identity $e\in G$ is in $H$. So, $g*e*g^{-1}=g*g^{-1}=e\in gHg^{-1}$. Now, let $x,y\in gHg^{-1}$. Then $x=g*h*g^{-1}$ and $y=g*h'*g^{-1}$ for some $h,h'\in H$. Then $x*y=(g*h*g^{-1})*(g*h'*g^{-1})=g*h*(g^{-1}*g)*h'*g^{-1}=g*h*e*h'*g^{-1}=g*(h*h')*g^{-1}$ by associativity since $G$ is a group. Since $H$ is a group, $h*h'\in H$ and hence $x*y\in gHg^{-1}$. Now, let $x\in gHg^{-1}.$ Then, $x=g*h*g^{-1}$ for some $h\in H$. Since $H$ is a group, $h^{-1}$ exists such that $h*h^{-1}=h^{-1}*h=e$. So, let $y=g*h^{-1}*g^{-1}\in H$. Then, $x*y=(g*h*g^{-1})*(g*h^{-1}*g^{-1})=g*h*(g^{-1}*g)*h^{-1}*g^{-1}=g*h*e*h^{-1}*g^{-1}=g*(h*h^{-1})*g^{-1}=g*e*g^{-1}=g*g^{-1}=e=g*g^{-1}=g*e*g^{-1}=g*(h^{-1}*h)*g^{-1}=g*h^{-1}*e*h*g^{-1}=g*h^{-1}*(g^{-1}*g)*h*g^{-1}=(g*h^{-1}*g^{-1})*(g*h*g^{-1})=y*x$, ad so $gHg^{-1}$ is closed under inverses. Thus $gHg^{-1}$ is a subgroup of $G$.\\
-b. $H\cong gHg^{-1}$.\\
-Let $G, H, g$, and $gHg^{-1}$ be as given. Let $f:H\rightarrow gHg^{-1}$ be defined by $f(h)=g*h*g^{-1}$. Now, let $x,y\in H$ and assume that $f(x)=f(y)$. Then $g*x*g^{-1}=g*y*g^{-1}$. By operating on the left of both sides by $g^{-1}$ and on the right of both sides by $g$, we get $x=y$. Thus $f$ is injective. Now, let $z\in gHg^{-1}$. Then $z=g*h*g^{-1}$ for some $h\in H$. Then clealy $f(h)=g*h*g^{-1}=z$, and $f$ is onto. Now, let $h_1,h_2\in H$. Since $H$ and $gHg^{-1}$ are both subgroups of $G$, they both have the inherited operation $*$. So, $f(h_1*h_2)=g*(h_1*h_2)*g^{-1}=g*h_1*e*h_2*g^{-1}=g*h_1*(g^{-1}*g)*h_2*g^{-1}=(g*h_1*g^{-1})*(g*h_2*g^{-1})=f(h_1)*f(h_2)$. Therefore, $f$ is an isomorphism, and hence there exists an isomorphism between $H$ and $gHg^{-1}$. Thus, $H\cong gHg^{-1}$.
+   \item \input{problem1}
+   \pagebreak
+   \item \input{problem2}
+   \pagebreak
+   \item \input{problem3}
+   \pagebreak
+   \item \input{problem4}
 
-
-
-
+ \end{enumerate}
 
 \end{document}
+%\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+%\end{solution}

@@ -1,0 +1,14 @@
+Let $(G,*_1)$, $(H,*_2)$, and $(K,*_3)$ be groups. Suppose that $G\cong H$ and $H\cong K$. Prove that
+$G\cong K$.\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Let $(G,*_1)$, $(H,*_2)$, and $(K,*_3)$ be groups, and assume that $G\cong H$ and $H\cong K$. Since
+    $G\cong H$, there exists an isomorphism $g:G\rightarrow H$. Also there exists an isomorphism
+    $f:H\rightarrow K$ since $H\cong K$. Now take the function $f\circ g:G\rightarrow K$. Since $f$ and
+    $g$ are isomorphisms, they are bijective, and by problem 6 of homework 6, that means that $f\circ g$
+    is also bijective. So, we need only show that $f(g(x*_1y))=f(g(x))*_3f(g(y))$. So, let $x,y\in G$.
+    Well, since $g$ is an isomorphism,, $f(g(x*_1y))=f(g(x)*_2g(y))$, and since $f$ is an isomorphism,
+    $f(g(x)*_2g(y))=f(g(x))*_3f(g(y))$. Thus $f(g(x*_1y))=f(g(x))*_3f(g(y))$ and so $f\circ g$ is an
+    isomorphism between $G$ and $K$, hence $G\cong K$.
+
+\end{solution}

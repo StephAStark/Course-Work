@@ -1,0 +1,12 @@
+Let $G$ be a group and let $g\in G$. Suppose the order of $g$ is finite, call it $n$. Suppose further
+that $p$ is a prime number and that $p$ is a prime factor of $n$. Prove that $\langle g\rangle$ has an
+element of order $p$.\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Let $G, g, n$, and $p$ be as above. Since $p|n$, we have that $n=pm$ for some $m\in\mathbb{Z}$. So,
+    $m=\frac{n}{p}$. Now, by definition of $\langle g\rangle$, there exists $h\in\langle g\rangle$ such
+    that $h=g^m$. So, $h=g^{\frac{n}{p}}$ and hence $h^p=g^{\frac{np}{p}}=g^n=e$. Now, since $m<n$, we
+    have that $h\neq e$ and by problem 0, we have that $h$ has order $p$. Thus, there exists
+    $h\in\langle g\rangle$ such that $h$ has order $p$.
+
+\end{solution}
