@@ -1,38 +1,46 @@
-%% Stephanie Klumpe
-%% Midterm
-%% Problem 1
+% Stephanie Klumpe
+% Midterm
+% Problem 1
 
 clear
 close all
 clc
 
-%eps = 0.03;                  % epsilon val
-%x = linspace(-pi,pi,1000);   % domain
-%t = linspace(0,1);           % time interval
-%u = exp(-10*sin(x/2).^2);    % initial conditions
+eps = 0.03;                    % epsilon val
+N = 40;                        % discretization
+x = linspace(-pi,pi,N);        % domain
+u = exp(-10*sin(x/2).^2);      % initial conditions
 
-% Set up grid and two-soliton initial data:
-  N = 256; dt = .4/N^2; x = (2*pi/N)*(-N/2:N/2-1)';
-  A = 25; B = 16; clf, drawnow, %set(gcf,'renderer','zbuffer')
-  u = 3*A^2*sech(.5*(A*(x+2))).^2 + 3*B^2*sech(.5*(B*(x+1))).^2;
-  v = fft(u); k = [0:N/2-1 0 -N/2+1:-1]'; ik3 = 1i*k.^3;
+k = [0:N/2-1 0 -N/2+1:-1];
 
-% Solve PDE and plot results:
-  tmax = 0.006; nplt = floor((tmax/25)/dt); nmax = round(tmax/dt);
-  udata = u; tdata = 0; h = waitbar(0,'please wait...');
-  for n = 1:nmax
-    t = n*dt; g = -.5i*dt*k;
-    E = exp(dt*ik3/2); E2 = E.^2;
-    a = g.*fft(real( ifft(     v    ) ).^2);
-    b = g.*fft(real( ifft(E.*(v+a/2)) ).^2);     % 4th-order
-    c = g.*fft(real( ifft(E.*v + b/2) ).^2);     % Runge-Kutta
-    d = g.*fft(real( ifft(E2.*v+E.*c) ).^2);
-    v = E2.*v + (E2.*a + 2*E.*(b+c) + d)/6;
-    if mod(n,nplt) == 0
-      u = real(ifft(v)); waitbar(n/nmax)
-      udata = [udata u]; tdata = [tdata t];
-    end
-  end
-  waterfall(x,tdata,udata'), colormap(1e-6*[1 1 1]); view(-20,25)
-  xlabel x, ylabel t, axis([-pi pi 0 tmax 0 2000]), grid off
-  set(gca,'ztick',[0 2000]), close(h), pbaspect([1 1 .13])
+
+dt = 1/N;
+udata = u;
+tdata = 0;
+
+f = @(t,u) -eps*k.^2.*fft(u) + 1i*k.*fft(1/2*u.^2);
+                               % Anon function
+for n = 1:N-1
+
+  t = (n+1)*dt;
+
+  k_1 = f(t,u);
+  k_2 = f(t+0.5*dt,u+0.5*dt*k_1);
+  k_3 = f((t+0.5*dt),(u+0.5*dt*k_2));
+  k_4 = f((t+dt),(u+k_3*dt));
+  u = fft(u) + (1/6)*(k_1+2*k_2+2*k_3+k_4)*dt;
+
+  u = real(ifft(u));
+
+  udata = [udata u];
+  tdata = [tdata t];
+
+end
+
+udata = reshape(udata,[N,N]);
+
+surf(x,tdata,udata), colormap(jet);
+view(2)
+xlabel x, ylabel t, axis([-pi pi 0 1 0 1]), grid off
+
+print('-dpng', 'problem1.png')
