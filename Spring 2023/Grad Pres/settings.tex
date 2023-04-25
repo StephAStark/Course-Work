@@ -1,0 +1,29 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{accents}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{tcolorbox}
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\setlength{\oddsidemargin}{0in}
+\setlength{\textwidth}{6.5in}
+\setlength{\headheight}{40pt}
+\setlength{\textheight}{9in}
+\renewcommand \d{\displaystyle}
+%\pagestyle{fancy}
+
+\newenvironment{solution}
+  {\renewcommand\qedsymbol{$\blacksquare$}
+  \begin{proof}[Solution]}
+  {\end{proof}}
+\renewcommand\qedsymbol{$\blacksquare$}
+
+\newcommand{\ubar}[1]{\underaccent{\bar}{#1}}
+
+% Style: no further than column 105 for readability.
+%        ensure 'whitespace'
+%        use \item[hw #] to enumerate wrt to the book problems

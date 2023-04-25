@@ -1,0 +1,115 @@
+\documentclass{beamer}
+\usetheme{Warsaw}
+
+\usepackage{amsfonts}
+\usepackage[mathcal]{eucal}
+\usepackage{eufrak}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{mathrsfs}
+
+\title{Equivalent Codes From Finite Fields}
+
+\author{Stephanie Amber Klumpe}
+
+\institute{University of Colorado at Colorado Springs}
+
+\date{April 27, 2023}
+
+
+
+\begin{document}
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\begin{frame}
+    
+    Imagine you wanted to send the message "Hi" to someone, but you were concerned about the quality
+    or secuity of the data line you were using.\\
+    You would likely want to encrypt it, but how would you do that if you wanted to make sure that the
+    reciever got the whole message even if errors were present?\\
+    We can use redundancy to turn "01001000 01101001" into "0100101 1000110 0110110 1001001".
+
+\end{frame}
+
+\begin{frame}
+    
+    This is the brain child of Richard Hamming. He spearheaded this area in coding theory called error
+    correcting code(ECC). We used his $[7,4]$ code on the world "Hi". This EEC uses the block matrix
+    $$G=\left[\begin{array}{ccccccc}
+        1 & 0 & 0 & 0 & 1 & 1 & 0 \\
+        0 & 1 & 0 & 0 & 1 & 0 & 1 \\
+        0 & 0 & 1 & 0 & 0 & 1 & 1 \\
+        0 & 0 & 0 & 1 & 1 & 1 & 1
+    \end{array}\right]$$
+    ECC is used in much of telecom today including computers, cell towers, annd satilite system.\\\
+
+\end{frame}
+
+\begin{frame}
+    
+    \textbf{Ex:} Let's look at the letter "H". In binary, it is given by "01001000". Notice that this
+    binary letter cannot be put through matrix multiplication in the Hamming code. However, each packet
+    of four can be. So,
+    $$(0 1 0 0)G=0100101\;\;\text{and}\;\; (1 0 0 0)G=1000110$$
+    The process for checking for errors comes down to checking if bits in certain positions line up with
+    the intended data.
+
+\end{frame}
+
+\begin{frame}
+
+    Historically, the alphabet itself, the binary system, the hexadecimal system and others have been
+    used to create codes. Since then, the field of coding theory has made use of more general fields,
+    rings, and modules as the setting to create codes.\\
+    This then leads to the natural mathematical question of when codes can be consider the same.\\ % edit the next para to more accurately reflect what we want to talk about
+    Just as "Ich bin ein berliner" and "I am a doughnut" or "Hello world" and "Rovvy gybvn" are the
+    same phrase, given certain codes and conditions, we can say similar things in different alphabets.
+    
+\end{frame}
+
+\begin{frame}
+    
+    In many areas of mathematics, we are concerned with maps that preserve certain properties.
+    Homomorphisms preserve algebraic properties across algebraic structures, isometries preserve
+    distance across metric spaces, and homeomorphisms preserve topological properties across topologies.
+    The same idea applies here, in that we want to know when certian maps preserve the Hamming weight of
+    a code. We call these particular morphisms linear isometries. % different from metric space ones as these work on finite dimensional vector spaces
+
+\end{frame}
+
+\begin{frame}
+    
+    The Hamming weight is the number of letters in a codeword that are not the $0$ element from the
+    alphabet. So, looking back at the binary representation of "H", "01001000" would have a Hamming
+    weight of 2. We denote this weight by $wt(x)$ for $x\in C$.\\
+    Another example would be $wt(0,1,2,2,4,0,3,1)=6$ on the alphabet $\{0,1,2,3,4\}$
+
+\end{frame}
+
+\begin{frame}
+    
+    Once we have these linear isometries, we can then talk about the left monomial transformations.
+    These are surjective module homomorphisms $T$ between codes $C,C'$ such that
+    $T(x_1,\ldots,x_n)=(x_{\sigma(1)}u_1,\ldots,x_{\sigma(n)}u_n)$ where $\sigma$ is a permutation of
+    the set $\{1,\ldots,n\}$ and $u_i\in R$ are units for $1\leq i\leq n$.
+
+\end{frame}
+
+\begin{frame}
+    
+    The mathematician Florence Jessie MacWilliams was able to prove that every onto linear isometry of
+    codes is actually a left monomial transformation between codes when $R$ is a finite field.
+
+\end{frame}
+
+\end{document}
+
+%\begin{frame}
+%\end{frame}
+
+% serious reordering of the later 7 frmaes would do nicely.
+% build up to the Macwilliams result. Flow through her life a bit, but emphesize the work.
+% follow up with the more general results by woods and sergio

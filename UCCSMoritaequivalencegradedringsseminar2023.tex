@@ -1,0 +1,2358 @@
+\documentclass{beamer}
+%\usepackage[all]{xy}
+%\usepackage{xypic}
+\usepackage{verbatim}
+
+
+%%% from the paper with Efren and Mark, trying to get \varinjlim to work
+\usepackage[]{latexsym,amssymb,amsmath,
+%amsfonts,
+ amsthm}
+\usepackage[all,cmtip,ps]{xy}
+%\usepackage{showkeys}
+\usepackage{enumitem}
+
+
+
+
+
+
+
+%  From Roozbeh:
+
+ \usepackage{wrapfig}
+%\usepackage[dvips]{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{shapes,shadows,arrows}
+
+\usepackage{times}
+
+
+
+
+
+%\usepackage[all,poly]{xy}
+
+
+
+
+\usepackage{amsfonts}
+\usepackage[mathcal]{eucal}
+\usepackage{eufrak}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{mathrsfs}
+
+
+
+
+
+
+
+\newcommand{\rmod}[1]{\operatorname{Mod}\text{-}#1}
+
+
+\newcommand{\grmod}[1]{\operatorname{Gr}\text{-}#1}
+
+
+
+\newcommand{\Pp}{\underline{p}}
+
+\newcommand{\SP}{\operatorname{SP}}
+
+\newcommand{\s}{\operatorname{\backslash S}}
+
+
+\newcommand{\lo}{\mathfrak l}
+
+\newcommand{\no}{\mathfrak n}
+
+%\newcommand{\rmod}[1]{\operatorname{Mod}\text{-}#1}
+
+
+%\newcommand{\grmod}[1]{\operatorname{Gr}\text{-}#1}
+
+
+\newcommand{\gr}{\operatorname{gr}}
+
+\newcommand{\hgr}{\operatorname{hgr}}
+
+\newcommand{\RH}[1]{\textcolor{cyan}{{\it Roozbeh}$\rightarrow$ #1}}
+
+
+
+
+
+
+\usepackage{venndiagram}
+
+
+
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}
+\usetikzlibrary{backgrounds,calc}
+
+
+
+
+
+\input xy
+\xyoption{all}
+
+%\usetheme{Luebeck}
+\usetheme{Berlin}
+
+\usecolortheme{beaver}
+
+
+
+
+%\logo{\includegraphics[height=0.4cm]{UCCS Signature.png}}
+
+
+
+%\title[Morita equivalence for graded rings]
+{}
+%Leavitt path algebras: \\ something for everyone
+
+\author[Gene Abrams   \hspace{2.7in}Morita equivalence for graded rings  ]{
+%Gene Abrams
+}
+\vspace{2in}
+\institute[UCCS]{
+%University of Colorado at Colorado Springs
+}
+ \date{
+ %Colloquia Patavina
+ }
+
+
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\coker}{coker}
+\renewcommand{\O}{\mathcal{O}}
+\newcommand{\VR}{\mathcal{V}(R)}
+
+\begin{document}
+
+%\begin{frame}
+	%\titlepage
+%\end{frame}
+
+
+
+
+
+\begin{frame}
+
+\begin{center}
+
+\Huge
+
+{\bf Morita equivalence for  \Huge    \\  
+
+graded rings}
+
+
+\large
+
+\bigskip
+
+\bigskip
+
+
+Gene Abrams  
+
+\bigskip
+
+%\includegraphics[width= .4\linewidth]{UCCSSignature.png} 
+
+\bigskip
+
+Colorado Springs Algebra Seminar
+
+\bigskip
+
+April 5, 2023  
+\end{center}
+
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Morita equivalence for graded rings}
+
+
+\begin{center}
+This is joint work with 
+
+\bigskip
+
+\Large
+Efren Ruiz
+\normalsize
+\bigskip
+
+
+\end{center}
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Some background and history}
+
+$A,B,R,S,T$ will denote unital associative rings.
+
+\medskip
+
+$\rmod{A}$  denotes the category of right $A$-modules, with $A$-module homomorphisms.   
+
+\bigskip
+\bigskip
+\pause
+
+%Equivalence of categories.  
+
+%\bigskip
+%\pause
+
+ Equivalence of $\rmod{A}$ and $\rmod{B}$.   
+ 
+  
+ \end{frame}
+
+
+\begin{frame}
+\frametitle{Some background and history}
+
+
+Important / guiding example:
+For any ring $R$ and positive integer $n$, 
+$$\rmod{R} \ \ \mbox{ and } \ \ \rmod{{\rm M}_n(R)}$$
+ are equivalent module categories.  
+ 
+  \bigskip
+ \pause
+ 
+For instance:      \ \ $\rmod{R} \ \ \mbox{ and } \ \ \rmod{{\rm M}_2(R)}$ \ \   are ``the same" ... 
+$$M  \ \ \ \mapsto \ \ \  \begin{pmatrix}
+M & M \\
+0 & 0 
+\end{pmatrix}$$
+AND, it's not hard to show that 
+$${\rm Hom}_R(M,N) \ \cong \ {\rm Hom}_{{\rm M}_2(R)} \big( \begin{pmatrix}
+M & M \\
+0 & 0 
+\end{pmatrix},\begin{pmatrix}
+N & N \\
+ 0 & 0 
+\end{pmatrix} \big).$$
+ 
+ 
+ \pause
+ 
+ But, e.g.,  $\rmod{\mathbb{R}}$ and $\rmod{\mathbb{C}}$ are not equivalent.  
+
+
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Some background and history}
+
+{\bf Definition}:   $S$ any ring, $e = e^2 \in S$.  
+
+\medskip
+
+\ \ \ \ \ \ \ \ \ \ \ \   $e$ is {\it full} in $S$ in case $SeS = S$.   
+
+\bigskip
+
+Note:   $SeS$ denotes {\it sums of} elements of the form $ses'$ for $s,s' \in S$.
+
+\bigskip
+
+Example:  $S = {\rm M}_n(R)$,  \ \ $e = e_{1,1}$.  \ \  Then $e$ is full in $S$.   
+
+\medskip
+
+(So is any $e_{i,i}$.)  
+
+
+
+
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Some background and history}
+Verbiage:
+
+\medskip
+
+\qquad \qquad ``the rings $R$ and $S$ are {\it Morita equivalent}" \ \ \ \ 
+
+\bigskip
+
+means
+
+\bigskip
+
+\ \ \  the categories $\rmod{R}$ and $\rmod{S}$ are equivalent categories.  
+
+\bigskip
+\bigskip
+
+
+
+ Notation:  
+$R \sim_{ME} S$.
+
+
+
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Some background and history}
+
+
+\noindent {\bf The Original Morita Theorem}: \ \ \ These are equivalent.  
+
+\smallskip
+
+
+\pause
+
+\begin{itemize}
+
+\item[(M1)]  $R$ and $S$ are Morita equivalent (i.e., the categories $\rmod{R}$ and $\rmod{S}$ are equivalent).  \ \ 
+\item[(M2)]  There exist $n\in \N$ and an idempotent $e \in {\rm M}_n(S)$ that is full in ${\rm M}_n(S)$ and for which the rings $R$ and $ e{\rm M}_n(S)e$ are isomorphic.
+ 
+\item[(M3)] There exist an $R$-$S$-bimodule $P$ and an $S$-$R$-bimodule $Q$ and appropriate surjective bimodule homomorphisms  $P \otimes_S Q \to R$ and $Q\otimes_R P \to S$.  
+
+\bigskip
+
+\footnotesize
+K. Morita, \emph{Duality for Modules and Its Applications to the Theory of Rings with Minimum Conditions}, Sci. Reports Tokyo Kyoiku Daigaku {\bf 6}A, 1958, 83 -- 142. 
+\normalsize
+ 
+
+\end{itemize}
+
+
+
+
+
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Some background and history}
+
+\noindent For any ring $T$,   \ \  ${\rm FM}_\infty(T)$ \ \  denotes:  
+
+\medskip
+
+\qquad  countably infinite square matrices over $T$  that contain \\ \qquad  at most finitely many nonzero entries.  
+ 
+ \bigskip
+ 
+ \pause
+ 
+ Note:  ${\rm FM}_\infty(T)$ does not contain a multiplicative identity.  
+ 
+ \medskip
+ 
+  BUT, there are ``local identities" in ${\rm FM}_\infty(T)$.  
+ 
+ \pause
+ 
+ \bigskip
+ 
+   Note:   $e_{1,1}$ is full in ${\rm FM}_\infty(T)$.   
+ 
+
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Some background and history}
+ 
+ 
+
+
+ 
+ A fourth  condition  equivalent to those in The Original Morita Theorem:
+  %\cite{Stephenson}
+ % (see also \cite{Abrams}).
+ 
+% ${\rm M}_\infty(T)$
+ 
+
+     
+ 
+\begin{itemize}
+\item[(M4)]  The rings  ${\rm FM}_\infty(R)$ and ${\rm FM}_\infty(S)$ are isomorphic.        
+\end{itemize}
+     
+     
+     \medskip
+
+ \footnotesize
+     
+ 
+W. Stephenson, \emph{Characterization of rings and modules by means of lattices}, Ph.D. thesis, Bedford College, University of London, 1965.
+\normalsize
+ \pause
+ 
+ \bigskip
+
+
+
+\smallskip
+
+
+
+\noindent  Statements (M1) through (M4): 
+
+\medskip
+
+\qquad \qquad   ``{\bf The Extended Morita 
+ Theorem}"
+
+
+\end{frame}
+
+
+
+
+
+\begin{frame}
+\frametitle{Some background and history}
+\footnotesize
+\begin{center}
+Comments on (M4):
+  \ \ \   ${\rm FM}_\infty(R) \cong {\rm FM}_\infty(S)$ as rings.  
+  \end{center}
+\normalsize
+
+\medskip
+
+1.   Stephenson's proof that (M4) implies $R \sim_{ME} S$  invoked some of his own work on isomorphisms between lattices of submodules of various modules.   
+
+\bigskip
+\pause
+
+2.    Using a now-well-understood notion of module categories over (nice) nonunital rings, it's not hard to get $$R \sim_{ME}  {\rm FM}_\infty(R) $$ for any unital $R$.  \ From this, the result that  (M4) implies $R \sim_{ME} S$ is immediate.   
+
+
+\end{frame}
+
+
+
+
+
+\begin{frame}
+\frametitle{Some background and history}
+\footnotesize
+\begin{center}
+Comments on (M4):
+  \ \ \   ${\rm FM}_\infty(R) \cong {\rm FM}_\infty(S)$ as rings.  
+  \end{center}
+\normalsize
+
+\smallskip
+
+3.   Stephenson's proof that $R \sim_{ME} S$ implies (M4)  consists of two steps.
+
+\medskip
+
+ First, show that $R \sim_{ME} S$ yields an (explicitly constructed)  isomorphism  
+
+ $$ \Phi:  {\rm RFM}_\infty(R) \to {\rm RFM}_\infty(S).$$
+ 
+\pause
+
+Then, show that $\Phi$ restricts to an isomorphism between ${\rm FM}_\infty(R)$ and ${\rm FM}_\infty(S)$.   
+ 
+  \medskip
+ 
+ View the isomorphism in (M4) as ``top down".   
+
+\end{frame}
+
+
+
+
+
+\begin{frame}
+\frametitle{Some background and history}
+\footnotesize
+\begin{center}
+Comments on (M4):
+  \ \ \   ${\rm FM}_\infty(R) \cong {\rm FM}_\infty(S)$ as rings.  
+  \end{center}
+\normalsize
+
+\medskip
+
+
+4.      A (really beautiful!) result of Camillo gives an additional equivalent condition:
+
+\medskip
+
+\ \ \ \ \ \ \ (M5)   \ \  ${\rm RFM}_\infty(R)$ and ${\rm RFM}_\infty(S)$  are isomorphic as rings.   
+%Then one shows this isomorphism takes  ${\rm FM}_\infty(R)$ onto ${\rm FM}_\infty(S)$. 
+
+\bigskip
+\medskip
+\pause
+
+5.  Many ring theorists were not so impressed by (M4)   ... 
+
+\medskip
+
+\ \ \ \ after all, ${\rm FM}_\infty(R)$ and ${\rm FM}_\infty(S)$ are NON-unital rings.   
+
+\end{frame}
+
+
+
+
+
+\begin{frame}
+\frametitle{Some background and history}
+
+ 
+$\mathbb{Z}$-graded  rings.
+
+\bigskip
+
+A ring $R$ is $\mathbb{Z}$-graded  in case:
+
+\medskip
+
+\ \ \ 1. \ \ $(R,+)  = \oplus_{t\in \mathbb{Z}} R_t$  \ \  as abelian groups,  and 
+
+\medskip
+
+\ \ \ 2.  \ \ $R_t \cdot R_u \subseteq R_{t+u}$ \ \  for all $t,u \in \mathbb{Z}$.  
+
+
+\bigskip
+\pause
+
+\footnotesize
+
+(All this can be done more generally for any abelian group.)
+
+\smallskip
+
+\pause
+
+(So every element of $R$ is a {\it finite} sum of homogeneous elements.) 
+
+\normalsize
+
+\pause
+\bigskip
+
+Familiar examples:   \ \   $k[x]$,   \pause  \ \ $k[x,x^{-1}]$.   
+
+\bigskip
+\pause
+
+Silly (but important?) example:   EVERY ring $S$ admits a $\mathbb{Z}$-grading.
+
+\medskip
+
+\ \ \ \ \ \ \ \ \ \ \ \ \ $S_0 := S$; \ \ \  \ $S_t := \{0\}$ for all $t\neq 0$.  
+
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Some background and history}
+
+Note:   If $R$ is $\mathbb{Z}$-graded then $R_0$ is a ring.   
+
+
+
+
+\bigskip
+
+\pause
+
+The gradings might allow for some modifications ...
+
+
+
+\bigskip
+
+
+Example:   Let  $R = k[x,x^{-1}]$.   For  $t\in \mathbb{Z}$,    define  
+
+\medskip
+
+$$R_{2t} = kx^t, \ \mbox{and}   \ R_{2t+1} = \{0\} .$$
+
+
+
+
+\bigskip
+\pause
+
+Graded homomorphisms and isomorphisms between $\mathbb{Z}$-graded rings:  defined  as expected.   
+
+
+
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Some background and history}
+
+{\bf Lemma}:   $n \in \mathbb{N}$.   If $R$ is $\mathbb{Z}$-graded, then ${\rm M}_n(R)$ is  $\mathbb{Z}$-graded.  
+
+\medskip
+
+ For each $t \in \mathbb{Z}$, 
+$$ ({\rm M}_n(R))_t \ := \ {\rm M}_n(R_t).$$
+
+
+\medskip
+
+In the same way, ${\rm FM}_\infty(R)$ is $\mathbb{Z}$-graded as well.    
+
+
+
+\bigskip
+
+The {\it standard}  $\mathbb{Z}$-grading on ${\rm M}_n(R)$ or  ${\rm FM}_\infty(R)$.  
+
+
+\pause
+
+\medskip
+
+(Note:  ``larger" infinite matrix rings are not necessarily $\mathbb{Z}$-graded.)  
+
+\bigskip
+\pause
+
+{\bf Notation for this talk}:   ``graded"  means $\mathbb{Z}$-graded.   
+
+
+
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Some background and history}
+There are other ``natural"  gradings on ${\rm M}_n(R)$.   For example, take {\it any} $R$ (not necessarily graded).  Then  e.g., on $ {\rm M}_3(R)$, 
+
+\scriptsize
+$$ ( {\rm M}_3(R) )_0  :=   \begin{pmatrix}
+R & 0 & 0 \\
+0  & R & 0 \\
+0 &  0 & R
+\end{pmatrix},  \ \   ( {\rm M}_3(R) )_1  :=   \begin{pmatrix}
+0 & R & 0 \\
+0  & 0 & R \\
+0 & 0 & 0 
+\end{pmatrix}, \ \  ( {\rm M}_3(R) )_{2} \ := \   \begin{pmatrix}
+0 & 0 & R \\
+0   & 0 & 0 \\
+0 & 0 & 0
+\end{pmatrix}, $$
+$$ ( {\rm M}_3(R) )_{-1}  :=   \begin{pmatrix}
+0 & 0 & 0 \\
+R  & 0 & 0 \\
+0 &  R & 0
+\end{pmatrix},  \ \   ( {\rm M}_3(R) )_{-2}  :=   \begin{pmatrix}
+0 & 0 & 0 \\
+0  & 0 & 0 \\
+R & 0 & 0 
+\end{pmatrix},$$
+
+\bigskip
+
+and $    \  ( {\rm M}_3(R) )_{i} \ := \   \begin{pmatrix}
+0 & 0 & 0 \\
+0   & 0 & 0 \\
+0 & 0 & 0
+\end{pmatrix} \mbox{ for all }  i \neq -2, -1, 0, 1, 2.$
+
+
+
+
+\normalsize
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Some background and history}
+
+Suppose $S$ is graded, and $e = e^2 \in S_0$.   Then the {\it corner ring} $eSe$ inherits a grading from $S$:  \ \ 
+$ (eSe)_t := eS_te \ \ \forall  t\in \mathbb{Z}.$
+\pause  
+
+\medskip
+
+
+{\bf Key observation}:     Suppose $S$ is graded, and $e = e^2 \in S_0$. 
+
+\medskip
+
+Then,   even if $e$ is full in $S$, $e$ need NOT be full in $S_0$.    
+
+\medskip
+
+Example:   $e_{1,1}$ is full in $S = {\rm M}_3(R)$.   And in the previous example, 
+%$e_{1,1} \in S_0$.  
+%And $e_{1,1} \in S_0$ in  all previous examples of gradings on $S$.    But, e.g.,  
+$$S_0  :=   \begin{pmatrix}
+R & 0 & 0 \\
+0  & R & 0 \\
+0 &  0 & R
+\end{pmatrix},  $$
+so $e_{1,1} \in S_0$.   But  clearly   $e_{1,1}$ is NOT full in $S_0$.  
+
+\pause
+
+\medskip
+
+But there are  plenty of examples where $e \in S_0$ being full in $S$ does imply that $e$ is full in $S_0$.  
+
+
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{``The Algebraic Stabilization Theorem"}
+
+Recall (M2) and (M4) from the Extended Morita Theorem:
+\bigskip 
+
+(M2)     There exist $n\in \N$ and an idempotent $e \in {\rm M}_n(S)$ that is full in ${\rm M}_n(S)$ and for which  $R$ and $ e{\rm M}_n(S)e$ are isomorphic.
+
+\medskip
+
+\ \ \ \ and
+
+\medskip
+
+(M4)    The rings  ${\rm FM}_\infty(R)$ and ${\rm FM}_\infty(S)$ are isomorphic.     
+
+\bigskip
+\bigskip
+
+
+Question:   is there a graded version of this result?   
+\end{frame}
+
+
+\begin{frame}
+\frametitle{``The Algebraic Stabilization Theorem"} 
+
+{\bf Algebraic Stabilization Theorem}: \ \  \ \ (A-, Ruiz, Tomforde)
+
+  Let $R$ and $S$ be unital graded rings.   Assume all gradings on matrix rings and corner rings are standard.   Then these two statements are equivalent.
+
+\bigskip
+
+(HG2) \    There exist $n\in \N$ and an idempotent $e \in {\rm M}_n(S)_0$ that is full in ${\rm M}_n(S)_0$ and for which the rings $R$ and $ e{\rm M}_n(S)e$ are graded isomorphic.
+  
+  \medskip
+  
+\ \ \ \ \   and
+
+\medskip
+
+(HG4)   \  The rings  ${\rm FM}_\infty(R)$ and ${\rm FM}_\infty(S)$ are graded isomorphic.    
+
+
+\end{frame}
+
+\begin{frame}
+\frametitle{``The Algebraic Stabilization Theorem"}
+
+
+Strategy  of the proof:   The key situation is where $n=1$ and $S = eRe$ for $e \in R_0$ that is full in $R_0$.   
+
+\medskip
+
+
+Construct idempotents $\{Q_n, P_n \ | \ n\in \mathbb{N}\}$ in  $\mathrm{RFM}_\infty(R_0)$, 
+together with graded homomorphisms 
+   $$ \phi_n  \colon  \ Q_n {\rm FM}_\infty(R) Q_n  \ \to \  P_n {\rm FM}_\infty(R) P_n \ \  \ \ \ \ \mbox{and} $$
+   $$  \psi_n \colon \ P_n {\rm FM}_\infty(R) P_n \  \to \  Q_{n+1} {\rm FM}_\infty(R) Q_{n+1}$$
+   
+   
+
+   
+%\end{frame}
+
+%\begin{frame}
+%\frametitle{``The Algebraic Stabilization Theorem"}
+
+
+   
+
+
+\noindent
+such that for all $n\in \mathbb{N}$,
+
+\medskip
+
+%\begin{enumerate}
+  
+  \ \ \ \ \   $Q_{n}Q_{n+1} = Q_n = Q_{n+1} Q_n$, \ \ \ 
+  $P_n P_{n+1} = P_n = P_{n+1} P_n$,
+   
+       \bigskip
+    
+   $ \bigcup_n P_n {\rm FM}_\infty(R) P_n = {\rm FM}_\infty( eRe ), \  \  \ \bigcup_n Q_n {\rm FM}_\infty(R) Q_n = {\rm FM}_\infty(R)$, 
+
+%\end{enumerate}
+
+
+
+\end{frame}
+
+
+   
+%\begin{comment}
+
+
+\begin{frame}
+\frametitle{``The Algebraic Stabilization Theorem"}
+
+
+
+
+
+
+and for which the diagram
+    
+    \[
+    \xymatrix{
+    Q_n {\rm FM}_\infty(R) Q_n \ar@{^{(}->}[rr]^{i_n} \ar[d]_-{\phi_n} & &  Q_{n+1} {\rm FM}_\infty(R) Q_{n+1} \ar[d]^-{\phi_{n+1}}  \\
+     P_{n} {\rm FM}_\infty(R) P_n \ar[urr]^-{\psi_n} \ar@{^{(}->}[rr]^{j_n} & & P_{n+1} {\rm FM}_\infty(R) P_{n+1}
+    }
+    \]
+    commutes.      \ \ \ (``Intertwining" homomorphisms")  
+    
+    \pause
+    \bigskip
+    
+    
+   
+    
+Note:  fullness of $e$ in $R_0$ is needed to get  that the idempotents   $\{Q_n, P_n \ | \ n\in \mathbb{N}\}$ can be chosen in  $\mathrm{RFM}_\infty(R_0)$ \ (as opposed to in $\mathrm{RFM}_\infty(R)$). 
+ 
+%   $  \bigcup_n Q_n {\rm FM}_\infty(R) Q_n = {\rm FM}_\infty(R)$.)
+    
+    \end{frame}
+
+
+\begin{frame}
+\frametitle{``The Algebraic Stabilization Theorem"}
+
+
+
+The four conditions  imply
+
+$${\rm FM}_\infty(R) \cong \varinjlim ( Q_n {\rm FM}_\infty(R) Q_n , i_n )  $$ 
+and
+$${\rm FM}_\infty(eRe) \cong \varinjlim ( P_n {\rm FM}_\infty(R) P_n , j_n ),$$
+
+\medskip
+
+and the commutativity of the diagram  implies that these direct limits are not only isomorphic, but in fact graded isomorphic. 
+        
+
+   \end{frame}
+
+
+\begin{frame}
+\frametitle{``The Algebraic Stabilization Theorem"}
+
+Remarks:    
+
+\bigskip
+
+1)  The construction is motivated by work done  in the context of C$^*$-algebras.    
+
+\medskip
+
+\footnotesize
+
+L. G. Brown,  \emph{Stable isomorphism of hereditary subalgebras of {$C^*$}-algebras}, Pacific J. Math, \textbf{71}(2), 1977, pp.~335--348.
+
+\normalsize
+
+\bigskip
+
+2)   By imposing the trivial grading on non-graded rings, the Algebraic Stabilization Theorem yields the equivalence of (M2) and (M4) in the Extended Morita Theorem.
+
+\bigskip
+
+3)   This is a ``bottom-up" approach to the isomorphism between ${\rm FM}_\infty(R)$ and ${\rm FM}_\infty(S)$.   
+
+   \end{frame}
+
+
+\begin{frame}
+\frametitle{``The Algebraic Stabilization Theorem"}
+
+4)   So the ``naive" extension of (M4) to graded rings
+
+\medskip
+
+\qquad  (i.e., to use the standard grading on the ${\rm FM}_\infty( - )$ rings) 
+ 
+ \medskip
+ 
+ is NOT equivalent to the ``naive" extension of (M2).
+ 
+ \medskip
+ 
+ 
+ The additional condition that $e$ be full in ${\rm M}_n(S)_0$ is required.  
+ 
+ \bigskip
+ \bigskip
+ \pause
+ 
+ {\bf Question}:  What, then, is the appropriate extension of (M1) to the graded setting?  
+
+
+
+
+
+\end{frame}
+
+
+
+
+
+\begin{frame}
+\frametitle{Graded modules, the category $\grmod{R}$}
+
+
+
+
+\hspace{.5in}Graded modules and graded homomorphisms.
+
+\bigskip
+
+
+$R$ a graded ring,  $M_R$ a right $R$-module.   
+
+\medskip
+
+$M$ is {\it graded} in case:
+
+\medskip
+
+
+
+\ \ \ \ \ $M = \oplus_{t \in \mathbb{Z}} M_t$,  \ \ and \ \  $ M_u R_t \subseteq M_{t+u}$ for all $t, u \in \mathbb{Z}$. 
+
+\bigskip
+
+If $M, N$ are graded right $R$-modules,  an $R$-homomorphism $f: M \to N$ is called {\it graded} in case $f(M_t) \subseteq N_t$ for all $t\in \mathbb{Z}$.  
+
+
+
+$$\grmod{R}$$
+ denotes the category of graded right  $R$-modules with graded homomorphisms.  
+
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Graded modules, the category $\grmod{R}$}
+
+
+Here's statement (M1) from the Extended Morita Theorem:
+
+\medskip
+
+
+(M1)    $R$ and $S$ are Morita equivalent (i.e., the categories $\rmod{R}$ and $\rmod{S}$ are equivalent). 
+
+
+\bigskip
+
+{\bf Question, recast}:  Is there some appropriate statement analogous to (M1)  about $\grmod{R}$ and $\grmod{S}$ which would be equivalent to (HG2) and (HG4) ?
+
+
+
+
+
+\end{frame}
+
+
+
+
+\begin{frame}
+\frametitle{Graded modules:  some terminology}
+ 
+
+    For a graded right $A$-module $M$ and $i \in \mathbb{Z}$, the \emph{$i$-suspension of $M$}, denoted $M(i)$, is the graded right $A$-module having $M(i) = M$, with grading given by $M(i)_j = M_{i+j}$.  
+    
+    \bigskip
+    
+      For $i \in \mathbb{Z}$,   $\mathcal{T}_i$ denotes the \emph{$i$-suspension functor}  $$\mathcal{T}_i:  \grmod{A} \to \grmod{A}$$  
+      given by $M \mapsto M(i)$ on objects, and the identity on morphisms.
+      
+      \bigskip
+      
+
+A functor $\phi: \grmod{A} \to \grmod{B}$ is called {\it graded} when $$\phi \circ \mathcal{T}_\alpha = \mathcal{T}_\alpha \circ \phi $$ for each $\alpha \in \mathbb{Z}$.   
+
+
+\end{frame}
+
+
+
+
+\begin{frame}
+\frametitle{Graded modules:  some terminology}
+
+
+  A graded functor $\phi : \grmod{A} \to \grmod{B}$ is a {\it graded equivalence} if there is a graded functor $\psi : \grmod{B} \to \grmod{A}$ such that $\phi$ and $\psi$ compose appropriately to the identity functors on each category.   
+
+
+\bigskip
+\bigskip
+
+
+  If there is a graded equivalence between $\grmod{A}$ and $\grmod{B}$, we say $A$ and $B$ are {\it graded equivalent} or, more formally,  {\it graded Morita equivalent}.  
+  
+  
+
+\end{frame}
+
+
+
+
+\begin{frame}
+\frametitle{Graded modules:  some terminology}
+ 
+
+  
+
+For any graded ring $A$, we let $U_A$ (or simply by $U$) denote the {\it forgetful functor} 
+$$U_A: \grmod{A} \to \rmod{A}.$$
+
+  A functor $\phi^{\prime} : \rmod{A} \to \rmod{B}$ is called a {\it graded functor} if there is a graded functor $\phi: \grmod{A} \to \grmod{B}$ such that  
+  $$ U_B \circ \phi   =   \phi^{\prime} \circ U_A$$ as functors from $\grmod{A}$ to $\rmod{B}$.    
+ In this situation the functor $\phi$ is called an {\it associated graded functor} of $\phi^{\prime}$.    
+
+
+\bigskip
+
+A functor $\phi^\prime : \rmod{A} \to \rmod{B}$ is called a {\it graded equivalence} if it is both graded and an equivalence.  
+
+
+
+
+\end{frame}
+
+
+
+
+\begin{frame}
+\frametitle{Graded modules:  some terminology}
+ 
+Let $S$ be a graded ring.
+
+\medskip
+
+
+If $M$ is any right $S_0$-module, then 
+$M \otimes_{S_0} S$
+is a graded right $S$-module, where
+$$(M \otimes_{S_0} S)_i = M \otimes_{S_0} S_i$$
+ for each $i \in \mathbb{Z}$.  
+
+\medskip
+
+This gives a functor
+$$ -  \otimes_{S_0} S : \rmod{S_0} \to \grmod{S}.$$
+
+
+
+\end{frame}
+
+
+
+
+\begin{frame}
+\frametitle{Graded modules:  some terminology}
+ 
+
+
+
+{\bf Definition.}      We  call the graded rings $A$ and $B$
+
+\smallskip
+\ \ \ \ \ \ \ \ \ \ \ \ \ \  {\it homogeneously graded equivalent}
+ \smallskip
+ 
+  in case there exists  a graded equivalence $\psi: \grmod{A} \to \grmod{B}$ 
+for which there is an equivalence  of categories
+$$\eta: \rmod{A_0} \to \rmod{B_0}$$
+such that the diagram
+$$  \xymatrix{\rmod{A_0} \ar[d]_{- \otimes_{A_0}A}\ar[r]^\eta&\rmod{B_0} \ar[d]^{- \otimes_{B_0}B}\\
+\grmod{A}\ar[r]^\psi &\grmod{B}  }$$
+\noindent
+commutes  on objects of $\rmod{A_0}$ (up to isomorphism).  
+
+
+
+
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Graded modules:  some terminology}
+ 
+
+
+Rephrased:    
+
+\bigskip
+
+ $A$ and $B$ are called {\it homogeneously graded equivalent} in case  there is a category equivalence $$\eta: \rmod{A_0} \to \rmod{B_0}$$  and a graded equivalence  $$\psi: \grmod{A} \to \grmod{B}$$   for which, for each object $M$ of $\rmod{A_0}$, there is an isomorphism  
+ $$\psi(M\otimes_{A_0}A) \cong_{gr} (\eta(M))\otimes_{B_0}B$$ as objects of $\grmod{B}$. 
+ 
+ \medskip
+ 
+%  In this situation we  write $A \approx_{\hgr} B$. 
+
+\
+
+
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{The connection between these ideas}
+
+(Recall the Extended Morita Theorem ...)
+
+
+\pause
+
+\bigskip
+
+{\bf Theorem.}   Let $R$ and $S$ be unital graded rings.   These are equivalent:
+
+\medskip
+
+(HG1)   $R$ is homogeneously graded equivalent to $S$.
+
+\medskip
+
+
+(HG2) \    There exist $n\in \N$ and an idempotent $e \in {\rm M}_n(S)_0$ that is full in ${\rm M}_n(S)_0$ and for which the rings $R$ and $ e{\rm M}_n(S)e$ are graded isomorphic.
+
+\medskip
+
+(HG4)    ${\rm FM}_\infty(R)$ is graded isomorphic to  ${\rm FM}_\infty(S)$ in the standard grading.  
+
+\end{frame}
+
+
+
+
+\begin{frame}
+\frametitle{The Homogeneously Graded Version of the Extended Morita Theorem}
+
+Proof that (HG1) is equivalent to (HG2):   Omitted here.  
+
+\medskip
+
+The proof uses a number of known results about graded rings.    
+
+\bigskip
+\bigskip
+
+Here is a great resource:
+
+
+\ \ \ \ \ R. Hazrat, Graded rings and graded Grothendieck groups. London Mathematical Society Lecture Note Series, \textbf{435}. Cambridge University Press, Cambridge, 2016. vii+235 pp.
+% ISBN: 978-1-316-61958-2
+
+
+
+
+\end{frame}
+
+
+
+
+\begin{frame}
+\frametitle{The Homogeneously Graded Version of the Extended Morita Theorem}
+
+There is an appropriate ``tensor product of graded bimodules" statement, which is the analog of (M3) in the Extended Morita Theorem, which is equivalent to (HG1), (HG2), (HG4).   Omitted today.   
+
+\bigskip
+\bigskip
+
+This completes the picture corresponding to the existence of a graded isomorphism between  ${\rm FM}_\infty(R)$ and  ${\rm FM}_\infty(S)$ (where  the standard grading is used to grade the infinite matrix rings).
+
+\end{frame}
+
+
+
+
+\begin{frame}
+\frametitle{More gradings on matrix rings}
+
+Recall this example.   (``Grading $\#$1")  
+
+  (Here $R$ need NOT be graded.)  
+%There are other ``natural"  $\mathbb{Z}$-gradings on ${\rm M}_n(R)$.   For example, take {\it any} $R$ (not necessarily graded).  Then  e.g., 
+\ \ \ \ \ On $ {\rm M}_3(R)$, 
+
+\scriptsize
+$$ ( {\rm M}_3(R) )_0  :=   \begin{pmatrix}
+R & 0 & 0 \\
+0  & R & 0 \\
+0 &  0 & R
+\end{pmatrix},  \ \   ( {\rm M}_3(R) )_1  :=   \begin{pmatrix}
+0 & R & 0 \\
+0  & 0 & R \\
+0 & 0 & 0 
+\end{pmatrix}, \ \  ( {\rm M}_3(R) )_{2} \ := \   \begin{pmatrix}
+0 & 0 & R \\
+0   & 0 & 0 \\
+0 & 0 & 0
+\end{pmatrix}, $$
+$$ ( {\rm M}_3(R) )_{-1}  :=   \begin{pmatrix}
+0 & 0 & 0 \\
+R  & 0 & 0 \\
+0 &  R & 0
+\end{pmatrix},  \ \   ( {\rm M}_3(R) )_{-2}  :=   \begin{pmatrix}
+0 & 0 & 0 \\
+0  & 0 & 0 \\
+R & 0 & 0 
+\end{pmatrix},$$
+
+\bigskip
+
+and $    \  ( {\rm M}_3(R) )_{i} \ := \   \begin{pmatrix}
+0 & 0 & 0 \\
+0   & 0 & 0 \\
+0 & 0 & 0
+\end{pmatrix} \mbox{ for all }  i \neq -2, -1, 0, 1, 2.$
+
+
+
+
+\normalsize
+
+
+\end{frame}
+
+
+
+%\begin{comment}
+\begin{frame}
+\frametitle{More gradings on matrix rings}
+Here's another   $\mathbb{Z}$-grading on ${\rm M}_3(R)$.     (``Grading $\#$2")  
+  
+   (Again, {\it any} $R$.)
+\scriptsize
+$$ ( {\rm M}_3(R) )_0  :=   \begin{pmatrix}
+R & 0 & 0 \\
+0  & R & 0 \\
+0 &  0 & R
+\end{pmatrix},  $$
+$$ \ \   ( {\rm M}_3(R) )_5  :=   \begin{pmatrix}
+0 & R & 0 \\
+0  & 0 & 0 \\
+0 & 0 & 0 
+\end{pmatrix}, \ \  ( {\rm M}_3(R) )_{3} \ := \   \begin{pmatrix}
+0 & 0 & 0 \\
+0   & 0 & R \\
+0 & 0 & 0
+\end{pmatrix}, \ \ 
+ ( {\rm M}_3(R) )_{8}  \  :=  \ \   \begin{pmatrix}
+0 & 0 & R \\
+0  & 0 & 0 \\
+0 & 0 & 0
+\end{pmatrix}, $$
+ $$    ( {\rm M}_3(R) )_{-5}  :=   \begin{pmatrix}
+0 & 0 & 0 \\
+R  & 0 & 0 \\
+0 & 0 & 0 
+\end{pmatrix}, \ \   ( {\rm M}_3(R) )_{-3}  :=   \begin{pmatrix}
+0 & 0 & 0 \\
+0  & 0 & 0 \\
+0 & R & 0 
+\end{pmatrix},
+ \ \   ( {\rm M}_3(R) )_{-8}  :=   \begin{pmatrix}
+0 & 0 & 0 \\
+0  & 0 & 0 \\
+R &0 & 0 
+\end{pmatrix}
+$$
+
+\bigskip
+
+and $    \  ( {\rm M}_3(R) )_{i} \ := \   \begin{pmatrix}
+0 & 0 & 0 \\
+0   & 0 & 0 \\
+0 & 0 & 0
+\end{pmatrix} \mbox{ for all other values of  }  i  .$
+
+
+
+
+\normalsize
+
+
+
+\end{frame}
+%\end{comment}
+
+
+
+\begin{frame}
+\frametitle{More gradings on matrix rings}
+
+So if $R$ is graded, we can grade  ${\rm M}_n(R)$ using the standard grading.  
+
+\medskip
+
+And for any $R$, we have gradings  on  ${\rm M}_n(R)$  coming from the matrix structure.  
+\medskip
+
+ We  combine these two ways to grade matrix rings over graded rings. 
+
+\bigskip
+
+{\bf Definition.}   If $R$ is graded, we can define a grading on ${\rm M}_n(R)$ as follows.  
+ 
+ \medskip
+ 
+ Pick any sequence $\delta = (z_1, z_2, \dots, z_n) $ in $ \mathbb{Z}^n$.  \ \   For $t\in \mathbb{Z}$, 
+ 
+$$ (( {\rm M}_n(R) )_t )_{i,j}   \ := \  R_{t + z_j - z_i}. $$ 
+
+%$$ (( {\rm M}_n(R) )_t )_{i,j}   \ := \  R_{t + z_j - z_i}. $$ 
+
+
+
+
+% $$ \ \ \mbox{placed in the } (i,j) \mbox{ entry}$$
+
+% placed in any $(i,j)$ entry  for which $j-i = t$.  
+
+
+\end{frame}
+
+\begin{frame}
+\frametitle{More gradings on matrix rings}
+
+
+
+{\bf Example}.      $\delta = (12,7,4) = (z_1, z_2,z_3)$.   Let $R$ be any graded ring.  
+
+\medskip
+ 
+\ \ \   We grade ${\rm M}_3(R)$ by setting, for each $t \in \mathbb{Z}$, 
+
+
+
+
+$$( {\rm M}_3(R) )_{t} :=  \begin{pmatrix}
+R_{t +  12-12}  & R_{t +  7 - 12}  & R_{t + 4- 12}  \\
+R_{t +  12-7}    & R_{t +  7 - 7}  & R_{t + 4 - 7} \\
+ R_{t + 12-4} & R_{t + 7-4}  & R_{t + 4-4} 
+\end{pmatrix}$$
+
+\medskip
+
+$$ =  \begin{pmatrix}
+R_{t }  & R_{t -5}  & R_{t - 8}  \\
+R_{t  + 5}    & R_{t }  & R_{t - 3} \\
+ R_{t  + 8} & R_{t + 3}  & R_{t } 
+\end{pmatrix}$$
+
+
+
+\end{frame}
+
+
+  
+  
+\begin{frame}
+\frametitle{More gradings on matrix rings}
+
+So, if $R$ is not graded, then by trivially grading $R$  
+
+  (i.e., $R_0 = R$, $R_t = 0$ for all $t \neq 0$):
+
+\medskip
+\bigskip
+
+
+ we recover Grading $\#$1 on ${\rm M}_3(R)$ using $\delta = (2,1,0)$,  and
+ 
+ \bigskip
+ 
+  we recover Grading $\#$2 on ${\rm M}_3(R)$ using $\delta = (12,7,4)$.
+
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{More gradings on matrix rings}
+
+
+
+For $R$ a graded ring, and $\delta = (z_1, z_2, \dots , z_n)$ in $\mathbb{Z}^n$, denote by  
+$$ {\rm M}_n(R)[(\delta)]$$
+
+the ring ${\rm M}_n(R)$ with the above grading.   
+
+\pause
+\bigskip
+
+
+It's not hard to see:   if $a \in \mathbb{Z}$, and 
+$\delta = (z_1, z_2, \dots , z_n) $ in $ \mathbb{Z}^n$, if we define
+$$\delta' := (z_1 - a, z_2 - a, \dots , z_n - a),$$
+ then \ \ $ {\rm M}_n(R)[(\delta)] =  {\rm M}_n(R)[(\delta')].$
+
+\pause
+\bigskip
+
+
+Also, if $\kappa = (z, z, \dots , z)$ is constant, then ${\rm M}_n(R)[(\kappa)]$ gives the standard grading on ${\rm M}_n(R)$. 
+
+\end{frame}
+
+\begin{frame}
+\frametitle{More gradings on matrix rings}
+
+
+AND ... all of these ideas work in the same way to give gradings on ${\rm FM}_\infty(R)$: 
+
+\bigskip
+
+Given a graded ring $R$, and  sequence $\delta = (z_1, z_2, z_3, \dots )$ in 
+$\mathbb{Z}^{\mathbb{N}}$,  define a grading on ${\rm FM}_\infty(R)$ by setting, for each $t\in \mathbb{Z}$, 
+
+$$ ( ( {\rm FM}_\infty(R) )_t )_{i,j} \ := R_{t + z_j - z_i}. $$
+
+\medskip
+
+Denote this by $ {\rm FM}_\infty(R) [(\delta)]$.  
+
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{The Graded Version of The Original Morita Theorem}
+
+
+\hspace{-.25in} {\bf \  The Graded Version of The Original Morita Theorem.} (Hazrat)     \ 
+\bigskip
+
+
+ 
+ For graded unital rings $R$ and $S$ these are equivalent.  
+ 
+\begin{itemize} 
+\item[(GM1)]  The categories $\rmod{R}$ and $\rmod{S}$  are graded equivalent.
+%, via a functor that is compatible with a specific type of equivalence functor between  $\grmod{R}$ and $\grmod{S}$.   
+ 
+ 
+\item[(GM2)] There exist $n\in \N$ and an  idempotent $e \in {\rm M}_n(S)$ that is full in  ${\rm M}_n(S)$ and a sequence $(\delta)$ in $\mathbb{Z}^n$ for which the rings $R$ and $ e{\rm M}_n(S)[(\delta)]e$ are graded isomorphic.
+%\end{itemize}
+ 
+%\noindent Although not explicitly included in \cite{RoozbehBook}, the following is easily seen to be equivalent to (GM1) and (GM2).   (See the comment following Theorem~\ref{GradedVersionExtMoritaThm}.)  
+
+%\begin{itemize} 
+\item[(GM3)] There exist a graded $R$-$S$-bimodule $P$ and a graded $S$-$R$-bimodule $Q$ and appropriate surjective graded bimodule homomorphisms  $P \otimes_S Q \to R$ and $Q\otimes_R P \to S$.  
+\end{itemize}
+
+\end{frame}
+
+
+
+
+
+\begin{frame}
+\frametitle{The Graded Version of The Extended Morita Theorem}
+
+{\bf Question}.  \ Is there an appropriate (GM4) statement about isomorphisms between infinite matrix rings analogous to (M4) or (HG4) which can be added to the Graded Version of the Original Morita Theorem?
+
+\pause
+\medskip
+
+Recall that if $\kappa := (z,z,z, \dots)$ is any constant sequence in $\mathbb{Z}^{\mathbb{N}}$, then ${\rm FM}_\infty(R)[(\kappa)]$ is just the standard grading on ${\rm FM}_\infty(R)$.    
+
+\bigskip
+
+{\bf Theorem.}  (A-, Ruiz, Tomforde)     The equivalent statements (GM1), (GM2), and (GM3) are equivalent to:
+
+\bigskip
+
+(GM4)  There exists a sequence $(\delta)$ in $\mathbb{Z}^{\mathbb{N}}$ such that 
+
+\medskip
+ \ \ \ \ \ \ \ \ \  ${\rm FM}_\infty(R)[(\kappa)] \mbox{ is graded isomorphic to }{\rm FM}_\infty(S) [ (\delta) ].$
+
+\end{frame}
+
+
+
+
+
+
+
+\begin{frame}
+\frametitle{Graded finitely generated projective modules }
+
+
+If $R$ is graded then $$ \mathcal{V}^{gr}(R)$$ denotes the graded-isomorphism classes of graded finitely generated projective right $R$-modules.  
+
+\medskip
+
+   $ \mathcal{V}^{gr}(R)$ is an abelian monoid under $\oplus$.   
+
+\bigskip
+\pause
+
+  There is a natural ``action" of $\mathbb{Z}[x,x^{-1}]$ on   $ \mathcal{V}^{gr}(R)$, via the suspension functor.    
+  
+  \medskip
+  
+    We can then view $ \mathcal{V}^{gr}(R)$ as a $\mathbb{Z}[x,x^{-1}]$-module.  
+
+
+\bigskip
+\bigskip
+
+
+%Intuitively:  View $\mathcal{V}^{gr}(R)$ as living inside $Gr - R$.   
+\end{frame}
+
+
+
+
+
+
+\begin{frame}
+\frametitle{Leavitt path algebras}
+
+
+Any Leavitt path algebra is $\mathbb{Z}$-graded, with grading given by setting
+
+$$pq^* \in L_K(E)_n \ \ \mbox{in case} \ \ \ell(p) - \ell(q) = n$$
+
+\smallskip
+
+for paths $p,q$ in $E$, and $n\in \mathbb{Z}$.  
+
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Hazrat's Talented Monoid Conjecture}
+
+One of the two most-discussed currently-open questions in the subject of Leavitt path algebras is 
+\begin{center}
+{\bf Hazrat's ``Talented Monoid Conjecture"}
+\end{center}
+Let $E$ and $F$ be finite graphs.  
+
+\medskip
+
+Suppose there is a monoid isomorphism between $\mathcal{V}^{gr}(L_K(E))$ and $\mathcal{V}^{gr}(L_K(F))$ which is compatible with the suspension functors.
+
+\medskip
+
+That is, suppose  there is an isomorphism $\mathcal{V}^{gr}(L_K(E)) \to \mathcal{V}^{gr}(L_K(F))$ as $\mathbb{Z}[x,x^{-1}]$-modules.   
+%, and for which $[L_K(E)] \mapsto [L_K(F)]$.  
+
+\bigskip
+
+ Question:   Are $L_K(E)$ and $L_K(F)$ graded Morita equivalent?   
+ 
+ \end{frame}
+
+
+
+\begin{frame}
+\frametitle{Hazrat's Conjecture}
+ 
+ Hazrat conjectures that the answer is YES.   
+
+\bigskip
+
+
+(Our current work is therefore at least tangentially related to Hazrat's Conjecture ...)   
+
+
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Connections}
+
+
+
+A graded ring $R$ is {\it strongly} graded in case $R_t R_u = R_{t+u}$ for all $t \in \mathbb{Z}$.   
+
+\bigskip
+
+{\bf Dade's Theorem}:   If $R$ is strongly graded, then $$- \otimes_{R_0} R: \   \rmod{R_0} \to \grmod{R}$$
+ is an equivalence of categories.
+
+
+
+\bigskip
+
+So for strongly graded rings, graded equivalence and homogeneous graded equivalence reduce to the same idea.  
+
+
+\end{frame}
+
+
+
+
+\begin{frame}
+\frametitle{Connections: \ Leavitt path algebras}
+
+For Leavitt path algebras:  
+
+\bigskip
+
+{\bf Theorem.}   (Hazrat)    \ Suppose $E$ is a finite graph, and $K$ any field.   Then $L_K(E)$ is strongly graded (in the natural $\mathbb{Z}$-grading)   if and only if $E$ has no sinks.    
+
+\bigskip
+
+So for finite graphs with no sinks, $L_K(E)$ and $L_K(F)$ are homogeneously graded equivalent if and only if they are graded equivalent.  
+
+
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Connections: \ Leavitt path algebras}
+
+
+For case where the graphs have sinks, the situation is not so clear.
+
+\bigskip
+
+Here's the flavor of one result.  
+
+\bigskip
+
+  
+
+For a finite graph $E$, let \ 
+$E^n$ \ denote the paths of length $n$.   Let  
+ \ ${\rm Path}(E)$ \  denote the set of all paths in $E$; so  $${\rm Path}(E) = \bigcup_{n\in \mathbb{Z}^{+}} E^n.$$  
+
+
+
+
+%\end{frame}
+
+
+%\begin{frame}
+%\frametitle{Connections: \ Leavitt path algebras}
+
+
+%For each $n \in \mathbb{Z}^+$
+%, we let $G_n$ denote the graph with $n+1$ vertices $z_0, z_1, \ldots, z_n$,  and exactly one edge from $z_i$ to $z_{i-1}$.
+%$$G_n :  \qquad  \xymatrix{ \bullet^{z_n} \ar[r] &  \bullet^{z_{n-1}}  \ar[r] & \cdots  \ar[r]& \bullet^{z_1} \ar[r] & \bullet^{z_0}} \ .$$
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Connections: \ Leavitt path algebras}
+
+
+{\bf Proposition.}  
+Let $E$ and $F$ be finite acyclic graphs.  Suppose $E$ has exactly one sink $v$ and $F$ has exactly one sink $w$.  Then $L_K(E)$ is homogeneously graded  equivalent to $L_K(F)$ if and only if 
+$$\max\{ {\rm length}(\mu) : \mu \in {\rm Path}(E), r(\mu) = v \}$$  $$ \ = \ \max \{ {\rm length} ( \nu ) : \nu \in {\rm Path}(F), r(\nu) =  w \}.$$
+
+\pause
+
+\bigskip
+
+Consequently, for example, the Leavitt path algebras of these graphs are not homogeneously graded equivalent.  
+
+$$E:= \ \ \bullet \ \ \ \ \  \mbox{and} \ \ \ \ \ F:= \ \ \bullet \longrightarrow \bullet$$
+
+%Note:   this is NOT the same as the condition which yields that $L_K(E)$ and $L_K(F)$ are graded equivalent in this setting.    One can show, e.g., that the Leavitt path algebras of the graphs  $$\bullet \ \ \ \ \  \mbox{and} \ \ \ \ \ \bullet \to \bullet$$  are graded equivalent.  But they are not homogeneously graded equivalent.  
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Connections: \ Leavitt path algebras}
+
+$$E:= \ \ \bullet \ \ \ \ \  \mbox{and} \ \ \ \ \ F:= \ \ \bullet \longrightarrow \bullet$$
+
+\bigskip
+
+Well known:  $L_K(E)\cong K$ and $L_K(F) \cong {\rm M}_2(K)$.   
+
+\bigskip
+
+So $L_K(E)$ and $L_K(F)$ are Morita equivalent.  
+
+
+\bigskip
+
+ The natural $\mathbb{Z}$-grading on these Leavitt path algebras: easy to describe.  
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Connections: \ Leavitt path algebras}
+
+   
+
+\bigskip
+
+Clearly $${\rm FM}_\infty(K) \ \  \cong \ \  {\rm FM}_\infty({\rm M}_2(K)).$$
+
+   This isomorphism is not a graded isomorphism in standard grading.   (It can't be, by the previous proposition.)   
+
+\bigskip
+
+  But this isomorphism  becomes a graded isomorphism 
+  $${\rm FM}_\infty(K)[(0,-1,0,-1,0,-1, ...)]   \ \ \cong_{gr}   \ \   {\rm FM}_\infty({\rm M}_2(K)).$$
+  So $L_K(E)$ and $L_K(F)$ are in fact graded Morita equivalent.   
+
+\end{frame}
+
+
+
+
+\begin{frame}
+\frametitle{Connections: \ C$^*$-algebras}
+
+
+\pause
+
+The notion of Morita equivalence is well known to C$^*$-algebraists.  
+
+\medskip
+
+
+
+Morita equivalence of the C$^*$-algebras $A$ and $B$ is defined by the existence of an imprimitivity Hilbert bimodule ${}_AX_B$.  
+
+\medskip
+
+Let $\mathcal{K}$ denote the algebra of compact operators on a separable infinite-dimensional Hilbert space. 
+
+\bigskip
+
+
+{\bf Theorem}:  (Brown-Green-Rieffel) \ \   The $\sigma$-unital $C^*$-algebras $A$ and $B$ are Morita equivalent if and only if $A$ and $B$ are stably isomorphic (i.e., $A \otimes \mathcal{K} \cong B \otimes \mathcal{K}$).    
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Connections: \ C$^*$-algebras}
+
+
+ Since $\mathcal{K} = \overline{\mathrm{FM}_\infty(\mathbb{C})}$ and $A \otimes \mathcal{K} \cong \overline{\mathrm{FM}_\infty(A)}$, we see that $A \otimes \mathcal{K}$ is the analytic analogue of $\mathrm{FM}_\infty(A)$.
+ 
+ \bigskip   
+ 
+ So  having $A$ stably isomorphic to $B$ (i.e., $A \otimes \mathcal{K} \cong B \otimes \mathcal{K}$) is the analytic analogue of having $\mathrm{FM}_\infty (A) \cong \mathrm{FM}_\infty (B)$.  
+ 
+ 
+ \bigskip
+ 
+ 
+ So for  operator algebraists inquiring about corresponding ring-theoretic results, (M4) is a quite natural condition.
+ 
+ 
+ \end{frame}
+ 
+
+\begin{frame}
+\frametitle{More C$^*$-algebra Connections: graph C$^*$-algebras}
+
+Let $E$ be a graph and let $C^*(E)$ be the graph $C^*$-algebra.  
+
+\medskip
+
+Then  there is an action $\gamma^E$ of the circle $\mathbb{T}$ on $C^*(E)$.  
+%comes equipped with an action $\gamma^E$ of the circle $\mathbb{T}$, the \emph{gauge action}.  
+Specifically, on the generators of $C^*(E)$, $\gamma^E$  is given by  
+$$
+\gamma_z^E(p_v)=p_v \quad \text{and} \quad \gamma_z^E(s_e)=z s_e.
+$$
+for $z\in \mathbb{T}$.  
+This `` gauge action" induces a $\mathbb{Z}$-grading on $C^*(E)$  via
+$$
+C^*(E)_n = \{ a \in C^*(E) \ | \  \gamma_z^E(a)=z^n a \}.
+$$
+and then taking the closure.  
+
+ \end{frame}
+ 
+
+\begin{frame}
+\frametitle{More C$^*$-algebra Connections: graph C$^*$-algebras}
+
+{\bf Theorem}.  
+Let $E$ and $F$ be finite graphs.  Then 
+
+\medskip
+
+there exists a $*$-isomorphism $$\varphi \colon C^*(E) \to C^*(F) \ \ \mbox{having} \ \  \gamma_z^F \circ \varphi = \varphi \circ \gamma_z^E$$
+
+\medskip
+
+ if and only if 
+ 
+ \medskip
+ 
+ there exists a graded $*$-isomorphism from $C^*(E)$ to $C^*(F)$.
+
+
+ \end{frame}
+ 
+
+\begin{frame}
+\frametitle{More C$^*$-algebra Connections: graph C$^*$-algebras}
+
+We define 
+ $$\gamma_z^{E, s} := \gamma_z^{E} \otimes \iota : C^*(E) \otimes \mathcal{K} \to C^*(E) \otimes \mathcal{K}.$$   
+ Call $\gamma_z^{E, s}$ the \emph{stabilized action}.
+
+\bigskip
+
+
+  Then $\gamma_z^{E,s}$ is an action of $\mathbb{T}$ on $C^*(E) \otimes \mathcal{K}$ which induces a $\mathbb{Z}$-grading on  $C^*(E) \otimes \mathcal{K}$ (after closing) via
+$$
+(C^*(E)\otimes\mathcal{K})_n = \{ x \in C^*(E)\otimes \mathcal{K}  \ | \  \gamma_z^{E,s}(x)=z^n x \}.
+$$
+This grading is the ``standard" grading of $C^*(E)\otimes \mathcal{K}$.  In fact,
+$$
+(C^*(E) \otimes \mathcal{K})_n = \overline{ \bigcup_{k=1}^\infty {\rm M}_k( C^*(E)_n)  }
+$$
+
+
+
+ \end{frame}
+ 
+
+\begin{frame}
+\frametitle{More C$^*$-algebra Connections: graph C$^*$-algebras}
+
+
+
+{\bf Theorem}. 
+Let $E$ and $F$ be graphs.  Then there exists a $*$-isomorphism 
+$$\varphi \colon C^*(E) \otimes \mathcal{K} \to C^*(F) \otimes \mathcal{K} \ \ \mbox{such that} \ \  \gamma_z^{F,s} \circ \varphi = \varphi \circ \gamma_z^{E,s}$$
+ if and only if 
+ 
+ \medskip
+ 
+ there exists a graded $*$-isomorphism
+ 
+ $$\psi:  C^*(E) \otimes \mathcal{K} \to C^*(F) \otimes \mathcal{K},$$ 
+ 
+ \medskip
+ 
+ (where the stabilizations are given the standard grading).
+
+
+
+\bigskip
+\bigskip
+
+This is the C$^*$-analog to  condition (HG4), for graph C$^*$-algebras.   
+ \end{frame}
+
+
+\begin{frame}
+\frametitle{More C$^*$-algebra Connections}
+
+
+
+There is a C$^*$-algebra  analog to the (HG1) condition, in situations more general than the one described above for graph C$^*$-algebras.  
+
+
+\bigskip
+\bigskip
+
+(It has been worked out by Efren Ruiz; still work in progress.)  
+
+
+
+ \end{frame}
+ 
+
+
+
+
+\begin{frame}
+\frametitle{More C$^*$-algebra Connections}
+
+{\bf Theorem.}  (Ruiz)  
+Let $G$ be a locally compact group.  Let $A$ and $B$ be unital $C^*$-algebras and let $\alpha$ and $\beta$ be actions of $G$ on the $C^*$-algebras $A$ and $B$ respectively.  TFAE:
+\bigskip
+
+1.  There exists a $*$-isomorphism $$\varphi \colon A \otimes \mathcal{K} \to B \otimes  \mathcal{K} $$  such that 
+$
+\beta_g^s \circ \varphi(x) = \varphi \circ \alpha_g^s(x)
+$
+for all $x \in A \otimes \mathcal{K}$ and for all $g \in G$, where $\alpha_g^s$ and $\beta_g^s$ are the stabilized actions.
+
+\bigskip 
+2.  The systems $(A, \alpha)$ and $(B, \beta)$ are Morita equivalent via an imprimitivity $A-B$-bimodule $(M, \gamma)$ such that
+$$
+M^\gamma = \{ x \in M \ | \  \gamma_g(x)=x \text{ for all } g \in G \}
+$$
+is an imprimitivity $A^\alpha-B^\beta$-bimodule.
+
+
+
+
+
+ \end{frame}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{frame}
+\frametitle{Morita equivalence for graded rings}
+
+
+
+\bigskip
+\bigskip
+
+\huge
+\begin{center}
+{\bf Thank you \\ for your time.}
+\end{center}
+\normalsize
+
+\end{frame}
+
+
+\end{document}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%
+%   END DOCUMENT
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+\begin{frame}
+\frametitle{More C$^*$-algebra Connections}
+
+There is an analog to the (XXX) condition;  it has been worked out by Efren Ruiz (in preparation). 
+
+\bigskip
+
+
+{\bf Theorem.}  (Ruiz)  
+Let $A$ and $B$ be unital $C^*$-algebras and let $\alpha$ and $\beta$ be actions of $G$ on the $C^*$-algebras $A$ and $B$ respectively.  Then the following are equivalent.
+
+
+
+1.  There exists a $*$-isomorphism $$\varphi \colon A \otimes \mathcal{K} \to B \otimes  \mathcal{K} $$  such that 
+$
+\beta_g^s \circ \varphi(a) = \varphi \circ \alpha_g^s(a)
+$
+for all $a \in A$ and for all $g \in G$, where $\alpha_g^s$ and $\beta_g^s$ are the stabilized actions.
+
+\bigskip 
+2.  The systems $(A, \alpha)$ and $(B, \beta)$ are Morita equivalent via an imprimitivity $A-B$-bimodule $(M, \gamma)$ such that
+$$
+M^\gamma = \{ x \in M \ | \  \gamma_g(x)=x \text{ for all } g \in G \}
+$$
+is an imprimitivity $A^\alpha-B^\beta$-bimodule.
+
+
+
+
+
+ \end{frame}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{frame}
+\frametitle{Some background and history}
+Here's another   $\mathbb{Z}$-grading on ${\rm M}_3(R)$.   
+\tiny
+$$ ( {\rm M}_3(R) )_0  :=   \begin{pmatrix}
+R & 0 & 0 \\
+0  & R & 0 \\
+0 &  0 & R
+\end{pmatrix},  $$
+$$ \ \   ( {\rm M}_3(R) )_3  :=   \begin{pmatrix}
+0 & R & 0 \\
+0  & 0 & 0 \\
+0 & 0 & 0 
+\end{pmatrix}, \ \  ( {\rm M}_3(R) )_{5} \ := \   \begin{pmatrix}
+0 & 0 & 0 \\
+0   & 0 & R \\
+0 & 0 & 0
+\end{pmatrix}, \ \ 
+ ( {\rm M}_3(R) )_{8}  \  :=  \ \   \begin{pmatrix}
+0 & 0 & R \\
+0  & 0 & 0 \\
+0 & 0 & 0
+\end{pmatrix}, $$
+ $$    ( {\rm M}_3(R) )_{-3}  :=   \begin{pmatrix}
+0 & 0 & 0 \\
+R  & 0 & 0 \\
+0 & 0 & 0 
+\end{pmatrix}, \ \   ( {\rm M}_3(R) )_{-5}  :=   \begin{pmatrix}
+0 & 0 & 0 \\
+0  & 0 & 0 \\
+0 & R & 0 
+\end{pmatrix},
+ \ \   ( {\rm M}_3(R) )_{-8}  :=   \begin{pmatrix}
+0 & 0 & 0 \\
+0  & 0 & 0 \\
+R &0 & 0 
+\end{pmatrix}
+$$
+
+\bigskip
+
+and $    \  ( {\rm M}_3(R) )_{i} \ := \   \begin{pmatrix}
+0 & 0 & 0 \\
+0   & 0 & 0 \\
+0 & 0 & 0
+\end{pmatrix} \mbox{ for all other values of  }  i  .$
+
+
+
+
+\normalsize
+
+
+
+\end{frame}
+
+
+
+
+\begin{frame}
+\frametitle{Some background and history}
+
+
+
+
+\hspace{.5in}Graded modules and graded homomorphisms.
+
+\bigskip
+
+
+$R$ a graded ring,  ${}_RM$ a right $R$-module.   
+
+\medskip
+
+$M$ is {\it graded} in case:
+
+\medskip
+
+
+
+\ \ \ \ \ $M = \oplus_{t \in \mathbb{Z}} M_t$,  \ \ and \ \  $ M_u R_t \subseteq M_{t+u}$ for all $t, u \in \mathbb{Z}$. 
+
+\bigskip
+
+If $M, N$ are graded right $R$-modules,  an $R$-homomorphism $f: M \to N$ is called {\it graded} in case $f(M_t) \subseteq N_t$ for all $t\in \mathbb{Z}$.  
+
+
+
+$$\grmod{R}$$
+ denotes the category of graded right $R$-modules with graded homomorphisms.  
+
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Some background and history}
+
+
+
+
+
+
+\end{frame}
+
+
+
+\begin{frame}
+	\frametitle{ General overview  }
+
+
+%Now that our main results have been established, we present a brief overview of a monoid-theoretic aspect of this article.  
+
+%A ``distinguished element"  in a monoid $M$ is an element $I\in M$ for which for each $a\in M$ there exists $b\in M$ and $n\in \mathbb{N}^+$ with $a+b = nI$.  If $R$ is a unital ring then   $[R]$ is a distinguished element in $\mathcal{V}(R)$. For a sandpile monoid $\SP(G)$,  both  $I_1 = \sum_{v\in G^0 \setminus\{s\}}v$ and $I_2 =    \sum_{v\in G^0 \setminus\{s\}} (|s^{-1}(v)-1|)v$ are easily seen to be distinguished elements.  (The element $I_2$ is sometimes denoted  MAX in the literature.)  
+
+
+{\bf Assume that ``monoid" means ``finitely generated commutative monoid written additively."}   
+
+\begin{center}
+Let $\mathcal{U}$  denote the class of monoids that are isomorphic to \\ 
+the $ \mathcal{V}$-monoid of some associative unital ring.  
+
+\medskip
+
+Let $\mathcal{S}_{M_{(E,\omega)}}$ denote the class of monoids that are isomorphic to  \\ the vertex-weighted monoid $M_{(E,\omega)}$  of a vertex-weighted finite directed graph $(E,\omega)$.   
+%the $\mathcal{V}$-monoid of a weighted Leavitt path algebra of a finite graph.
+ 
+\medskip
+
+
+
+ Let $\mathcal{S}_{M_E}$ denote the class of monoids that are isomorphic to  \\
+ the    monoid $M_{E}$  of a finite directed graph $E$.   %the $\mathcal{V}$-monoid  of a standard (i.e., unweighted) Leavitt path algebra of a finite graph.
+
+\medskip
+
+
+Let $\mathcal{S}_{\rm con-sand}$ denote the class of monoids that are isomorphic to \\
+the  sandpile monoid of a conical sandpile graph. 
+
+\end{center}
+
+\end{frame}
+
+
+%------slide-----------------------------------------------------------------%
+
+
+\begin{frame}
+	\frametitle{ General overview  }
+Then:  
+
+ 
+ 
+ 
+\begin{enumerate}
+\item  By Bergman's Realization Theorem,  $\mathcal{U}$ is precisely the class of monoids that are conical and have a distinguished element.      
+
+\pause
+
+\item    In our main result  we established that $\mathcal{S}_{\rm con-sand} \subseteq \mathcal{S}_{M_{(E,\omega)}}$.  There are plenty of examples to show that this inclusion is proper.  (E.g. $\Z^{\geq 0}$.)  
+
+\pause
+
+\item  Clearly $\mathcal{S}_{M_E} \subseteq \mathcal{S}_{M_{(E,\omega)}}$, and this inclusion is proper (e.g. $C_{m,n}$ for any $m \geq 2$).  
+
+\pause
+
+\item   {\bf Proposition}:  The monoids in the intersection $\mathcal{S}_{\rm con-sand} \cap \mathcal{S}_{M_E}$  are precisely direct sums of copies of $C_{n_j}$ over any finite sequence of integers $n_j$, $1 \leq j \leq t$.   \ \ 
+
+\ \ \ \small (Proof:  use the refinement property of the elements of $\mathcal{S}_{M_E}.$)  \normalsize 
+
+\end{enumerate}
+
+   
+%> We also know obviously that S2 \subsetneq S1.    
+%> We then identify the monoids in S3 \cap S2  (finite direct sum of C_n monoids).  
+
+\medskip
+
+
+\end{frame}
+
+
+%------slide-----------------------------------------------------------------%
+
+
+\begin{frame}
+	\frametitle{ General overview  }
+
+
+
+
+
+
+
+\tikzstyle{decision} = [diamond, draw, fill=blue!50]
+\tikzstyle{line} = [draw,  -stealth, thick]
+\tikzstyle{lined} = [draw, bend right=45, thick, dashed]
+\tikzstyle{elli}=[draw, ellipse,minimum height=2cm, minimum width=2cm,  text width=5em]
+\tikzstyle{elli2}=[draw, ellipse,minimum height=4cm, minimum width=7cm,  text width=5em, text centered]
+
+\tikzstyle{block} = [draw, rounded corners, rectangle, top color=white, bottom color=blue!50, text width=8em, text centered, minimum height=15mm, node distance=7em]
+\tikzstyle{largeblock} = [draw, rounded corners, rectangle,   minimum height=5cm, minimum width=10cm,  node distance=1em]
+
+\tikzstyle{block2} = [draw, rounded corners, rectangle, color=blue!50, text width=8em, text centered,  minimum height=15mm, node distance=7em]
+\begin{wrapfigure}{r}{9cm}
+
+
+
+
+
+
+\begin{tikzpicture}
+\node [largeblock]  (leavitt) {};
+\node at (-4cm,2cm) {$\mathcal U$};
+\node at (0cm,1.3cm) {$S_{M_{(E,w)}}$};
+\node at (-2cm,0cm) {$S_{\operatorname{con-sand}}$};
+\node at (2cm,0cm) {$S_{M_E}$};
+
+\node[elli, in=leavitt, xshift=-1cm, yshift=0 cm] (symbol) {};
+\node[elli, in=leavitt, xshift=1cm, yshift=0 cm] (symbol) {};
+\node[elli2, in=leavit] (symbol)   {$\scriptstyle{\oplus C_{n_j}}$}; 
+
+%\bigoplus_{j=1}^t C_{n_j}
+
+
+
+\end{tikzpicture}
+
+\end{wrapfigure}
+
+
+
+\end{frame}
+
+%------slide-----------------------------------------------------------------%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{frame}
+	\frametitle{ Sandpile models }
+
+\tiny
+
+
+$$    \xymatrix{
+\!\!\!      &    \bullet^0   & \\
+\bullet^0 & \bullet^4 \ar@{-}[l]  \ar@{-}[r] \ar@{-}[u] \ar@{-}[d]  & \bullet^0      \ \rightsquigarrow  \\
+ & \bullet^0  &  \\
+}       \pause      \xymatrix{
+\!\!\!      &    \bullet^1   & \\
+  \ \ \bullet^1 & \bullet^0 \ar@{-}[l]  \ar@{-}[r] \ar@{-}[u] \ar@{-}[d]  & \bullet^1    \   \rightsquigarrow  \\
+& \bullet^1  & \\
+}        \pause 
+  \xymatrix{
+\!\!\!      &    \bullet^0   & \\
+  \ \ \bullet^1 & \bullet^1 \ar@{-}[l]  \ar@{-}[r] \ar@{-}[u] \ar@{-}[d]  & \bullet^1    \  \rightsquigarrow   \\
+& \bullet^1  & \\
+}          $$
+$$   \pause  \xymatrix{
+\!\!\!      &    \bullet^0   & \\
+\rightsquigarrow \ \ \  \bullet^0 & \bullet^2 \ar@{-}[l]  \ar@{-}[r] \ar@{-}[u] \ar@{-}[d]  & \bullet^1     \ \rightsquigarrow   \cdots  \rightsquigarrow  \\
+ & \bullet^1  &  \\
+}      \pause       \xymatrix{
+\!\!\!      &    \bullet^0   & \\
+  \ \ \bullet^0 & \bullet^4 \ar@{-}[l]  \ar@{-}[r] \ar@{-}[u] \ar@{-}[d]  & \bullet^0    \   \rightsquigarrow \\
+& \bullet^0  & \\
+}          $$
+
+
+
+
+
+
+\normalsize
+
+
+
+%$$\xymatrix{
+%\!\!\!    \bullet^s   &   \bullet^x \ar@{.}[l]  \ar@{.}@/_{5pt}/ [l]  \ar@/_{10pt}/ [l]_{f_1}  \ar@/^{10pt}/ [l]^{f_k}     \ar@{.}@(l,d) \ar@(ur,dr)^{e_{1}} \ar@(r,d)^{e_{2}} \ar@(dr,dl)^{e_{3}} 
+%\ar@{.}@(l,u) \ar@(u,r)^{e_n}  \ar@{.}@(ul,ur)& 
+%}$$
+
+\end{frame}
+
+
+
+
+
