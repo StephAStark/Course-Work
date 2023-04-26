@@ -22,16 +22,14 @@ one of the most noteble ways is to use redundancy. Consider sending the message 
 binary, you would get "01001000 01101001". Using what is called Hamming code, we can encode this to
 "0100101 1000110 0110110 1001001". This specific way of encoding a message was developed by Richard
 Hamming, one of the pioneers of the field of Error Correction Codes and a well known mathematician in
-the field of coding theory. For this example, we use his $[4,7]$ code to create the rendundancies. It
+the field of coding theory. For this example, we use his $[7,4]$ code to create the rendundancies. It
 has this notation because it takes four bits of data and adds three extra bits in a special manner using
-this matrix.
-%Add matrix to slides.
-This idea of ECC is used quite vastly in  the world of telecom from cell tower and satilite systems, to
-computers and even game consols. This allows for the inevitable errors to happen with a way of detecting
-them and also correcting some of them. This is becasue pieces of the encoded message can get corrupted
-or go missing, and that is already accounted for from the extra three bits per four bit piece. ECC is a
-bit of a misnomer as not all errors can be corrected, but with different methods, more or less errors
-can be.\\
+this matrix. The idea of ECC is used quite vastly in  the world of telecom from cell tower and satellite
+systems, to computers and even game consols. This allows for the inevitable errors to happen with a way
+of detecting them and also correcting some of them. This is becasue pieces of the encoded message can
+get corrupted or go missing, and that is already accounted for from the extra three bits per four bit
+piece. ECC is a bit of a misnomer as not all errors can be corrected, but with different methods, more
+or less errors can be.\\
 
 When it comes to encoding messages, we are used to using the our native alphabet, or even binary in some
 cases, but we can actually change that up a bit. Consider for a moment the statements "Ich binn ein
@@ -40,9 +38,10 @@ and "Rovvy gybvn". These are also the same phrases. In both of these examples, w
 to another via a map between alphabets. In the latter case, it's a bit easier to define the map, as all
 of the letters are shifted ten places to the right, so the map goes from our alphabet to itself. This is
 the essence of detemining when codes are the same in the context of coding theory, even if they look
-different on the surface. Like in algebra, we look at homomorphisms, in the study of metric spaces we
-look at isometries, and in topology we look at homeomorphisms. We will be looking at in part what are
-called linear isometries. For this, we will only concern ourselves with linear codes. These isometries
+different on the surface. Like in algebra, we look at homomorphisms, and in topology we look at
+homeomorphisms. We will be looking at in part what are
+called linear isometries. Generally, these are maps in vector spaces that preserve distance.
+For this, we will only concern ourselves with linear codes. These isometries over linear codes
 preserve what is called the Hamming weight, again named after Richard Hamming. This weight is simply the
 number of nonzero elements in a code with respect to the alphabet. For example the letter "H" in the
 word "Hi" has the binary representation "01001000". So, applying the Hamming weight to it, we get
@@ -53,13 +52,34 @@ For that, we need a few more ideas.\\
 This leads us naturally to monomial transformations. A monomial transformation $T:C\to C'$ is a module
 epimorphism given by $T(x_1,\ldots,x_n)=(x_{\sigma(1)}u_1,\ldots,x_{\sigma(n)}u_n)$ where $\sigma$ is a
 permutation of the set $\{1,\ldots,n\}$ and $u_i\in R$ are units for $1\leq i\leq n$. This then plays 
-into the question of if every surjective linear isometry is in fact a left monomial transformation.
-Interestingly enough, this is indeed the case when the ring $R$ in question is a finite field instead.
-This was shown by the mathematician MacWilliams. So, if you had two codes in a finite field such that
-you could find an onto linear isometry between them, then they would have the same Hamming weight, and
-also, each letter would just be the same as another in the other code, just in a different position. So,
-we could say that the codes would be the same.\\
+into some questions.
+SInce these maps are both morphisms between codes, just one of the is surjective, can we say that
+isometries extend to monomial transformations? Or if $T$ preserves the Hamming wieght of a code, are
+they the same? In true mathematical fashion, the answer is no, not in general. However, some interesting
+things happen if we look at specific alphabets.\\
 
+What we are going to do, not just for name sake of this talk but also for ease of results, is look
+specifically at finite fields. For example, consider $\mathbb{Z}_2$. From ring theory, we
+have that this is a field since 2 is prime. In particular, it is a finite field of 2 elements. So
+consider the codes $C=\{0000,0101,0010,0111\}$ and $C'=\{0000,1100,0001,1101\}$. Doing a bit of work, we
+can see that each codeword in $C'$ is a permutaion of a codeword in $C$. This is not a couincidence.
+For this work, we look at the mathematician FLorence Jessie MacWilliams. She was one of the first women
+to publish in the field of coding theory. Specificall, for her doctoral research she proved that any
+linear isometry between linear codes can be extended to a monomial transformation in a finite field!
+This is known as the MacWilliams extension theorem. This was huge in this area of mathematics. Along
+with the ECC's this allowed people creating codes to ensure that the codes they were making were unique
+in some regard.
 
+Now, another desire in pure mathematics is to generlize results that we have. So, can we generalize
+MacWilliams result to different kinds of structures/alphabets that are not finite fields? As it turns
+out, the answer is yes. Work is even still being done in this regard under a few different contexts.
+In particular, we have the mathematician Jay A. Wood to look to. He showed that codes over every finite
+Frobenius ring can satisfy an analogous version of MacWilliams theorem.
+
+Since his work in this direction, himself and others have shown that the converse holds. When it comes
+to these more recent works, we make more use of the generator matricies of linear codes such as the
+Hamming code as well as other works done By Richard Hamming including the Hamming distance. Also, as
+more work is done, the usage of noncommutative rings and modules comes into play much more heavily
+as well as their properties.
 
 \end{document}

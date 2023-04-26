@@ -16,15 +16,24 @@
 
 \date{April 27, 2023}
 
-
-
 \begin{document}
 
 \begin{frame}
     \titlepage
 \end{frame}
 
-\begin{frame}
+\begin{frame}{Abstract}
+    
+    Equivalency of codes in regards to encryption becomes a different question when we remove ourselves from
+    the typical alphabet. Historically, people would take messages and use maps on the alphabet to translate
+    the messages into equivalent statements that look different on the surface. In the context of fields,
+    this is where MacWilliams did her work and showed that, under certain circumstances, we can still show
+    certain codes are equivalent even if they look different. We will explore her work and show with
+    examples how this can be done, and then look to what lies beyond MacWilliams' initial work.
+
+\end{frame}
+
+\begin{frame}{Encoding}
     
     Imagine you wanted to send the message "Hi" to someone, but you were concerned about the quality
     or secuity of the data line you were using.\\
@@ -34,7 +43,7 @@
 
 \end{frame}
 
-\begin{frame}
+\begin{frame}{Richard Hamming}
     
     This is the brain child of Richard Hamming. He spearheaded this area in coding theory called error
     correcting code(ECC). We used his $[7,4]$ code on the world "Hi". This EEC uses the block matrix
@@ -44,11 +53,11 @@
         0 & 0 & 1 & 0 & 0 & 1 & 1 \\
         0 & 0 & 0 & 1 & 1 & 1 & 1
     \end{array}\right]$$
-    ECC is used in much of telecom today including computers, cell towers, annd satilite system.\\\
+    ECC is used in much of telecom today including computers, cell towers, annd satellite system.\\\
 
 \end{frame}
 
-\begin{frame}
+\begin{frame}{Hamming Code}
     
     \textbf{Ex:} Let's look at the letter "H". In binary, it is given by "01001000". Notice that this
     binary letter cannot be put through matrix multiplication in the Hamming code. However, each packet
@@ -59,7 +68,7 @@
 
 \end{frame}
 
-\begin{frame}
+\begin{frame}{Alphabets}
 
     Historically, the alphabet itself, the binary system, the hexadecimal system and others have been
     used to create codes. Since then, the field of coding theory has made use of more general fields,
@@ -70,7 +79,7 @@
     
 \end{frame}
 
-\begin{frame}
+\begin{frame}{Maps and Equivalencies}
     
     In many areas of mathematics, we are interested in maps that preserve certain properties.\\
     In algebra we look at homomorphisms, in differential geometry we look at diffeomorphisms, in
@@ -80,7 +89,7 @@
 
 \end{frame}
 
-\begin{frame}
+\begin{frame}{Hamming cont'}
     
     The Hamming weight is the number of letters in a codeword that are not the $0$ element from the
     alphabet. So, looking back at the binary representation of "H", "01001000" would have a Hamming
@@ -90,7 +99,7 @@
 
 \end{frame}
 
-\begin{frame}
+\begin{frame}{Maps cont'}
     
     Another kind of morphism of interest in coding theory is the monomial transformation.\\
     These are surjective module homomorphisms $T:C\to C'$ between codes such that
@@ -99,7 +108,7 @@
 
 \end{frame}
 
-\begin{frame}
+\begin{frame}{The Big Question}
     
     Since $f$ and $T$ are both morphisms between codes, the next natural question to ask might be if $f$
     is onto, are they the same? Or if $T$ preserves the Hamming weight are the same?
@@ -114,7 +123,7 @@
 
 \end{frame}
 
-\begin{frame}
+\begin{frame}{Math Magic}
     
     Something magical happens however, if we happen to be in a finite field.\\
     Consider again the binary system $\mathbb{Z}_2=\{0,1\}$. Consider the codes
@@ -125,11 +134,11 @@
 
 \end{frame}
 
-\begin{frame}
+\begin{frame}{MacWilliams Extension Theorem}
     
     This is not a couincidence, and we have the mathematician Florence Jessie MacWilliams to thank for
     this realization!\\
-    MacWilliams was the first woman in the field of coding theory and for her dissertation, she showed
+    MacWilliams was among the first women in the field of coding theory and for her dissertation, she showed
     that any two codes in a finite field that have a linear isometry between them, this is then a
     transformation.
 
@@ -143,20 +152,36 @@
 
 \end{frame}
 
-\begin{frame}
+\begin{frame}{More Abstract}
     
     One of the next question could be can we generalize this any further?\\
     As of right now, yes! We have similar extension theorems over certain finite structures.
 
 \end{frame}
 
-\begin{frame}
+\begin{frame}{What's Next?}
     
     Jay A. Wood proved that codes over every finite Frobenius ring can satisfies an analogous version of
     MacWilliams Equivalence.\\
     Since then, he and others including Hai Quang Dinh and Sergio R. L\'{o}pez-Permouth have worked on
     the proof of the converse.\\
     Work still continues in this field to further generilze these results.
+
+\end{frame}
+
+\begin{frame}
+
+    \begin{center}
+        Questions?
+    \end{center}
+
+\end{frame}
+
+\begin{frame}{Am Ende}
+
+    \begin{center}
+        Vielen Dank!
+    \end{center}
 
 \end{frame}
 
