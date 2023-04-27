@@ -22,47 +22,76 @@
     \titlepage
 \end{frame}
 
-\begin{frame}{Abstract}
+% \begin{frame}{Abstract}
     
-    Equivalency of codes in regards to encryption becomes a different question when we remove ourselves from
-    the typical alphabet. Historically, people would take messages and use maps on the alphabet to translate
-    the messages into equivalent statements that look different on the surface. In the context of fields,
-    this is where MacWilliams did her work and showed that, under certain circumstances, we can still show
-    certain codes are equivalent even if they look different. We will explore her work and show with
-    examples how this can be done, and then look to what lies beyond MacWilliams' initial work.
+%     Equivalency of codes in regards to encryption becomes a different question when we remove ourselves from
+%     the typical alphabet. Historically, people would take messages and use maps on the alphabet to translate
+%     the messages into equivalent statements that look different on the surface. In the context of fields,
+%     this is where MacWilliams did her work and showed that, under certain circumstances, we can still show
+%     certain codes are equivalent even if they look different. We will explore her work and show with
+%     examples how this can be done, and then look to what lies beyond MacWilliams' initial work.
 
-\end{frame}
+% \end{frame}
 
 \begin{frame}{Encoding}
     
     Imagine you wanted to send the message "Hi" to someone, but you were concerned about the quality
-    or secuity of the data line you were using.\\
+    or secuity of the data line you were using.
+
+    \medskip
+
+    \pause
+
     You would likely want to encrypt it, but how would you do that if you wanted to make sure that the
-    reciever got the whole message even if errors were present?\\
-    We can use redundancy to turn "01001000 01101001" into "0100101 1000110 0110110 1001001".
+    reciever got the whole message even if errors were present?
+
+    \medskip
+
+    \pause
+
+    We can use redundancy to turn
+    
+    $$01001000\;\;01101001$$
+    
+    into
+    
+    $$0100101\;\;1000110\;\;0110110\;\;1001001$$
 
 \end{frame}
 
 \begin{frame}{Richard Hamming}
     
     This is the brain child of Richard Hamming. He spearheaded this area in coding theory called error
-    correcting code(ECC). We used his $[7,4]$ code on the world "Hi". This EEC uses the block matrix
+    correcting code(\textbf{ECC}). We used his $[7,4]$ code on the world "Hi". This \textbf{ECC} uses
+    the block matrix:
+
     $$G=\left[\begin{array}{ccccccc}
         1 & 0 & 0 & 0 & 1 & 1 & 0 \\
         0 & 1 & 0 & 0 & 1 & 0 & 1 \\
         0 & 0 & 1 & 0 & 0 & 1 & 1 \\
         0 & 0 & 0 & 1 & 1 & 1 & 1
     \end{array}\right]$$
-    ECC is used in much of telecom today including computers, cell towers, annd satellite system.\\\
+
+    \bigskip
+
+    \pause
+
+    \textbf{ECC} is used in much of telecom today including computers, cell towers, annd satellite system.
 
 \end{frame}
 
 \begin{frame}{Hamming Code}
     
-    \textbf{Ex:} Let's look at the letter "H". In binary, it is given by "01001000". Notice that this
-    binary letter cannot be put through matrix multiplication in the Hamming code. However, each packet
-    of four can be. So,
+    \textbf{Example:} Let's look at the letter "H". In binary, it is given by
+    "01001000". Notice that this binary letter cannot be put through matrix multiplication in the
+    Hamming code. However, each packet of four can be. So,
+
     $$(0 1 0 0)G=0100101\;\;\text{and}\;\; (1 0 0 0)G=1000110$$
+
+    \bigskip
+
+    \pause
+
     The process for checking for errors comes down to checking if bits in certain positions line up with
     the intended data.
 
@@ -70,41 +99,69 @@
 
 \begin{frame}{Alphabets}
 
-    Historically, the alphabet itself, the binary system, the hexadecimal system and others have been
-    used to create codes. Since then, the field of coding theory has made use of more general fields,
-    rings, and modules as the setting to create codes.\\
-    This then leads to the natural mathematical question of when codes can be consider the same.\\
-    Similar to "Ich bin ein berliner" and "I am a doughnut" or "Hello world" and "Rovvy gybvn" being the
-    same phrase, given certain codes and conditions, we can say those codes are in some way the same.
+    We are used to using the english alphabet or the binary system to make codes. Interestingly, we can
+    use the elements of a ring or module as our alphabet.
+
+    \bigskip
+
+    \pause
+
+    This then leads to the natural mathematical question of when codes can be consider the same.
+
+    \medskip
+
+    Similar to "Hello world" and "Rovvy gybvn" being the same codes under a mapping, given certain codes
+    and conditions, we can say those codes are in some way equivalent.
     
 \end{frame}
 
 \begin{frame}{Maps and Equivalencies}
     
-    In many areas of mathematics, we are interested in maps that preserve certain properties.\\
+    In many areas of mathematics, we are interested in maps that preserve certain properties.
+
+    \medskip
+
     In algebra we look at homomorphisms, in differential geometry we look at diffeomorphisms, in
-    topology we look at homeomorphisms, etc.\\
+    topology we look at homeomorphisms, etc.
+
+    \bigskip
+
+    \pause
+
     The same idea applies here, in that we look for maps between codes $f:C\to C'$ such that $f$
     preserves the Hamming weight of a code. We call these particular morphisms linear isometries. 
 
 \end{frame}
 
-\begin{frame}{Hamming cont'}
+\begin{frame}{Hamming Weight}
     
-    The Hamming weight is the number of letters in a codeword that are not the $0$ element from the
-    alphabet. So, looking back at the binary representation of "H", "01001000" would have a Hamming
-    weight of 2.\\
-    We denote this weight by $wt(x)$ for $x\in C$ our code.\\
-    Another example would be $wt(0,1,2,2,4,0,3,1)=6$ on the alphabet $\{0,1,2,3,4\}$
+    The Hamming weight, denoted $wt(x)$ is the number of letters in a codeword that are not the $0$
+    element from the alphabet. So, looking back at the binary representation of "H", "01001000" would
+    have a Hamming weight of
+    
+    $$wt(0,1,0,0,1,0,0,0)$$
+
+    \bigskip
+
+    \pause
+
+    \textbf{Example:} Consider $01224031$. Then,
+    
+    $$wt(0,1,2,2,4,0,3,1)=6$$
+    
+    on the alphabet $\{0,1,2,3,4\}$
 
 \end{frame}
 
-\begin{frame}{Maps cont'}
+\begin{frame}{Maps and Equivalencies}
     
     Another kind of morphism of interest in coding theory is the monomial transformation.\\
     These are surjective module homomorphisms $T:C\to C'$ between codes such that
-    $T(x_1,\ldots,x_n)=(x_{\sigma(1)}u_1,\ldots,x_{\sigma(n)}u_n)$ where $\sigma$ is a permutation of
-    the set $\{1,\ldots,n\}$ and $u_i\in R$ are units for $1\leq i\leq n$.
+
+    $$T(x_1,\ldots,x_n)=(x_{\sigma(1)}u_1,\ldots,x_{\sigma(n)}u_n)$$
+    
+    where $\sigma$ is a permutation of the set $\{1,\ldots,n\}$ and $u_i\in R$ are units for
+    $1\leq i\leq n$.
 
 \end{frame}
 
@@ -123,49 +180,110 @@
 
 \end{frame}
 
-\begin{frame}{Math Magic}
+\begin{frame}{Finite Structures}
     
-    Something magical happens however, if we happen to be in a finite field.\\
+    Something magical happens however, if we happen to be in a finite field.
+
+    \medskip
+
     Consider again the binary system $\mathbb{Z}_2=\{0,1\}$. Consider the codes
-    $C=\{0000,0101,0010,0111\}$ and $C'=\{0000,1100,0001,1101\}$\\
-    Using the permutation $(2\;4\;1\;3)$, we have that $C$ transforms to $C'$! That is, any linear
-    isometry between $C$ and $C'$ extends to a monomial transformation and they are thus essentially the
-    same!
+    $C=\{0000,0101,0010,0111\}$ and $C'=\{0000,1100,0001,1101\}$
+
+    \medskip
+
+    Using the permutation $(2\;4\;1\;3)$, we have that $C$ transforms to $C'$!
+    
+    \bigskip
+
+    \pause
+
+    It turns out that any linear isometry between $C$ and $C'$ extends to a monomial transformation.\\
+
+    \pause
+
+    Thus, the codes are essentially the same!
 
 \end{frame}
 
 \begin{frame}{MacWilliams Extension Theorem}
     
-    This is not a couincidence, and we have the mathematician Florence Jessie MacWilliams to thank for
-    this realization!\\
+    This is not a coincidence, and we have the mathematician Florence Jessie MacWilliams to thank for
+    this realization!
+
+    \medskip
+    
+    \pause
+
     MacWilliams was among the first women in the field of coding theory and for her dissertation, she showed
     that any two codes in a finite field that have a linear isometry between them, this is then a
     transformation.
 
 \end{frame}
 
+\begin{frame}{MacWilliams Extension Theorem}
+    
+    \textbf{MacWilliams Extension Theorem:} Every Hamming weight preserving linear isometry $f$ of
+    linear codes over a finite field $\mathbb{F}$ extends to a monomial transformation $T$ on the
+    ambient space $\mathbb{F}^n$.
+
+\end{frame}
+
 \begin{frame}
     
-    This allows anybody trying to generate a code to encrypt a message to ensure that it is unique by
-    checking to see what that code can map to under a linear isometry. This fact allows for usage of
-    those ECC that we saw above so long as they are linear in nature.
+    This allows people to check the uniquness of thier codes up to isometry.
+
+    \medskip
+
+    It also shows why linear \textbf{ECC} work the way they do.
 
 \end{frame}
 
-\begin{frame}{More Abstract}
+\begin{frame}{Generalizations}
     
-    One of the next question could be can we generalize this any further?\\
-    As of right now, yes! We have similar extension theorems over certain finite structures.
+    One of the next question could be can we generalize this any further?
+
+    \bigskip
+
+    \pause
+
+    Yes! We have similar extension theorems over certain finite structures.
 
 \end{frame}
 
-\begin{frame}{What's Next?}
+\begin{frame}{Wood's Theorem}
     
-    Jay A. Wood proved that codes over every finite Frobenius ring can satisfies an analogous version of
-    MacWilliams Equivalence.\\
-    Since then, he and others including Hai Quang Dinh and Sergio R. L\'{o}pez-Permouth have worked on
-    the proof of the converse.\\
-    Work still continues in this field to further generilze these results.
+    Jay A. Wood proved in 1999 that linear isometries between codes extend to transformations in
+    finite Frobenius rings.
+
+    \bigskip
+
+    A ring $R$ such that $Soc(_RR)\cong\;_R(R/J(R))$ is a Frobenius ring.
+
+    \bigskip
+
+    \pause
+
+    \textbf{Example:} Any semisimple ring is Frobenius. So, the ring $M_2(\mathbb{Z}_7)$ is Frobenius.
+
+\end{frame}
+
+\begin{frame}{Wood's Theorem}
+    
+    Since then, he and others including Hai Quang Dinh and Sergio R. L\'{o}pez-Permouth have proven
+    the converse.
+
+    \bigskip
+
+    \pause
+
+    \textbf{Theorem:} Codes in a finite Frobenius are equivalent if and only if every linear isometry
+    between them extends to a monomial transformation.
+
+    \bigskip
+
+    \pause
+
+    Work still continues in this field to further generalize these results.
 
 \end{frame}
 
