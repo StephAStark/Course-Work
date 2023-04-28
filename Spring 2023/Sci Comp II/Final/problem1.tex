@@ -1,9 +1,24 @@
-\begin{enumerate}
+Consider an implicit closed curve in 2D
 
-\item \input{parta}
-\pagebreak
-\item \input{partb}
-\pagebreak
-\item \input{partc}
- 
-\end{enumerate}
+$$f(x,y)=0$$
+
+given by a parametrization $x=x(t), y=y(t), t\in[0,L]$. For a choice of parameter values
+$\{t_j\}=\{t_1,\ldots,t_N\}$ consider the point cloud $\textbf{x}_j=(x_j,y_j)=(x(t_j),y(t_j))$. The goal
+of this exercise is to reconstruct the implicit function from the given point cloud.\\
+
+Step 1: Find an outer normal vector $\textbf{n}_j$ to the curve at each point $\{\textbf{x}_j\}$.\\
+
+Step 2: Fix $\alpha>0$ small and comnsider the inner and outer positions
+
+$$\textbf{x}_j^-=\textbf{x}_j-\alpha\textbf{n}_j,\;\;\textbf{x}_j^+=\textbf{x}_j+\alpha\textbf{n}_j$$
+
+Step 3: Interpolate the $3N$ data points
+$(\textbf{x}_j^-,-\alpha),(\textbf{x}_j,0),(\textbf{x}_j^+,\alpha)$ using RBF interpolants. That is find
+a function $F:\mathbb{R}^2\to\mathbb{R}$,
+
+$$F(\bf{x})=\sum_{j=1}^Nc_j\phi(||x-x_j||)$$
+
+such that $F(\bf{x}_j)=0$ and $F(\bf{x}_j^-)=-\alpha,\;F(\bf{x}_j^+)=\alpha$.\\
+
+Step 4: Restrict $F$ to the level set $F(x,y)=0$ to obtain the RBF interpolation for the implicit curve
+$f(x,y)=0$

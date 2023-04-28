@@ -1,2 +1,12 @@
-Apply the RBF-PS method to solve the heat equation and the Helmholtz equation in 1D and 2D in some given
-domain.
+a. Modify the RBF interpolantion to include a polynomial correction. In 2D, this amounts to searching
+the interpolant in the form
+
+$$F(\bf{x}) = \sum_{j=1}^Nc_j\phi(||\bf{x}-\bf{x}_j||) + p(\bf{x})$$
+
+where $p(x) = p(x, y) = gamma_1 + \gamma_2x + \gamma_3y$. [See Fornberg (2016) Part 1 for details ]\\
+
+b. Solve the analogous problem in 3D, stating that given a 3D point cloud, find an implicit surface
+that approximates these N points using RBF interpolants.\\
+
+c. Revisit Exercise 1 by using the Machine Learning approach of the RBF Networks, to obtain a RBF best
+fit approximation\\\\
