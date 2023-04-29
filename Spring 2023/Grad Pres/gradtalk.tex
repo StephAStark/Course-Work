@@ -14,24 +14,13 @@
 
 \institute{University of Colorado at Colorado Springs}
 
-\date{April 27, 2023}
+\date{May 1, 2023}
 
 \begin{document}
 
 \begin{frame}
     \titlepage
 \end{frame}
-
-% \begin{frame}{Abstract}
-    
-%     Equivalency of codes in regards to encryption becomes a different question when we remove ourselves from
-%     the typical alphabet. Historically, people would take messages and use maps on the alphabet to translate
-%     the messages into equivalent statements that look different on the surface. In the context of fields,
-%     this is where MacWilliams did her work and showed that, under certain circumstances, we can still show
-%     certain codes are equivalent even if they look different. We will explore her work and show with
-%     examples how this can be done, and then look to what lies beyond MacWilliams' initial work.
-
-% \end{frame}
 
 \begin{frame}{Encoding}
     
@@ -61,16 +50,13 @@
 
 \begin{frame}{Richard Hamming}
     
-    This is the brain child of Richard Hamming. He spearheaded this area in coding theory called error
-    correcting code(\textbf{ECC}). We used his $[7,4]$ code on the world "Hi". This \textbf{ECC} uses
-    the block matrix:
+    This is the brain child of Richard Hamming. He was a mathematician in the mid 1900's and did
+    extensive research in the field of mathematics at Bell Labs.
 
-    $$G=\left[\begin{array}{ccccccc}
-        1 & 0 & 0 & 0 & 1 & 1 & 0 \\
-        0 & 1 & 0 & 0 & 1 & 0 & 1 \\
-        0 & 0 & 1 & 0 & 0 & 1 & 1 \\
-        0 & 0 & 0 & 1 & 1 & 1 & 1
-    \end{array}\right]$$
+    \bigskip
+
+    Many thins are attributed to his name such as Hamming code, Hamming numbers, and Hamming distance.
+    He also spearheaded the area in coding theory called error correcting code(\textbf{ECC}).
 
     \bigskip
 
@@ -82,8 +68,25 @@
 
 \begin{frame}{Hamming Code}
     
+    With his work on \textbf{ECC}, he devised a particular version known as the $[7,4]$ code. This uses
+    the block matrix
+
+    $$G=\left[\begin{array}{ccccccc}
+        1 & 0 & 0 & 0 & 1 & 1 & 0 \\
+        0 & 1 & 0 & 0 & 1 & 0 & 1 \\
+        0 & 0 & 1 & 0 & 0 & 1 & 1 \\
+        0 & 0 & 0 & 1 & 1 & 1 & 1
+    \end{array}\right]$$
+
+    to take packets of four and encode them into packets of seven. This is the code that we used on the
+    word "Hi" above.
+
+\end{frame}
+
+\begin{frame}{Hamming Code}
+    
     \textbf{Example:} Let's look at the letter "H". In binary, it is given by
-    "01001000". Notice that this binary letter cannot be put through matrix multiplication in the
+    "01001000". Notice that this binary codeword cannot be put through matrix multiplication in the
     Hamming code. However, each packet of four can be. So,
 
     $$(0 1 0 0)G=0100101\;\;\text{and}\;\; (1 0 0 0)G=1000110$$
@@ -97,16 +100,27 @@
 
 \end{frame}
 
+\begin{frame}{Linear Codes}
+    
+    What we saw above is an example of a linear code. These are \textbf{ECC} for which any linear
+    combination of codewords is also a codeword.
+
+    \bigskip
+
+    That is to say, linear codes are finite abelian groups.
+
+\end{frame}
+
 \begin{frame}{Alphabets}
 
-    We are used to using the english alphabet or the binary system to make codes. Interestingly, we can
-    use the elements of a ring or module as our alphabet.
+    We are used to using the english alphabet or the binary system to make codes. Thanks to work done
+    by ring theorists and coding theorists, we can also use rings and modules.
 
     \bigskip
 
     \pause
 
-    This then leads to the natural mathematical question of when codes can be consider the same.
+    This then leads to the natural mathematical question of when codes can be consider the equivalent.
 
     \medskip
 
@@ -128,35 +142,50 @@
 
     \pause
 
-    The same idea applies here, in that we look for maps between codes $f:C\to C'$ such that $f$
-    preserves the Hamming weight of a code. We call these particular morphisms linear isometries. 
+    We will look at, in part, linear isometries. These are maps between vector spaces that preserve the
+    norms. In our particular case, the linear isometries $f:C\to C'$ will preserve the Hamming weight
+    and the Hamming distance.
+    % I make note that we will not be using the distance part, but it does come up with respect to these
+    % definitions since isometries preserve distance.
 
 \end{frame}
 
 \begin{frame}{Hamming Weight}
     
-    The Hamming weight, denoted $wt(x)$ is the number of letters in a codeword that are not the $0$
-    element from the alphabet. So, looking back at the binary representation of "H", "01001000" would
-    have a Hamming weight of
+    The Hamming weight of a string of letters is the number of nonzero elements from the alphabet and is
+    denoted $wt(x)$ for each codeword $x\in C$.
+
+    \medskip
+
+    \pause
+
+    \textbf{Example:} Consider the letter 'i' from above. Then, $x=01101001$ and so
+
+    $$wt(01101001)=4$$
+
+\end{frame}
+
+\begin{frame}{Letters and Words}
+
+    It is important to make the distinction between letters and codewords in this topic.
     
-    $$wt(0,1,0,0,1,0,0,0)$$
+    \bigskip
+
+    While 'i' might be a letter in its own right in the usual alphabet, it becomes an entire codeword
+    in binary. This is due to the binary alphabet being $\{0,1\}$.
 
     \bigskip
 
     \pause
 
-    \textbf{Example:} Consider $01224031$. Then,
+    So, we need to be aware of our alphabet and context.
     
-    $$wt(0,1,2,2,4,0,3,1)=6$$
-    
-    on the alphabet $\{0,1,2,3,4\}$
-
 \end{frame}
 
 \begin{frame}{Maps and Equivalencies}
     
     Another kind of morphism of interest in coding theory is the monomial transformation.\\
-    These are surjective module homomorphisms $T:C\to C'$ between codes such that
+    These are module epimorphisms $T:C\to C'$ between codes such that
 
     $$T(x_1,\ldots,x_n)=(x_{\sigma(1)}u_1,\ldots,x_{\sigma(n)}u_n)$$
     
@@ -167,8 +196,8 @@
 
 \begin{frame}{The Big Question}
     
-    Since $f$ and $T$ are both morphisms between codes, the next natural question to ask might be if $f$
-    is onto, are they the same? Or if $T$ preserves the Hamming weight are the same?
+    Can we extend linear isometries to monomial transformations in a general setting, thus making the
+    codes in the maps equivalent?
 
 \end{frame}
 
@@ -182,7 +211,7 @@
 
 \begin{frame}{Finite Structures}
     
-    Something magical happens however, if we happen to be in a finite field.
+    However, if we happen to be in a finite field, then we can make these sorts of claims.
 
     \medskip
 
@@ -205,7 +234,7 @@
 
 \end{frame}
 
-\begin{frame}{MacWilliams Extension Theorem}
+\begin{frame}{Florence Jessie MacWilliams}
     
     This is not a coincidence, and we have the mathematician Florence Jessie MacWilliams to thank for
     this realization!
@@ -214,13 +243,23 @@
     
     \pause
 
-    MacWilliams was among the first women in the field of coding theory and for her dissertation, she showed
-    that any two codes in a finite field that have a linear isometry between them, this is then a
-    transformation.
+    MacWilliams was a mathematician in the mid 1900's. She too, worked at Bell Labs and did research,
+    but she did not get her doctorate until sometime working there. MacWilliams made many controbutions
+    to the algebra and combenatorics of coding theory. She even wrote a book titled "The Theory of
+    Error-Correcting Codes"
+    
+    \bigskip
+
+    She got her PhD at Harvard where in she proved the result that we will be looking at.
 
 \end{frame}
 
 \begin{frame}{MacWilliams Extension Theorem}
+
+    MacWilliams showed that any two codes in a finite field that have a linear isometry between them,
+    this is then a transformation.
+
+    \bigskip
     
     \textbf{MacWilliams Extension Theorem:} Every Hamming weight preserving linear isometry $f$ of
     linear codes over a finite field $\mathbb{F}$ extends to a monomial transformation $T$ on the
@@ -246,7 +285,7 @@
 
     \pause
 
-    Yes! We have similar extension theorems over certain finite structures.
+    Yes! We have similar extension theorems over other certain finite structures.
 
 \end{frame}
 
@@ -257,7 +296,8 @@
 
     \bigskip
 
-    A ring $R$ such that $Soc(_RR)\cong\;_R(R/J(R))$ is a Frobenius ring.
+    A ring $R$ such that $Soc(_RR)\cong\;_R(R/J(R))$ is a Frobenius ring. There are other definitions
+    of Frobenius rings as well.
 
     \bigskip
 
@@ -276,8 +316,8 @@
 
     \pause
 
-    \textbf{Theorem:} Codes in a finite Frobenius are equivalent if and only if every linear isometry
-    between them extends to a monomial transformation.
+    \textbf{Theorem:} A finite ring is Frobenius if and only if every linear isometry between codes can
+    be extended to a monomial transformation.
 
     \bigskip
 
