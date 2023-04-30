@@ -18,5 +18,9 @@ covariant functor. Show that
 is a split exact sequence of left $S$-modules.\\\\
 
 \begin{solution}\renewcommand{\qedsymbol}{}\ \\
-    Assume that the former above sequence is split exact and that $F:RMod\to SMod$ is as stated.
+     Assume that the former above sequence is split exact and that $F:RMod\to SMod$ is as stated. Since
+     $F$ is an additive functor, we have that for all $\phi,\psi\in Mor(X,Y)$ and
+     $X,Y\in Ob(\mathcal{C})$, then $F(\phi+\psi)=F(\phi)+F(\psi)$. Also, since $F$ is covariant, we
+     have that for all $\phi\in Mor(X,Y)$ with $\phi:X\to Y$, then $F(\phi):F(X)\to F(Y)$.
+
 \end{solution}

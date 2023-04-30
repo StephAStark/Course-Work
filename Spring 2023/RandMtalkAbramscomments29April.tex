@@ -8,6 +8,9 @@
 \usepackage{amsmath}
 \usepackage{mathrsfs}
 
+
+
+
 \title{Equivalent Codes From Finite Fields}
 
 \author{Stephanie Amber Klumpe}
@@ -32,13 +35,14 @@
     \pause
 
     You would likely want to encrypt it, but how would you do that if you wanted to make sure that the
-    receiver got the whole message even if errors were present?
+   \textcolor{red}{ reciever} got the whole message even if errors were present?
 
     \medskip
 
     \pause
 
-    We can use redundancy, the process of adding extra information to the space, to add chech bits
+    We can use redundancy
+    \textcolor{red}{explain what 'redundancy' means here; I don't see any repeated stuff ...} to turn
     
     $$01001000\;\;01101001$$
     
@@ -78,9 +82,10 @@
         0 & 0 & 0 & 1 & 1 & 1 & 1
     \end{array}\right]$$
 
-    to take packets of four and encode them into packets of seven. The $[7,4]$ code allows for detection
-    and correction of single bit errors or just detection of double bit errors. This is the code that we
-    used on the word "Hi" above.
+    to take packets of four and encode them into packets of seven. This is the code that we used on the
+    word "Hi" above.
+    
+    \textcolor{red}{explain what Hamming (7,4) does.  it either detects or corrects one error, I forget which ...}
 
 \end{frame}
 
@@ -125,7 +130,7 @@
 
     \medskip
 
-    Similar to "Hello world" and "Rovvy gybvn" being the same codes under a mapping, given certain codes
+    Similar to "Hello world" and "Rovvy gybvn" being the same \textcolor{red}{I don't understand what this means}  codes under a mapping, given certain codes
     and conditions, we can say those codes are in some way equivalent.
     
 \end{frame}
@@ -142,10 +147,23 @@
     \bigskip
 
     \pause
+    
+    
+    
+    \textcolor{red}{Now define Hamming weight. THEN talk about linear isometries.}
+    
+    
+    \textcolor{red}{Give an example of a linear isometry between codes.}
+    
 
-    For us to even look at our desired morphsims, we first need what is known as the Hamming weigth.
+    
 
-   
+
+    We will look at, in part, linear isometries. These are maps between vector spaces that preserve the
+    norms. In our particular case, the linear isometries $f:C\to C'$ will preserve the Hamming weight
+    and the Hamming distance.
+    
+        
     % I make note that we will not be using the distance part, but it does come up with respect to these
     % definitions since isometries preserve distance.
 
@@ -166,33 +184,34 @@
 
 \end{frame}
 
-\begin{frame}{Maps and Equivalencies}
-    
-    In coding and information theory, we look at morphisms that preserve the norms of vector spaces.
-    These are called linear isometries.
+\begin{frame}{Letters and Words}
 
+    It is important to make the distinction between letters and codewords in this topic.
+    
     \bigskip
 
-    In our particular case, the linear isometries $f:C\to C'$ will preserve the Hamming weight
-    and the Hamming distance.
+    While 'i' might be a letter in its own right in the usual alphabet, it becomes an entire codeword
+    in binary. This is due to the binary alphabet being $\{0,1\}$.
 
     \bigskip
 
     \pause
 
-    \textbf{Example:} $C=01011001$ and $C'=10100110$. Then the map $f:C\to C'$ defined by
-
-    $$f(0)=1\;\;\;f(1)=0$$
+    So, we need to be aware of our alphabet and context.
     
-    is a linear isometry between the two codes.
+    
+    \textcolor{red}{I don't understand what this slide means.}
+    
 
+    
 \end{frame}
 
 \begin{frame}{Maps and Equivalencies}
 
-    Two codes $C,C'$ are equivalent when there exists a linear isometry $f$ between them.
 
-    \bigskip
+    \textcolor{red}{Now define what it means for codes to be equivalent.}
+    
+
     
     Another kind of morphism of interest in coding theory is the monomial transformation.\\
     These are module epimorphisms $T:C\to C'$ between codes such that
@@ -201,18 +220,24 @@
     
     where $\sigma$ is a permutation of the set $\{1,\ldots,n\}$ and $u_i\in R$ are units for
     $1\leq i\leq n$.
-
-    \bigskip
     
-    We also say that two codes $C,C'$ are equivalent if there exists a monomial transformation $T$
-    between them.
+    
+    
+    \textcolor{red}{if there's a monomial trans between codes are they equivalent?.}
+    
+    
+    \textcolor{red}{If there's a linear isometry between codes are they equivalent?}
+    
+
+    
+
 
 \end{frame}
 
 \begin{frame}{The Big Question}
     
     Can we extend linear isometries to monomial transformations in a general setting, thus making the
-    ideas above the same?
+    codes in the maps equivalent?
 
 \end{frame}
 
@@ -277,8 +302,25 @@
     \bigskip
     
     \textbf{MacWilliams Extension Theorem:} Every Hamming weight preserving linear isometry $f$ of
-    linear codes $C,C'$ over a finite field $\mathbb{F}$ extends to a monomial transformation $T$ on the
+    linear codes over a finite field $\mathbb{F}$ extends to a monomial transformation $T$ on the
     ambient space $\mathbb{F}^n$.
+
+\end{frame}
+
+\begin{frame}
+    
+    This allows people to check the  
+    \textcolor{red}{uniquness }
+    
+of  \textcolor{red}{thier}   codes up to isometry.
+
+\textcolor{red}{I'm not sure what that statement means.}
+
+    \medskip
+
+    It also shows why linear \textbf{ECC} work the way they do.
+    
+    \textcolor{red}{I'm not sure what that statement means.}
 
 \end{frame}
 
@@ -298,12 +340,15 @@
     
     Jay A. Wood proved in 1999 that linear isometries between codes extend to transformations in
     finite Frobenius rings.
+    
+    \textcolor{red}{State Wood's theorem precisely}
 
     \bigskip
 
-    A finite ring $R$ such that $Soc(_RR)\cong\;_R(R/J(R))$ is a Frobenius ring. Similarlly, a finite
-    ring $R$ such that $Soc(R_R)\cong(R/J(R))_R$ is a Frobenius ring.
+  \textcolor{red}{First define Frobenius ring, then give Wood's theorem}  A ring $R$ such that $Soc(_RR)\cong\;_R(R/J(R))$ is a Frobenius ring. There are other definitions
+    of Frobenius rings as well.
 
+\textcolor{red}{Give some of those equivalent conditions.}
     \bigskip
 
     \pause
@@ -313,13 +358,6 @@
 \end{frame}
 
 \begin{frame}{Wood's Theorem}
-
-    \textbf{Theorem:} Any linear isometry $f$ between codes $C,C'$ over a finite Frobenius ring $R$ can
-    be extended to a monomial Transformation $T$.
-
-    \bigskip
-
-    \pause
     
     Since then, he and others including Hai Quang Dinh and Sergio R. L\'{o}pez-Permouth have proven
     the converse.
@@ -328,21 +366,19 @@
 
     \pause
 
-    \textbf{Theorem:} A finite ring $R$ is Frobenius if and only if every linear isometry $f$ between
-    codes $C,C'$ can be extended to a monomial transformation $T$.
-
-\end{frame}
-
-\begin{frame}{Current and Future Work}
-
-    With this generalization from finite fields to Frobenius rings, work is still being done to go even
-    further.
+    \textbf{Theorem:} A finite ring is Frobenius if and only if every linear isometry between codes can
+    be extended to a monomial transformation.
+    
+    \textcolor{red}{Need to be more specific.   A finite ring $R$ is Frobenius ... between codes over $R$ ....}
 
     \bigskip
 
-    That is, ring theorists are trying to find more general structures for which we can extend
-    Macwilliams' Extension Theorem.
+    \pause
+
+    Work still continues in this field to further generalize these results.
     
+    \textcolor{red}{I'm not sure what that statement means.  The previous theorem is an if and only if result.  What more generalizations are there ???  }
+
 \end{frame}
 
 \begin{frame}
