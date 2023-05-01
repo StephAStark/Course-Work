@@ -25,7 +25,7 @@
 \begin{frame}{Encoding}
     
     Imagine you wanted to send the message "Hi" to someone, but you were concerned about the quality
-    or secuity of the data line you were using.
+    or security of the data line you were using.
 
     \medskip
 
@@ -34,11 +34,28 @@
     You would likely want to encrypt it, but how would you do that if you wanted to make sure that the
     receiver got the whole message even if errors were present?
 
-    \medskip
+    \bigskip
 
     \pause
 
-    We can use redundancy, the process of adding extra information to the space, to add chech bits
+    We can use redundancy!
+
+\end{frame}
+
+\begin{frame}{Redundancy}
+    
+    This is the process of adding extra information to codewords that the recipient knows will be there.
+
+    \bigskip
+
+    These are called check bits and allow for the recipient to find errors after decrypting because they
+    know what should be at the end.
+
+    \bigskip
+
+    \pause
+
+    Redundancy turns the binary version of "Hi":
     
     $$01001000\;\;01101001$$
     
@@ -50,19 +67,19 @@
 
 \begin{frame}{Richard Hamming}
     
-    This is the brain child of Richard Hamming. He was a mathematician in the mid 1900's and did
+    This is the brain child of Richard Hamming. He was a mathematician in the mid 1900s and did
     extensive research in the field of mathematics at Bell Labs.
 
     \bigskip
 
-    Many thins are attributed to his name such as Hamming code, Hamming numbers, and Hamming distance.
+    Many things are attributed to his name such as Hamming code, Hamming numbers, and Hamming distance.
     He also spearheaded the area in coding theory called error correcting code(\textbf{ECC}).
 
     \bigskip
 
     \pause
 
-    \textbf{ECC} is used in much of telecom today including computers, cell towers, annd satellite system.
+    \textbf{ECC} is used in much of telecom today including computers, cell towers, and satellite system.
 
 \end{frame}
 
@@ -114,19 +131,25 @@
 
 \begin{frame}{Alphabets}
 
-    We are used to using the english alphabet or the binary system to make codes. Thanks to work done
-    by ring theorists and coding theorists, we can also use rings and modules.
+    We are used to using the english alphabet or the binary system to make codes.
+    
+    \medskip
+
+    \textbf{Example:} "Hello world" and "Rovvy gybvn" are the same in the english alphabet as one is
+    just a Ceaser cipher of the other.
 
     \bigskip
 
     \pause
 
-    This then leads to the natural mathematical question of when codes can be consider the equivalent.
+    Thanks to work done by ring theorists and coding theorists, we can also use rings and modules.
 
-    \medskip
+    \bigskip
 
-    Similar to "Hello world" and "Rovvy gybvn" being the same codes under a mapping, given certain codes
-    and conditions, we can say those codes are in some way equivalent.
+    \pause
+
+    This then leads to the natural mathematical question of when codes in these new alphabets can be
+    considered equivalent.
     
 \end{frame}
 
@@ -143,7 +166,7 @@
 
     \pause
 
-    For us to even look at our desired morphsims, we first need what is known as the Hamming weigth.
+    For us to even look at our desired morphsims, we first need what is known as the Hamming weight.
 
    
     % I make note that we will not be using the distance part, but it does come up with respect to these
@@ -180,7 +203,7 @@
 
     \pause
 
-    \textbf{Example:} $C=01011001$ and $C'=10100110$. Then the map $f:C\to C'$ defined by
+    \textbf{Example:} If $C=01011001$ and $C'=10100110$. Then the map $f:C\to C'$ defined by
 
     $$f(0)=1\;\;\;f(1)=0$$
     
@@ -193,6 +216,8 @@
     Two codes $C,C'$ are equivalent when there exists a linear isometry $f$ between them.
 
     \bigskip
+
+    \pause
     
     Another kind of morphism of interest in coding theory is the monomial transformation.\\
     These are module epimorphisms $T:C\to C'$ between codes such that
@@ -203,6 +228,8 @@
     $1\leq i\leq n$.
 
     \bigskip
+
+    \pause
     
     We also say that two codes $C,C'$ are equivalent if there exists a monomial transformation $T$
     between them.
@@ -230,12 +257,17 @@
 
     \medskip
 
-    Consider again the binary system $\mathbb{Z}_2=\{0,1\}$. Consider the codes
-    $C=\{0000,0101,0010,0111\}$ and $C'=\{0000,1100,0001,1101\}$
+    \pause
+
+    \textbf{Example:} Consider the codes $C=\{0000,0101,0010,0111\}$ and $C'=\{0000,1100,0001,1101\}$ in
+    $\mathbb{Z}_2=\{0,1\}$.
 
     \medskip
 
-    Using the permutation $(2\;4\;1\;3)$, we have that $C$ transforms to $C'$!
+    \pause
+
+    Using the permutation $(2\;4\;1\;3)$ on the letters of each of the codewords, we have that $C$
+    transforms to $C'$!
     
     \bigskip
 
@@ -245,7 +277,7 @@
 
     \pause
 
-    Thus, the codes are essentially the same!
+    Thus, the ideas are the same!
 
 \end{frame}
 
@@ -259,8 +291,8 @@
     \pause
 
     MacWilliams was a mathematician in the mid 1900's. She too, worked at Bell Labs and did research,
-    but she did not get her doctorate until sometime working there. MacWilliams made many controbutions
-    to the algebra and combenatorics of coding theory. She even wrote a book titled "The Theory of
+    but she did not get her doctorate until sometime working there. MacWilliams made many contributions
+    to the algebra and combinatorics of coding theory. She even wrote a book titled "The Theory of
     Error-Correcting Codes"
     
     \bigskip
@@ -284,7 +316,7 @@
 
 \begin{frame}{Generalizations}
     
-    One of the next question could be can we generalize this any further?
+    One of the next questions could be can we generalize this any further?
 
     \bigskip
 
@@ -301,7 +333,7 @@
 
     \bigskip
 
-    A finite ring $R$ such that $Soc(_RR)\cong\;_R(R/J(R))$ is a Frobenius ring. Similarlly, a finite
+    A finite ring $R$ such that $Soc(_RR)\cong\;_R(R/J(R))$ is a Frobenius ring. Similarly, a finite
     ring $R$ such that $Soc(R_R)\cong(R/J(R))_R$ is a Frobenius ring.
 
     \bigskip
@@ -343,6 +375,22 @@
     That is, ring theorists are trying to find more general structures for which we can extend
     Macwilliams' Extension Theorem.
     
+\end{frame}
+
+\begin{frame}{Other Structures}
+    
+    For example, could we extend Macwilliams' Extension Theorem to Quasi-Frobenius rings?
+
+    \bigskip
+
+    What about arbitrary finite ring?
+
+    \bigskip
+
+    \pause
+
+    For now, those questions are still unanswered.
+
 \end{frame}
 
 \begin{frame}
