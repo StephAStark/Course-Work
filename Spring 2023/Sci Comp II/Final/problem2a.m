@@ -65,16 +65,7 @@ Apol = [A un Xbig; unt; xbt];
 C = Apol\RHS;
 C(end-2:end)
 
-% [Xplot,Yplot] = meshgrid(-4:0.1:4,-4:0.1:4);
-% 
-% Zplot = zeros(size(Xplot));
-% Dist = zeros(M,1);
-% 
-% for j = 1:size(Xplot,1)
-%     for k = 1:size(Yplot,1)
-%         Zplot(j,k) = FunctInterp([Xplot(j,k) Yplot(j,k)],C,Xbig,rho);
-%     end
-% end
+
 
 % Functions
 function out = bestfitnormal(data)
@@ -83,18 +74,5 @@ function out = bestfitnormal(data)
 
     Const = ones(M,1); % Vector of the constant term in the RHS
     out = data\Const; % Find the coefficients
-
-end
-
-function Fout = FunctInterp(Xin,C,Xbig,rho)
-
-    M = size(Xbig,1);
-    Dist = zeros(M,1);
-
-    for s = 1:M
-        Dist(s) = norm(Xin-Xbig(s,:));
-    end
-
-    Fout = C'.*rho(Dist);
 
 end

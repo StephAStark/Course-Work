@@ -19,6 +19,7 @@ z = r.*sin(theta+0.5*rand(length(phi),1));
 
 plot3(x,y,z,'k.')
 axis equal
+grid on
 
 print('-dpng', 'problem2bcloud.png')
 
@@ -48,6 +49,7 @@ plot3(xzero(:,1:40),xzero(:,41:80),xzero(:,81:120),'ro')
 hold on
 plot3(xplus(:,1:40),xplus(:,41:80),xplus(:,81:120),'b*')
 plot3(xminus(:,1:40),xminus(:,41:80),xminus(:,81:120),'gd')
+grid on
 
 print('-dpng','problem2bnorm.png')
 
@@ -72,7 +74,7 @@ end
 
 C = A\RHS;
 
-[Xplot,Yplot,Zplot] = meshgrid(-1:0.1:1,-1:0.1:1,-1:0.1:1);
+[Xplot,Yplot,Zplot] = meshgrid(-2:0.2:2,-2:0.2:2,-2:0.2:2);
 
 Tplot = zeros(size(Xplot));
 Dist = zeros(M,1);
@@ -81,17 +83,19 @@ for j =1:size(Xplot,1)
     for k = 1:size(Yplot,1)
         for l = 1:size(Zplot,1)
 
-            Tplot(j,k,l) = FunctInterp([Xplot(j,k,l);Yplot(j,k,l);Zplot(j,k,l)],C,Xbig,rho);
+            Tplot(j,k,l) = FunctInterp([Xplot(j,k,l);Yplot(j,k,l);Zplot(j,k,l)],
+            C,Xbig,rho);
 
         end
     end
 end
 
-%surf(Xplot,Yplot,Zplot,Tplot)
-
-X=reshape(Tplot,[],3);
 figure
-plot3(X(:,1),X(:,2),X(:,3),'bo')
+isosurface(Xplot,Yplot,Zplot,Tplot,0)
+grid on
+
+print('-dpng','problem2blvl0.png')
+
 
 
 

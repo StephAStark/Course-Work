@@ -20,7 +20,7 @@ fit approximation\\\\
     polynomial correction term. As such, we get that $\gamma_1=0.4085, \gamma_2=0.0051$, and
     $\gamma_3=-0.0009$ when using a perturbed elipse as our starting data.\\
 
-    b. For part b, we will look at a torus. Here, we find the point cloud to be:
+    b. For part b, we will look at a torus with some noise. Here, we find the point cloud to be:
 
     \begin{center}
         \includegraphics[scale=0.5]{problem2bcloud.PNG}
@@ -32,6 +32,22 @@ fit approximation\\\\
         \includegraphics[scale=0.7]{problem2bnorm.PNG}
     \end{center}
 
-    After that, we compute the interpolant as shwon in the code below.
+    After that, we compute the interpolant as shwon in the code below. We then get the resulting level
+    surface:
+
+    \begin{center}
+        \includegraphics[scale=0.5]{problem2blvl0.PNG}
+    \end{center}
+
+    Clearly, this is not the correct level surface. This is likely due to the behavior on the inner
+    radius of the torus with respect to the normal vectors. However, it still does have a sort of
+    oblong shape to it, almost creating a filled in torus or an ellipsoid.\\
+
+    c. TBD
 
 \end{solution}
+
+\newpage
+\lstinputlisting{problem2a.m}
+\newpage
+\lstinputlisting{problem2b.m}
