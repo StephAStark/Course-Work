@@ -100,10 +100,12 @@ contour(Xplot,Yplot,Zplot,v,'Color','r')
 
 print('-dpng', 'problem1lvl.png')
 
+close all
+
 % Functions
 function out = bestfitnormal(data)
 
-    [M, dim]=size(data);
+    [M, ~]=size(data);
 
     Const = ones(M,1); % Vector of the constant term in the RHS
     out = data\Const; % Find the coefficients
