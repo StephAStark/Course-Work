@@ -4,5 +4,26 @@ $f:P\to Q$ in $RMod, F(f)=f^*:\text{Hom}_R(Q,M)\to\text{Hom}_R(P,M)$ where $f^*(
 $\phi\in\text{Hom}_R(Q,M)$. Prove that $F$ is left exact.\\\\
 
 \begin{solution}\renewcommand{\qedsymbol}{}\ \\
-    Let $M$ be a left $R$-module and $F$ be as given.
+
+    Let $M$ be a left $R$-module and $F$ be as given. Let
+
+    \begin{center}
+    \begin{tikzcd}
+        0 \arrow{r} & K \arrow{r}{f} & M \arrow{r}{g} & N \arrow{r} & 0
+    \end{tikzcd}
+    \end{center}
+
+    be an exact sequence of $R$-modules. We want to show that
+
+    \begin{center}
+    \begin{tikzcd}
+        0 \arrow{r} & F(K) \arrow{r}{F(f)} & F(M) \arrow{r}{F(g)} & F(N)
+    \end{tikzcd}
+    \end{center}
+
+    is exact. By similar reasoning as in problem 3, we have that $F$ is exact at $F(K)$. So, we need
+    exactness at $F(M)$ and $F(N)$. By $F$ being the $\text{Hom}$ functor and being contravariant, we
+    have that $F$ is also exact at $F(N)$.
+
+
 \end{solution}

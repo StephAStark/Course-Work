@@ -2,5 +2,15 @@ Give an example of an abelian group $(ie, \mathbb{Z}-module)$ $M$ for which $M$ 
 projective. Justify.\\\\
 
 \begin{solution}\renewcommand{\qedsymbol}{}\ \\
-    Well,
+
+    It is known that $\mathbb{Q}$ is not a projective $\mathbb{Z}$-module, however it is flat as one.
+    Let $M,N$ be $\mathbb{Z}$-modules and assume that $f:M\to N$ is one to one. So, every element of
+    $\mathbb{Q}\otimes_{\mathbb{Z}}M$ can be written as $\frac1q\otimes m$ for some $q\in\mathbb{Z}^*$
+    and some $m\in M$. If $\frac1q\otimes m\in\ker(1\otimes f)$ then
+    $\frac1q\otimes(m)f=0\in\mathbb{Q}\otimes_{\mathbb{Z}}M$. So, $\alpha(m)f=0\in N$ for some
+    $\alpha\in\mathbb{Z}^*$. Then by the module homomorphism action, $(\alpha m)f=0$, and since we
+    assume that $f$ is a monomorphism, $\alpha m=0$. Therefore,
+    $\frac1q\otimes m=\frac{1}{\alpha q}\otimes \alpha m=0$. Thus, $f$ is injective and so $\mathbb{Q}$
+    is flat as a $\mathbb{Z}$-module.
+
 \end{solution}

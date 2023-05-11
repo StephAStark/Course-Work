@@ -6,7 +6,13 @@ b. Describe the RBF-PS method in 2D (the implementation is optional).\\\\
 \begin{solution}\renewcommand{\qedsymbol}{}\ \\
 
     a. For the implementation here, we take the work that we did previously and instead of solving for
-    the coeeficients using our RBF matrix, we use this matrix as a differentiation matrix.\\
+    the coeeficients using our RBF matrix, we use this matrix as a differentiation matrix. So, we will
+    solve the system:
+    
+    $$(A'' A^{-1})u=u_t$$
+    
+    where $A''$ is the matrix $A$ using the second derivative of the RBF instead of the RBF itself.
+    Solving the heat equation $u_t=u_{xx}$, we have the following code.\\
 
     b. To do this in the 2 dimensional case, we would need to look back at our work in spectral methods
     in 2D.
