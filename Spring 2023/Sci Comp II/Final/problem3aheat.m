@@ -7,58 +7,78 @@ clear
 close all
 clc
 
-t = linspace(0:0.1:1);
+T = 1;
+tplot = 0.1;
+Amp = 2;
 
-xzero = [x y];
+N = 25;
 
-N = length(t);
+c = 0.02;
 
-xzero = [xzero(end,:); xzero; xzero(1,:)];
+rho = @(e,r) exp(-(e*r).^2);
+d2rho = @(e,r) 2*e^2*exp(-(e*r).^2).*(2*(e*r).^2-1);
 
-normal = zeros(N,2);
+[D2,x] = D2RBF(N,rho,d2rho);
+clc
 
-for j = 2:N+1
+dt = min([10e-6, N^(-4)/c]);
+t = 0;
+nplots = round(T/tplot);
+plotgap = round(tplot/dt);
+dt = tplot/plotgap;
 
-    data = xzero(j-1:j+1,:);
-    normal(j-1,:) = bestfitnormal(data);
+u = Amp*sin(pi*x/2).^2;
 
-end
+xspace = 0:0.01:1;
+uu = polyval(polyfit(x,u,N),xspace);
+plotdata = [uu;zeros(nplots,length(xspace))];
+tspace = t;
 
-xzero([1,N+2],:)=[];
-alpha = 0.4;
+for i = 1:nplots
 
-xplus = xzero+alpha*normal;
-xminus = xzero-alpha*normal;
+    for k = 1:plotgap
 
-eps = 2;
-rho = @(r) exp(-eps*r.^2);
-d2rho = @(r) eps^2*exp(-eps*r.^2).*(eps^2*r.^2-1)
-
-M=3*N;
-RHS = [zeros(N,1);alpha*ones(N,1);-alpha*ones(N,1)];
-
-A = zeros(M);
-A2 = zeros(M);
-
-Xbig = [xzero;xplus;xminus];
-
-for j = 1:M
-    for k = 1:M
-
-        A(j,k)= rho(norm(Xbig(j,:)-Xbig(k,:)));
-        A2(j,k) = d2rho(norm(Xbig(j,:)-Xbig(k,:)));
+        t = t+dt;
+        u = u+dt *(c*(D2*u));
+        u(1) = 0;
+        u(end) = 0;
 
     end
-end
 
-D = A2\A;
-
-% Functions
-function out = bestfitnormal(data)
-
-    [M, ~]=size(data);
-
-    Const = ones(M,1); % Vector of the constant term in the RHS
-    out = data\Const; % Find the coefficients
+    uu = polyval(polyfit(x,u,N),xspace);
+    plotdata(i+1, :) = uu;
+    tspace = [tspace;t];
 
 end
+
+figure
+plot(xspace,plotdata)
+grid on
+xlabel('x');
+ylabel('u');
+title('Spacial')
+
+print('problem3aheatx', '-dpng')
+
+figure
+plot(tspace,plotdata)
+grid on
+xlabel('t');
+ylabel('u');
+title('Temporal')
+
+print('problem3aheatt', '-dpng')
+
+figure
+surf(xspace,tspace,plotdata)
+colormap('cool');
+xlabel('x');
+ylabel('t');
+zlabel('u');
+title('Heat Equation Using RBF-PS')
+
+print('problem3aheat', '-dpng')
+
+view(0, 90)
+
+print('problem3aheat2d', '-dpng')
