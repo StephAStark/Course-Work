@@ -1,0 +1,30 @@
+(\#12 in 3.2) Prove that the set $FC$ is a topology on any set $X$.\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Let $X$ be any set. First assume that $X=\emptyset$. Then $FC=\{\emptyset\}$. Hence $FC$ is the
+    discrete topology and therefore a topology. So, assume that $X\neq\emptyset$. Then
+    $FC=\{V\subseteq X|V=\emptyset$ or $X\setminus V$ is finite$\}$. Now, clearly $\emptyset\in FC$ by
+    definition. Also, $X\in FC$ since $X\setminus X=\emptyset$ which is finite. Now let $\Lambda$ be an
+    index set. So, let $V_{\alpha}\in FC$ for every $\alpha\in\Lambda$. Now, if all
+    $V_{\alpha}=\emptyset$, then $\bigcup_{\alpha\in\Lambda}V_{\alpha}=\emptyset\in FC$. So, assume that
+    at least one $V_{\alpha}\neq\emptyset$. Then
+    $X\setminus\bigcup_{\alpha\in\Lambda}V_{\alpha}=\bigcap_{\alpha\in\Lambda}(X\setminus V_{\alpha})$
+    by DeMorgan's laws. Now,
+    $\bigcap_{\alpha\in\Lambda}(X\setminus V_{\alpha})\subseteq X\setminus V_{\beta}$ for any
+    $\beta\in\Lambda$. Now $X\setminus V_{\beta}$ for any $\beta\in\Lambda$ is finite since
+    $V_{\beta}\in FC$, and since
+    $\bigcap_{\alpha\in\Lambda}(X\setminus V_{\alpha})\subseteq X\setminus V_{\beta}$,
+    $X\setminus\bigcup_{\alpha\in\Lambda}V_{\alpha}$ is finite since
+    $X\setminus\bigcup_{\alpha\in\Lambda}V_{\alpha}=\bigcap_{\alpha\in\Lambda}(X\setminus V_{\alpha})$
+    and $\bigcap_{\alpha\in\Lambda}(X\setminus V_{\alpha})$ is a subset of a finte set. Next consider
+    $V_1,V_2\in FC$. Then, again by DeMorgan's Laws,
+    $X\setminus(V_1\cap V_2)=(X\setminus V_1)\cup(X\setminus V_2)$. Since $V_1,V_2\in FC$, we have the
+    union of two finite sets, which is finite. Now let $V_3\in FC$. Then
+    $X\setminus((V_1\cap V_2)\cap V_3)=X\setminus(V_1\cap V_2)\cup(X\setminus V_3)$ which is again
+    finite since it is the union of two finite sets by the same reasoning above. Continuing in this
+    manner, if $V_1,\ldots V_n\in FC$ for some $n\in\mathbb{N}$, we have that
+    $X\setminus(\bigcap_{\alpha\in\Lambda}V_{\alpha})$ is also finite by being the finite union of
+    finite sets. Thus we have that $FC$ is closed under arbitrary unions and finite intersections.
+    Therefore, $FC$ is a topology on any set as desired.
+
+\end{solution}

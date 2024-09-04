@@ -1,0 +1,52 @@
+Let $\{_RM_{\alpha}|\alpha\in I\}$ be a set of left $R$-modules, and let $N_R$ be a right $R$-module.
+Prove that there is an isomorphism of abelian groups: 
+
+$$N\otimes_R(\oplus_{\alpha\in I}M_{\alpha})\cong\oplus_{\alpha\in I}(N\otimes_RM_{\alpha})$$
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Let $\{_RM_{\alpha}|\alpha\in I\}$ and $N_R$ be as above. Consider first the projection map
+
+    $$\pi:\oplus M_{\alpha}\to M_{\alpha}$$
+
+    and the inclusion map
+
+    $$\iota:M_{\alpha}\to\oplus M_{\alpha}$$
+
+    Next consider the function
+    
+    $$f_{\pi}:N\otimes_R(\oplus_{\alpha\in I}M_{\alpha})\to N\otimes M_{\alpha}$$
+
+    defined by
+
+    $$f_{\pi}=1\otimes\pi$$
+
+    If we then compose this with the inclusion map, we get that $\phi=f_{\pi}\circ\iota$ from 
+    $N\otimes_R(\oplus_{\alpha\in I}M_{\alpha})$ to $\oplus_{\alpha\in I}(N\otimes_RM_{\alpha})$ is one
+    of the maps that we need. This is because the universal property gives us this unigue well defined
+    map and since it is the compostition of homomorphism, it too is a homomorphism. Now observe if we
+    define the function
+
+    $$f_{\iota}:N\otimes M_{\alpha}\to N\otimes_R(\oplus_{\alpha\in I}M_{\alpha})$$
+
+    by
+
+    $$f_{\iota}=1\otimes\iota$$
+
+    then letting $\psi=\pi\circ f_{\iota}$ from $\oplus_{\alpha\in I}(N\otimes_RM_{\alpha})$ to
+    $N\otimes_R(\oplus_{\alpha\in I}M_{\alpha})$, we get our other homomorphism. All that is left is to
+    show that these maps are indeed inverses. CLearly,
+
+    $$\psi\circ\phi=f_{\pi}\circ\iota\circ\pi\circ f_{\iota}=I$$
+
+    and
+
+    $$\phi\circ\psi=\pi\circ f_{\iota}\circ f_{\pi}\circ\iota=I$$
+
+    So, we have that
+
+    $$N\otimes_R(\oplus_{\alpha\in I}M_{\alpha})\cong\oplus_{\alpha\in I}(N\otimes_RM_{\alpha})$$
+
+    as desired.
+
+
+\end{solution}

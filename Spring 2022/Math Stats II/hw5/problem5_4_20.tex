@@ -1,0 +1,12 @@
+Given a random sample of size $n$ from a Poisson distribution, $\hat{\lambda}_1=X_1$ and
+$\hat{\lambda}_2=\bar{X}$ are two unbiased estimators for $\lambda$. Calculate the relative efficiency
+of $\hat{\lambda}_1$ to $\hat{\lambda}_2$.\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Since $\hat{\lambda}_1$ and $\hat{\lambda}_2$ are both from a Poisson distribution, we have that
+    $Var(\hat{\lambda}_1)=Var(X_1)=\lambda$ and
+    $Var(\hat{\lambda}_2)=Var(\bar{X})=\frac{1}{n^2}(n\lambda)=\frac{\lambda}{n}.$ Hence, the relative
+    efficiency is
+    $\frac{Var(\hat{\lambda}_2)}{Var(\hat{\lambda}_1)}=\frac{\frac{\lambda}{n}}{\lambda}=\frac1n$.
+
+\end{solution}

@@ -1,0 +1,19 @@
+Calculate the power of the 6.2.1 test when the true mean is 500.\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Well, we have that $H_0:\mu=494$ and $H_1:\mu\neq494$ given $\sigma=124, \alpha=0.05$, and $n=86$.
+    So, we now have that $H_1:\mu=500$. So,
+    
+    $$-1.96\leq\frac{\bar{y}-494}{\frac{124}{\sqrt{86}}}\leq1.96$$
+    
+    Hence,
+    
+    $$494-1.96(\frac{124}{sqrt{86}})=467.7923\leq\bar{y}\leq520.2077=494+1.96(\frac{124}{\sqrt{86}})$$ 
+    
+    Since this is a two sided test, the power is
+    
+    $$P(\frac{\bar{y}-500}{\frac{124}{\sqrt{86}}}=z\leq\frac{467.7923-500}{\frac{124}{\sqrt{86}}})$$
+    $$+P(z\geq\frac{520.2077-500}{\frac{124}{\sqrt{86}}})$$
+    $$=P(z\leq-2.4087)+P(z\geq1.5113)=0.008+(1-0.9345)=0.0735$$
+
+\end{solution}

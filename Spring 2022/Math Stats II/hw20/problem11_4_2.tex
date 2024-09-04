@@ -1,0 +1,17 @@
+Suppose that $X$ and $Y$ have the joint pdf $f_{X,Y}(x,y)=x+y, 0<x<1, 0<y<1$. Find $\rho(X,Y)$.\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Well, $f_X(x,y)=\int_0^1x+y dy=x+\frac12$ and $f_Y(x,y)=\int_0^1x+y dx=y+\frac12$. So,
+    $E(X)=\int_0^1x(x+\frac12)=\int_0^1x^2\frac{x}{2}=\frac13+\frac14=\frac{7}{12}$. Since $f_X$ and
+    $f_Y$ are symmetric, we have that $E(Y)=\frac{7}{12}$. Now,
+    $E(X^2)=\int_0^1x^2(x+\frac12)=\int_0^1x^3+\frac{x^2}{2}=\frac14+\frac16=\frac{5}{12}$. Again by
+    symmetry, we have that $E(Y^2)=\frac{5}{12}$. Hence,
+    Var$(X)=$Var$(Y)=\frac{5}{12}-(\frac{7}{12})^2=\frac{11}{144}$. Finally, we have that
+    
+    $$E(XY)=\int_0^1\int_0^1xy(x+y) dydx=\int_0^1\int_0^1x^2y+xy^2 dydx$$
+    $$=\int_0^1\frac{x^2}{2}+\frac{x}{3}dx=\frac16+\frac16=\frac13$$
+    
+    Therefore, Cov$(X,Y)=\frac13-\frac{7}{12}\frac{7}{12}=\frac{-1}{144}$. Thus,
+    $\rho(X,Y)=\frac{\frac{-1}{144}}{\sqrt{\frac{11}{144}}\sqrt{\frac{11}{144}}}=\frac{-1}{11}$.
+
+\end{solution}

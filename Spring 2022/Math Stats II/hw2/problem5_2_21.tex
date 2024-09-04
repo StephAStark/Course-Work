@@ -1,0 +1,25 @@
+Suppose that $Y_1 = 8.3, Y_2 = 4.9, Y_3 = 2.6$, and $Y_4 = 6.5$ is a random sample of size 4 from the
+two parameter uniform pdf
+$f_Y(y; \theta_1, \theta_2)=\frac{1}{2\theta_2}, \theta_1-\theta_2\leq y\leq\theta_1+\theta_2$. Use the
+method of moments to calculate $\theta_{1e}$ and $\theta_{2e}$.\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Well,
+    
+    $$EX=\int_{\theta_1-\theta_2}^{\theta_1+\theta_2}y\frac{1}{2\theta_2}dy=
+    \frac{1}{4\theta_2}y^2|_{\theta_1-\theta_2}^{\theta_1+\theta_2}$$
+    $$=\frac{\theta_1^2+2\theta_1\theta_2+\theta_2^2-\theta_1^2+2\theta_1\theta_2-\theta_2^2}{4\theta_2}
+    =\theta_{1e}=\bar{y}$$
+    
+    Also,
+    
+    $$EX^2=\int_{\theta_1-\theta_2}^{\theta_1+\theta_2}y^2\frac{1}{2\theta_2}dy
+    =\frac{1}{6\theta_2}y^3|_{\theta_1-\theta_2}^{\theta_1+\theta_2}$$
+    $$=\frac{6\theta_1^2\theta_2+2\theta_2^3}{6\theta_2}=\theta_1^2+\frac13\theta_2^2
+    =\bar{y}^2+\frac13\theta_2^2$$
+    
+    Now, $EX^2=\frac1n\sum_{i=1}^ny_i^2$, so $\frac1n\sum_{i=1}^ny_i^2=\bar{y}^2+\frac13\theta_2^2$.
+    Thus, $\theta_{2e}=\sqrt{3(\frac1n\sum_{i=1}^ny_i^2-\bar{y}^2)}$. So, for the random sample, we
+    have that $\theta_{1e}=5.575$ and $\theta_{2e}=3.632$.
+
+\end{solution}

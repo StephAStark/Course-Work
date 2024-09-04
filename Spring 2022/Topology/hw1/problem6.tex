@@ -1,0 +1,11 @@
+(\#3 in 2.5) Verify that the set $\{1,4,7,10,\ldots\}$ is infinite, by Definition 2.5.2.\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Let $A=\{1,4,7,10,\ldots\}$. Define $B=\{4,7,10,13,\ldots\}\subset A$. Also define
+    $f:A\rightarrow B$ by $f(x)=x+3$. Now, assume that $f(x_1)=f(x_2)$. So, $x_1+3=x_2+3$, whence
+    $x_1=x_2$. Hence $f$ is injective. Now $y\in Y$ such that $y=x+3$ for some $x\in X$. Therefore,
+    $x=y-3$. So, $f(x)=f(y-3)=(y-3)+3=y$. Since $y$ was arbitrary, we have that $f$ is also onto. So,
+    $f$ is bijective. Thus, $A=B$ and we have that $A$ is equal to a proper subset of itself. Thus by
+    definition, $A$ is infinite as desired.
+
+\end{solution}

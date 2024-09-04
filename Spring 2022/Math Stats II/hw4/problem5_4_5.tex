@@ -1,0 +1,13 @@
+Suppose $X_1, X_2,\ldots, X_n$ is a random sample of size $n$ drawn from a Poisson pdf where $\lambda$
+is an unknown parameter. Show that $\hat{\lambda}=\bar{X}$ is unbiased for $\lambda$. For what type of
+parameter, in general, will the sample mean necessarily be an unbiased estimator?\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Well,
+    
+    $$E(\lambda)=E(\bar{X})=E(\frac{X_1+\ldots+X_n}{n})=\frac1n(E(X_1+\ldots+X_n))$$
+    $$=\frac1n(E(X_1)+\ldots+E(X_n))=\frac1n(\lambda+\ldots+\lambda)=\frac1n(n\lambda)=\lambda$$
+    
+    Hence $E(\lambda)=\lambda$ and so $\lambda$ is an unbiased estimator.
+
+\end{solution}

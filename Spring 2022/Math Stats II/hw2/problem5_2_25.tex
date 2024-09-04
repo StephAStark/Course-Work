@@ -1,0 +1,15 @@
+Use the method of moments to derive estimates for the parameters $r$ and $\lambda$ in the gamma pdf
+$f_Y(y;r,\lambda)=\frac{\lambda^r}{\Gamma(r)}y^{r-1}e^{-\lambda y}, y\geq0$.\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    We know that $EY=\frac{r}{\lambda}$ and $VarY=\frac{r}{\lambda^2}$. So, $\hat{\mu_1}=\bar{y}=EY$.
+    Also, $EY^2=\frac1n\sum_{i=1}^n=\hat{\mu_2}=VarY+(EY^2)=\frac{r}{\lambda^2}+\frac{r^2}{\lambda^2}$.
+    Now, we have that $r=\bar{y}\lambda$, so
+
+    $$EY^2=\frac{\bar{y}\lambda}{\lambda^2}+\frac{\bar{y}^2\lambda^2}{\lambda^2}
+    =\frac{\bar{y}}{\lambda}+\bar{y}^2$$
+
+    Hence, $\lambda=\frac{\bar{y}}{\hat{\mu_2}-\bar{y}^2}$. Thus, substituting $\lambda$ back into $r$,
+    we get $r=\frac{\bar{y}^2}{\hat{\mu_2}-\bar{y}^2}$ for both of our moment estimators.
+
+\end{solution}

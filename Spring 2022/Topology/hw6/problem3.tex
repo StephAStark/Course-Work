@@ -1,0 +1,19 @@
+(\#6 in 4.4) Let $X_{\tau}$ be a topological space and let $A\subseteq X$.\\
+Prove that $X = \text{Int}(A)\cup \text{Bdy}(A) \cup \text{Ext}(A)$. (Hint: first show that
+$\text{Bdy}(A)=X\backslash (\text{Int}(A)\cup \text{Ext}(A))$).\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Let $X_{\tau}$ and $A$ be as given. We will first show that
+    $\text{Bdy}(A)=X\backslash (\text{Int}(A)\cup \text{Ext}(A))$. So, let $x\in$Bdy$(A)\subseteq X$.
+    By above, we see that $x\notin$Int$(A)$ and $x\notin$Ext$(A)$. So,
+    $x\in(X\setminus\text{Int}(A))\cap(X\setminus\text{Ext}(A))=
+    X\setminus(\text{Int}(A)\cup\text{Ext}(A))$. Now, let
+    $x\in X\setminus(\text{Int}(A)\cup \text{Ext}(A))$. So, $x\in X$ and $x\notin$Int$(A)\cup$Ext$(A)$.
+    Hence, $x\in X$ and $x\notin$Int$(A)$ and $x\notin$Ext$(A)$. Since $x\notin$Int$(A)$ and
+    $x\notin$Ext$(A)$ and $\text{Int}(A), \text{Bdy}(A)$ and $\text{Ext}(A)$ are pairwise disjoint, we
+    have that $x\in$Bdy$(A)$. Therefore $\text{Bdy}(A)=X\backslash (\text{Int}(A)\cup \text{Ext}(A))$.
+    So,
+    $\text{Int}(A)\cup \text{Bdy}(A) \cup \text{Ext}(A)=X\backslash(\text{Int}(A)\cup \text{Ext}(A))
+    \cup(\text{Int}(A)\cup \text{Ext}(A))=X$ as desired.
+
+\end{solution}

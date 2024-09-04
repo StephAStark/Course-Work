@@ -1,0 +1,14 @@
+Use the sample $y_1=8.2$, $y_2=9.1$, $y_3=10.6$, and $y_4=4.9$ to calculate the MLE for $\lambda$ in the
+exponential pdf $f_Y(y;\lambda)=\lambda e^{-\lambda y}$, $y\geq0$.\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Take $L(\lambda)=\prod_{i=1}^n\lambda e^{-\lambda y_i}.$ Then set
+
+    $$l(\lambda)=\ln(L(\lambda))=\sum_{i=1}^n\ln(\lambda e^{-\lambda y_i})=
+    \sum_{i=1}^n(\ln\lambda-\lambda y_i)=n\ln\lambda-\lambda\sum_{i=1}^ny_i$$
+
+    Hence $l'(\lambda)=\frac{n}{\lambda}-\sum_{i=1}^ny_i$. Setting
+    $l'(\lambda)=0$ yields $\lambda=\frac{n}{\sum_{i=1}^ny_i}$. So,
+    $\lambda_e=\frac{4}{8.2+9.1+10.6+4.9}=0.122$.
+
+\end{solution}

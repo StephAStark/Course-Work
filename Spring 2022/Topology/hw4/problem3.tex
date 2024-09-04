@@ -1,0 +1,16 @@
+If $A$ is a subspace of $X_{\tau}$, the inclusion map $j:A\hookrightarrow X$ is continuous.\\\\
+
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Let $A$ be a subspace of $X_{\tau}$. Let $V$ be a $\tau-$open subset of $X$. Assume first that
+    $V\cap A=V$. Then $j^{-1}(V)\subseteq A$ and
+    $j^{-1}(V)=j^{-1}(V\cap A)=j^{-1}(V)\cap j^{-1}(A)=V\cap A=V$ by definition of the inclusion map.
+    Thus $V$ is $\tau_{A}-$open by definition of the subspace topology. Next assume that
+    $V\cap A=\emptyset$. Then, $j^{-1}(V)=\emptyset$ by the definition of the inclusion map. Hence
+    $j^{-1}(V)$ is open since $\tau_{A}$ is a topology. Finally assume that $V\cap A\neq V$ and
+    $V\cap A\neq\emptyset$. Then we can take $V=V_1\cup V_2$ such that $V_1\cap V_2=\emptyset$,
+    $V_1\cap A=V_1$, and $V_2\cap A=\emptyset$. Then
+    $j^{-1}(V)=j^{-1}(V_1\cup V_2)=j^{-1}(V_1)\cup j^{-1}(V_2)=V_1$ be definition of the inclusion map.
+    Since $V_1=V_1\cap A$, $j^{-1}(V)$ is $\tau_{A}-$open. Thus, $j:A\hookrightarrow X$ is continuous.
+
+\end{solution}

@@ -1,0 +1,26 @@
+Show that if $U$ is an open connected subset of $\mathbb{R}^2$, then $U$ is path-connected.
+(Hint: Show that given a point $x_0\in U$, the set of points in $U$ that can be joined to $x_0$ by a
+path in $U$ is both open and closed.)\\\\
+
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Let $U$ be an open connected subset of $\mathbb{R}^2$. If $U=\mathbb{R}^2$, then $U$ is path
+    connected. So, assume $U\subset\mathbb{R}^2$. Fix $(x_0,y_0)\in U$. Let $V$ be the set of points
+    $(x,y)\in U$ such that $(x,y)$ can be joined to $(x_0,y_0)$ by a path in $U$. Then $V\subseteq U$
+    and $V\neq\emptyset$ since $(x_0,y_0)\in V$. Now, let $(x,y)\in V$ and let $B_1$ be a basis set of
+    $\mathcal{U}^2$ such that $(x,y)\in B_1$. Now, take $(x_1,y_1)\in B_1$ where $x\neq x_1$. Let
+    $m=\frac{y_1-y}{x_1-x}$ and define $\alpha:[0,1]\rightarrow\mathbb{R}^2$ by $\alpha(t)=(x+mt,y+mt)$.
+    Now, $p_x\circ\alpha=x+mt$ and $p_y\circ\alpha=y+mt$ are both continuous since they are both linear,
+    and by Theorem 5.2.2, $\alpha$ is continuous. Hence, we have that $B_1$ is path connected. So, let
+    $(x',y')\in B_1$ with $(x',y')\neq(x,y)$. Since $B_1$ is path-connected, $(x',y')$ can be joined to
+    $(x,y)$ by a path and therefore can be joined to $(x_0,y_0)$ by a path. So, $(x',y')\in V$. Hence,
+    $B_1\subseteq V$ and so $V$ is open. Now, let $(x,y)\in\mathbb{R}^2\setminus V$ and let $B_2$ be a
+    basis set such that $(x,y)\in B_2$. Again, since $B_2$ is a basis set, $B_2$ is path-connected. Now,
+    let $(x',y')\in B_2$. Since $B_2$ is path-connected, $(x',y')$ can be joined to $(x,y)$ by a path.
+    So, $(x',y')\in\mathbb{R}^2\setminus V$ and hence $B_2\subseteq\mathbb{R}^2\setminus V$. So,
+    $\mathbb{R}^2\setminus V$ is open and by definition, $V$ is closed. Since $U$ has a subset that is
+    both open and closed and $U$ is connected, we have that $U=V$. Since $V$ is the set of all points
+    $(x,y)\in U$ such that $(x,y)$ can be joined to $(x_0,y_0)$ by a path in $U$ and $U=V$, we have $U$
+    is path-connected.
+
+\end{solution}

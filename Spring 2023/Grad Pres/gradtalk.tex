@@ -1,0 +1,412 @@
+\documentclass{beamer}
+\usetheme{Warsaw}
+
+\usepackage{amsfonts}
+\usepackage[mathcal]{eucal}
+\usepackage{eufrak}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{mathrsfs}
+
+\title{Equivalent Codes From Finite Fields}
+
+\author{Stephanie Amber Klumpe}
+
+\institute{University of Colorado at Colorado Springs}
+
+\date{May 1, 2023}
+
+\begin{document}
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\begin{frame}{Encoding}
+    
+    Imagine you wanted to send the message "Hi" to someone, but you were concerned about the quality
+    or security of the data line you were using.
+
+    \medskip
+
+    \pause
+
+    You would likely want to encrypt it, but how would you do that if you wanted to make sure that the
+    receiver got the whole message even if errors were present?
+
+    \bigskip
+
+    \pause
+
+    We can use redundancy!
+
+\end{frame}
+
+\begin{frame}{Redundancy}
+    
+    This is the process of adding extra information to codewords that the recipient knows will be there.
+
+    \bigskip
+
+    These are called check bits and allow for the recipient to find errors after decrypting because they
+    know what should be at the end.
+
+    \bigskip
+
+    \pause
+
+    Redundancy turns the binary version of "Hi":
+    
+    $$01001000\;\;01101001$$
+    
+    into
+    
+    $$0100101\;\;1000110\;\;0110110\;\;1001001$$
+
+\end{frame}
+
+\begin{frame}{Richard Hamming}
+    
+    This is the brain child of Richard Hamming. He was a mathematician in the mid 1900s and did
+    extensive research in the field of mathematics at Bell Labs.
+
+    \bigskip
+
+    Many things are attributed to his name such as Hamming code, Hamming numbers, and Hamming distance.
+    He also spearheaded the area in coding theory called error correcting code(\textbf{ECC}).
+
+    \bigskip
+
+    \pause
+
+    \textbf{ECC} is used in much of telecom today including computers, cell towers, and satellite system.
+
+\end{frame}
+
+\begin{frame}{Hamming Code}
+    
+    With his work on \textbf{ECC}, he devised a particular version known as the $[7,4]$ code. This uses
+    the block matrix
+
+    $$G=\left[\begin{array}{ccccccc}
+        1 & 0 & 0 & 0 & 1 & 1 & 0 \\
+        0 & 1 & 0 & 0 & 1 & 0 & 1 \\
+        0 & 0 & 1 & 0 & 0 & 1 & 1 \\
+        0 & 0 & 0 & 1 & 1 & 1 & 1
+    \end{array}\right]$$
+
+    to take packets of four and encode them into packets of seven. The $[7,4]$ code allows for detection
+    and correction of single bit errors or just detection of double bit errors. This is the code that we
+    used on the word "Hi" above.
+
+\end{frame}
+
+\begin{frame}{Hamming Code}
+    
+    \textbf{Example:} Let's look at the letter "H". In binary, it is given by
+    "01001000". Notice that this binary codeword cannot be put through matrix multiplication in the
+    Hamming code. However, each packet of four can be. So,
+
+    $$(0 1 0 0)G=0100101\;\;\text{and}\;\; (1 0 0 0)G=1000110$$
+
+    \bigskip
+
+    \pause
+
+    The process for checking for errors comes down to checking if bits in certain positions line up with
+    the intended data.
+
+\end{frame}
+
+\begin{frame}{Linear Codes}
+    
+    What we saw above is an example of a linear code. These are \textbf{ECC} for which any linear
+    combination of codewords is also a codeword.
+
+    \bigskip
+
+    That is to say, linear codes are finite abelian groups.
+
+\end{frame}
+
+\begin{frame}{Alphabets}
+
+    We are used to using the english alphabet or the binary system to make codes.
+    
+    \medskip
+
+    \textbf{Example:} "Hello world" and "Rovvy gybvn" are the same in the english alphabet as one is
+    just a Ceaser cipher of the other.
+
+    \bigskip
+
+    \pause
+
+    Thanks to work done by ring theorists and coding theorists, we can also use rings and modules.
+
+    \bigskip
+
+    \pause
+
+    This then leads to the natural mathematical question of when codes in these new alphabets can be
+    considered equivalent.
+    
+\end{frame}
+
+\begin{frame}{Maps and Equivalencies}
+    
+    In many areas of mathematics, we are interested in maps that preserve certain properties.
+
+    \medskip
+
+    In algebra we look at homomorphisms, in differential geometry we look at diffeomorphisms, in
+    topology we look at homeomorphisms, etc.
+
+    \bigskip
+
+    \pause
+
+    For us to even look at our desired morphsims, we first need what is known as the Hamming weight.
+
+   
+    % I make note that we will not be using the distance part, but it does come up with respect to these
+    % definitions since isometries preserve distance.
+
+\end{frame}
+
+\begin{frame}{Hamming Weight}
+    
+    The Hamming weight of a string of letters is the number of nonzero elements from the alphabet and is
+    denoted $wt(x)$ for each codeword $x\in C$.
+
+    \medskip
+
+    \pause
+
+    \textbf{Example:} Consider the letter 'i' from above. Then, $x=01101001$ and so
+
+    $$wt(01101001)=4$$
+
+\end{frame}
+
+\begin{frame}{Maps and Equivalencies}
+    
+    In coding and information theory, we look at morphisms that preserve the norms of vector spaces.
+    These are called linear isometries.
+
+    \bigskip
+
+    In our particular case, the linear isometries $f:C\to C'$ will preserve the Hamming weight
+    and the Hamming distance.
+
+    \bigskip
+
+    \pause
+
+    \textbf{Example:} If $C=01011001$ and $C'=10100110$. Then the map $f:C\to C'$ defined by
+
+    $$f(0)=1\;\;\;f(1)=0$$
+    
+    is a linear isometry between the two codes.
+
+\end{frame}
+
+\begin{frame}{Maps and Equivalencies}
+
+    Two codes $C,C'$ are equivalent when there exists a linear isometry $f$ between them.
+
+    \bigskip
+
+    \pause
+    
+    Another kind of morphism of interest in coding theory is the monomial transformation.\\
+    These are module epimorphisms $T:C\to C'$ between codes such that
+
+    $$T(x_1,\ldots,x_n)=(x_{\sigma(1)}u_1,\ldots,x_{\sigma(n)}u_n)$$
+    
+    where $\sigma$ is a permutation of the set $\{1,\ldots,n\}$ and $u_i\in R$ are units for
+    $1\leq i\leq n$.
+
+    \bigskip
+
+    \pause
+    
+    We also say that two codes $C,C'$ are equivalent if there exists a monomial transformation $T$
+    between them.
+
+\end{frame}
+
+\begin{frame}{The Big Question}
+    
+    Can we extend linear isometries to monomial transformations in a general setting, thus making the
+    ideas above the same?
+
+\end{frame}
+
+\begin{frame}
+    
+    \begin{center}
+        No!\footnote{Not in general.}
+    \end{center}
+
+\end{frame}
+
+\begin{frame}{Finite Structures}
+    
+    However, if we happen to be in a finite field, then we can make these sorts of claims.
+
+    \medskip
+
+    \pause
+
+    \textbf{Example:} Consider the codes $C=\{0000,0101,0010,0111\}$ and $C'=\{0000,1100,0001,1101\}$ in
+    $\mathbb{Z}_2=\{0,1\}$.
+
+    \medskip
+
+    \pause
+
+    Using the permutation $(2\;4\;1\;3)$ on the letters of each of the codewords, we have that $C$
+    transforms to $C'$!
+    
+    \bigskip
+
+    \pause
+
+    It turns out that any linear isometry between $C$ and $C'$ extends to a monomial transformation.\\
+
+    \pause
+
+    Thus, the ideas are the same!
+
+\end{frame}
+
+\begin{frame}{Florence Jessie MacWilliams}
+    
+    This is not a coincidence, and we have the mathematician Florence Jessie MacWilliams to thank for
+    this realization!
+
+    \medskip
+    
+    \pause
+
+    MacWilliams was a mathematician in the mid 1900's. She too, worked at Bell Labs and did research,
+    but she did not get her doctorate until sometime working there. MacWilliams made many contributions
+    to the algebra and combinatorics of coding theory. She even wrote a book titled "The Theory of
+    Error-Correcting Codes"
+    
+    \bigskip
+
+    She got her PhD at Harvard where in she proved the result that we will be looking at.
+
+\end{frame}
+
+\begin{frame}{MacWilliams Extension Theorem}
+
+    MacWilliams showed that any two codes in a finite field that have a linear isometry between them,
+    this is then a transformation.
+
+    \bigskip
+    
+    \textbf{MacWilliams Extension Theorem:} Every Hamming weight preserving linear isometry $f$ of
+    linear codes $C,C'$ over a finite field $\mathbb{F}$ extends to a monomial transformation $T$ on the
+    ambient space $\mathbb{F}^n$.
+
+\end{frame}
+
+\begin{frame}{Generalizations}
+    
+    One of the next questions could be can we generalize this any further?
+
+    \bigskip
+
+    \pause
+
+    Yes! We have similar extension theorems over other certain finite structures.
+
+\end{frame}
+
+\begin{frame}{Wood's Theorem}
+    
+    Jay A. Wood proved in 1999 that linear isometries between codes extend to transformations in
+    finite Frobenius rings.
+
+    \bigskip
+
+    A finite ring $R$ such that $Soc(_RR)\cong\;_R(R/J(R))$ is a Frobenius ring. Similarly, a finite
+    ring $R$ such that $Soc(R_R)\cong(R/J(R))_R$ is a Frobenius ring.
+
+    \bigskip
+
+    \pause
+
+    \textbf{Example:} Any semisimple ring is Frobenius. So, the ring $M_2(\mathbb{Z}_7)$ is Frobenius.
+
+\end{frame}
+
+\begin{frame}{Wood's Theorem}
+
+    \textbf{Theorem:} Any linear isometry $f$ between codes $C,C'$ over a finite Frobenius ring $R$ can
+    be extended to a monomial Transformation $T$.
+
+    \bigskip
+
+    \pause
+    
+    Since then, he and others including Hai Quang Dinh and Sergio R. L\'{o}pez-Permouth have proven
+    the converse.
+
+    \bigskip
+
+    \pause
+
+    \textbf{Theorem:} A finite ring $R$ is Frobenius if and only if every linear isometry $f$ between
+    codes $C,C'$ can be extended to a monomial transformation $T$.
+
+\end{frame}
+
+\begin{frame}{Current and Future Work}
+
+    With this generalization from finite fields to Frobenius rings, work is still being done to go even
+    further.
+
+    \bigskip
+
+    That is, ring theorists are trying to find more general structures for which we can extend
+    Macwilliams' Extension Theorem.
+    
+\end{frame}
+
+\begin{frame}{Other Structures}
+    
+    For example, could we extend Macwilliams' Extension Theorem to Quasi-Frobenius rings?
+
+    \bigskip
+
+    What about arbitrary finite ring?
+
+    \bigskip
+
+    \pause
+
+    For now, those questions are still unanswered.
+
+\end{frame}
+
+\begin{frame}
+
+    \begin{center}
+        Questions?
+    \end{center}
+
+\end{frame}
+
+\begin{frame}{Am Ende}
+
+    \begin{center}
+        Vielen Dank!
+    \end{center}
+
+\end{frame}
+
+\end{document}

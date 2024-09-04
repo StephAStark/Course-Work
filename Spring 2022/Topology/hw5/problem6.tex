@@ -1,0 +1,16 @@
+Let $X_{\tau}$ be a topological space, and let $A$ and $B$ be subsets of $X$ with $X=A\cup B$. Let $W$
+be a subset of $A\cap B$ that is both $\tau_A$-open and $\tau_B$-open. Prove that $W$ is also
+$\tau$-open. (Hint: Show that $W$ is the intersection of two $\tau$-open sets $V_1$ and $V_2$).\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Let $A, B,$ and $X_{\tau}$ be as given above. Let $X=A\cup B$ and $W\subseteq A\cap B$ be such that
+    $W$ is $\tau_A$ and $\tau_B$-open. If $W=\emptyset$, then $W$ is $\tau-$open. Now assume that
+    $W\neq\emptyset$. Since $W$ is $\tau_A-$open, $W=A\cap V_1$ such that $V_1$ is $\tau-$open. Since
+    $W$ is $\tau_B$-open, $W=B\cap V_2$ such that $V_2$ is $\tau$-open. Now,
+    $W\cap V_1=B\cap(V_1\cap V_2)$ and $W\cap V_2=A\cap(V_1\cap V_2)$. Since $W\subseteq A\cap B$ and
+    by these two equalities, we have that $W=A\cap(V_1\cap V_2)=B\cap(V_1\cap V_2)$. Now,
+    $W=W\cup W=(A\cap(V_1\cap V_2))\cup (B\cap(V_1\cap V_2))=(A\cup B)\cap(V_1\cap V_2)$. Since
+    $X=A\cup B$, we have that $W=X\cap(V_1\cap V_2)=V_1\cap V_2$. Since $V_1$ and $V_2$ are both
+    $\tau$-open, we have that $W$ is also $\tau$-open as desired.
+
+\end{solution}

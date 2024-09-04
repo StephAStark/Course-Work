@@ -1,0 +1,16 @@
+(\# 7a in 6.2) A space $X_{\tau}$ is said to be \textit{totally disconnected} if every subspace of $X$
+with more than one element is disconnected (in the subspace topology). Show that every discrete space is
+totally disconnected.\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Let $X$ be a set with the discrete topology. If $X$ itself has only one element, then
+    $X_{\mathcal{D}}$ is vacuously totally disconnected. So, let $Card(X)\geq2$. Now, let $U$ be a
+    subspace of $X_{\mathcal{D}}$ such that $Card(U)\geq2$. Then, consider the sets $V\subset U$ such
+    that $V\neq\emptyset$ and $U\setminus V$. Hence $V, U\setminus V\neq\emptyset$,
+    $V\cap(U\setminus V)=\emptyset$, and $V\cup(U\setminus V)=U$. Now, $V,(U\setminus V)$ are both open
+    in the subspace topology, since $V$ and $(U\setminus V)$ are both open in $X_{\mathcal{D}}$, so $U$
+    is disconnected. Since $U$ was an arbitrary subspace with $Card(U)\geq2$, $X_{\mathcal{D}}$ is
+    totally disconnected. Since $X_{\mathcal{D}}$ was also arbitrary, we have that every discrete space
+    is totally disconnected as desired.
+
+\end{solution}

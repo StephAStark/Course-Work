@@ -1,0 +1,14 @@
+Prove that any quotient space of a path-connected space is path-connected. That is, if $X_{\tau}$ is a
+path-connected space and $\sim$ is an equivalence relation on $X$, then the quotient space $X/\sim$ is
+path-connected.\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Let $X_{\tau}$ be a path-connected topological space and $\sim$ an equivalence relation on $X$.
+    Then, for every $x_0,x_1\in X$, there exists a path $\alpha:[0,1]\rightarrow X_{\tau}$ with
+    $\alpha(0)=x_0$ and $\alpha(1)=x_1$. Let $[y_0],[y_1]\in X/\sim$. Let $x_0\sim y_0$ and
+    $x_1\sim y_1$. Since there exists a path $\alpha$ between $x_0$ and $x_1$ and $x_0\sim y_0$ and
+    $x_1\sim y_1$, we see that $\nu\circ\alpha:[0,1]\rightarrow X/\sim$ is also a path in $X/\sim$ by
+    composition of continuous functions and since $(\nu\circ\alpha)(0)=\nu(\alpha(0))=\nu(x_0)=[y_0]$
+    and $(\nu\circ\alpha)(1)=\nu(\alpha(1))=\nu(x_1)=[y_1]$. Therefore, $X/\sim$ is path-connected.
+
+\end{solution}

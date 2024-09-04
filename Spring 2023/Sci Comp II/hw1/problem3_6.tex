@@ -1,0 +1,13 @@
+We have seen that a discrete function $v$ can be spectrally differentiated by means of two complex
+FFTs (one forward, one inverse). Explain how two distinct discrete functions $v$ and $w$ can be
+spectrally differentiated at once by the same two complex FFTs, provided that $v$ and $w$ are real.\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Let $v$ and $w$ be two real valued discrete functions. Then define the function $u\equiv v+iw$.
+    Then, we have that $u$ is a complex function and we know that we can spectrally differentiate $u$ by
+    the use of the FFT and its inverse. So, by applying the FFT to $u$, we get
+    $\hat{u}=\hat{v}+i\hat{w}$. We can then spectrally differentiate $u$ and by consequence spectrally
+    differentiate $v$ and $w$. Succeding this, we then apply the inverse FFT to $\hat{u}'$ and obtain
+    $u'$ and therefore $v'$ and $w'$.
+
+\end{solution}

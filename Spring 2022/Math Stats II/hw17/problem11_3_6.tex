@@ -1,0 +1,27 @@
+Prove that
+
+$$\sum_{i=1}^n(y_i-\hat{\beta}_0-\hat{\beta}_1x_i)^2$$
+$$=\sum_{i=1}^ny_i^2-\hat{\beta}_0\sum_{i=1}^ny_i-\hat{\beta}_1\sum_{i=1}^ny_ix_i$$\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Well,
+    
+    $$\sum_{i=1}^n(y_i-\hat{\beta}_0-\hat{\beta}_1x_i)^2$$
+    $$=\sum_{i=1}^n(y_i-(\bar{y}-\hat{\beta}_1\bar{x})-\hat{\beta}_1x_i)^2$$
+    $$=\sum_{i=1}^n((y_i-\bar{y})-\hat{\beta}_1(x_i-\bar{x}))^2$$
+    $$=\sum_{i=1}^n(y_i-\bar{y})^2+\hat{\beta}_1^2\sum_{i=1}^n(x_i-\bar{x})^2-
+    2\hat{\beta}_1\sum_{i=1}^n(x_i-\bar{x})(y_i-\bar{y})$$
+    $$=\sum_{i=1}^n(y_i-\bar{y})^2$$
+    $$\hat{\beta}_1(\frac{\sum_{i=1}^n(x_i-\bar{x})(y_i-\bar{y})}{\sum_{i=1}^n(x_i-\bar{x})^2})
+    \sum_{i=1}^n(x_i-\bar{x})^2$$
+    $$-2\hat{\beta}_1\sum_{i=1}^n(x_i-\bar{x})(y_i-\bar{y})$$
+    $$=\sum_{i=1}^n(y_i-\bar{y})^2-\hat{\beta}_1\sum_{i=1}^n(x_i-\bar{x})(y_i-\bar{y})$$
+    $$=\sum_{i=1}^ny_i^2-
+    n\bar{y}^2-\hat{\beta}_1(\sum_{i=1}^nx_iy_i-\frac1n(\sum_{i=1}^nx_i)(\sum_{i=1}^ny_i))$$
+    $$=\sum_{i=1}^ny_i^2-
+    \hat{\beta}_1\sum_{i=1}^nx_iy_i-n\bar{y}^2+\hat{\beta}_1\frac1n(\sum_{i=1}^nx_i)(\sum_{i=1}^ny_i)$$
+    $$=\sum_{i=1}^ny_i^2-
+    \hat{\beta}_1\sum_{i=1}^nx_iy_i-(\bar{y}+\hat{\beta}_1\bar{x})(\sum_{i=1}^ny_i)$$
+    $$=\sum_{i=1}^ny_i^2-\hat{\beta}_0\sum_{i=1}^ny_i-\hat{\beta}_1\sum_{i=1}^ny_ix_i$$
+
+\end{solution}

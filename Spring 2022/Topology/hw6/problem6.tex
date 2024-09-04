@@ -1,0 +1,28 @@
+Let $\{X_i\}$, $i\in \mathbb{N}$ be a countable collection of topological spaces. Let $P(\mathbb{N})$
+be a permutation of $\mathbb{N}$ (that is, a bijection from $\mathbb{N}$ to $\mathbb{N}$). Prove that
+the product space $\prod X_i$ is homeomorphic to the product space $\prod X_{P(i)}$.
+(Hint: start by looking at a finite product, and a permutation of the coordinates to convince
+yourself of what the homeomorphism should be).\\\\
+
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Let $\{X_i\}, P(\mathbb{N}), \prod X_i$, and $\prod X_{P(i)}$ be as stated. Consider the function
+    $f((x_1, x_2,\ldots))=(x_{P(1)}, x_{P(2)},\dots)$ where $x_i\in X_i$ for all $i\in\mathbb{N}$. Now,
+    let $(x_1, x_2,\ldots), (y_1, y_2,\ldots)\in\prod X_i$ and assume that
+    $f((x_1, x_2,\ldots))=f( (y_1, y_2,\ldots))$. Then
+    $(x_{P(1)}, x_{P(2)},\ldots)=(y_{P(1)}, y_{P(2)},\ldots)$. Since $P(\mathbb{N})$ is a bijection, we
+    see that $(x_1, x_2,\ldots)=(y_1, y_2,\ldots)$, so $f$ is injective. Now, let
+    $(x_{P(1)}, x_{P(2)},\ldots)\in\prod X_{P(i)}$. Since $P$ is bijective, $P$ is onto, and so there
+    exists a $(x_1, x_2,\ldots)\in\prod X_i$ such that
+    $f((x_1, x_2,\ldots))=(x_{P(1)}, x_{P(2)},\ldots)$. So, $f$ is onto and therefore $f$ is bijective.
+    Now, let $p_i$ be the projection map $\prod X_{i}\rightarrow X_{i}$ and $p_{P(i)}$ be the projection
+    map $\prod X_{P(i)}\rightarrow X_{P(i)}$. Consider $p_{P{i}}\circ f:\prod X_i\rightarrow X_{P(i)}$.
+    We see that $(p_{P(i)}\circ f)((x_1, x_2,\ldots))=x_{P(i)}$ which is the permutation of $x_i$ and
+    still a component of $(x_1, x_2,\ldots)$. Similarly, if we consider
+    $p_i\circ f^{-1}:\prod X_{P(i)}\rightarrow X_i$, then we have that
+    $(p_i\circ f^{-1})((x_{P(1)}, x_{P(2)},\ldots))=x_i$ which is still a component of
+    $(x_{P(1)}, x_{P(2)},\ldots)$. Hence, $p_{P(i)}\circ f$ and $p_i\circ f^{-1}$ are projection maps,
+    and are therefore continuous. Thus, both $f$ and $f^{-1}$ are continuous and so $f$ is a
+    homeomorphism. So, $\prod X_i\cong \prod X_{P(i)}$ as desired.
+
+\end{solution}

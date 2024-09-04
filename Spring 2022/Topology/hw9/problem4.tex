@@ -1,0 +1,18 @@
+(\#6 in 7.3) Prove Theorem 7.3.2: Let $X_{\tau}$ be compact and Hausdorff. If $\tau'$ is any
+topology on $X$ with $\tau'$ finer than $\tau$, then $X_{\tau'}$ is not compact. If $\tau''$ is any
+topology on $X$ with $\tau''$ coarser than $\tau$, then $X_{\tau''}$ is not Hausdorff.
+(Hint: consider the hint for problem \#5 in 7.3).\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Let $X_{\tau}$ be compact and Hausdorff. First, let $\tau'$ be a topology on $X$ that is strictly
+    finer than $\tau$. Consider $i_X: X_{\tau'}\rightarrow X_{\tau}$. Since $\tau\subset\tau'$, we have
+    that $i_X$ is continuous, and as discussed in previous problem sets, $i_X$ is bijective. Now, assume
+    by way of contradiction that $X_{\tau'}$ is compact. Then, since $X_{\tau}$ is Hausdorff, we have
+    that $i_X$ is a homeomorphism by Theorem 7.3.3. Hence, $\tau=\tau'$ which contradicts
+    $\tau\subset\tau'$. Hence, $X_{\tau'}$ is not compact. Now let $\tau''$ be a strictly coarser
+    topology than $\tau$ on $X$. So, consider $i_X:X_{\tau}\rightarrow X_{\tau''}$. Since
+    $\tau''\subset\tau$, we have that $i_X$ is a continuous bijection. Now, suppose by way of
+    contradiction that $X_{\tau''}$ is Hausdorff. Then, $i_X$ is a homeomorphism by Theorem 7.3.3.
+    Therefore, $\tau''=\tau$ which contradicts $\tau''\subset\tau$. Thus, $X_{\tau''}$ is not Hausdorff.
+
+\end{solution}

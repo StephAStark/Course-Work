@@ -1,0 +1,14 @@
+Suppose that $W_1$ is a random variable with mean $\mu$ and variance $\sigma^2_1$ and $W_2$ is a random
+variable with mean $\mu$ and variance $\sigma^2_2$. From Example 5.4.3, we know that $cW_1+(1-c)W_2$ is
+an unbiased estimator of $\mu$ for any constant $c>0$. If $W_1$ and $W_2$ are independent, for what
+value of $c$ is the estimator $cW_1+(1-c)W_2$ most efficient?\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Since $W_1$ and $W_2$ are independent, we have that
+    
+    $$Var(cW_1+(1-c)W_2)=c^2Var(W_1)+(1-c)^2Var(W_2)=c^2\sigma_1^2+(1-c)^2\sigma_2^2$$
+    
+    Next take the derivative with respect to $c$ and set it equal to $0$ to get
+    $2c\sigma_1^2-2(1-c)\sigma_2^2=0$ Thus, $c=\frac{\sigma_2^2}{\sigma_1^2-\sigma_2^2}$.
+
+\end{solution}

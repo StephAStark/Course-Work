@@ -1,0 +1,19 @@
+Prove an $R$-module $_RP$ is finitely generated projective if and only if it has a finite dual basis.\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+
+    Let $_RP$ be an $R$-module. Assume first that $_RP$ is finitely generated projective. Let $f:F\to P$
+    be an $R$-epimorphism for some finitely generated free module $F=\bigoplus_{i=1}^nRe_i$. Since $P$
+    is projective, we have the map $g:P\to F$. Since $e_i$ for $1\leq i\leq n$ form a basis for $F$, we
+    can write $h(x)=\sum f_i(x)e_i$ for some $f_i(x)\in R$. Thus $f_i\in P^*$ for all $i$. Finally,
+    composing with $g$ gives us $x=gh(x)=\sum_{i=1}^nf_i(x)x_i$ with $x_i=g(e_i)\in P$. So $\{x_i\}$
+    and $\{f_i\}$ are finite bases of $P$ and $P^*$ respectively\\
+    
+    Let $\{x_i\}$ and $\{f_i\}$ be finite bases of $P$ and $P^*$ respectively. Let
+    $F=\bigoplus_{i=1}^nRe_i$ be a finitely generated free module with $\{e_i\}$ for $1\leq i\leq n$ as
+    a basis. Define $\phi:F\to P$ by $e_i\mapsto x_i$. Since $\{x_i\}$ generates $P$ we have that
+    $\phi$ is also onto. Now, let $h:P\to F$ be defined by $x\mapsto\sum_{i=1}^nf_i(x)e_i$.
+    This gives us $gh=1_P$ and $hg=1_F$. Therefore $P$ is isomorphic to a direct sum of the finitely
+    generated free module $F$. Thus $P$ is projective as desired.
+
+\end{solution}

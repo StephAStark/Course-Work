@@ -1,0 +1,18 @@
+Let $X_{\tau}$ be a topological space, and let $A$ and $B$ be subsets of $X$. Prove that 
+$\text{Int}(A\cap B) = \text{Int}(A)\cap \text{Int}(B)$, and 
+$\text{Int}(A)\cup \text{Int}(B)\subseteq \text{Int}(A\cup B)$.\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    a. Let $X_{\tau}$ be a topological space and $A,B\subseteq X$. Let $Y=$Int$(A\cap B)$. Then
+    $Y\subseteq A\cap B$ such that $Y$ is open. Since $Y\subseteq A\cap B$, $Y\subseteq A$ and
+    $Y\subseteq B$. Therefore, we have that $Y\subseteq $Int$(A)\cap $Int$(B)$ since $Y$ is open. On the
+    other hand, let $Z=$Int$(A)\cap $Int$(B)$. So, $Z$ is such that $Z\subseteq A$, $Z\subseteq B$, and
+    $Z$ is the largest such open subset of $A$ and $B$. Hence, $Z\subseteq A\cap B$, and since $Z$ is
+    open, we have that $Z\subseteq $Int$(A\cap B)$. Thus, Int$(A\cap B)=$Int$(A)\cap $Int$(B)$.\\
+
+    b. Let $X_{\tau}, A$, and $B$ be as given. Consider Int$(A)\cup $Int$(B)$. Well, Int$(A)\subseteq A$
+    and Int$(B)\subseteq B$ and so Int$(A)\cup $Int$(B)\subseteq A\cup B$. By definition Int$(A)$ and
+    Int$(B)$ are open in $\tau$, so Int$(A)\cup $Int$(B)$ is $\tau-$open. Therefore,
+    Int$(A)\cup $Int$(B)\subseteq $Int$(A\cup B)$.
+    
+\end{solution}

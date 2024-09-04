@@ -1,0 +1,18 @@
+(\#5 in 6.2) Prove Theorem 6.2.4: Let $A_{\tau_A}$ be a connected subspace of a space $X_{\tau}$, and
+let $B$ be a subset of $X$ with $A\subseteq B\subseteq \text{Cl($A$)}$. Then $B$ is also connected in
+the subspace topology.\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Let $X_{\tau}, A_{\tau_A}$, and $B$ be as given. Assume by way of contradiction that $B$ is
+    disconnected in the subspace topology. Then, there exist $C,D\in\tau_{B}$ such that
+    $C,D\neq\emptyset, C\cap D=\emptyset$ and $C\cup D=B$. Since $C,D\in\tau_{B}$, $C=U\cap B$ and
+    $D=V\cap B$ for $U,V\in\tau$. Then $A\subseteq C\cup D\subseteq$Cl$(A)$. Consider $C\cap A$ and
+    $D\cap A$. Then we have that $(U\cap B)\cap A=U\cap(B\cap A)=U\cap A$ and
+    $(V\cap B)\cap A=V\cap(B\cap A)=V\cap A$. By definition, $C\cap A$ and $D\cap A$ are both
+    $\tau_A$-open. Also, $(C\cap A)\cap(D\cap A)=(C\cap D)\cap A=\emptyset\cap A=\emptyset$. In
+    addition, we have $(C\cap A)\cup(D\cap A)=(C\cup D)\cap A=B\cap A=A$. Now, let $x\in C$. Since
+    $C\subset B$, $C\subset$Cl$(A)$. So, by Theorem 4.3.2, $C\cap A\neq\emptyset$. By a very similar
+    argument, we have that $D\cap A\neq\emptyset$. Therefore, $A$ has a disconnection, which is a
+    contradiction to $A$ being connected. Thus, $B$ is connected in the subsapace topology as desired.
+
+\end{solution}

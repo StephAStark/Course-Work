@@ -1,0 +1,121 @@
+Let $K$ be any field. Let $F$ be the graph \ \ \  \ 
+$\xymatrix{ \bullet \ar@(ul,dl)  & \bullet \ar[l]}$. Explicitly write down a K-algebra isomorphism 
+$M_2(K[x,x^{-1}])\cong L_K(F)$.\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Let $K$ and $F$ be as above, and $L_K(F)$ be the Leavitt algebra of $F$. Let $G=M_2(K[x,x^{-1}])$.
+    Denote the edges from left to right as $f$ and $e$ and the vertices from left to right as $v$ and
+    $u$. Consider the mapping $\phi:L_K(F)\rightarrow G$ given by
+
+    $$\phi(u)=\left(\begin{array}{cc} 1 & 0 \\ 0 & 0 \end{array}\right)$$
+
+    $$\phi(e)=\left(\begin{array}{cc} 0 & 1 \\ 0 & 0 \end{array}\right)$$
+
+    $$\phi(e^*)=\left(\begin{array}{cc} 0 & 0 \\ 1 & 0 \end{array}\right)$$
+
+    $$\phi(v)=\left(\begin{array}{cc} 0 & 0 \\ 0 & 1 \end{array}\right)$$
+
+    $$\phi(f)=\left(\begin{array}{cc} 0 & 0 \\ 0 & x \end{array}\right)$$
+
+    $$\phi(f^*)=\left(\begin{array}{cc} 0 & 0 \\ 0 & x^{-1} \end{array}\right)$$
+
+    Now, we will check that the relations are satisfied. Notice that:
+
+    $$\phi(u)\phi(u)-\phi(u)=\left(\begin{array}{cc} 1 & 0 \\ 0 & 0 \end{array}\right)^2-
+    \left(\begin{array}{cc} 1 & 0 \\ 0 & 0 \end{array}\right)$$
+    $$=\left(\begin{array}{cc} 1 & 0 \\ 0 & 0 \end{array}\right)-
+    \left(\begin{array}{cc} 1 & 0 \\ 0 & 0 \end{array}\right)=0$$
+
+    $$\phi(v)\phi(v)-\phi(v)=\left(\begin{array}{cc} 0 & 0 \\ 0 & 1 \end{array}\right)^2-
+    \left(\begin{array}{cc} 0 & 0 \\ 0 & 1 \end{array}\right)$$
+    $$=\left(\begin{array}{cc} 0 & 0 \\ 0 & 1 \end{array}\right)-
+    \left(\begin{array}{cc} 0 & 0 \\ 0 & 1 \end{array}\right)=0$$
+
+    $$\phi(u)\phi(v)=\left(\begin{array}{cc} 1 & 0 \\ 0 & 0 \end{array}\right)
+    \left(\begin{array}{cc} 0 & 0 \\ 0 & 1 \end{array}\right)=0$$
+    $$=\left(\begin{array}{cc} 0 & 0 \\ 0 & 1 \end{array}\right)
+    \left(\begin{array}{cc} 1 & 0 \\ 0 & 0 \end{array}\right)=\phi(v)\phi(u)$$
+
+    and
+
+    $$\phi(u)+\phi(v)=\left(\begin{array}{cc} 1 & 0 \\ 0 & 0 \end{array}\right)+
+    \left(\begin{array}{cc} 0 & 0 \\ 0 & 1 \end{array}\right)$$
+    $$=\left(\begin{array}{cc} 1 & 0 \\ 0 & 1 \end{array}\right)=I_2$$
+
+    So, we have that the mappings of the vertices are also idempotent, orthogonal, and sum to the
+    identity. Now observe that:
+
+    $$\phi(v)\phi(f)=\left(\begin{array}{cc} 0 & 0 \\ 0 & 1 \end{array}\right)
+    \left(\begin{array}{cc} 0 & 0 \\ 0 & x \end{array}\right)$$
+    $$=\left(\begin{array}{cc} 0 & 0 \\ 0 & x \end{array}\right)$$
+    $$=\left(\begin{array}{cc} 0 & 0 \\ 0 & x \end{array}\right)
+    \left(\begin{array}{cc} 0 & 0 \\ 0 & 1 \end{array}\right)=\phi(f)\phi(v)$$
+
+    $$\phi(v)\phi(f^*)=\left(\begin{array}{cc} 0 & 0 \\ 0 & 1 \end{array}\right)
+    \left(\begin{array}{cc} 0 & 0 \\ 0 & x^{-1} \end{array}\right)$$
+    $$=\left(\begin{array}{cc} 0 & 0 \\ 0 & x^{-1} \end{array}\right)$$
+    $$=\left(\begin{array}{cc} 0 & 0 \\ 0 & x^{-1} \end{array}\right)
+    \left(\begin{array}{cc} 0 & 0 \\ 0 & 1 \end{array}\right)=\phi(f^*)\phi(v)$$
+
+    $$\phi(f)\phi(f^*)=\left(\begin{array}{cc} 0 & 0 \\ 0 & x \end{array}\right)
+    \left(\begin{array}{cc} 0 & 0 \\ 0 & x^{-1} \end{array}\right)$$
+    $$=\left(\begin{array}{cc} 0 & 0 \\ 0 & 1 \end{array}\right)=\phi(v)$$
+
+    $$\phi(f^*)\phi(f)=\left(\begin{array}{cc} 0 & 0 \\ 0 & x^{-1} \end{array}\right)
+    \left(\begin{array}{cc} 0 & 0 \\ 0 & x \end{array}\right)$$
+    $$=\left(\begin{array}{cc} 0 & 0 \\ 0 & 1 \end{array}\right)=\phi(v)$$
+
+    $$\phi(u)\phi(e)=\left(\begin{array}{cc} 1 & 0 \\ 0 & 0 \end{array}\right)
+    \left(\begin{array}{cc} 0 & 1 \\ 0 & 0 \end{array}\right)$$
+    $$=\left(\begin{array}{cc} 0 & 1 \\ 0 & 0 \end{array}\right)=\phi(e)$$
+
+    $$\phi(v)\phi(e^*)=\left(\begin{array}{cc} 0 & 0 \\ 0 & 1 \end{array}\right)
+    \left(\begin{array}{cc} 0 & 0 \\ 1 & 0 \end{array}\right)$$
+    $$=\left(\begin{array}{cc} 0 & 0 \\ 1 & 0 \end{array}\right)=\phi(e^*)$$
+
+    $$\phi(e)\phi(u)=\left(\begin{array}{cc} 0 & 1 \\ 0 & 0 \end{array}\right)
+    \left(\begin{array}{cc} 1 & 0 \\ 0 & 0 \end{array}\right)=0$$
+
+    $$\phi(e^*)\phi(v)=\left(\begin{array}{cc} 0 & 0 \\ 1 & 0 \end{array}\right)
+    \left(\begin{array}{cc} 0 & 0 \\ 0 & 1 \end{array}\right)=0$$
+
+    $$\phi(e)\phi(e^*)=\left(\begin{array}{cc} 0 & 1 \\ 0 & 0 \end{array}\right)
+    \left(\begin{array}{cc} 0 & 0 \\ 1 & 0 \end{array}\right)$$
+    $$=\left(\begin{array}{cc} 1 & 0 \\ 0 & 0 \end{array}\right)=\phi(u)$$
+
+    and
+
+    $$\phi(e^*)\phi(e)=\left(\begin{array}{cc} 0 & 0 \\ 1 & 0 \end{array}\right)
+    \left(\begin{array}{cc} 0 & 1 \\ 0 & 0 \end{array}\right)$$
+    $$=\left(\begin{array}{cc} 0 & 0 \\ 0 & 1 \end{array}\right)=\phi(v)$$
+
+    So, all of the relations described in the Leavitt algebra are satisfied by the mapping and thus,
+    this map over the free algebra mod the relations is the unique desired homomorphism.
+
+    Now, consider the mapping $\psi:G\rightarrow L_K(F)$ given by:
+
+    $$\psi(\left(\begin{array}{cc} 1 & 0 \\ 0 & 0 \end{array}\right))=u$$
+
+    $$\psi(\left(\begin{array}{cc} 0 & 1 \\ 0 & 0 \end{array}\right))=e$$
+
+    $$\psi(\left(\begin{array}{cc} 0 & 0 \\ 1 & 0 \end{array}\right))=e^*$$
+
+    $$\psi(\left(\begin{array}{cc} 0 & 0 \\ 0 & 1 \end{array}\right))=v$$
+
+    $$\psi(\left(\begin{array}{cc} 0 & 0 \\ 0 & x \end{array}\right))=f$$
+
+    $$\psi(\left(\begin{array}{cc} 0 & 0 \\ 0 & x^{-1} \end{array}\right))=f^*$$
+
+    Notice that, with almost identical but reversed logic, $\psi$ is also a homomorphism since it
+    satisfies the relations over the free algebra mod the aforementioned relations.
+
+    Finally, note that for all $x\in G$, 
+    $$\phi(\psi(x))=x$$
+
+    and for all $x\in L_K(F)$
+
+    $$\psi(\phi(x))=x$$
+
+    Hence, each of the derived homomorphisms has an inverse, namely the other. That is, they are
+    both bijective. Therefore, they are isomorphisms yielding $M_2(K[x,x^{-1}])\cong L_K(F)$ as desired.
+\end{solution}

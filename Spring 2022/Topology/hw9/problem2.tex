@@ -1,0 +1,12 @@
+(\#6 in 7.2) Show from the definition that $\mathbb{R}^2_{\mathcal{U}^2}$ is not compact.\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Consider the set $\mathcal{C}=\{(x,y)|x^2+y^2<a^2\; \text{such that}\; a\in\mathbb{R}^+\}$. Clearly
+    $\mathcal{C}$ is a cover of $\mathbb{R}^2$ as $C\in\mathcal{C}$ is an open disk of radius $a$ and
+    $\bigcup_{C\in\mathcal{C}}C=\mathbb{R}^2$. However, there is no finite subcollection from
+    $\mathcal{C}$ that covers $\mathbb{R}^2$, since no finite union of open disks with radius
+    $a\in\mathbb{R}^+$ covers all of $\mathbb{R}^2$. If there were, then there would have to be a radius
+    $a=\infty$ inorder to reach the "ends" of $\mathbb{R}^2$, however $\infty\notin\mathbb{R}^+$. So we
+    have that $\mathbb{R}^2_{\mathcal{U}^2}$ is not compact by definition.
+
+\end{solution}

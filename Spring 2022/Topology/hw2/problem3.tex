@@ -1,0 +1,16 @@
+In the topology $U$ on $\mathbb{R}$, give an example of an arbitrary intersection of open sets that is
+nonempty and not open.\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Let $U$ be the usual topology on $\mathbb{R}$. Consider the interval $(-\frac1n, \frac1n)$ where
+    $n\in\mathbb{N}$. Clearly this interval is in $U$, and hence is open. Then, we have that the
+    arbitrary intersection
+    $\bigcap_{n\in\mathbb{N}}(-\frac1n,\frac1n)=(-1,1)\cap(-\frac12,\frac12)\cap\ldots=
+    \{0\}\neq\emptyset$.
+    Now $\bigcap_{n\in\mathbb{N}}(-\frac1n, \frac1n)=\{0\}$ since, for any $a<0$ and any $b>0$, there
+    exists an $n\in\mathbb{N}$ such that $a<-\frac1n<0<\frac1n<b$ by the Archimedian Property. Also,
+    $\{0\}$ is not an open set in $U$ as we cannot place an open interval $(a,b)$ around $0$ in $\{0\}$
+    as there is no $a<0$ or $b>0$ in $\{0\}$. So this arbitrary intersection of open sets need not be
+    open and nonempty as desired.
+
+\end{solution}

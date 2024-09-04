@@ -1,0 +1,20 @@
+The time step in Program 37 is specified by $\Delta t = 5/(N_x + N_y^2 )$. Study this discretization 
+theoretically  and, if you like, numerically, and decide: Is this the right choice? Can you derive 
+a more precise stability limit on $\Delta t$?\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Taking a look at program 37, the implemented time step is not necessarily bad. Numerically speaking,
+    it works well in terms of computation time as well as stability. Now, we know that
+    
+    $$\Delta t\leq\frac{6}{N_x}$$
+
+    due to the length of the $x$ spacial dimension and the discretization using Fourier nodes, and
+
+    $$\Delta t\leq\frac{8}{N_y^2}$$
+
+    due to the discretization using CHebyshev nodes in $y$. So, theoretically we only need
+    $\Delta t\leq\min\{\frac{6}{N_x},\frac{8}{N_y^2}\}$. Implementing this value in the p37 script, we
+    still have stability. So, clearly the current $\Delta t$ value is sufficient. However, for clearity
+    and conciseness, we can let $\Delta t=\frac{1}{(N_x+N_y)^2}$ as this value is less than the
+    theoretical minimum.
+\end{solution}

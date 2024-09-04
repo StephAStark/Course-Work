@@ -1,0 +1,21 @@
+Let $y_1, y_2,\dots, y_n$ be a random sample of size $n$ from the pdf
+$f_Y (y;\theta)=\frac{2y}{\theta^2}, 0\leq y\leq\theta$. Find a formula for the method of moments
+estimate for $\theta$. Compare the values of the method of moments estimate and the maximum likelihood
+estimate if a random sample of size $5$ consists of the numbers $17, 92, 46, 39$, and $56$\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Well, set $EX=\int_0^{\theta}y\frac{2y}{\theta^2}dy$. Hence
+    
+    $$\int_0^{\theta}y\frac{2y}{\theta^2}dy=\frac{1}{\theta^2}\int_0^{\theta}2y^2dy
+    =\frac{1}{\theta^2}(\frac23y^3|_0^\theta)=\frac23\theta=\bar{y}$$
+    
+    So, $\theta_e=\frac32\bar{y}$. Now, $\bar{y}=50$, therefore $\theta_e=75$. Now, setting
+    $L(\theta)=\prod_{i=1}^n\frac{2y_i}{\theta^2}$. So, we will set
+
+    $$l(\theta)=\ln(L(\theta))=\sum_{i=1}^n\ln(\frac{2y_i}{\theta^2})
+    =\sum_{i=1}^n\ln(2y_i)-2n\ln(\theta)$$
+    
+    Whence $l'(\theta)=\frac{-2n}{\theta}$. So, we have that $\frac{-2n}{\theta}=0$ yields no MLE. So,
+    since $l'(\theta)<0$, $l(\theta)$ is decreasing and we will take $\theta_e=y_{max}=92$.
+
+\end{solution}

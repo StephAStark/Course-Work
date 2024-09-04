@@ -1,0 +1,51 @@
+a. Let $Y_1,Y_2,\ldots,Y_n$ be a random sample of size $n$ from the pdf
+$f_Y(y;\theta)=\frac{1}{\theta}e^{-\frac{y}{\theta}}, y>0$. Show that
+$\hat{\theta}_1=Y_1, \hat{\theta}_2=\bar{Y}$, and $\hat{\theta}_3=n*Y_{min}$ are all unbiased estimators
+for $\theta$.\\
+
+b.  Find the variances of $\hat{\theta}_1, \hat{\theta}_2$, and $\hat{\theta}_3$.\\
+
+c. Calculate the relative efficiencies of $\hat{\theta}_1$ to $\hat{\theta}_3$ and $\hat{\theta}_2$ to
+$\hat{\theta}_3$.\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Well,
+    
+    $$E(Y)=\int_0^{\infty}y\frac{1}{\theta}e^{-\frac{y}{\theta}}dy$$
+    $$=\frac{1}{\theta}\int_0^{\infty}ye^{-\frac{y}{\theta}}dy$$
+    $$=-ye^{-\frac{y}{\theta}}|_0^{\infty}+\int_0^{\infty}e^{-\frac{y}{\theta}}dy$$
+    $$=-ye^{-\frac{y}{\theta}}-\theta e^{-\frac{y}{\theta}}=\theta$$
+    
+    Now, since $Y_1$ has the same distribution, $E(\hat{\theta}_1)E(Y_1)=\theta$. Now,
+    $$E(\hat{\theta}_2)=E(\bar{Y})=\frac1n(E(Y_1)+\ldots+E(Y_n))=\frac1n(n\theta)=\theta$$
+    
+    Finally,
+    
+    $$F_Y(Y)=\int_0^y\frac{1}{\theta}e^{-\frac{t}{\theta}}dt$$
+    $$=\frac{1}{\theta}\int_0^ye^{-\frac{t}{\theta}}dt=1-e^{-\frac{y}{\theta}}$$
+    
+    Hence,
+    
+    $$f_{Y_{min}}(Y)=n(1-(1-e^{-\frac{y}{\theta}}))\frac{1}{\theta}e^{-\frac{y}{\theta}}$$
+    $$=\frac{n}{\theta}e^{-\frac{y(n-1)}{\theta}}e^{-\frac{y}{\theta}}$$
+    $$=\frac{n}{\theta}e^{-\frac{ny}{\theta}}$$
+    
+    Thus, we have that
+    
+    $$E(\hat{\theta}_3)=E(n*Y_{min})=n*(\int_0^{\infty}y\frac{n}{\theta}e^{-\frac{ny}{\theta}}dy)$$
+    $$=\frac{n^2}{\theta}\int_0^{\infty}ye^{-\frac{ny}{\theta}}dy$$
+    $$=\frac{n^2}{\theta}(\frac{\theta^2}{n})=\theta$$
+    
+    Therefore, we have that all three estimators are unbiased. To find the variance notice that since
+    $f_Y$ is a gamma distribution, we have that $Var(\hat{\theta}_1)=Var(Y_1)=\theta^2$. Also,
+    
+    $$Var(\hat{\theta}_2)=Var(\bar{Y})=\frac{1}{n^2}(n\theta^2)=\frac{\theta^2}{n}$$
+    
+    Finally, we have that $Var(\hat{\theta}_3)=Var(n*Y_{min})=\theta^2$. For the efficiencies, we have
+    $\frac{Var(\hat{\theta}_3)}{Var(\hat{\theta}_1)}=\frac{\theta^2}{\theta^2}=1$ as the relative
+    efficieny of $\hat{\theta}_1$ to $\hat{\theta}_3$ and $\frac{\theta^2}{\frac{\theta^2}{n}}=n$ as the
+    relative efficiency of $\hat{\theta}_2$ to $\hat{\theta}_3$.
+
+
+
+\end{solution}

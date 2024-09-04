@@ -1,0 +1,35 @@
+If $x_0,x_1,\ldots,x_N\in\mathbb{R}$ are distinct, then the cardinal function $p_j(x)$ defined by
+
+$$p_j(x)=\frac{1}{a_j}\prod_{k=0,\neq j}^N(x-x_k),\;\;\;a_j=\prod_{k=0,\neq j}^N(x_j-x_k)$$
+
+is the unique polynomial interpolant of degree $N$ to the values 1 at $x_j$ and 0 at $x_k$, $k\neq j$.
+Take the logarithm and differentiate to obtain
+
+$$p_j'(x)=p_j(x)\sum_{k=0,\neq j}^N(x-x_k)^{-1},$$
+
+and derive the formulas
+
+$$D_{ij}=\frac{1}{a_j}\prod_{k=0,\neq j}^N(x_i-x_k)=\frac{a_i}{a_j(x_i-x_j)}\;\;\;(i\neq j)$$
+
+and
+
+$$D_{jj}=\sum_{k=0,\neq j}^N(x_j-x_k)^{-1}$$\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Letting $p_j(x)$ and $a_j$ be as given above, we take the natural logarithm of both sides. This
+    gives us
+
+    $$\ln(p_j(x))=\ln(\prod_{k=0,\neq j}^N\frac{(x-x_k)}{(x_j-x_k)})=
+    \sum_{k=0,\neq j}^N\ln(\frac{x-x_k}{x_j-x_k})$$
+
+    $$=\sum_{k=0,\neq j}^N\ln(x-x_k)-\sum_{k=0,\neq j}^N\ln(x_j-x_k)$$
+
+    Now differentiating both sides yields
+
+    $$\frac{p'_j(x)}{p_j(x)}=\sum_{k=0,\neq j}^N\frac{1}{(x-x_k)}-0$$
+
+    which gives us the desired equation
+
+    $$p_j'(x)=p_j(x)\sum_{k=0,\neq j}^N(x-x_k)^{-1}$$
+
+\end{solution}   

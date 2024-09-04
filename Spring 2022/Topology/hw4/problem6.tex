@@ -1,0 +1,31 @@
+In $\mathbb{R}_{\mathcal{U}}$, prove that any open interval $(a,b)$ is homeomorphic to the interval
+$(0,1)$. (Hint: what is the ``obvious" function $f:(a,b)\to(0,1)$ for which $f(a) = 0$ and $f(b) = 1$?
+Show that this map is a homeomorphism by showing that it is a continuous bijection with a continuous
+inverse.)\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Consider $f:(a,b)\to(0,1)$ given by $f(x)=\frac{x-a}{b-a}$. Let $x_1,x_2\in(a,b)$ and assume that
+    $f(x_1)=f(x_2)$. Then $\frac{x_1-a}{b-a}=\frac{x_2-1}{b-a}$. So, $x_1-a=x_2-a$ and hence $x_1=x_2$.
+    Therefore $f$ is injective. Now, let $y\in(0,1)$. Take $x=(b-a)y+a$. Since $0<y<1$, $0<(b-a)y<(b-a)$
+    and hence $a<(b-a)y+a<b-a+a$. So, $a<x<b$. Then
+    $f(x)=\frac{x-a}{b-a}=\frac{(b-a)y+a-a}{b-a}=\frac{(b-a)y}{b-a}=y$. Thus $f$ is onto and therefore
+    $f$ is bijective. Now, let $U=(s,t)\subseteq(0,1)$ be an open set in $(0,1)$. Then
+    $f^{-1}(U)=\{x\in(a,b)|f(x)\in U\subseteq(0,1)\}=(\tilde{s},\tilde{t})$ where
+    $a\leq\tilde{s}<\tilde{t}\leq b$. $f^{-1}(U)$ is an interval since $f^{-1}$ maps every point
+    inbetween two endpoints to unique points between two endpoints. Hence $f^{-1}(U)$ is open $(a,b)$.
+    Now, let $U$ be an arbitrary open set in $(0,1)$. Then $U$ is a union of open intervals in $(0,1)$.
+    So, $f^{-1}(U)$ is the preimage of unions, and by a theorem, we have that $f^{-1}(U)$ is a union of
+    preimages. Since each preimage is that of an open interval in $(0,1)$, each preimage is open in
+    $(a,b)$, so the union of all of them, $f^{-1}(U)$ is also open in $(a,b)$. So, $f$ is continuous.
+    Now, we have that $f^{-1}:(0,1)\rightarrow(a,b)$ defined by $f^{-1}(x)=(b-a)x+a$ which is a function
+    since $f$ is bijective. Now, let $V=(\tilde{a},\tilde{b})\subseteq(a,b)$ be an open set in $(a,b)$.
+    Then $f(V)=\{x\in(0,1)|f^{-1}(x)\in V\subseteq(a,b)\}=(s,t)$ where $0\leq s<t\leq1$ by the
+    definition of $f$. Now, $f$ maps intervals to intervals since $f$ takes each element from an
+    interval and maps it to a unique element between two endpoints that are the mappings of the
+    endpoints of the original interval. So, $f(V)$ is open in $(0,1)$. Now, let $V$ be an arbitrary open
+    set in $(a,b)$. Then $V$ is the union of open intervals in $(a,b)$. By similar logic as above, we
+    have that $f(V)$ is the union of open intervals in $(0,1)$. Therefore, we have that $f^{-1}$ is also
+    continuous. Thus $f$ is a homeomorphism between $(a,b)$ and $(0,1)$, and so $(a,b)\cong(0,1)$ as
+    desired.
+
+\end{solution}

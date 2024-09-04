@@ -1,0 +1,18 @@
+(\#5 in 3.5) If $f:X\to Y$ is continuous and if $A$ is a subspace of $X_{\tau}$, then the restriction
+of $f$ to $A$, $f|_{A}:A\to Y$ is continuous.\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Let $f:X\to Y$ be continuous and $A$ be a subspace of $X_{\tau}$. Let $V\subseteq Y$ be open in $Y$.
+    Assume first that $f|_{A}^{-1}(V)\cap A=\emptyset$. Then $f|_{A}^{-1}(V)=\emptyset$ by definition of
+    the restriction map. So, $f|_{A}^{-1}(V)$ is $\tau_{A}-$open. Next asssume that
+    $f|_{A}^{-1}(V)\cap A=f|_{A}^{-1}(V)$. Since $f$ is continuous, $f^{-1}(V)$ is $\tau-$open and so
+    $f|_{A}^{-1}(V)$ is also $\tau-$open. Therefore $f|_{A}^{-1}(V)$ is $\tau_{A}-$open by definition of
+    $\tau_{A}$. Finally assume that $f|_{A}^{-1}(V)\cap A\neq\emptyset$ and
+    $f|_{A}^{-1}(V)\cap A\neq f|_{A}^{-1}(V)$. So $f|_{A}^{-1}(V)=f|_{A}^{-1}(V_1)\cup f|_{A}^{-1}(V_2)$
+    such that
+    $f|_{A}^{-1}(V_1)\cap f|_{A}^{-1}(V_2)=\emptyset$, $f|_{A}^{-1}(V_1)\cap A=f|_{A}^{-1}(V_1)$, and
+    $f|_{A}^{-1}(V_2)\cap A=\emptyset$. Hence $f|_{A}^{-1}(V)=f|_{A}^{-1}(V_1)=f|_{A}^{-1}\cap A$, and
+    is thus $\tau_{A}-$open by definition. Thus the restriction of $f$ to $A$, $f|_{A}:A\to Y$ is
+    continuous.
+
+\end{solution}
