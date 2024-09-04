@@ -1,2 +1,2 @@
-# Coding Practice
-Coding projects of various languages to practice and learn.
+# UCCS Course work
+Work done at UCCS during graduate school
