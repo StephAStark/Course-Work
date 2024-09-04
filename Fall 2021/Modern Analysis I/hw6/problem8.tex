@@ -1,0 +1,12 @@
+Show that if $f$ is integrable on $[a,b]$, then $f$ is integrable on every $[c,d]\subseteq[a,b]$.\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Well, since $f$ is integrable on $[a,b]$, then there exists a $\delta>0$ such that for all
+    $\epsilon>0$, we have $mesh(P)<\delta$ imples $U(f,P)-L(f,P)<\epsilon$ for all partitions $P$ of
+    $[a,b]$. We also have that $f$ is bounded. Let $[c,d]\subseteq[a,b]$ and $\epsilon>0$. For any
+    partition P, let $\tilde{P}$ be the partition of $[c,d]$ such that $\tilde{P}\subseteq P$ and
+    $mesh(\tilde{P})=mesh(P)$. Then $mesh(\tilde{P})<\delta$, and so on $[c,d]$, we have that
+    $U(f,\tilde{P})-L(f,\tilde{P})<\epsilon$. Thus, we have that $f$ is integrable on $[c,d]$ as
+    desired.
+
+\end{solution}

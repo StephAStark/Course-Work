@@ -1,0 +1,27 @@
+True or False: "If $ab$ is a unit, then $a, b$ are units"? \\
+This statement is false.\\
+Show the following for any ring $R$:\\
+a. If $a^n$ is a unit in $R$, then $a$ is a unit in $R$.\\
+b. If $a$ is left-invertible and not a right $0$-divisor, then $a$ is a unit in $R$.\\
+c. If $R$ is a domain, then $R$ is Dedekind-finite.\\\\
+Let $R$ be any ring.\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    a. Let $a\in R$ and assume that $a^n$ is a unit in $R$. Then, there is a $b\in R$ such that
+    $a^nb=ba^n=1$. We have that $a^nb=(aa^{n-1})b=a(a^{n-1})b$ and $ba^n=b(a^{n-1}a)=(ba^{n-1})a$.
+    Whence $a(a^{n-1}b)=(ba^{n-1})a=1$. Therefore, $a$ is a unit in $R$.\\
+
+    b. Let $a\in R$ and assume that $a$ is left invertible and not a right $0$-divisor. So, $a\neq0$,
+    there exists $b\in R$ such that $ba=1$, and for all $c\in R\setminus\{0\}$, $ca\neq0$. Now consider
+    $(1-ab)a$. By distribution, we get
+
+    $$(a-ab)a=a-(ab)a=a-a(ba)=a-a=0$$
+
+    Since $a$ is not a right zero divisor, we have that $1-ab=0$. Hence, $ab=1$, That is $a$ is a unit
+    in $R$.\\
+
+    c. Assume that $R$ is a domain and let $a,b\in R\setminus\{0\}$ such that $ab=1$. Now, consider
+    $a(1-ba)$. This yields $a-a(ba)=a-(ab)a=a-a=0$. Since $R$ is a domain and $a\neq0$, we have that
+    $1-ba=0$. That is $1=ba$. Thus, $R$ is Dedekind-finite as desired.
+
+\end{solution}

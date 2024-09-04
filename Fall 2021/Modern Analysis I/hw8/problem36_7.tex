@@ -1,0 +1,23 @@
+a. Use 6 above to show $\int_{-\infty}^{\infty}e^{-x^2}dx<\infty$.\\
+
+b. Show this intergral equals $\sqrt{\pi}$.\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Well, for $x\geq1$, we have that $e^{-x^2}\leq e^{-x}$. Thus,
+    
+    $$\int_{1}^{\infty}e^{-x^2}dx\leq\int_{1}^{\infty}e^{-x}dx=\frac1e$$
+    
+    So, by 6 above, we see that $\int_{-\infty}^{\infty}e^{-x^2}dx<\infty$.\\
+
+    Well,
+    
+    $$(\int_{-\infty}^{\infty}e^{-x^2}dx)^2=\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}
+    e^{-x^2}e^{-y^2}dxdy$$
+    $$=\int_{0}^{\infty}\int_{0}^{2\pi}e^{-r^2}rd\theta dr=2\pi\int_{0}^{\infty}e^{-r^2}rdr$$
+    $$=2\pi\frac12(1-0)=\pi$$
+    
+    by u-substitution. Therefore
+    
+    $$\int_{-\infty}^{\infty}e^{-x^2}dx=\sqrt{\pi}$$
+
+\end{solution}

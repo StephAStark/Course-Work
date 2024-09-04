@@ -1,0 +1,28 @@
+Consider $f_n(x)=nx^n(1-x)$ for $x\in[0,1]$.\\
+
+a. Find $f(x) = limf_n(x)$.\\
+
+b. Determine uniform convergence on $[0,1]$.\\
+
+c. Does $\int_{0}^{1}f_n(x)dx$ converge to $\int_{0}^{1}f(x)dx$?\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Well, $limf_n(x)=lim nx^n(1-x)=0=f(x)$.\\
+
+    Let $S=[0,1]$. Well, for $x\in S$,
+    
+    $$\lim\sup|f_n(x)-f(x)|=\lim\sup(nx^n(1-x))=\lim\sup(nx^n-nx^{n+1})$$
+    
+    Clearly on $S$ $nx^n\geq nx^{n+1}$, so we get $lim(n-n)=0$. So, $f_n(x)\rightarrow f(x)$ uniformly
+    on $[0,1]$.\\
+
+    Let $\epsilon>0$. Since $f_n\rightarrow f$ uniformly on $[0,1]$, there exists a number $N$ such that
+    $|f_n(x)- f(x)|<\epsilon$ for all $x\in[0,1]$ and all $n>N$. Since $f_n$ and $f$ are continuous,
+    $n>N$ implies
+    
+    $$|\int_{0}^{1}f_n(x)dx-\int_{0}^{1}f(x)dx|=|\int_{0}^{1}(f_n(x)-f(x))dx|$$
+    $$\leq\int_{0}^{1}|f_n(x)-f(x)|dx<\int_{0}^{1}\epsilon=\epsilon$$
+    
+    Thus, we see that $\int_{0}^{1}f_n(x)dx$ converges to $\int_{0}^{1}f(x)dx$.
+
+\end{solution}

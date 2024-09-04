@@ -1,0 +1,38 @@
+Let $f$ be integrable on $[a,b]$ and suppose $g$ is a function on $[a,b]$ such that $g(x)=f(x)$ except
+at finitely many $x\in[a,b]$. Show $g$ is integrable and $\int_a^bf=\int_a^bg$.\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Frist, assume that $f(x)=g(x)$ except at one point, call it $x_1\in[a,b]$. Since $f$ is integarble
+    and $f(x)=g(x)$ except at $x_1$, we have that $f$ and $g$ are bounded. So, $|f|, |g|<M$ for some
+    $M>0$. Let $\epsilon>0$. Since $f$ is integrable, we have that there exsits a partition $P$ of
+    $[a,b]$ such that $U(f,P)-L(f,P)<\frac{\epsilon}{3}$. Now, for any interval $[t_{k-1}-t_k]$, assume
+    that $t_k-t_{k-1}<\frac{\epsilon}{12M}$. Now, $x_1$ is in at most two intervals $[t_{k-1}-t_k]$, so
+    
+    $$|U(f,P)-U(g,P)|\leq2((M+M)(t_k-t_{k-1}))<4M(\frac{\epsilon}{12M})=\frac{\epsilon}{3}$$
+    
+    Similarly,
+    
+    $$|L(f,P)-L(g,P)|\leq2((M+M)(t_k-t_{k-1}))<4M(\frac{\epsilon}{12M})=\frac{\epsilon}{3}$$
+    
+    So,
+    
+    $$|U(g,P)-L(g,P)|<|U(g,P)-U(f,P)|+|U(f,P)-L(f,P)|+|L(f,P)-L(g,P)|<\epsilon$$
+    
+    Thus $g$ is integrable. Now, assume this is true for $n$ points $x_i\in[a,b]$ for $1\leq i\leq n$.
+    Now assume that $f(x)=g(x)$ except at $n+1$ points $x_i\in[a,b]$ for $1\leq i\leq n+1$. Again, let
+    $P$ be a partition of $[a,b]$, $\epsilon>0$, and $M>0$ be the bound of $f$ and $g$. Assume that
+    $t_k-t_{k-1}<\frac{\epsilon}{12M(n+1)}$ for any interval $[t_{k-1}-t_k]$. Then, each $x_i$ is in at
+    most two intervals $[t_{k-1}-t_k]$. So,
+    
+    $$|U(f,P)-U(g,P)|\leq2(n+1)((M+M)(t_k-t_{k-1}))<4M(n+1)(\frac{\epsilon}{12M(n+1)})=
+    \frac{\epsilon}{3}$$
+    
+    The same is true for $|L(f,P)-L(g,P)|$, so $|L(f,P)-L(g,P)|<\frac{\epsilon}{3}$. Hence,
+    
+    $$|U(g,P)-L(g,P)|<|U(g,P)-U(f,P)|+|U(f,P)-L(f,P)|+|L(f,P)-L(g,P)|<\epsilon$$
+    
+    and $g$ is integrable. So, by induction, $g$ is integrable if f is integrable and $f(x)=g(x)$ except
+    at finitely many points in $[a,b]$. Now clearly, $|\int_a^bf-\int_a^bg|<\epsilon$ for any
+    $\epsilon>0$. Thus $\int_a^bf=\int_a^bg$ as desired.
+
+\end{solution}

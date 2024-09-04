@@ -1,0 +1,16 @@
+Show that a ring $R$ is von Neumann regular iff $IJ = I\cap J$ for every right ideal $I$ and every
+left ideal $J$ in $R$.\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Let $R$ be a ring. Assume first that $IJ=I\cap J$ for every right ideal $I$ and every left ideal $J$
+    in $R$. Let $a\in R$. Consider the ideals $aR$ and $Ra$. By our assumption,
+    $(aR)(Ra)=aRa=aR\cap Ra$. Now, observe that $1a=a1=a$. Hence, $a\in aR$ and $a\in Ra$. That is
+    $a\in aR\cap Ra=aRa$. So, there exists some $b\in R$ such that $a=aba$. That is, $R$ is von Neumann
+    regular as desired. Conversely assume that $R$ is von Nuemann regular. Let $I, J$ be left and right
+    ideals of $R$ respectively. Let $a\in IJ$. So, there exists $i\in I$ and $j\in J$ such that $a=ij$.
+    Since $I$ is a left ideal and $J$ is a right ideal, we have that $a=ij\in I$ and $a=ij\in J$. That
+    is $a\in I\cap J$. now, let $a\in I\cap J$. Since $R$ is von Nuemann regular, there exists $b\in R$
+    such that $a=aba$. Since $I$ and $J$ are left and right ideals respectively and $b\in R$, we have
+    that $a=aba\in IJ$. So, $IJ=I\cap J$ as desired.
+
+\end{solution}

@@ -1,0 +1,15 @@
+5. Let $R$ be a ring, and $M_i$ ($i\in I$) left $R$-modules. Show that if $\bigoplus_{i\in I}M_i$ is
+projective, then each $M_i$ is projective.\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Let $R$ and $M_i$ for $i\in I$ be as given. Since $\bigoplus_{i\in I}M_i$ is projective, then for
+    any left $R$-modules $N_1, N_2$, any onto $R$-module homomorphism $\phi:N_1\rightarrow N_2$, and any
+    $R$-module homomorphism $\psi:\bigoplus_{i\in I}M_i\rightarrow N_2$, there exists an $R$-module
+    homomorphism $\rho:\bigoplus_{i\in I}M_i\rightarrow N_1$ such that $\phi\circ\rho=\psi$ by part 3 of
+    Theorem 10. Now consider $\iota_i:M_i\rightarrow\bigoplus_{i\in I}M_i$ the natural inclusion map.
+    Then, for an arbitrary $a\in M_i$, $\iota_i(a)=b\in\bigoplus_{i\in I}M_i$. Now,
+    $\psi(\iota_i(a))=\psi(b)$. By our assumption, $\psi(b)=\phi(\rho(b))$. That is,
+    $\psi(\iota_i(a))=\phi(\rho(\iota_i(a)))$. So, we have each $M_i$ is projective by considering
+    $\rho\circ\iota_i$ and $\psi\circ\iota_i$.
+
+\end{solution}

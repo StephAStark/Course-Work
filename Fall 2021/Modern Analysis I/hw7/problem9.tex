@@ -1,0 +1,29 @@
+Let $(f_n)$ be a sequence of integrable functions on $[a,b]$ and suppose $f_n\rightarrow f$ uniformly on
+$[a,b]$. Prove that $f$ is integrable and $\int_a^bf=\lim_{n\rightarrow\infty}\int_a^bf_n$.\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Let $\epsilon>0$ and $P$ a partition of $[a,b]$. Well, take $m\in\mathbb{N}$ such that
+    
+    $$|f(x)-f_m(x)|<\frac{\epsilon}{2(b-1)}$$
+    
+    for all $x\in[a,b]$. So,
+    
+    $$-\frac{\epsilon}{2}\leq L(f-f_m,P)\leq U(f-f_m,P)\leq\frac{\epsilon}{2}$$
+    
+    Since $f_m$ is integrable, let $P'$ be a partition of $[a,b]$ such that
+    
+    $$U(f_m,P')-L(f_m,P')<\frac{\epsilon}{2}$$
+    
+    Since we know $f=(f-f_m)+f_m$, we have that
+    
+    $$(U(f-f_m,P')+U(f_m,P'))-(L(f-f_m,P')+L(f_m,P'))<\epsilon$$
+    
+    Therefore $U(f,P')-L(f,P')<\epsilon$ and so $f$ is integrbale. Now, since $f$ and $f_n$ are
+    integrable, we have that $f-f_n$ is integrable. Since $f_n\rightarrow f$ uniformly, there exists $N$
+    such that $|f-f_n|<\frac{\epsilon}{b-a}$ for all $x\in[a,b]$ and all $n>N$. Hence,
+    
+    $$|\int_a^bf-\int_a^bf_n|=|\int_a^bf-f_n|\leq\int_a^b|f-f_n|<\int_a^b\frac{\epsilon}{b-a}=\epsilon$$
+    
+    Thus, $\int_a^bf=\lim_{n\rightarrow\infty}\int_a^bf_n$.
+
+\end{solution}

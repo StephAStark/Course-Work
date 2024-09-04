@@ -1,0 +1,21 @@
+Find the upper and lower Darboux integrals for $f(x)=x^3$ on the interval $[0,b]$.\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Well, on the subinterval $[t_{k-1},t_k]$ we have that $M=t_k^3$ and $m=t_{k-1}^3$. Now, let
+    $t_k=\frac{kb}{n}$. So, for any partition $P$,
+    
+    $$U(f,P)=\sum_{k=1}^nt_k^3(t_k-t_{k-1})$$
+    $$=\sum_{k=1}^n(\frac{kb}{n})^3(\frac{kb}{n}-\frac{(k-1)b}{n})$$
+    $$=\sum_{k=1}^n\frac{k^3b^3}{n^3}(\frac{b}{n})=\sum_{k=1}^n\frac{k^3b^4}{n^4}$$
+    $$=\frac{b^4}{n^4}\sum_{k=1}^nk^3=\frac{b^4}{n^4}(\frac{n^2(n-1)^2}{4})$$
+    
+    Also,
+    
+    $$L(f,P)=\sum_{k=1}^nt_{k-1}^3(t_k-t_{k-1})=\sum_{k=1}^n(\frac{(k-1)b}{n})^3(\frac{b}{n})$$
+    $$=\frac{b^4}{n^4}\sum_{k=1}^n(t_{k-1})^3=\frac{b^4}{n^4}(\frac{(n-1)^2(n-2)^2}{4})$$
+    
+    For large $n$, $\frac{b^4}{n^4}(\frac{(n-1)^2(n-2)^2}{4})$ and
+    $\frac{b^4}{n^4}(\frac{(n)^2(n-1)^2}{4})$ both approach $\frac{b^4}{4}$, so
+    $\frac{b^4}{4}\leq L(f)\leq U(f)\leq\frac{b^4}{4}$. Therefore $L(f)=U(f)=\frac{b^4}{4}$.
+
+\end{solution}

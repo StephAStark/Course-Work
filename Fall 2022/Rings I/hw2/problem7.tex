@@ -1,0 +1,16 @@
+7. Show that if $M$ is an injective $\mathbb{Z}$-module, then for all $m\in M$ and
+$n\in\mathbb{Z}\setminus\{0\}$, there exists $m'\in M$ such that $nm'=m$.\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Let $M$ be an injective $\mathbb{Z}$-module and let $m\in M$ and $n\in\mathbb{Z}\setminus\{0\}$.
+    Consider the map $\psi:n\mathbb{Z}\rightarrow M$ induced by $n\mapsto m$. Also consider the map
+    $\iota:n\mathbb{Z}\rightarrow\mathbb{Z}$ the natural inclusion map. Then $\iota$ is injective.
+    Hence, there exists a $\mathbb{Z}$-module homomorphism $\rho$ such that $\rho\circ\iota=\psi$ by
+    part 3 of Theorem 11. Now, define $m'=\rho(1)$. Without loss of generality, assume that $n>0$. Then,
+    $n=1+\cdots+1$. Now, $\psi(n)=\rho(\iota(n))$. That is $m=\rho(n)$ by definition of $\psi$ and
+    $\iota$. Whence, $m=\rho(1+\cdots+1)=\rho(1)+\cdots+\rho(1)$ since $\rho$ is a $\mathbb{Z}$-module
+    homomorphism. Therefore, $m=m'+\cdots+m'=nm'$. Thus, if $M$ is an injective $\mathbb{Z}$-module,
+    then for all $m\in M$ and $n\in\mathbb{Z}\setminus\{0\}$, there exists $m'\in M$ such that $nm'=m$
+    as desired.
+
+\end{solution}

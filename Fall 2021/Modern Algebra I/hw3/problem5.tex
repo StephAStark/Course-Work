@@ -1,0 +1,33 @@
+For the following groups $G$ and subsets $H$, either prove that $H$ is a subgroup of $G$ or find one
+of the three conditions that fails and show that it fails via an explicit counterexample.\\
+
+a. Let $G=(\mathbb{Q},+)$ and let $H=\{\frac{a}{2^n}|a\in\mathbb{Z},n\in\mathbb{N}\}$.\\
+
+b. Let $G=(M_{2\times2}(\mathbb{R}),+)$ and let $H=\emptyset$.\\
+
+c. Let $G=(\mathcal{F}(\mathbb{R}),+)$ and let $H=\{f\in\mathcal{F}(\mathbb{R})|f(0)=0\}$.\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Let $G$ be the group $G=(\mathbb{Q},+)$ and $H=\{\frac{a}{2^n}|a\in\mathbb{Z},n\in\mathbb{N}\}$. We
+    will prove that $H$ is subgroup of $G$. $0$ is clearly the identity of $G$ and $0\in\mathbb{Z}$,
+    hence $\frac{0}{2^n}=0$ for all $n\in\mathbb{N}$, and so $0\in H$. Now, let $x,y\in H$. Then,
+    $x=\frac{a}{2^n}$ and $y=\frac{b}{2^m}$ for $a,b\in\mathbb{Z}$ and $n,m\in\mathbb{N}$. So,
+    $x+y=\frac{a}{2^n}+\frac{b}{2^m}=\frac{a2^m+b2^n}{2^n2^m}=\frac{a2^m+b2^n}{2^n+m}$. Notice
+    $2^n\in\mathbb{Z}$ for all $n\in\mathbb{N}$ and $m+n\in\mathbb{N}$ for all $m,n\in\mathbb{N}$, so we
+    have that $\frac{a2^m+b2^n}{2^n+m}\in H$. Now, let $x\in H$. So, $x=\frac{a}{2^n}$ for
+    $a\in\mathbb{Z}$ and $n\in\mathbb{N}$. Since $x\in H$, $x\in G$ and so $x^{-1}\in G$. Observe that
+    $x+x^{-1}=\frac{a}{2^n}+x^{-1}=0$. Therefore $x^{-1}=\frac{-a}{2^n}$. Note that $-a\in\mathbb{Z}$
+    and thus $x^{-1}\in H$.\\
+
+    $H$ is not a subgroup as condition one for the identity of $G$ being in $H$ fails. The identity
+    $2\times2$ matrix $I=\left ( \begin{array}{cc} 1 & 0\\ 0 & 1 \end{array} \right )\notin H$ by
+    definition of $H$.\\
+
+    Let $G=(\mathcal{F}(\mathbb{R}),+)$ and let $H=\{f\in\mathcal{F}(\mathbb{R})|f(0)=0\}$. We will show
+    that $H$ is a subgroup of $G$. It can easily be seen that $f(x)=0$ is the identity of $G$ which is
+    clearly in $H$. Now, let $f,g\in H$. So, we have that $f(0)=0$ and $g(0)=0$. Now,
+    $(f+g)(0)=f(0)+g(0)=0$ and hence $f+g\in H$. Finally, let $f\in H$. Therefore, $f(0)=0$. Now, $f$ is
+    also in $G$ and so $f^{-1}\in G$. Well, $(f+f^{-1})(x)=f(x)+f^{-1}(x)=0$. Since $f(0)=0$,
+    $(f+f^{-1})(0)$ yields $f^{-1}(0)=0$ and thus $f^{-1}\in H$.
+
+\end{solution}

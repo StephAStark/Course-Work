@@ -1,0 +1,31 @@
+7. Let $G$ be a group and $S$ a nonempty subset of $G$. Prove that
+
+$$\langle S\rangle=\{s_1^{m_1}s_2^{m_2}\cdots s_k^{m_k}:s_i\in S,m_i\in\mathbb{Z},k\in\mathbb{Z}^+\}=H$$
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Let $G, S$, and $H$ be as given. Well, let $k=1$, $m_1=0$, and $s_1\in S$. Then $s_1^{m_1}=e\in H$.
+    Now, let $x,y\in H$. Then $x=s_1^{m_1}s_2^{m_2}\cdots s_k^{m_k}$ and
+    $y=t_1^{n_1}t_2^{n_2}\cdots t_j^{n_j}$ for $s_i,t_l\in S$, $m_i,n_l\in\mathbb{Z}$, and
+    $k,j\in\mathbb{Z}^+$. Then
+
+    $$xy=s_1^{m_1}s_2^{m_2}\cdots s_k^{m_k}t_1^{n_1}t_2^{n_2}\cdots t_j^{n_j}\in H$$
+    
+    Next, let $x\in H$.
+    Then $x=s_1^{m_1}s_2^{m_2}\cdots s_k^{m_k}$. Now,
+
+    $$y=(s_k^{m_k})^{-1}\cdots(s_2^{m_2})^{-1}(s_1^{m_1})^{-1}$$
+    $$=s_k^{-m_k}\cdots s_2^{-m_2}s_1^{-m_1}\in H$$
+    
+    and
+    
+    $$xy=s_1^{m_1}s_2^{m_2}\cdots s_k^{m_k}s_k^{-m_k}\cdots s_2^{-m_2}s_1^{-m_1}=e$$
+    $$=s_k^{-m_k}\cdots s_2^{-m_2}s_1^{-m_1}s_1^{m_1}s_2^{m_2}\cdots s_k^{m_k}=yx$$
+    
+    Thus $H$ is a subgroup of $G$. Now, clearly $S\subseteq H$, so by 4 above,
+    $\langle S\rangle\subseteq H$. Now, let $K$ be a subgroup of $G$ such that $S\subseteq K$. Since $S$
+    is nonempty, we have that $s_1,...,s_k\in K$ for some $k\in\mathbb{Z}^+$. So, by 5 and 6 above, we
+    have that $s_1^{m_1}\cdots s_k^{m_k}\in K$ for $m_i\in\mathbb{Z}$ and some $k\in\mathbb{Z}$. Thus,
+    $H\subseteq K$, and since $K$ was arbitrary, we have that $H\subseteq\langle S\rangle$. Thus,
+    $H=\langle S\rangle$ as desired.
+
+\end{solution}

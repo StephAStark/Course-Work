@@ -1,0 +1,16 @@
+$\sum_{n=0}^{\infty}\frac{1}{(n+1)^22^n}x^n$.\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    We have that $a_n=\frac{1}{(n+1)^22^n}$, therefore
+    
+    $$|\frac{a_{n+1}}{a_n}|=\frac{(n+1)^22^n}{(n+2)^22^{n+1}}=\frac{(n+1)^2}{2(n+2)^2}$$
+    
+    Thus, $\lim_{n\to\infty} \frac{(n+1)^2}{2(n+2)^2}=\frac12$, and the radius of convergence is 2. If
+    $x=2$, then
+    
+    $$\sum_{n=0}^{\infty}\frac{1}{(n+1)^22^n}x^n=\sum_{n=0}^{\infty}\frac{1}{(n+1)^2}$$
+    
+    which converges from the comparison test to $\sum_{n=0}^{\infty}\frac{1}{n^2}$. The same is true for
+    $x=-2$ as it the sum just becomes negative. Therefore the interval of convergence is $[-2,2]$.
+
+\end{solution}

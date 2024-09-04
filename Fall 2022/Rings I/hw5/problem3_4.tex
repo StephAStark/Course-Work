@@ -1,0 +1,28 @@
+Show that the center of a simple ring is a field, and the center of a semisimple ring is a finite direct
+product of fields.\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    First, let $R$ be a simple ring, and let $Z$ be the center of $R$. We know that $Z$ is a subring of
+    $R$, so we need only show that multiplication is commutative in $Z$, there is a multiplicative
+    identity, and that every nonzero element is invertible. It is obvious that if $1\in R$, then
+    $1\in Z$. So, if we assume that $1\notin R$, then we have that $Z=\{0\}$ which can be considered to
+    be the trivial field. So, we will continue with the assumption that $1\in R$. Clearly multiplication
+    is commutative in $Z$ since every element $a\in Z$ commutes with every element $b\in R$ and in
+    particular every element $b\in Z$ since $Z\subseteq R$. Now, let $x\in Z\setminus\{0\}$. Then, we
+    have that $Rx$ is a two sided ideal of $R$ since $x\in Z$. Since $R$ is simple, $Rx=R$. So, there
+    exists $y\in R$ such that $yx=1$. Since $x\in Z\setminus\{0\}$ was arbitrary, we have that $xy=1$
+    and also that $y\in Z\setminus\{0\}$. Hence, $Z$ is closed under multiplicative inverses. Therefore,
+    $Z$ is a field.\\
+
+    Now, let $R$ be a semisimple ring and let $Z$ be the center of $R$. Since $R$ is semisimple,
+    $R\cong\mathbb{M}_{n_1}(D_1)\times\ldots\times\mathbb{M}_{n_m}(D_m)$ where,
+    $m,n_1,\ldots n_m\in\mathbb{Z}^+$ and $D_i$ are division rings. From a previous problem on homework
+    3, we know that the center of $\mathbb{M}_{n_i}(D_i)$ are $d_i\cdot I_{n_i}$ where $I_{n_i}$ is the
+    identity matrix and $d_i$ is in the center of $D_i$. Since $D_i$ is a division ring, $D_i$ is also
+    simple. Therefore, the center of $D_i$ is a field by the above exercise. Now, clearly the center of
+    $\mathbb{M}_{n_i}(D_i)=Z_i$ is a field since it contains the zero matrix, the identity matrix,
+    additive and multiplicative inverses, and is commutative, asscociatve and distributive due to the
+    center of $D_i$ being a field. Thus, the center of $R$ is $Z\cong Z_1\times\ldots\times Z_m$ a
+    finite direct product of fields as desired.
+
+\end{solution}

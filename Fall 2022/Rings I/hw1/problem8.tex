@@ -1,0 +1,31 @@
+8. Let $R$ be a ring, $M$ a left $R$-module, and $N$ an $R$-submodule of $M$. Prove that if $M/N$ and
+$N$ are both finitely generated as left $R$-modules, then so is $M$.
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Let $R, M$, and $N$ be as given, and suppose that $M/N$ and $N$ are both finitely generated as left
+    $R$-modules. We then have that $N=RS$ and $M/N=RT$ for some finite sets $S\subseteq N$ and
+    $T\subseteq M/N$. Now, define $\phi:M\rightarrow M/N$ by $\phi(m)=m+N$. By theorem 8, we have that
+    $\phi$ is an $R$-module homomorphism. Now, take $X=\{x_1,\ldots, x_n\}\subseteq M$ for some
+    $n\in\mathbb{N}$ such that $\phi(X)=T$. Let $m\in M$. if $m\in\ker(\phi)$, then we have that
+    $\phi(m)=0$. Thus, $m\in N$ and $m=a_1s_1+\cdots+a_{\alpha}s_{\alpha}$ where $\alpha\in\mathbb{N}$,
+    $a_i\in R$ and $s_i\in S$ for $1\leq i\leq\alpha$. If, however, $m\notin\ker(\phi)$, then
+    $\phi(m)\in M/N$. Hence, since $\phi$ is a homomorphism,
+    
+    $$\phi(m)=a_1\phi(x_1)+\cdots+a_n\phi(x_n)=\phi(a_1x_1+\cdots+a_nx_n)$$
+    
+    where $a_i\in R$ for $1\leq i\leq n$. Then,
+    
+    $$\phi(m)-\phi(a_1x_1+\cdots+a_nx_n)=\phi(m-(a_1x_1+\cdots+a_nx_n))=0$$
+    
+    since $\phi$ is a homomorphism. Therefore $m-(a_1x_1+\cdots+a_nx_n)\in N$. So,
+    
+    $$m-(a_1x_1+\cdots+a_nx_n)=b_1s_1+\cdots+b_{\alpha}s_{\alpha}$$
+    
+    where $b_i\in R$ for $1\leq i\leq\alpha$. Thus,
+    
+    $$m=(b_1s_1+\cdots+b_{\alpha}s_{\alpha})+(a_1x_1+\cdots+a_nx_n)$$
+    
+    and so $m\in R(S\cup X)$. Since $m\in m$ was arbitrary and $S$ and $X$ were both finite, we have
+    that $M$ is finitely generated as $S\cup X$ is also finite.
+
+\end{solution}

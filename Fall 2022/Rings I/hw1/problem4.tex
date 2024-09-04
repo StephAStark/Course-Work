@@ -1,0 +1,17 @@
+Give an example of a ring $R$, left $R$-modules $M$ and $N$ and a map $\phi:M\rightarrow N$ such that
+$\phi$ is a group homomorphism but not an $R$-module homomorphism.
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Consider the ring $\mathbb{C}$ and the left $\mathbb{C}$-modules $M=N=\mathbb{C}$. That is consider
+    $\mathbb{C}$ as a left $R$-module of itself. Further consider the function $\phi:M\rightarrow N$
+    defined by $\phi(x)=\bar{x}$ where $\bar{x}$ is the complex conjugate of $x$. Let $x,y\in M$. Then
+    $x=a+bi$ and $y=c+di$ where $a,b,c,d\in\mathbb{R}$. Clearly $\phi$ is well defined. Also,
+    
+    $$\phi(x+y)=\phi(a+bi+c+di)=\phi((a+c)+(b+d)i)=(a+c)-(b+d)i=a+c-bi-di$$
+    $$=a-bi+c-di=\phi(x)+\phi(y)$$
+    
+    Hence, $\phi$ is a group homomorphism by definition. However, consider $1+i\in\mathbb{C}$ and
+    $5\in M$. Then $(1+i)\phi(5)=(1+i)5=5+5i\neq5-5i=\phi(5+5i)=\phi(5(1+i))$. Therefore, $\phi$ is
+    indeed not a $\mathbb{C}$-module homomorphism.
+
+\end{solution}

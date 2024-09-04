@@ -1,0 +1,44 @@
+Now, let $n\in\mathbb{Z}^+$. Assume that for every psitive interger $m\leq n$: if $G$ is an abelian
+group of order $m$ and $p$ is a prime number such that $p|m$, then $G$ has an element with order $p$.
+So, assume that $G$ is an abelian group with order $n+1$ and that $p$ is a prime number that divides
+$n+1$. Fix $g\in G$ where $g\neq e$.\\
+
+a. Prove $g$ has finite order.\\
+
+b. Assume that $p$ is not a factor of the order of $g$. Prove that $p$ is a factor of the order of
+$G/H$, where $H=\langle g\rangle$.\\
+
+c. Prove that $1\leq|G/H|<n+1$.\\
+
+d. Prove that $G/H$ has an element of order $p$.\\
+
+e. Prove that $G$ itself has an element of order $p$.\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Let everything be as given above. Well, $G$ has order $n+1$, so $G$ has finite order. That is $G$ is
+    finite. So, by homework 5 problem 4, we have that $g$ has finite order, since $g\in G$.\\
+
+    Let everything be as given above and assume that $p$ is not a factor of the order of $g$. Well, $G$
+    is an abelian, so we have that $H$ is a normal subgroup of $G$. So, we have that $|G/H|=|G|/|H|$.
+    Now, $g$ has finite order by above, call it $k\in\mathbb{Z}^+$, so $|H|=|\langle g\rangle|=k$. Hence
+    $|G/H|=\frac{n+1}{k}$. Since $p|n+1$, $n+1=pj$ for some $j\in\mathbb{Z}^+$. Therefore
+    $|G/H|=\frac{pj}{k}$. Now, by Lagrange's Theorem, we have that $k|n+1$. Hence $n+1=ka$ for some
+    $a\in\mathbb{Z}^+$ and $|G/H|=\frac{ka}{k}=a$. So, $\frac{pj}{k}=a$, thus $pj=ka$. This means that
+    $p|ka$. Therefore $p|k$ or $p|a$. If $p|k$, since $p|n+1$, $p$ is a factor of $|G/H|$.
+    Alternativley, if $p|a$, then $p$ is also a factor of $|G/H|$.\\
+
+    Well, $g\neq e$, so we have that $|H|>1$ and since $|G/H|=|G|/|H|$ and $|G|=n+1$, we have that
+    $|G/H|<n+1$. Now, since $g\neq e$, if $\langle g\rangle=G$, then $|G/H|=1$. Since $H$ is a subgroup
+    of $G$, $|H|\leq|G|$, so $1\leq|G/H|<n+1$ as desired.\\
+
+    Well, $G/H$ is an abelian group and by part b, we know that $p$ is a factor of the order of $G/H$.
+    Now by part c, we also know that the order of $G/H$ is finite. Hence, by $(**)$, we have that $G/H$
+    has an element of order $p$.\\
+
+    Well, there exists $Hx\in G/H$ for some $x\in G$ such that $(Hx)^p=He$. Now by part a, $x$ has
+    finite order since $G$ has finite order. Call it $m\in\mathbb{Z}^+$. Then, we have that
+    $(Hx)^m=H(x^m)=He$. Now, since $Hx$ has order $p$, we have that $p|m$. So, $\langle x\rangle$ has an
+    element of order $p$ by problem 1. Since $\langle x\rangle\subseteq G$, we conclude there is an
+    element of $G$ with order p as desired.
+
+\end{solution}

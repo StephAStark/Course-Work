@@ -1,0 +1,36 @@
+a. If $f$ and $g$ are continuous functions on $[a,b]$ and $g(t)\geq0$ for all $t\in[a,b]$, prove there
+exists $x\in(a,b)$ such that $\int_a^bf(t)g(t)dt=f(x)\int_a^bg(t)dt$.\\
+
+b. Show Theorem 33.9 is a special case of part a.\\
+
+c. Does the conclusion of part a hold if $[a,b]=[-1,1]$ and $f(t)=g(t)=t$ for all $t$?\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Well, if $g(t)=0$, then we see that $0=\int_a^bf(t)*0dt=f(x)\int_a^b0dt$ for all $x\in(a,b)$. So,
+    assume now that $g(t)>0$ for all $t\in[a,b]$. Now, since $f$ is continuous, there exists a maximum
+    $M$ and a minimum $m$ for whcih there is some $x_0,y_0\in[a,b]$ such that $f(x_0)=m$ and $f(y_0)=M$.
+    So,
+    
+    $$\int_a^bf(x_0)g(t)dt\leq\int_a^bf(t)g(t)dt\leq\int_a^bf(y_0)g(t)dt$$
+    
+    and hence
+    
+    $$f(x_0)\int_a^bg(t)dt\leq\int_a^bf(t)g(t)dt\leq f(y_0)\int_a^bg(t)dt$$
+    
+    So, by the Intermediate Value Theorem, there exists $x\in(a,b)$ such that
+    
+    $$f(x)\int_a^bg(t)dt=\int_a^bf(t)g(t)dt$$
+    
+    as desired.\\
+
+    Well, if we let $g(t)=1$, then by part a, we see there exists $x\in[a,b]$ such that
+    
+    $$\int_a^bf(t)*1dt=f(x)\int_a^b1dt=f(x)(b-a)$$
+    
+    Hence there exists $x\in[a,b]$ such that $f(x)=\frac{1}{b-a}\int_a^bf$ as desired.\\
+
+    No, the conclusion doesn't hold. We would get $\int_{-1}^1t^2dt=x\int_{-1}^1tdt$ which yields
+    $\frac23=x*0=0$ which is not true. The conclusion doesn't hold beacsue the hypothesis is not met
+    since $g(t)<0$ on $[-1,0)\subset[-1,1]$.
+
+\end{solution}

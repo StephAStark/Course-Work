@@ -1,0 +1,30 @@
+9. Prove that for any ring $R$, every left $R$-module is projective if and only if every left $R$-module
+is injective.\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Let $R$ be a ring. Assume first that every left $R$-module is projective. Then, we have that every
+    short exact sequence
+
+    \begin{center}
+    \begin{tikzcd}
+    0 \arrow{r} & M_1 \arrow{r}{\phi_1} & M_2 \arrow{r}{\phi_2} & M_3 \arrow{r} & 0
+    \end{tikzcd}
+    \end{center}
+
+    is split for all left $R$-modules $M_1, M_2, M_3$. So, if we fix the left $R$-module $M_1$, then the
+    short exact sequence is still split for all left $R$-modules $M_2, M_3$. Since $M_1$ is an arbitrary
+    left $R$-module, we have that every left $R$-module is injective. Conversely, assume that every left
+    $R$-module is injective. Hence we have that every short exact sequence
+
+    \begin{center}
+    \begin{tikzcd}
+    0 \arrow{r} & M_1 \arrow{r}{\phi_1} & M_2 \arrow{r}{\phi_2} & M_3 \arrow{r} & 0
+    \end{tikzcd}
+    \end{center}
+
+    is split for all left $R$-modules $M_1, M_2, M_3$. Now, fix the left $R$-module $M_3$. Whence every
+    short exact sequence is still split for all left $R$-modules $M_1, M_2$. Since $M_3$ is arbitrary as
+    a left $R$-modules, we have that every left $R$-module is projective. Thus, every left $R$-module is
+    projective if and only if every left $R$-module is injective.
+
+\end{solution}

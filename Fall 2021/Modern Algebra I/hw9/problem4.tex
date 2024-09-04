@@ -1,0 +1,36 @@
+Now, let $(G,*)$ be a group and suppose that $H$ is a subgroup of $G$. For any $a,b\in G$, consider
+the set $aHb=\{a*h*b:h\in H\}$. prove the following:\\
+
+a. For any $g\in G$, $gHg^{-1}$ is a subgroup of $G$.\\
+
+b. $H\cong gHg^{-1}$.\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Let $G, H$, and $g$ be as given. Then the set $gHg^{-1}=\{g*h*g^{-1}:h\in H\}$. Well, since $H$ is a
+    subgroup of $G$, the identity $e\in G$ is in $H$. So, $g*e*g^{-1}=g*g^{-1}=e\in gHg^{-1}$. Now, let
+    $x,y\in gHg^{-1}$. Then $x=g*h*g^{-1}$ and $y=g*h'*g^{-1}$ for some $h,h'\in H$. Then
+    $x*y=(g*h*g^{-1})*(g*h'*g^{-1})=g*h*(g^{-1}*g)*h'*g^{-1}=g*h*e*h'*g^{-1}=g*(h*h')*g^{-1}$ by
+    associativity since $G$ is a group. Since $H$ is a group, $h*h'\in H$ and hence $x*y\in gHg^{-1}$.
+    Now, let $x\in gHg^{-1}.$ Then, $x=g*h*g^{-1}$ for some $h\in H$. Since $H$ is a group, $h^{-1}$
+    exists such that $h*h^{-1}=h^{-1}*h=e$. So, let $y=g*h^{-1}*g^{-1}\in H$. Then,
+    
+    $$x*y=(g*h*g^{-1})*(g*h^{-1}*g^{-1})=g*h*(g^{-1}*g)*h^{-1}*g^{-1}=g*h*e*h^{-1}*g^{-1}$$
+    $$=g*(h*h^{-1})*g^{-1}=g*e*g^{-1}=g*g^{-1}=e=g*g^{-1}=g*e*g^{-1}=g*(h^{-1}*h)*g^{-1}$$
+    $$=g*h^{-1}*e*h*g^{-1}=g*h^{-1}*(g^{-1}*g)*h*g^{-1}=(g*h^{-1}*g^{-1})*(g*h*g^{-1})=y*x$$
+    
+    and so $gHg^{-1}$ is closed under inverses. Thus $gHg^{-1}$ is a subgroup of $G$.\\
+
+    Let $G, H, g$, and $gHg^{-1}$ be as given. Let $f:H\rightarrow gHg^{-1}$ be defined by
+    $f(h)=g*h*g^{-1}$. Now, let $x,y\in H$ and assume that $f(x)=f(y)$. Then $g*x*g^{-1}=g*y*g^{-1}$. By
+    operating on the left of both sides by $g^{-1}$ and on the right of both sides by $g$, we get $x=y$.
+    Thus $f$ is injective. Now, let $z\in gHg^{-1}$. Then $z=g*h*g^{-1}$ for some $h\in H$. Then clealy
+    $f(h)=g*h*g^{-1}=z$, and $f$ is onto. Now, let $h_1,h_2\in H$. Since $H$ and $gHg^{-1}$ are both
+    subgroups of $G$, they both have the inherited operation $*$. So,
+    
+    $$f(h_1*h_2)=g*(h_1*h_2)*g^{-1}=g*h_1*e*h_2*g^{-1}=g*h_1*(g^{-1}*g)*h_2*g^{-1}$$
+    $$=(g*h_1*g^{-1})*(g*h_2*g^{-1})=f(h_1)*f(h_2)$$
+    
+    Therefore, $f$ is an isomorphism, and hence there exists an isomorphism between $H$ and $gHg^{-1}$.
+    Thus, $H\cong gHg^{-1}$.
+
+\end{solution}

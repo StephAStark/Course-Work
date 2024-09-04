@@ -1,0 +1,34 @@
+Let $g(x)=e^{-\frac{1}{x^2}}$ for $x\neq0$ and $g(0)=0$.\\
+
+a. Show $g^{(n)}(0)=0$ for all $n\in\mathbb{N}$.\\
+
+b. Show the Taylor sereis for $g$ about $0$ agrees with $g$ only at $0$.\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Clearly $g^{(0)}(0)=0$ by assumption. Now, let $f(x)=e^{-\frac{1}{x}}$. So we see that
+    $g(x)=f(x^2)*1$. Now, assume there exists a polynomial $p_n$ such that
+    $g^{(n)}(x)=f(x^2)p_n(\frac{1}{x^2})$ for $n>0$. That is assume the polynomial is of the form
+    $p_n(t)=a_0+a_1t+...+a_{3n}t^{3n}$ for $n>3$. Well, we can see that
+    
+    $$g^{(n)}(x)=f(x^2)\sum_{k=1}^{3n}\frac{a_k}{x^k}$$
+    
+    So
+    
+    $$g^{(n+1)}(x)=f'(x^2)[-\sum_{k=1}^{3n}\frac{ka_k}{x^(k+1)}]
+    +[\sum_{k=1}^{3n}\frac{a_k}{x^k}]f(x^2)(\frac{1}{x^3})$$
+    
+    So, we see that our polynomial is of the form
+    
+    $$p_{n+1}= -\sum_{k=1}^{3n}ka_kt^{(k+1)}+[\sum_{k=1}^{3n}\frac{a_k}{x^k}](t^3)$$
+    
+    So, for all $n$, there exists a polynomial that satisfies $g^{(n)}(x)=f(x^2)p_n(\frac{1}{x^2})$. Now
+    assume that $g^{(n)}(0)=0$ for some $n>0$. So, by example 3, we see that to show this is true for
+    $n+1$, we need $\lim_{y\rightarrow}\frac{y^{(k+1)}}{e^y}=0$ when we set $y=\frac{1}{x^2}$. Well,
+    this is true by $k+1$ applications of L'Hospitals Rule, so we have that $g^{(n)}(0)=0$ for all
+    $n\in\mathbb{N}$.\\
+
+    Well, since $g^{(n)}(0)=0$ for all $n\in\mathbb{N}$, we have that the Taylor series for $g$ about
+    $0$ is simply $\sum_{n=0}^{\infty}0=0$. Clearly for $x\neq0$, $g(x)\neq0$, and so $g$ does not
+    agree with the Taylor series for any $x$ aside from $x=0$.
+
+\end{solution}

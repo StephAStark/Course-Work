@@ -1,0 +1,15 @@
+Prove that a monotonically decreasing function $f$ on $[a,b]$ is integrable.\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Assume $f$ is a decreasing function on $[a,b]$ and $f(a)>f(b)$. So, $f(a)\geq f(x)\geq f(b)$ for all
+    $x\in[a,b]$ and $f$ is clearly bounded. Now, let $\epsilon>0$ and $P$ be a partition of $[a,b]$ such
+    that $mesh(P)<\frac{\epsilon}{f(a)-f(b)}$. Then,
+    
+    $$U(f,P)-L(f,P)=\sum_{k=1}^n(M-m)(t_k-t_{k-1})=\sum_{k=1}^n(f(t_{k-1})-f(t_k))(t_k-t_{k-1})$$
+    $$<\sum_{k=1}^n(f(t_{k-1})-f(t_k))(\frac{\epsilon}{f(a)-f(b)})$$
+    $$=(f(a)-f(b))(\frac{\epsilon}{f(a)-f(b)})=\epsilon$$
+    
+    Thus, by Theorem 32.5, $f$ is integrable. So, a monotonically decreasing function on $[a,b]$ is
+    integrable.
+
+\end{solution}

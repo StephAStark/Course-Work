@@ -1,0 +1,23 @@
+Let $f$ be a bounded function on $[a,b]$. Suppose there exist sequences $(U_n)$ and $(L_n)$ of upper and
+lower Darboux sums of $f$ such that $\lim(U_n-L_n)=0$. Show $f$ is integrable and
+$\int_a^bf=\lim U_n=\lim L_n$.\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Well, since $\lim(U_n-L_n)=0$, we have that for all $\epsilon>0$, $|U_n-L_n|<\epsilon$, Now since
+    $f$ is fixed, we have that $U_n=U(f,P_n)$ and $L_n=L(f,Q_n)$ for some sequence of partitions $P_n$
+    and $Q_n$. Take $\tilde{P}_n=P_n\cup Q_n$. So,
+    
+    $$|U_n-L_n|=|U(f,P_n)-L(f,Q_n)|$$
+    
+    and
+    
+    $$|U(f,\tilde{P}_n)-L(f,\tilde{P}_n)|\leq|U(f,P_n)-L(f,Q_n)|$$
+    
+    since $\tilde{P}_n$ is a refinement, thus
+    
+    $$|U(f,\tilde{P}_n)-L(f,\tilde{P}_n)|<\epsilon$$
+    
+    for all $\epsilon>0$ and thus $f$ is integrable on $[a,b]$. Now, $L_n\leq\int_a^bf\leq U_n$, and
+    since $\lim(U_n-L_n)=0$, we have that $\lim L_n=\int_a^bf=\lim U_n$.
+
+\end{solution}

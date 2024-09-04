@@ -1,0 +1,31 @@
+Let $f(x)=x^2\sin{\frac{1}{x}}$ for $x\neq0$ and $f(0)=0$.\\
+
+a. Use Theorems 28.3 and 28.4 to show $f$ is differentiable at every $a\neq0$ and calculate $f'(a)$.\\
+
+b. Use the definition to show that $f$ is differentiable at $x=0$ and $f'(0)=0$.\\
+
+c. Show $f'$ is not continuous at $x=0$.\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Let $a\in\mathbb{R}\setminus\{0\}$. Now, clearly $x^2$, $\sin x$, and $\frac1x$ are differentiable
+    at all $x=a$. So, by Theorem 28.4, we have that $\sin{\frac1x}$ is differentaible at all $x=a$ and
+    then by Theorem 28.3, we have that $x^2\sin{\frac1x}$ is differentiable at all $a\neq0$. So, $f'(a)$
+    exists, and
+    
+    $$f'(a)=2x\sin{\frac1x}+x^2\cos{\frac1x}(-\frac{1}{x^2})=2x\sin{\frac1x}-\cos({\frac1x})$$
+
+    Take $\frac{f(x)-f(0)}{x-0}$. Well, this becomes
+    
+    $$\frac{x^2\sin{\frac{1}{x}}-0}{x-0}=\frac{x^2\sin{\frac{1}{x}}}{x}=x\sin{\frac{1}{x}}$$
+    
+    Now, $\lim_{x\rightarrow0}x\sin{\frac{1}{x}}=0$ since $-1\leq sin(\frac1x)\leq1$. Since the limit
+    exists and is finite, $f'(0)$ exists and in particular $f'(0)=0$.\\
+
+    Take the sequence $s_n=\frac{1}{n}$. Clearly $\lim_{n\rightarrow\infty}s_n=0$, however we have that
+    
+    $$\lim_{n\rightarrow\infty}f'(s_n)=\lim_{n\rightarrow\infty}s_n\sin(\frac{1}{s_n})$$
+    $$=\lim_{n\rightarrow\infty}\frac{\sin n}{n}=1\neq0$$
+    
+    Thus, $f'(x)$ not continuous at $x=0$.
+
+\end{solution}

@@ -1,0 +1,22 @@
+Let $G$ be a group and let $H$ be a subgroup of $G$. Further, let $a,b\in G$. Determine a necessary and
+sufficent condition in order for $aH=bH$ and prove this condition is correct.\\\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    For a group $G$ and a subgroup $H$ of $G$, and $a,b\in G$, $aH=bH$ if and only if $b^{-1}*a\in H$.\\
+
+    Let $G, H, a$, and $b$ be as given. Assume first that $aH=bH$. Let $x\in aH$. Then $x=a*h_1$ for
+    some $h_1\in H$. Since $aH=bH$, we have that $x\in bH$ and so $x=b*h_2$ for some $h_2\in H$. Hence,
+    $a*h_1=b*h_2$. Since $H$ is group, $h_1^{-1}$ exists such that $h_1*h_1^{-1}=h_1^{-1}*h_1=e$ where
+    $e\in H$ is the identity. Since $G$ is a group, we also have that $b^{-1}$ exists such that
+    $b*b^{-1}=b^{-1}*b=e$. Therefore, if we operate on the right of both sides by $h_1^{-1}$ and on the
+    left of both sides by $b^{-1}$ for $a*h_1=b*h_2$, we get $b^{-1}*a=h_2*h_1^{-1}$. Since $H$ is a
+    group and $h_1^{-1}, h_2\in H$, $h_2*h_1^{-1}\in H$. Thus $b^{-1}*a\in H$. On the other hand, assume
+    that $b^{-1}*a\in H$. Then we know that $b^{-1}*a=h'$ for some $h'\in H$. Now, let $x\in aH$. Then
+    $x=a*h_1$ for some $h_1\in H$. Now, $a=b*h'$, so we have that $x=(b*h')*h_1=b*(h'*h_1)$ by
+    associativity since $H$ is a group. Also since $H$ is a group, we have that $h'*h_1\in H$ and thus
+    $x\in bH$. Now, let $x\in bH$. So $x=b*h_2$ for some $h_2\in H$. Well, since $G$ is a group, we have
+    that $h'^{-1}$ exists such that $h'*h'^{-1}=h'^{-1}*h'=e$ and hence $b=a*h'^{-1}$. Therefore,
+    $x=(a*h'^{-1})*h_2=a*(h'^{-1}*h_2)$ by associativity. Thus, since $h'^{-1}*h_2\in H$ by $H$ being a
+    group, we have that $x\in aH$. Thus, $aH=bH$.
+
+\end{solution}
