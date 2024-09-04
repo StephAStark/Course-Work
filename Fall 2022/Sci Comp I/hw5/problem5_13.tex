@@ -1,0 +1,72 @@
+Consider the Runge-Kutta methods defined by the tableaux below. In each case show that the method
+is third order accurate in two different ways: First by checking that the order conditions (5.35), 
+(5.38), and (5.39) are satisfied, and then by applying one step of the method to $u' = \lambda u$ and
+verifying that the Taylor series expansion of $e^{k\lambda}$ is recovered to the expected order.\\
+a. \begin{center}
+\begin{tabular}{c | c c c c}
+0 & 0 & 0 & 0 & 0 \\
+$\frac12$ & $\frac12$ & 0 & 0 & 0 \\
+1 & 0 & 1 & 0 & 0 \\
+1 & 0 & 0 & 1 & 0 \\
+\hline
+ & $\frac16$ & $\frac23$ & 0 & $\frac16$
+\end{tabular}
+\end{center}
+
+b. \begin{center}
+\begin{tabular}{c | c c c}
+0 & 0 & 0 & 0 \\
+$\frac13$ & $\frac13$ & 0 & 0 \\
+$\frac23$ & 0 & $\frac23$ & 0 \\
+\hline
+ & $\frac14$ & 0 & $\frac34$
+\end{tabular}
+\end{center}
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    a. We first need that $\sum_{j=1}^ra_{ij}=c_i$ and $\sum_{j=1}^rb_j=1$. Clearly,
+    $\sum_{j=1}^rb_j=\frac16+\frac23+\frac16=1$. Also, $\sum_{j=1}^ra_{1j}=0=c_1, 
+    \sum_{j=1}^ra_{2j}=\frac12=c_2, \sum_{j=1}^ra_{3j}=1=c_3$, and $\sum_{j=1}^ra_{4j}=1=c_4$. Now, we
+    need $\sum_{j=1}^rb_jc_j=\frac12$. We see that $\sum_{j=1}^rb_jc_j=
+    (\frac16\cdot0)+(\frac23\cdot\frac12)+(0\cdot1)+(\frac16\cdot1)=\frac12$. Finally, we need 
+    $\sum_{j=1}^rb_jc_j^2=\frac13$ and $\sum_{i=1}^r\sum_{j=1}^rb_ia_{ij}c_j=\frac16$. We note that 
+    $\sum_{j=1}^rb_jc_j^2=(\frac16\cdot0)+(\frac23\cdot\frac14)+(0\cdot1)+(\frac16\cdot1)=\frac13$ and
+    that $\sum_{i=1}^r\sum_{j=1}^rb_ia_{ij}c_j=(0)+(0)+(0+0+(\frac16\cdot1\cdot1)+0)+(0)=\frac16$. So,
+    we have that the third order Rugne-Kutta method is indeed third order accurate.\\
+    Now, we will use one step of this third order method to verify the Taylor series expansion of
+    $e^{k\lambda}$ is third order accurate. So,
+
+    $$Y_1=u_n$$
+    $$Y_2=u_n+\frac{k}{2}f(Y_1,t_n)=u_n+\frac{k\lambda}{2}u_n$$
+    $$Y_3=u_n+kf(Y_2,t_n+\frac12k)=u_n+k\lambda u_n+\frac12k^2\lambda^2u_n$$
+    $$Y_4=u_n+kf(Y_3,t_n+k)=u_n+k\lambda u_n+k^2\lambda^2u_n+\frac12k^3\lambda^3u_n$$
+
+    $$U^{n+1}=u_n+k(\frac16(\lambda u_n)+\frac23(\lambda u_n+k\lambda^2u_n+\frac12k^2\lambda^3u_n)+
+    \frac16(\lambda u_n+k\lambda^2u_n+k^2\lambda^3u_n+\frac12k^3\lambda^4u_n))$$
+    $$=u_n+\frac16(k\lambda u_n)+\frac23(k\lambda u_n+k^2\lambda^2u_n+\frac12k^3\lambda^3u_n)+
+    \frac16(k\lambda u_n+k^2\lambda^2u_n+k^3\lambda^3u_n+\frac12k^4\lambda^4u_n)$$
+
+    Thus, we have that $e^{k\lambda}$ is recovered to third order accuracy.\\
+
+    b. We will verify the same conditions as in part a above. First, we see that
+    $\sum_{j=1}^ra_{1j}=0=c_1, \sum_{j=1}^ra_{2j}=\frac13=c_2$, and $\sum_{j=1}^ra_{3j}=\frac23=c_3$ and
+    that $\sum_{j=1}^rb_j=\frac14+\frac34=1$. So, the first condition holds. Now, note that 
+    $\sum_{j=1}^rb_jc_j=(\frac14\cdot0)+(0\cdot\frac13)+(\frac34\cdot\frac23)=\frac12$. Hence, the
+    second condition holds. Finally, observe that
+    $\sum_{j=1}^rb_jc_j^2=(\frac14\cdot0)+(0\cdot\frac19)+(\frac34\cdot\frac49)=\frac13$ and
+    $sum_{i=1}^r\sum_{j=1}^rb_ia_{ij}c_j=(0)+(0)+(0+(\frac34\cdot\frac23\cdot\frac13)+0)=\frac16$.
+    Hence, Heun's third order method is thrid order accurate.\\
+    Now, we will use one step of this third order method to verify the Taylor series expansion of
+    $e^{k\lambda}$ is third order accurate. So,
+
+    $$Y_1=u_n$$
+    $$Y_2=u_n+\frac{k}{3}f(Y_1,t_n)=u_n+\frac{k\lambda}{3}u_n$$
+    $$Y_3=u_n+\frac23kf(Y_2,t_n+\frac13k)=u_n+\frac23k\lambda u_n+\frac13k^2\lambda^2u_n$$
+
+    $$U^{n+1}=
+    u_n+k(\frac14(\lambda u_n)+\frac34(\lambda u_n+\frac23k\lambda^2u_n+\frac13k^2\lambda^3u_n))$$
+    $$=u_n+\frac14(k\lambda u_n)+\frac34(k\lambda u_n+\frac23k^2\lambda^2u_n+\frac13k^3\lambda^3u_n)$$
+
+    Thus, we have that $e^{k\lambda}$ is recovered to third order accuracy.
+
+\end{solution}

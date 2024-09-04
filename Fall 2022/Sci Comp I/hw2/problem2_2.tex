@@ -1,0 +1,94 @@
+a. Find the function $G(x,\bar{x})$ solving $u''(x)=\delta(x-\bar{x}), u'(0)=0, u(1)=0$ and the
+functions $G_0(x)$ solving $u''(x)=0, u'(0)=1, u(1)=0$ and $G_1(x)$ solving $u''(x)=0, u'(0)=0, 
+u(1)=1$.\\
+b. Using this as guidance, find the general formulas for the elements of the inverse of the matrix in
+equation $(2.54)$. Write out the $5\times5$ matrices $A$ and $A^{-1}$ for the case $h=0.25$.\\
+
+\begin{solution}\renewcommand{\qedsymbol}{}\ \\
+    Since we want $G(x,\bar{x})$ to be the solution to $u''(x)=\delta(x-\bar{x})$ with $u'(0)=0, u(1)=0$
+    we integrate $u''(x)$ to get
+    
+    $$G'(x,\bar{x})=\begin{cases} 0 & 0\leq x<\bar{x} \\ 1 & \bar{x}<x<\leq1 \end{cases}$$
+    
+    Since $0\leq\bar{x}\leq1$, we have that $u'(0)=0$. So, integrating again yields
+    
+    $$G(x,\bar{x})=\begin{cases} \bar{x}-1 & 0\leq x<\bar{x} \\ x-1 & \bar{x}<x\leq1 \end{cases}$$
+    
+    Here we see that $G(1,\bar{x})=u(1)=0$. Thus, we have found the solution to the boundry value
+    problem. Now, to find $G_0(x)$, we will integrate $u''(x)=0$. This gives us $G_0'(x)=1$. Clearly,
+    $G_0'(0)=u'(0)=1$. Integrating again gives us $G_0(x)=x+C$. Hence, $G_0(1)=1+C=0$. So, $G_0(x)=x-1$.
+    So, we have found the solution to the boundry value problem $u''(x)=0, u'(0)=1, u(1)=0$. Finally, to
+    solve $u''(x)=0, u'(0)=0, u(1)=1$, we will integrate $u''(x)=0$. To satisfy $u'(0)=0$, we get
+    $G_1'(x)=0$. Integrating again yields $G_1(x)=C$. To satisfy $u(1)=1$, we have $G_1(x)=1$. So, we
+    have found the solution to the final boundry problem.\\
+
+    Now, the general formula for the elements of $A^{-1}$ is given by the Green's functions we found
+    above. The formulas are
+    
+    $$B_{i0}=G_0(x_i)=x_i-1, B_{i m+1}=G_1(x_i)=1$$
+    
+    and
+    
+    $$B_{ij}=hG(x_i,x_j)=\begin{cases} hx_j-h & 1\leq i\leq j \\ hx_i-h & j\leq i\leq m \end{cases}$$
+    
+    where $i$ and $j$ are the rows and columns of the inverse matrix respctively, $m+1$ is the dimension
+    of the matrix, and $x_i,x_j$ are the grid or stencil points used. Using this and $h=0.25$, we have
+    that the first column of the $5\times5$ matrix is
+    
+    $$\left(\begin{array}{c} -1\\ -\frac{3}{4} \\ -\frac12 \\ -\frac14 \\ 0 \end{array}\right)$$
+    
+    Also, the last column is given by
+    
+    $$\left(\begin{array}{c} 1\\ 1 \\ 1 \\ 1 \\ 1 \end{array}\right)$$
+    
+    Now, the middle thre columns are given by
+    
+    $$\left(\begin{array}{c} \frac14\cdot\frac14-\frac14 
+                          \\ \frac14\cdot\frac14-\frac14
+                          \\ \frac14\cdot\frac12-\frac14
+                          \\ \frac14\cdot\frac34-\frac14
+                          \\ \frac14\cdot1-\frac14
+      \end{array}\right)
+    =\left(\begin{array}{c} -\frac{3}{16}\\ -\frac{3}{16} \\ -\frac18
+                         \\ -\frac{1}{16} \\ 0 \end{array}\right),
+     \left(\begin{array}{c} \frac14\cdot\frac12-\frac14\\ \frac14\cdot\frac12-\frac14
+                         \\ \frac14\cdot\frac12-\frac14 \\ \frac14\cdot\frac34-\frac14
+                         \\ \frac14\cdot1-\frac14
+     \end{array}\right)
+    =\left(\begin{array}{c} -\frac{1}{8}\\ -\frac{1}{8} \\ -\frac18 \\ -\frac{1}{16} \\ 0 
+     \end{array}\right),
+     \left(\begin{array}{c} \frac14\cdot\frac34-\frac14\\ \frac14\cdot\frac34-\frac14
+                         \\ \frac14\cdot\frac34-\frac14 \\ \frac14\cdot\frac34-\frac14
+                         \\ \frac14\cdot1-\frac14 
+     \end{array}\right)
+    =\left(\begin{array}{c} -\frac{1}{16}\\ -\frac{1}{16} \\ -\frac{1}{16} \\ -\frac{1}{16} \\ 0
+     \end{array}\right)$$
+     
+     Hence, our inverse matrix is
+     
+     $$A^{-1}=\left(\begin{array}{ccccc} -1 & -\frac{3}{16} & -\frac18 & -\frac{1}{16}& 1 
+                                      \\ -\frac{3}{4} & -\frac{3}{16} & -\frac18 & -\frac{1}{16} & 1
+                                      \\ -\frac12 & -\frac18 & -\frac18 & -\frac{1}{16} & 1
+                                      \\ -\frac14 & -\frac{1}{16} & -\frac{1}{16} & -\frac{1}{16} & 1
+                                      \\ 0 & 0 & 0 & 0 & 1 \end{array}\right)$$
+                                      
+    By the book, we have that
+    
+    $$A=16\left(\begin{array}{ccccc} -0.25 & 0.25 & 0 & 0 & 0\\ 1 & -2 & 1 & 0 & 0\\ 0 & 1 & -2 & 1 & 0
+                                  \\ 0 & 0 & 1 & -2 & 1\\ 0 & 0 & 0 & 0 & 0.0625 \end{array}\right)
+       =\left(\begin{array}{ccccc} -4 & 4 & 0 & 0 & 0\\ 16 & -32 & 16 & 0 & 0\\ 0 & 16 & -32 & 16 & 0
+                                \\ 0 & 0 & 16 & -32 & 16\\ 0 & 0 & 0 & 0 & 1 \end{array}\right)$$
+                                
+    and MATLAB gives us
+    
+    $$A^{-1}=\frac{1}{16}\left(\begin{array}{ccccc} -16 & -3 & -2 & -1 & 16\\ -12 & -3 & -2 & -2 & 16
+        \\ -8 & -2 & -2 & -1 & 16\\ -4 & -1 & -1 & -1 & 16\\ 0 & 0 & 0 & 0 & 16 \end{array}\right)
+    =\left(\begin{array}{ccccc} -1 & -\frac{3}{16} & -\frac18 & -\frac{1}{16} & 1
+        \\ -\frac{3}{4} & -\frac{3}{16} & -\frac18 & -\frac{1}{16} & 1
+        \\ -\frac12 & -\frac18 & -\frac18 & -\frac{1}{16} & 1
+        \\ -\frac14 & -\frac{1}{16} & -\frac{1}{16} & -\frac{1}{16} & 1\\ 0 & 0 & 0 & 0 & 1 
+     \end{array}\right)$$
+     
+    which verifies our above work.
+
+\end{solution}
