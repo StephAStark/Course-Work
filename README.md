@@ -1,3 +1,2 @@
-# UCCS course work for graduate classes
-
-Hello, world!
+# Coding Practice
+Coding projects of various languages to practice and learn.
